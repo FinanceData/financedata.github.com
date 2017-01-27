@@ -1,1 +1,0 @@
-# financedata.github.com

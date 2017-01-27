@@ -1,0 +1,4 @@
+Sitemap: https://plusjune.github.com/sitemapindex.xml
+
+User-Agent: *
+Host: plusjune.github.com
