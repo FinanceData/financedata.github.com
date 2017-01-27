@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1485549139.3286755
+_modified_time = 1485549254.1398292
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl'
 _template_uri = 'comments_helper_intensedebate.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_link_script', 'comment_form', 'comment_link']
+_exports = ['comment_form', 'comment_link', 'comment_link_script']
 
 
 def render_body(context,**pageargs):
@@ -20,16 +20,6 @@ def render_body(context,**pageargs):
         __M_writer = context.writer()
         __M_writer('\n\n')
         __M_writer('\n\n')
-        __M_writer('\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_comment_link_script(context):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        __M_writer = context.writer()
         __M_writer('\n')
         return ''
     finally:
@@ -74,8 +64,18 @@ def render_comment_link(context,link,identifier):
         context.caller_stack._pop_frame()
 
 
+def render_comment_link_script(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        __M_writer = context.writer()
+        __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 """
 __M_BEGIN_METADATA
-{"line_map": {"64": 14, "65": 14, "66": 16, "67": 16, "68": 17, "69": 17, "70": 18, "71": 18, "77": 71, "16": 0, "21": 11, "22": 22, "23": 25, "29": 24, "33": 24, "39": 2, "44": 2, "45": 4, "46": 4, "47": 5, "48": 5, "49": 6, "50": 6, "56": 13, "61": 13, "62": 14, "63": 14}, "uri": "comments_helper_intensedebate.tmpl", "source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl"}
+{"filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl", "uri": "comments_helper_intensedebate.tmpl", "source_encoding": "utf-8", "line_map": {"67": 24, "71": 24, "77": 71, "16": 0, "21": 11, "22": 22, "23": 25, "29": 2, "34": 2, "35": 4, "36": 4, "37": 5, "38": 5, "39": 6, "40": 6, "46": 13, "51": 13, "52": 14, "53": 14, "54": 14, "55": 14, "56": 16, "57": 16, "58": 17, "59": 17, "60": 18, "61": 18}}
 __M_END_METADATA
 """
