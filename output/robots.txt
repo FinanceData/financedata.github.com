@@ -1,4 +1,4 @@
-Sitemap: https://plusjune.github.com/sitemapindex.xml
+Sitemap: https://financedata.github.com/sitemapindex.xml
 
 User-Agent: *
-Host: plusjune.github.com
+Host: financedata.github.com

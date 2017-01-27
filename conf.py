@@ -21,7 +21,7 @@ BLOG_AUTHOR = "plusjune"  # (translatable)
 BLOG_TITLE = "FinanceData"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://plusjune.github.com/"
+SITE_URL = "https://financedata.github.com/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://plusjune.github.com/"
