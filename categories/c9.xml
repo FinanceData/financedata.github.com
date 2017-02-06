@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (c9에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://financedata.github.com/categories/c9.xml"></atom:link><language>ko</language><lastBuildDate>Mon, 06 Feb 2017 09:59:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] c9.io 얼마나 쓸만한가</title><link>https://financedata.github.com/posts/c9_io_features.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-c9.io-활동-상태가-얼마나-유지되나요?"&gt;[FAQ] c9.io 활동 상태가 얼마나 유지되나요?&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%5BFAQ%5D-c9.io-%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EA%B0%80-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98%EC%9A%94?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="240" src="http://i.imgur.com/AczuNfy.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="활동-상태는-얼마나-유지되나"&gt;활동 상태는 얼마나 유지되나&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EB%8A%94-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;c9.io 를 닫은 상태로 2시간이 지나면, 프로세스가 내려 간다. jupyter 노트북 서버가 바로 프로세스(process)다. 
+다시 c9.io 를 열었을 때 다음과 같은 명령으로 jupyter 노트북 서버를 다시 시작하면 된다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ jupyter notebook --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.0.0 --port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt; --no-browser
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;추가로 설명을 덧붙이자면,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;c9.io IDE를 닫은 상태로 2시간이 지나면, 프로세스(띄워놓은 프로그램)이 내려간다.&lt;/li&gt;
+&lt;li&gt;c9.io IDE를 닫은 상태로 7일이 지나면  절전모드(hibernated)가 된다. 다시 접속했을 때 절전모드에서 켜지는 시간이 4분 정도 소요 된다. (PC를 켜는 것과 같은 과정을 거친다)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;IDE (메뉴, 편집기, 명령라인이 있는 화면)가 열려 있는 상태면 활동상태(active)는 계속 유지된다. active 상태란 사용자가 사용중인 상태를 말한다.
+설치한 프로그램과 저장된 내용은 영구 보존된다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="유료와-무료-계정의-차이점"&gt;유료와 무료 계정의 차이점&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%EC%9C%A0%EB%A3%8C%EC%99%80-%EB%AC%B4%EB%A3%8C-%EA%B3%84%EC%A0%95%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="유료-($19/월)"&gt;유료 ($19/월)&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%EC%9C%A0%EB%A3%8C-(%2419/%EC%9B%94)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Workspace: Public 무제한, private 무제한&lt;/li&gt;
+&lt;li&gt;2.5GB 메모리, 10GB 디스크 / Workspace&lt;/li&gt;
+&lt;li&gt;SSH 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="무료"&gt;무료&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%EB%AC%B4%EB%A3%8C"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Workspace: Public 무제한, private 1개&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;1GB 메모리, 5GB 디스크 였는데 글을 업데이트하는 시점(2016.09)에서 &lt;/strike&gt; 0.5G 메모리, 2GB 디스크 / Workspace &lt;/li&gt;
+&lt;li&gt;SSH 불가&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Workspace는 간단히 말해 가상기계 1대를 말한다. 
+SSH는 원격에서 접속하여 명령라인 사용하는 기능을 말한다 (안전하게 사용하는 telnet 명령이라고 보면 되겠다)
+주로 웹기반 IDE에서 명령라인을 사용하므로 SSH를 사용해야 할 경우는 사실상 거의 없다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="결론"&gt;결론&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%EA%B2%B0%EB%A1%A0"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;무료 계정으로도 충분히 그리고 계속 쓸 만하다. 실험용, 테스트용, 학습용으로는 충분하다. 특히, 특정 환경이나 프로그래밍 언어를 배우는 용도라면 자신의 PC에 개발환경을 구성하는 것 보다 c9을 활용하는 것이 좋다. 계속 켜놓을 수 있는 인터넷 PC 있으시다면 IDE를 열어두시면 active 거의 지속 유지 된다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="참고"&gt;참고&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%EC%B0%B8%EA%B3%A0"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.c9.io/docs/inactive-workspaces"&gt;https://docs.c9.io/docs/inactive-workspaces&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.c9.io/docs/picking-a-plan"&gt;https://docs.c9.io/docs/picking-a-plan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="2016,-2017-facebook.com/financedata"&gt;2016, 2017 &lt;a href="https://facebook.com/financedata"&gt;facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#2016,-2017-facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>c9</category><category>cloud9</category><guid>https://financedata.github.com/posts/c9_io_features.html</guid><pubDate>Thu, 30 Jun 2016 11:30:10 GMT</pubDate></item></channel></rss>
