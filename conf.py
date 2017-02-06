@@ -1181,7 +1181,7 @@ SOCIAL_BUTTONS_CODE = """
 # in the default template (base.tmpl).
 # (translatable)
 # BODY_END = ""
-BODY_END = "<style> div.prompt {display:NONE} </style>"
+# BODY_END = "<style> div.prompt {display:NONE} </style>"
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
