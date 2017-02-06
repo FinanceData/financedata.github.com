@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (faq에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://financedata.github.com/categories/faq.xml"></atom:link><language>ko</language><lastBuildDate>Mon, 06 Feb 2017 09:59:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title> [FAQ] pip list 명령에서 AssertionError</title><link>https://financedata.github.com/posts/fqa_pip_list_assertion_error.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-pip3-list,-AssertionError-에러"&gt;[FAQ] pip3 list, AssertionError 에러&lt;a class="anchor-link" href="https://financedata.github.com/posts/fqa_pip_list_assertion_error.html#%5BFAQ%5D-pip3-list,-AssertionError-%EC%97%90%EB%9F%AC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: pip3 list 명령에서 아래와 같이 AssertionError 에러가 납니다.&lt;/li&gt;
+&lt;li&gt;A: pip3 를 업그레이드 하세요.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/5zFdnEA.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;pip3 list 명령에서 아래와 같이 AssertionError 에러가 난다면,&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"&gt;&lt;pre style="margin: 0; line-height: 125%"&gt;&lt;span style="color: #996633"&gt;$ &lt;/span&gt;pip3 list
+backports-abc &lt;span style="color: #333333"&gt;(&lt;/span&gt;0.4&lt;span style="color: #333333"&gt;)&lt;/span&gt;
+beautifulsoup4 &lt;span style="color: #333333"&gt;(&lt;/span&gt;4.4.1&lt;span style="color: #333333"&gt;)&lt;/span&gt;
+
+...(중략)...
+
+Exception:
+Traceback &lt;span style="color: #333333"&gt;(&lt;/span&gt;most recent call last&lt;span style="color: #333333"&gt;)&lt;/span&gt;:
+  File &lt;span style="background-color: #fff0f0"&gt;"/usr/lib/python3/dist-packages/pip/basecommand.py"&lt;/span&gt;, line 122, in main
+    &lt;span style="color: #996633"&gt;status&lt;/span&gt; &lt;span style="color: #333333"&gt;=&lt;/span&gt; self.run&lt;span style="color: #333333"&gt;(&lt;/span&gt;options, args&lt;span style="color: #333333"&gt;)&lt;/span&gt;
+  File &lt;span style="background-color: #fff0f0"&gt;"/usr/lib/python3/dist-packages/pip/commands/list.py"&lt;/span&gt;, line 80, in run
+    self.run_listing&lt;span style="color: #333333"&gt;(&lt;/span&gt;options&lt;span style="color: #333333"&gt;)&lt;/span&gt;
+  File &lt;span style="background-color: #fff0f0"&gt;"/usr/lib/python3/dist-packages/pip/commands/list.py"&lt;/span&gt;, line 142, in run_listing
+    self.output_package_listing&lt;span style="color: #333333"&gt;(&lt;/span&gt;installed_packages&lt;span style="color: #333333"&gt;)&lt;/span&gt;
+  File &lt;span style="background-color: #fff0f0"&gt;"/usr/lib/python3/dist-packages/pip/commands/list.py"&lt;/span&gt;, line 151, in output_package_listing
+    &lt;span style="color: #008800; font-weight: bold"&gt;if &lt;/span&gt;dist_is_editable&lt;span style="color: #333333"&gt;(&lt;/span&gt;dist&lt;span style="color: #333333"&gt;)&lt;/span&gt;:
+  File &lt;span style="background-color: #fff0f0"&gt;"/usr/lib/python3/dist-packages/pip/util.py"&lt;/span&gt;, line 366, in dist_is_editable
+    &lt;span style="color: #996633"&gt;req&lt;/span&gt; &lt;span style="color: #333333"&gt;=&lt;/span&gt; FrozenRequirement.from_dist&lt;span style="color: #333333"&gt;(&lt;/span&gt;dist, &lt;span style="color: #333333"&gt;[])&lt;/span&gt;
+  File &lt;span style="background-color: #fff0f0"&gt;"/usr/lib/python3/dist-packages/pip/__init__.py"&lt;/span&gt;, line 286, in from_dist
+    assert len&lt;span style="color: #333333"&gt;(&lt;/span&gt;specs&lt;span style="color: #333333"&gt;)&lt;/span&gt; &lt;span style="color: #333333"&gt;==&lt;/span&gt; 1 and specs&lt;span style="color: #333333"&gt;[&lt;/span&gt;0&lt;span style="color: #333333"&gt;][&lt;/span&gt;0&lt;span style="color: #333333"&gt;]&lt;/span&gt; &lt;span style="color: #333333"&gt;==&lt;/span&gt; &lt;span style="background-color: #fff0f0"&gt;'=='&lt;/span&gt;
+AssertionError
+
+Storing debug log &lt;span style="color: #008800; font-weight: bold"&gt;for &lt;/span&gt;failure in /home/ubuntu/.pip/pip.log
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;다음과 같이 명령하여 update 하고, 다시 터미널을 실행한다. (pip를 최신버전으로 업데이트&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo pip3 install -U setuptools
+$ sudo pip3 install -U pip
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="2016,-2017-facebook.com/financedata"&gt;2016, 2017 &lt;a href="https://facebook.com/financedata"&gt;facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/fqa_pip_list_assertion_error.html#2016,-2017-facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>AssertionError</category><category>faq</category><category>list</category><category>pip</category><guid>https://financedata.github.com/posts/fqa_pip_list_assertion_error.html</guid><pubDate>Wed, 29 Jun 2016 12:30:10 GMT</pubDate></item><item><title>[FAQ] Jupyter notebook 텍스트 화면</title><link>https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-Jupyter-notebook-실행시-텍스트-브라우저-화면"&gt;[FAQ] Jupyter notebook 실행시 텍스트 브라우저 화면&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html#%5BFAQ%5D-Jupyter-notebook-%EC%8B%A4%ED%96%89%EC%8B%9C-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%ED%99%94%EB%A9%B4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: Jupyter notebook 실행했을 때, 이상한 텍스트 화면이 표시 됩니다&lt;/li&gt;
+&lt;li&gt;A: Jupyter notebook 실행시 --no-browser 옵션을 추가하세요&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;다음과 같이 명령하여 jupyter notebook 을 실행했을 때,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ jupyter notebook --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.0.0 --port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다음과 같은 화면이 표시된다면.... 이 화면은 링크스(Lynx)라는 텍스트 브라우저 화면이다. 
+기본 브라우저를 지정하지 않았을 경우 디폴트로 텍스트 브라우저인 lynx 가 실행된다.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/P6eTyDc.png"&gt;&lt;/p&gt;
+&lt;p&gt;이 Lynx 브라우저 종료 하려면  q, y 를 차례로 눌러준다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;로컬 PC가 아닌 jupyter notebook을 서버로 띄우거나 클라우드 IDE에서 실행하는 경우는 --no-browser 옵션을 사용한다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ jupyter notebook --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.0.0 --port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt; --no-browser
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="2016,-2017-facebook.com/financedata"&gt;2016, 2017 &lt;a href="https://facebook.com/financedata"&gt;facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html#2016,-2017-facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>faq</category><category>jupyter notebook</category><category>lynx</category><guid>https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html</guid><pubDate>Tue, 28 Jun 2016 11:30:10 GMT</pubDate></item></channel></rss>

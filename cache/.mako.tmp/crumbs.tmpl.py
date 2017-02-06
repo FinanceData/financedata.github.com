@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1485549404.8370037
+_modified_time = 1486375157.805649
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/crumbs.tmpl'
 _template_uri = 'crumbs.tmpl'
@@ -53,6 +53,6 @@ def render_bar(context,crumbs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"33": 3, "34": 4, "35": 5, "36": 7, "37": 8, "38": 9, "39": 10, "40": 10, "41": 10, "42": 11, "43": 12, "44": 12, "45": 12, "46": 12, "47": 12, "16": 0, "48": 16, "21": 2, "22": 19, "54": 48, "28": 3}, "uri": "crumbs.tmpl", "source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/crumbs.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"33": 3, "34": 4, "35": 5, "36": 7, "37": 8, "38": 9, "39": 10, "40": 10, "41": 10, "42": 11, "43": 12, "44": 12, "45": 12, "46": 12, "47": 12, "16": 0, "48": 16, "21": 2, "22": 19, "54": 48, "28": 3}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/crumbs.tmpl", "uri": "crumbs.tmpl"}
 __M_END_METADATA
 """

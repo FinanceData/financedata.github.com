@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1485549404.9832072
+_modified_time = 1486375157.879367
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl'
 _template_uri = 'comments_helper_livefyre.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_link', 'comment_form', 'comment_link_script']
+_exports = ['comment_link', 'comment_link_script', 'comment_form']
 
 
 def render_body(context,**pageargs):
@@ -43,6 +43,16 @@ def render_comment_link(context,link,identifier):
         context.caller_stack._pop_frame()
 
 
+def render_comment_link_script(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        __M_writer = context.writer()
+        __M_writer('\n<script src="http://zor.livefyre.com/wjs/v1.0/javascripts/CommentCount.js"></script>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_comment_form(context,url,title,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -58,18 +68,8 @@ def render_comment_form(context,url,title,identifier):
         context.caller_stack._pop_frame()
 
 
-def render_comment_link_script(context):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        __M_writer = context.writer()
-        __M_writer('\n<script src="http://zor.livefyre.com/wjs/v1.0/javascripts/CommentCount.js"></script>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"line_map": {"65": 31, "34": 23, "35": 24, "36": 24, "37": 25, "38": 25, "39": 25, "40": 25, "55": 11, "46": 2, "61": 31, "16": 0, "51": 2, "52": 7, "21": 21, "22": 28, "23": 33, "71": 65, "54": 11, "29": 23, "53": 7}, "uri": "comments_helper_livefyre.tmpl", "source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"64": 11, "65": 11, "34": 23, "35": 24, "36": 24, "37": 25, "38": 25, "39": 25, "40": 25, "71": 65, "46": 31, "61": 2, "16": 0, "50": 31, "21": 21, "22": 28, "23": 33, "56": 2, "29": 23, "62": 7, "63": 7}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl", "uri": "comments_helper_livefyre.tmpl"}
 __M_END_METADATA
 """

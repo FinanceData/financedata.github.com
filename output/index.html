@@ -183,6 +183,495 @@
 </div>
 </div>
     </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/c9_io_features.html" class="u-url">[FAQ] c9.io 얼마나 쓸만한가</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/c9_io_features.html" rel="bookmark"><time class="published dt-published" datetime="2016-06-30T20:30:10+09:00" title="2016-06-30 20:30">2016-06-30 20:30</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/c9_io_features.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="[FAQ]-c9.io-활동-상태가-얼마나-유지되나요?">[FAQ] c9.io 활동 상태가 얼마나 유지되나요?<a class="anchor-link" href="posts/c9_io_features.html#%5BFAQ%5D-c9.io-%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EA%B0%80-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98%EC%9A%94?">¶</a>
+</h2>
+<p><img width="240" src="http://i.imgur.com/AczuNfy.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="활동-상태는-얼마나-유지되나">활동 상태는 얼마나 유지되나<a class="anchor-link" href="posts/c9_io_features.html#%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EB%8A%94-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98">¶</a>
+</h2>
+<p>c9.io 를 닫은 상태로 2시간이 지나면, 프로세스가 내려 간다. jupyter 노트북 서버가 바로 프로세스(process)다. 
+다시 c9.io 를 열었을 때 다음과 같은 명령으로 jupyter 노트북 서버를 다시 시작하면 된다.</p>
+<div class="highlight"><pre><span></span>$ jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">8080</span> --no-browser
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>추가로 설명을 덧붙이자면,</p>
+<ul>
+<li>c9.io IDE를 닫은 상태로 2시간이 지나면, 프로세스(띄워놓은 프로그램)이 내려간다.</li>
+<li>c9.io IDE를 닫은 상태로 7일이 지나면  절전모드(hibernated)가 된다. 다시 접속했을 때 절전모드에서 켜지는 시간이 4분 정도 소요 된다. (PC를 켜는 것과 같은 과정을 거친다)</li>
+</ul>
+<p>IDE (메뉴, 편집기, 명령라인이 있는 화면)가 열려 있는 상태면 활동상태(active)는 계속 유지된다. active 상태란 사용자가 사용중인 상태를 말한다.
+설치한 프로그램과 저장된 내용은 영구 보존된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="유료와-무료-계정의-차이점">유료와 무료 계정의 차이점<a class="anchor-link" href="posts/c9_io_features.html#%EC%9C%A0%EB%A3%8C%EC%99%80-%EB%AC%B4%EB%A3%8C-%EA%B3%84%EC%A0%95%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90">¶</a>
+</h2>
+<h4 id="유료-($19/월)">유료 ($19/월)<a class="anchor-link" href="posts/c9_io_features.html#%EC%9C%A0%EB%A3%8C-(%2419/%EC%9B%94)">¶</a>
+</h4>
+<ul>
+<li>Workspace: Public 무제한, private 무제한</li>
+<li>2.5GB 메모리, 10GB 디스크 / Workspace</li>
+<li>SSH 가능</li>
+</ul>
+<h4 id="무료">무료<a class="anchor-link" href="posts/c9_io_features.html#%EB%AC%B4%EB%A3%8C">¶</a>
+</h4>
+<ul>
+<li>Workspace: Public 무제한, private 1개</li>
+<li>
+<strike>1GB 메모리, 5GB 디스크 였는데 글을 업데이트하는 시점(2016.09)에서 </strike> 0.5G 메모리, 2GB 디스크 / Workspace </li>
+<li>SSH 불가</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Workspace는 간단히 말해 가상기계 1대를 말한다. 
+SSH는 원격에서 접속하여 명령라인 사용하는 기능을 말한다 (안전하게 사용하는 telnet 명령이라고 보면 되겠다)
+주로 웹기반 IDE에서 명령라인을 사용하므로 SSH를 사용해야 할 경우는 사실상 거의 없다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="결론">결론<a class="anchor-link" href="posts/c9_io_features.html#%EA%B2%B0%EB%A1%A0">¶</a>
+</h2>
+<p>무료 계정으로도 충분히 그리고 계속 쓸 만하다. 실험용, 테스트용, 학습용으로는 충분하다. 특히, 특정 환경이나 프로그래밍 언어를 배우는 용도라면 자신의 PC에 개발환경을 구성하는 것 보다 c9을 활용하는 것이 좋다. 계속 켜놓을 수 있는 인터넷 PC 있으시다면 IDE를 열어두시면 active 거의 지속 유지 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="참고">참고<a class="anchor-link" href="posts/c9_io_features.html#%EC%B0%B8%EA%B3%A0">¶</a>
+</h3>
+<ul>
+<li><a href="https://docs.c9.io/docs/inactive-workspaces">https://docs.c9.io/docs/inactive-workspaces</a></li>
+<li><a href="https://docs.c9.io/docs/picking-a-plan">https://docs.c9.io/docs/picking-a-plan</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2016,-2017-facebook.com/financedata">2016, 2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="posts/c9_io_features.html#2016,-2017-facebook.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/fqa_pip_list_assertion_error.html" class="u-url"> [FAQ] pip list 명령에서 AssertionError</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/fqa_pip_list_assertion_error.html" rel="bookmark"><time class="published dt-published" datetime="2016-06-29T21:30:10+09:00" title="2016-06-29 21:30">2016-06-29 21:30</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/fqa_pip_list_assertion_error.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="[FAQ]-pip3-list,-AssertionError-에러">[FAQ] pip3 list, AssertionError 에러<a class="anchor-link" href="posts/fqa_pip_list_assertion_error.html#%5BFAQ%5D-pip3-list,-AssertionError-%EC%97%90%EB%9F%AC">¶</a>
+</h2>
+<ul>
+<li>Q: pip3 list 명령에서 아래와 같이 AssertionError 에러가 납니다.</li>
+<li>A: pip3 를 업그레이드 하세요.</li>
+</ul>
+<p><img src="http://i.imgur.com/5zFdnEA.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>pip3 list 명령에서 아래와 같이 AssertionError 에러가 난다면,</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #996633">$ </span>pip3 list
+backports-abc <span style="color: #333333">(</span>0.4<span style="color: #333333">)</span>
+beautifulsoup4 <span style="color: #333333">(</span>4.4.1<span style="color: #333333">)</span>
+
+...(중략)...
+
+Exception:
+Traceback <span style="color: #333333">(</span>most recent call last<span style="color: #333333">)</span>:
+  File <span style="background-color: #fff0f0">"/usr/lib/python3/dist-packages/pip/basecommand.py"</span>, line 122, in main
+    <span style="color: #996633">status</span> <span style="color: #333333">=</span> self.run<span style="color: #333333">(</span>options, args<span style="color: #333333">)</span>
+  File <span style="background-color: #fff0f0">"/usr/lib/python3/dist-packages/pip/commands/list.py"</span>, line 80, in run
+    self.run_listing<span style="color: #333333">(</span>options<span style="color: #333333">)</span>
+  File <span style="background-color: #fff0f0">"/usr/lib/python3/dist-packages/pip/commands/list.py"</span>, line 142, in run_listing
+    self.output_package_listing<span style="color: #333333">(</span>installed_packages<span style="color: #333333">)</span>
+  File <span style="background-color: #fff0f0">"/usr/lib/python3/dist-packages/pip/commands/list.py"</span>, line 151, in output_package_listing
+    <span style="color: #008800; font-weight: bold">if </span>dist_is_editable<span style="color: #333333">(</span>dist<span style="color: #333333">)</span>:
+  File <span style="background-color: #fff0f0">"/usr/lib/python3/dist-packages/pip/util.py"</span>, line 366, in dist_is_editable
+    <span style="color: #996633">req</span> <span style="color: #333333">=</span> FrozenRequirement.from_dist<span style="color: #333333">(</span>dist, <span style="color: #333333">[])</span>
+  File <span style="background-color: #fff0f0">"/usr/lib/python3/dist-packages/pip/__init__.py"</span>, line 286, in from_dist
+    assert len<span style="color: #333333">(</span>specs<span style="color: #333333">)</span> <span style="color: #333333">==</span> 1 and specs<span style="color: #333333">[</span>0<span style="color: #333333">][</span>0<span style="color: #333333">]</span> <span style="color: #333333">==</span> <span style="background-color: #fff0f0">'=='</span>
+AssertionError
+
+Storing debug log <span style="color: #008800; font-weight: bold">for </span>failure in /home/ubuntu/.pip/pip.log
+</pre></div>
+
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음과 같이 명령하여 update 하고, 다시 터미널을 실행한다. (pip를 최신버전으로 업데이트</p>
+<div class="highlight"><pre><span></span>$ sudo pip3 install -U setuptools
+$ sudo pip3 install -U pip
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2016,-2017-facebook.com/financedata">2016, 2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="posts/fqa_pip_list_assertion_error.html#2016,-2017-facebook.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/jupyter_notebook_text_browser_lynx.html" class="u-url">[FAQ] Jupyter notebook 텍스트 화면</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/jupyter_notebook_text_browser_lynx.html" rel="bookmark"><time class="published dt-published" datetime="2016-06-28T20:30:10+09:00" title="2016-06-28 20:30">2016-06-28 20:30</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/jupyter_notebook_text_browser_lynx.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="[FAQ]-Jupyter-notebook-실행시-텍스트-브라우저-화면">[FAQ] Jupyter notebook 실행시 텍스트 브라우저 화면<a class="anchor-link" href="posts/jupyter_notebook_text_browser_lynx.html#%5BFAQ%5D-Jupyter-notebook-%EC%8B%A4%ED%96%89%EC%8B%9C-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%ED%99%94%EB%A9%B4">¶</a>
+</h2>
+<ul>
+<li>Q: Jupyter notebook 실행했을 때, 이상한 텍스트 화면이 표시 됩니다</li>
+<li>A: Jupyter notebook 실행시 --no-browser 옵션을 추가하세요</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음과 같이 명령하여 jupyter notebook 을 실행했을 때,</p>
+<div class="highlight"><pre><span></span>$ jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">8080</span>
+</pre></div>
+<p>다음과 같은 화면이 표시된다면.... 이 화면은 링크스(Lynx)라는 텍스트 브라우저 화면이다. 
+기본 브라우저를 지정하지 않았을 경우 디폴트로 텍스트 브라우저인 lynx 가 실행된다.</p>
+<p><img src="http://i.imgur.com/P6eTyDc.png"></p>
+<p>이 Lynx 브라우저 종료 하려면  q, y 를 차례로 눌러준다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>로컬 PC가 아닌 jupyter notebook을 서버로 띄우거나 클라우드 IDE에서 실행하는 경우는 --no-browser 옵션을 사용한다.</p>
+<div class="highlight"><pre><span></span>$ jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">8080</span> --no-browser
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2016,-2017-facebook.com/financedata">2016, 2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="posts/jupyter_notebook_text_browser_lynx.html#2016,-2017-facebook.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/headless_dropbox.html" class="u-url">헤드리스 Dropbox</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/headless_dropbox.html" rel="bookmark"><time class="published dt-published" datetime="2016-06-23T21:30:10+09:00" title="2016-06-23 21:30">2016-06-23 21:30</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/headless_dropbox.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="헤드리스-Dropbox">헤드리스 Dropbox<a class="anchor-link" href="posts/headless_dropbox.html#%ED%97%A4%EB%93%9C%EB%A6%AC%EC%8A%A4-Dropbox">¶</a>
+</h2>
+<p><img width="480" src="https://cf.dropboxstatic.com/static/images/brand/logotype-vflHjIsop.svg"></p>
+<p>Dropbox는 우분투에서도 잘 수행 된다. 하지만, 다수의 서버를 운영하거나 클라우드의 우부투 박스를 활용하는 경우 GUI가 없는 상황에서도 Dropbox와 같은 클라우드 동기화 서비스를 활용할 수 있다면 편리한 점이 많다. 백업을 자동화 할 수 있고, 서버간의 동기화도 Dropbox를 이용해 해결할 수 있다.
+GUI나 콘솔 없이 터미널로만 접근해서 사용해야 하는 소프트웨어 혹은 시스템을 헤드리스(headless) 소프트웨어 혹은 헤드리스 시스템이라고 한다.
+물론 리눅스에 Rsync와 같은 좋은 동기화 솔루션이 있지만, 데스크탑과 함께 사용하는 편의성을 따지자면 Dropbox 만큼 간편하고 편리한 것은 드물다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="설치">설치<a class="anchor-link" href="posts/headless_dropbox.html#%EC%84%A4%EC%B9%98">¶</a>
+</h2>
+<p>홈 디렉토리에서 작업을 시작</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
+</pre></div>
+<p>아래와 같이 wget 명령으로 설치한다</p>
+<div class="highlight"><pre><span></span>$ wget -O - <span class="s2">"https://www.dropbox.com/download?plat=lnx.x86_64"</span> <span class="p">|</span> tar xzf -
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="데몬-실행-+-계정연결">데몬 실행 + 계정연결<a class="anchor-link" href="posts/headless_dropbox.html#%EB%8D%B0%EB%AA%AC-%EC%8B%A4%ED%96%89-+-%EA%B3%84%EC%A0%95%EC%97%B0%EA%B2%B0">¶</a>
+</h2>
+<div class="highlight"><pre><span></span>$ .dropbox-dist/dropboxd
+
+This computer isn<span class="s1">''</span>t linked to any Dropbox account...
+Please visit https://www.dropbox.com/cli_link_no... to link this device.
+This computer isn<span class="s1">''</span>t linked to any Dropbox account...
+
+<span class="o">(</span>위 링크를 브라우저에서 열고, 접근을 허용한다<span class="o">)</span>
+
+Please visit https://www.dropbox.com/cli_link_no... to link this device.
+This computer is now linked to Dropbox. Welcome seung-june
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="dropbox.py">dropbox.py<a class="anchor-link" href="posts/headless_dropbox.html#dropbox.py">¶</a>
+</h2>
+<p>데몬을 실행하면, 명령라인에 링크가 표시된다. 이 링크를 브라우저 주소창에 복사넣고 열면 Dropbox 사이트로 연결되며, Dropbox에 로그인하면 연결된다.
+제어를 위해 "dropbox.py"라는 파이썬 스크립트 파일이 필요하다. 아래와 같이 "dropbox.py"를 다운로드하고 실행 모드를 부여한다.</p>
+<div class="highlight"><pre><span></span>$ wget -O ~/dropbox.py <span class="s2">"https://www.dropbox.com/download?dl=packages/dropbox.py"</span>
+$ chmod +x ~/dropbox.py
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="동기화-시작">동기화 시작<a class="anchor-link" href="posts/headless_dropbox.html#%EB%8F%99%EA%B8%B0%ED%99%94-%EC%8B%9C%EC%9E%91">¶</a>
+</h2>
+<div class="highlight"><pre><span></span>$ ~/dropbox.py start
+</pre></div>
+<p>시스템 전체에서 Python3를 기본으로 사용하고 있다면, ~/dropbox.py 파일의 첫 줄을 다음과 같이 수정한다. (현재 dropbox.py 스크립트는 Python2 용으로 만들어져 있어서, Python3이 기본인 경우 문법 에러가 난다)</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python      # 수정전</span>
+<span class="c1">#!/usr/bin/python2    # 수정후</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="실행">실행<a class="anchor-link" href="posts/headless_dropbox.html#%EC%8B%A4%ED%96%89">¶</a>
+</h2>
+<div class="highlight"><pre><span></span>$ ~/dropbox.py start
+Starting Dropbox...Done!
+$ ~/dropbox.py status
+Starting...
+</pre></div>
+<div class="highlight"><pre><span></span>$ ~/dropbox.py status
+Downloading file list...
+Syncing <span class="o">(</span><span class="m">6</span>,719 files remaining, <span class="m">1</span> min left<span class="o">)</span>
+Downloading <span class="m">6</span>,719 files <span class="o">(</span><span class="m">0</span>.6 KB/sec, <span class="m">1</span> min left<span class="o">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="유용한-명령">유용한 명령<a class="anchor-link" href="posts/headless_dropbox.html#%EC%9C%A0%EC%9A%A9%ED%95%9C-%EB%AA%85%EB%A0%B9">¶</a>
+</h2>
+<div class="highlight"><pre><span></span>~/dropbox.py <span class="nb">help</span>                               <span class="c1"># 도움말</span>
+~/dropbox.py start                               <span class="c1"># 시작</span>
+~/dropbox.py autostart y                      <span class="c1"># 로그인시 dropbox 자동실행 설정</span>
+~/dropbox.py exclude add backup dev  <span class="c1"># 지정한 backup dev 두 개 폴더를 동기화 대상에서 제외</span>
+~/dropbox.py exclude list                     <span class="c1"># 동기화 제외 목록 확인</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="설명">설명<a class="anchor-link" href="posts/headless_dropbox.html#%EC%84%A4%EB%AA%85">¶</a>
+</h2>
+<p>대부분의 설명은 아래 링크에 자세하게 설명되어 있다.</p>
+<ul>
+<li><a href="https://www.dropbox.com/install?os=lnx">https://www.dropbox.com/install?os=lnx</a></li>
+<li>
+<a href="http://goo.gl/jaxOXq">http://goo.gl/jaxOXq</a> Using the Official Dropbox Command Line Interface (CLI)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2016,-2017-facebook.com/financedata">2016, 2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="posts/headless_dropbox.html#2016,-2017-facebook.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
     </article>
 </div>
 
