@@ -6,8 +6,12 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://financedata.github.com/categories/analysis.xml</loc>
+  <lastmod>2017-02-08T04:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/assertionerror.xml</loc>
-  <lastmod>2017-02-08T04:03:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/axhline.xml</loc>
@@ -23,11 +27,11 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2017-02-06T09:59:00Z</lastmod>
+  <lastmod>2017-02-08T04:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
-  <lastmod>2017-02-08T04:44:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/chart.xml</loc>
@@ -43,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/crawling.xml</loc>
-  <lastmod>2017-02-08T04:03:00Z</lastmod>
+  <lastmod>2017-02-08T04:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/data.xml</loc>
@@ -51,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/default.xml</loc>
-  <lastmod>2017-02-08T04:08:00Z</lastmod>
+  <lastmod>2017-02-08T04:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/dev.xml</loc>
@@ -67,11 +71,15 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/faq.xml</loc>
-  <lastmod>2017-02-08T04:44:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/fill.xml</loc>
   <lastmod>2017-02-08T04:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://financedata.github.com/categories/financedata.xml</loc>
+  <lastmod>2017-02-08T04:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/hangul.xml</loc>
@@ -99,7 +107,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/list.xml</loc>
-  <lastmod>2017-02-08T04:03:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/lynx.xml</loc>
@@ -107,11 +115,11 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/matplotlib.xml</loc>
-  <lastmod>2017-02-08T04:44:00Z</lastmod>
+  <lastmod>2017-02-08T04:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/pip.xml</loc>
-  <lastmod>2017-02-08T04:03:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/python.xml</loc>
@@ -127,7 +135,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/size.xml</loc>
-  <lastmod>2017-02-08T04:08:00Z</lastmod>
+  <lastmod>2017-02-08T04:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/ubuntu.xml</loc>
@@ -139,14 +147,14 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/galleries/rss.xml</loc>
-  <lastmod>2017-02-08T04:39:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2017-02-08T04:44:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2017-02-08T04:44:00Z</lastmod>
+  <lastmod>2017-02-08T05:02:00Z</lastmod>
  </sitemap>
 </sitemapindex>
