@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link href="https://financedata.github.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>ko</language><lastBuildDate>Wed, 08 Feb 2017 05:33:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] matplotlib 특정 구간을 강조하려면</title><link>https://financedata.github.com/posts/faq_matplotlib_highlight.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link rel="self" type="application/rss+xml" href="https://financedata.github.com/rss.xml"></atom:link><language>ko</language><lastBuildDate>Wed, 08 Feb 2017 21:05:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>추천 무료 온라인 강좌</title><link>https://financedata.github.com/posts/recommended-free-online-courses.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="(파이썬-데이터-사이언스-입문자를-위한)"&gt;(파이썬 데이터 사이언스 입문자를 위한)&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#(%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%EC%9E%85%EB%AC%B8%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h2 id="무료-추천-온라인-강좌"&gt;무료 추천 온라인 강좌&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%AC%B4%EB%A3%8C-%EC%B6%94%EC%B2%9C-%EC%98%A8%EB%9D%BC%EC%9D%B8-%EA%B0%95%EC%A2%8C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/ClIQff8.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="파이썬"&gt;파이썬&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%ED%8C%8C%EC%9D%B4%EC%8D%AC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 코드카데미 파이썬(한국어)&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://financedata.github.io/posts/codeademy_python_jupyter_notebook.html"&gt;Codeademy python jupyter notebook&lt;/a&gt; 코드카데미 파이썬(한국어) 강좌 Jupyter Notebook 으로 정리한 문서&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://goo.gl/wnMDvJ"&gt;https://goo.gl/wnMDvJ&lt;/a&gt; [인프런] Python(파이썬) 프로그래밍 입문부터 활용까지&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/"&gt;https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/&lt;/a&gt; 파이썬을 배우는 최고의 방법&lt;ul&gt;
+&lt;li&gt;"&lt;a href="https://code.tutsplus.com/articles/the-best-way-to-learn-python--net-26288"&gt;The Best Way to Learn Python&lt;/a&gt;" 요약 번역한 문서&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="리눅스"&gt;리눅스&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%A6%AC%EB%88%85%EC%8A%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/2598"&gt;https://opentutorials.org/course/2598&lt;/a&gt; [생활코딩] 리눅스&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="웹-크롤링"&gt;웹 크롤링&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/2039"&gt;https://opentutorials.org/course/2039&lt;/a&gt; [생활코딩] HTML 수업&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/580"&gt;https://opentutorials.org/course/580&lt;/a&gt; [생활코딩] 크롬 개발자 도구&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://goo.gl/uT66z7"&gt;https://goo.gl/uT66z7&lt;/a&gt; [인프런] 파이썬을 이용한 웹 크롤링(Web Crawling) 어플리케이션 만들기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="데이터베이스"&gt;데이터베이스&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/195"&gt;https://opentutorials.org/course/195&lt;/a&gt; [생활코딩] MySQL 강좌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="2016,-2017-facebook.com/financedata"&gt;2016, 2017 &lt;a href="https://facebook.com/financedata"&gt;facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#2016,-2017-facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>course</category><category>free</category><category>online</category><category>python</category><guid>https://financedata.github.com/posts/recommended-free-online-courses.html</guid><pubDate>Wed, 08 Feb 2017 19:45:16 GMT</pubDate></item><item><title>프로젝트 관계자의 호칭 정의</title><link>https://financedata.github.com/posts/definitions-of-designations.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="프로젝트-관계자의-호칭-정의"&gt;프로젝트 관계자의 호칭 정의&lt;a class="anchor-link" href="https://financedata.github.com/posts/definitions-of-designations.html#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EA%B3%84%EC%9E%90%EC%9D%98-%ED%98%B8%EC%B9%AD-%EC%A0%95%EC%9D%98"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="300" src="http://i.imgur.com/K0LtStP.jpg"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;프로젝트 매니저(PM)&lt;/strong&gt;: 여자 아홉명이 한 달만에 아이를 낳을 수 있다는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;개발자&lt;/strong&gt;: 애 낳는데 18개월이 걸린다는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;기획자&lt;/strong&gt;: 임신 중에 아이 성별을 바꾸고 싶다는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;온사이트 코디네이터&lt;/strong&gt;: 여자 한 명이 한 달만에 애를 아홉명 낳을 수 있다는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;고객&lt;/strong&gt;: 자기가 왜 애를 원하는지 모르는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;마케팅 담당자&lt;/strong&gt;: 인간 여자 남자가 없어도 자기가 애를 만들 수 있다는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;리소스 관리자&lt;/strong&gt;: 인간 여자 남자 그 외 아무 재료 없이 애를 생산할 수 있다는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;문서화 담당자&lt;/strong&gt;: 애가 나오던지 말던지 9개월동안의 과정을 문서화 하면 된다는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;품질 관리자&lt;/strong&gt;: 애 낳는 프로세스가 맘에 드는 게 하나도 없는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;테스터&lt;/strong&gt;: 내가 원한 아이는 이 아이가 아니라고 계속 와이프에게 말하는 사람&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인사 담당자&lt;/strong&gt;: 당나귀라도 어쨌든 9개월 시간만 주면 사람 아이를 낳을 수 있다고 믿는 사람&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;원문: "Definitions of Designations" &lt;a href="https://www.jitbit.com/alexblog/217-it-designation-definitions/"&gt;https://www.jitbit.com/alexblog/217-it-designation-definitions/&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="2017-facebook.com/financedata"&gt;2017 &lt;a href="https://facebook.com/financedata"&gt;facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/definitions-of-designations.html#2017-facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>management</category><category>project</category><guid>https://financedata.github.com/posts/definitions-of-designations.html</guid><pubDate>Wed, 08 Feb 2017 08:55:23 GMT</pubDate></item><item><title>[FAQ] matplotlib 특정 구간을 강조하려면</title><link>https://financedata.github.com/posts/faq_matplotlib_highlight.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -112,39 +196,4 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Python3-개발-환경-만들기-요약"&gt;Python3 개발 환경 만들기 요약&lt;a class="anchor-link" href="https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html#Python3-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9A%94%EC%95%BD"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;데이터 분석을 위한 Python3 개발 환경을 만드는 과정을 요약
 &lt;img width="60%" src="http://i.imgur.com/iMzS1Gr.png"&gt;
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dev</category><category>python</category><category>python3</category><category>ubuntu</category><guid>https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html</guid><pubDate>Mon, 07 Nov 2016 10:22:10 GMT</pubDate></item><item><title>[FAQ] c9.io 얼마나 쓸만한가</title><link>https://financedata.github.com/posts/c9_io_features.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="[FAQ]-c9.io-활동-상태가-얼마나-유지되나요?"&gt;[FAQ] c9.io 활동 상태가 얼마나 유지되나요?&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%5BFAQ%5D-c9.io-%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EA%B0%80-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98%EC%9A%94?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="240" src="http://i.imgur.com/AczuNfy.png"&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="활동-상태는-얼마나-유지되나"&gt;활동 상태는 얼마나 유지되나&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EB%8A%94-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;c9.io 를 닫은 상태로 2시간이 지나면, 프로세스가 내려 간다. jupyter 노트북 서버가 바로 프로세스(process)다. 
-다시 c9.io 를 열었을 때 다음과 같은 명령으로 jupyter 노트북 서버를 다시 시작하면 된다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ jupyter notebook --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.0.0 --port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt; --no-browser
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/c9_io_features.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>c9</category><category>cloud9</category><guid>https://financedata.github.com/posts/c9_io_features.html</guid><pubDate>Thu, 30 Jun 2016 11:30:10 GMT</pubDate></item><item><title> [FAQ] pip list 명령에서 AssertionError</title><link>https://financedata.github.com/posts/fqa_pip_list_assertion_error.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="[FAQ]-pip3-list,-AssertionError-에러"&gt;[FAQ] pip3 list, AssertionError 에러&lt;a class="anchor-link" href="https://financedata.github.com/posts/fqa_pip_list_assertion_error.html#%5BFAQ%5D-pip3-list,-AssertionError-%EC%97%90%EB%9F%AC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Q: pip3 list 명령에서 아래와 같이 AssertionError 에러가 납니다.&lt;/li&gt;
-&lt;li&gt;A: pip3 를 업그레이드 하세요.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src="http://i.imgur.com/5zFdnEA.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/fqa_pip_list_assertion_error.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>AssertionError</category><category>faq</category><category>list</category><category>pip</category><guid>https://financedata.github.com/posts/fqa_pip_list_assertion_error.html</guid><pubDate>Wed, 29 Jun 2016 12:30:10 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dev</category><category>python</category><category>python3</category><category>ubuntu</category><guid>https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html</guid><pubDate>Mon, 07 Nov 2016 10:22:10 GMT</pubDate></item></channel></rss>

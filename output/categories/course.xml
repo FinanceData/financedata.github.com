@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (course에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://financedata.github.com/categories/course.xml"></atom:link><language>ko</language><lastBuildDate>Wed, 08 Feb 2017 21:05:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>추천 무료 온라인 강좌</title><link>https://financedata.github.com/posts/recommended-free-online-courses.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="(파이썬-데이터-사이언스-입문자를-위한)"&gt;(파이썬 데이터 사이언스 입문자를 위한)&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#(%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%EC%9E%85%EB%AC%B8%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h2 id="무료-추천-온라인-강좌"&gt;무료 추천 온라인 강좌&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%AC%B4%EB%A3%8C-%EC%B6%94%EC%B2%9C-%EC%98%A8%EB%9D%BC%EC%9D%B8-%EA%B0%95%EC%A2%8C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/ClIQff8.jpg"&gt;&lt;/p&gt;
+&lt;h2 id="파이썬"&gt;파이썬&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%ED%8C%8C%EC%9D%B4%EC%8D%AC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 코드카데미 파이썬(한국어)&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://financedata.github.io/posts/codeademy_python_jupyter_notebook.html"&gt;Codeademy python jupyter notebook&lt;/a&gt; 코드카데미 파이썬(한국어) 강좌 Jupyter Notebook 으로 정리한 문서&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://goo.gl/wnMDvJ"&gt;https://goo.gl/wnMDvJ&lt;/a&gt; [인프런] Python(파이썬) 프로그래밍 입문부터 활용까지&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/"&gt;https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/&lt;/a&gt; 파이썬을 배우는 최고의 방법&lt;ul&gt;
+&lt;li&gt;"&lt;a href="https://code.tutsplus.com/articles/the-best-way-to-learn-python--net-26288"&gt;The Best Way to Learn Python&lt;/a&gt;" 요약 번역한 문서&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="리눅스"&gt;리눅스&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%A6%AC%EB%88%85%EC%8A%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/2598"&gt;https://opentutorials.org/course/2598&lt;/a&gt; [생활코딩] 리눅스&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="웹-크롤링"&gt;웹 크롤링&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/2039"&gt;https://opentutorials.org/course/2039&lt;/a&gt; [생활코딩] HTML 수업&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/580"&gt;https://opentutorials.org/course/580&lt;/a&gt; [생활코딩] 크롬 개발자 도구&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://goo.gl/uT66z7"&gt;https://goo.gl/uT66z7&lt;/a&gt; [인프런] 파이썬을 이용한 웹 크롤링(Web Crawling) 어플리케이션 만들기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="데이터베이스"&gt;데이터베이스&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://opentutorials.org/course/195"&gt;https://opentutorials.org/course/195&lt;/a&gt; [생활코딩] MySQL 강좌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="2016,-2017-facebook.com/financedata"&gt;2016, 2017 &lt;a href="https://facebook.com/financedata"&gt;facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#2016,-2017-facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>course</category><category>free</category><category>online</category><category>python</category><guid>https://financedata.github.com/posts/recommended-free-online-courses.html</guid><pubDate>Wed, 08 Feb 2017 19:45:16 GMT</pubDate></item></channel></rss>
