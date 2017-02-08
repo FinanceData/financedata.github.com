@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>FinanceData (size에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://financedata.github.com/categories/size.xml"></atom:link><language>ko</language><lastBuildDate>Wed, 08 Feb 2017 04:03:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>FAQ - matplotlib 차트의 기본 크기 설정</title><link>https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-matplotlib:-차트의-기본-크기-설정-하려면?"&gt;[FAQ] matplotlib: 차트의 기본 크기 설정 하려면?&lt;a class="anchor-link" href="https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html#%5BFAQ%5D-matplotlib:-%EC%B0%A8%ED%8A%B8%EC%9D%98-%EA%B8%B0%EB%B3%B8-%ED%81%AC%EA%B8%B0-%EC%84%A4%EC%A0%95-%ED%95%98%EB%A0%A4%EB%A9%B4?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: 차트의 기본 크기를 지정하고 싶습니다.&lt;/li&gt;
+&lt;li&gt;A: matplotlib.pylab의 rcParams을 이용하여 차트 그림(figure)의 기본 설정을 지정할 수 있습니다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;다음과 같이 plot()에서 figsize를 기본 크기를 지정할 수 도 있지만, 매번 그릴 때 마다 크기를 지정해야 하는 불편함이 있다. 특히, 시계열 차트를 많이 그리는 경우 시간에 따른 변화를 보기 위해 가로로 긴 차트를 그리는 경우가 더 많다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;matplotlib.pylab의 rcParams 설정을 활용하면, 차트의 크기와 선의 색, 두께등의 기본 값을 설정할 수 있다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pylab&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"figure.figsize"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'lines.linewidth'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'lines.color'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'r'&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'axes.grid'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;설정에 자주 사용하는 값들은 아래와 같다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th&gt;항목&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;"figure.figsize"&lt;/td&gt;
+&lt;td&gt;그림(figure)의 크기. (가로,세로) 인치 단위&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;'lines.linewidth'&lt;/td&gt;
+&lt;td&gt;선의 두께&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;'lines.color'&lt;/td&gt;
+&lt;td&gt;선의 색깔&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;'axes.grid'&lt;/td&gt;
+&lt;td&gt;차트내 격자선(grid) 표시 여부&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"figure.figsize"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'lines.linewidth'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'lines.color'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'r'&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'axes.grid'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlUAAAEACAYAAACarYNrAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz%0AAAALEgAACxIB0t1+/AAAIABJREFUeJzt3X+UXWV97/H3N5FAJA3BlEso1KReDAWXMEgJiooTwR9A%0AQWzLxSuVjPfeSl1VKL9EQ/mNArXAqrlYEQg3ULBSUAGtiIKDEn65hJGkyK/aFKkrkWIjlbRBzHP/%0A2GdMmPMkcyazzzn7nP1+rTUrs8/ZZ+bJJzuZJ/v5nL0jpYQkSZImZ0q3ByBJktQPnFRJkiSVwEmV%0AJElSCZxUSZIklcBJlSRJUgmcVEmSJJXgFa3sFBGrgJ8DG4BfppQWRMSOwBeBucAq4H+klH7epnFK%0AkiRVWqtnqjYAgymlfVNKCxqPfRz4VkppD+Au4BPtGKAkSVIvaHVSFZl93wMsa3y+DDiqrEFJkiT1%0AmlYnVQn4RkR8LyL+T+OxnVNKawBSSquBndoxQEmSpF7QUqcKODCltDoidgLuiIjHKSZakiRJosVJ%0AVeNMFCmlZyPiK8ACYE1E7JxSWhMRc4Cf5l4bEU6+JElSz0gpxda8btzlv4h4ZUTMaHy+PfBOYAVw%0AKzDU2G0RcMsWBufHmI+zzz6762Oo2oeZmIu5mMtkPpYvT8yZkygWUjZ+RJzd9NjYj512SnzsY4kn%0An+z+78Njpbsfk9FKp2pn4J6IeBi4H7gtpXQHcDHwjsZS4CHARZMaSc2sWrWq20OoHDPJM5c8c8mr%0Aay5XXAGDg7B69csf3313OOKIVTzyCHzkI7DDDvnXP/ss/OVfwmtfCwcfDDfeCC++2PZhd1Vdj5V2%0AGndSlVL655TSQCoup/D6lNJFjcd/llI6JKW0R0rpHSmlte0friRJG61fDx/6EPzpn8Ivf/ny5w49%0AFB58EHbcEV7/eliyBH7yE7jmGnjTmzb/Ne+6C445BnbbDU4/HZ56qr2/B/UPr6jeJUNDQ90eQuWY%0ASZ655JlLXp1y+clPirNTV17Z/NzixXDbbcWEatNMXvlKGBqCe++l9mev6nSsdEpMdv1w3G8Qkdr9%0APSRJ9XLvvfCHf9i83Lf99rBsWfFcq9atKyZMn/883HfflvfdaSf44AfhT/6kWFpU/4kIUruK6mqP%0A4eHhbg+hcswkz1zyzCWvDrlsqT/1wAPNE6rxMqnr2as6HCud5qRKktQTWulPve51k/sedq80GS7/%0ASZIq7yc/Kc5A3X9/83OLF8N558HUqe353itWFEuD110HP//5lvd9+9vh+OPhqKNg2rT2jEftNZnl%0APydVkqRKK7M/NRl2r+rBTlUPci27mZnkmUueueT1Wy4T7U/llJVJv3Wv+u1YqQInVZKkyulEf2oy%0A7F4px+U/SVKldLM/NRl2r/qDnSpJUl+oSn9qMuxe9TY7VT3ItexmZpJnLnnmktfLuZTRn8rpdCa9%0A0r3q5WOlqpxUSZK6qur9qcmwe1UvLv9JkrqmV/tTk2H3qtrsVEmSek4/9Kcmw+5VNdmp6kGuZTcz%0AkzxzyTOXvF7JpV39qZyqZtLt7lVVc+llTqokSR3Tz/2pybB71R9c/pMkdUQd+1OTYfeqO+xUSZIq%0Are79qcmwe9VZdqp6kGvZzcwkz1zyzCWvirl0sj+VU8VMJqJd3atez6WKWp5URcSUiHg4Im5tbP+/%0AiPhR47GHImLv9g1TktRr7E+Vz+5VtbW8/BcRJwH7ATNTSkdGxDXArSmlL4/zOpf/JKlm7E91jt2r%0AcrV9+S8idgMOA67amtdLkurj3nthv/2aJ1Tbbw833QSf/KQTqjJ59qo6Wp0UXQacBow95XRBRIxE%0AxCURsU25Q+tvrmU3M5M8c8kzl7xu59Lt/lROtzPplIl3r4a7cs/BfjbupCoiDgfWpJRGgE1Ph308%0ApbQnsD8wGzi9PUOUJFWd/alq8exVd4zbqYqITwF/DLwETAd+A/hSSum4TfZ5G3BKSunIzOvTokWL%0AmDdvHgCzZs1iYGCAwcFBYOP/INx222233e7N7fnzBxv9qWIbBhu/DnPssbBs2SBTp1ZnvHXdXrp0%0AmNtug29/e7DRvSqe3/TPa3T77W+Ht7xlmLe8Bd7xjmqMv13bo5+vWrUKgGXLlnXmOlWbTp4iYk5K%0AaXVEBHAp8J8ppcWZ11hUl6Q+de+9Xn+q13jdqy3r1nWqro+IHwA/oFj+u2ASX6t2Np0hq2AmeeaS%0AZy55ncyliv2pHI+VlxvtXn3qU8NduedgP5vQpCqldPfoEl9K6eCU0j4ppb1TSsellNa1Z4iSpCqx%0AP9U/7F6Vy9vUSJJa5vWn+l/dr3vlvf8kSW1nf6pe6tq98t5/Pcg1/mZmkmcueeaS165ceqU/leOx%0AkjdeLu2652A/c1IlSdos+1MCu1etcvlPkpRlf0pb0q/dKztVkqRS2Z9Sq/qte2Wnqge5xt/MTPLM%0AJc9c8srIpZf7UzkeK3ll5WL3aiMnVZIkwP6UJq/u3SuX/yRJ9qfUNr3WvbJTJUnaavan1Am90r2y%0AU9WDXONvZiZ55pJnLnkTzaXf+lM5Hit5nc6lDt0rJ1WSVEP2p9RN/dq9cvlPkmrG/pSqqCrdKztV%0AkqSW2J9S1XW7e2Wnqge5xt/MTPLMJc9c8raUSx36UzkeK3lVzaWXu1dOqiSpz9mfUq/qte6Vy3+S%0A1MfsT6nftLt7ZadKktTE/pT6Wbu6V3aqelBV17K7yUzyzCXPXPJGc6lrfyrHYyWv13OpYveq5UlV%0AREyJiIci4tbG9ryIuD8iHo+IL0TEK8ofniRpIl580f6U6qcq3auWl/8i4iRgP2BmSunIiPgicFNK%0A6e8j4m+AkZTSFZnXufwnSR1gf0raaGu7V9tu2+ZOVUTsBlwDfBI4uTGpehbYOaW0ISLeCJyTUnp3%0A5rVOqiSpzexPSXkT7V49+2z7O1WXAacBCSAiZgP/nlLa0Hj+GeC3tmYAddXra9ntYCZ55pJnLhu9%0AvD81/OvH69ifyvFYyatLLhPtXk3GuD2oiDgcWJNSGomIwdGHGx+b2uzpqKGhIebNmwfArFmzGBgY%0AYHCw+FKjf6h12x5VlfG4Xd3tkZGRSo3H7eps33HHMJ/5DHzta8V2MaEaAQY59FD48IeHGz8kqjHe%0Abm2Pqsp4qrI9MjJSqfF0anvJkkEuvhjOO2+Y226DRx+F4u/OKiZr3OW/iPgU8MfAS8B04DeArwDv%0ABOZssvx3dkrp0MzrXf6TpJLZn5LK0dy96tB1qiLibcApmxTVv5RS+mKjqP6DlNLnMq9xUiVJJbr3%0AXvtTUtlGu1cf/GB3rlP1ceDkiHgCeBVw9SS+Vu2MPS0tM9kcc8mray7jXX9q9uzhbgyr0up6rIzH%0AXF5utHs1GRO6tlRK6W7g7sbn/wwcMLlvL0lqxfr18NGPwpVXNj936KFw/fWw447gz0mpe7xNjSRV%0AnP0pqXMmc5sar4IuSRVmf0rqHZPpVGkSXMtuZiZ55pJXh1y25v59dchloswkz1zK56RKkipm/Xrv%0A3yf1IjtVklQh9qek7rJTJUl9wP6U1Ntc/usS17KbmUmeueT1Wy5b05/K6bdcymAmeeZSPidVktRF%0A9qek/mGnSpK6xP6UVD12qiSpx9ifkvqPy39d4lp2MzPJM5e8Xs6lrP5UTi/n0i5mkmcu5XNSJUkd%0AYn9K6m92qiSpA+xPSb3BTpUkVZj9KakeXP7rEteym5lJnrnk9Uou7exP5fRKLp1kJnnmUj4nVZLU%0ABvanpPqxUyVJJbM/JfUuO1WSVBH2p6T6cvmvS1zLbmYmeeaSV8VcOt2fyqliLt1mJnnmUr5xJ1UR%0AsW1EPBARD0fEiog4u/H4NRHxo8bjD0XE3u0friRVj/0pSdBipyoiXplSWhcRU4HlwInAnwK3pZS+%0ANM5r7VRJ6lv2p6T+0vZOVUppXePTbRuv2TD6vbfmm0pSP7A/JWlTLXWqImJKRDwMrAa+mVL6XuOp%0ACyJiJCIuiYht2jbKPuRadjMzyTOXvG7nUoX+VE63c6kiM8kzl/K1eqZqA7BvRMwEvhwRewEfTymt%0AaUymrgROBy7IvX5oaIh58+YBMGvWLAYGBhgcHAQ2/qHWbXtUVcbjdnW3R0ZGKjWeum+/+CLcdNMg%0AV14JUDwPxfMLFgzzF38Br3td98bn8eK/t61uj4yMVGo83Tw+hoeHWbVqFZM14etURcRZwC9SSpdu%0A8tjbgFNSSkdm9rdTJakv2J+S+t9kOlVTWvjivxkROzQ+nw4cAjwWEXMajwVwFLByawYgSb3g3nth%0Av/2aJ1Tbbw833QSf/KQTKqnuxp1UAbsA346IEeAB4BsppX8Aro+IHwA/AGazmaU/5Y09LS0z2Rxz%0AyetkLlXtT+V4vDQzkzxzKd+4naqU0grgDZnHD27LiCSpItavh49+lEZ/6uUOPRSuvx523LHz45JU%0ATd77T5Iy7E9J9eS9/ySpRPfe6/WnJE1cK50qtYFr2c3MJM9c8tqVSy/1p3I8XpqZSZ65lM9JlSTh%0A/fskTZ6dKkm1Z39K0ig7VZK0lexPSSqLy39d4lp2MzPJM5e8MnLp9f5UjsdLMzPJM5fyOamSVDv2%0ApyS1g50qSbVif0rSltipkqQW2J+S1E4u/3WJa9nNzCTPXPImmks/9qdyPF6amUmeuZTPSZWkvmZ/%0ASlKn2KmS1LfsT0maKDtVkjSG/SlJnebyX5e4lt3MTPLMJW9LudSlP5Xj8dLMTPLMpXxOqiT1DftT%0AkrrJTpWkvmB/SlIZ7FRJqjX7U5KqwOW/LnEtu5mZ5JlL3mgude5P5Xi8NDOTPHMp37iTqojYNiIe%0AiIiHI2JFRJzdeHxeRNwfEY9HxBciwrNekjrmxRftT0mqlpY6VRHxypTSuoiYCiwHTgROBm5KKf19%0A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"&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="참고-자료"&gt;참고 자료&lt;a class="anchor-link" href="https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html#%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;추가적인 보다 상세한 내용은 아래 내용을 참고 하자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://matplotlib.org/users/customizing.html"&gt;http://matplotlib.org/users/customizing.html&lt;/a&gt; Customizing matplotlib&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h5 id="2016,-2017-facebook.com/financedata"&gt;2016, 2017 &lt;a href="https://financedata.github.com/posts/facebook.com/financedata"&gt;facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html#2016,-2017-facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>default</category><category>faq</category><category>matplotlib</category><category>size</category><guid>https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html</guid><pubDate>Sat, 28 Jan 2017 00:00:00 GMT</pubDate></item></channel></rss>
