@@ -23,10 +23,6 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-02-08T04:55:00Z</lastmod>
- </url>
- <url>
-  <loc>https://financedata.github.com/categories/analysis.html</loc>
   <lastmod>2017-02-08T05:02:00Z</lastmod>
  </url>
  <url>
@@ -35,11 +31,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/axhline.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/axvline.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/c9.html</loc>
@@ -51,11 +47,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/chart.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cloud9.html</loc>
@@ -67,15 +63,15 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/crawling.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/data.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/default.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/dev.html</loc>
@@ -87,23 +83,19 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/encoding.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/faq.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/fill.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
- </url>
- <url>
-  <loc>https://financedata.github.com/categories/financedata.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangul.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/headless.html</loc>
@@ -111,11 +103,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/highlight.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hline.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/home.html</loc>
@@ -135,7 +127,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/matplotlib.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/pip.html</loc>
@@ -155,7 +147,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/size.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/ubuntu.html</loc>
@@ -163,7 +155,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/vline.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/galleries/</loc>
@@ -195,23 +187,19 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/faq_crawling_data_encoding.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/faq_matplotlib_fill_chart.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/faq_matplotlib_highlight.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
- </url>
- <url>
-  <loc>https://financedata.github.com/posts/finance-data-crawling-and-analysis.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/fqa_pip_list_assertion_error.html</loc>
@@ -227,6 +215,6 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</loc>
-  <lastmod>2017-02-08T05:02:00Z</lastmod>
+  <lastmod>2017-02-08T05:11:00Z</lastmod>
  </url>
 </urlset>
