@@ -98,50 +98,12 @@
 <li>Q: Jupyter notebook 실행했을 때, 이상한 텍스트 화면이 표시 됩니다</li>
 <li>A: Jupyter notebook 실행시 --no-browser 옵션을 추가하세요</li>
 </ul>
+<p class="more"><a href="posts/jupyter_notebook_text_browser_lynx.html">더 읽기…</a></p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>다음과 같이 명령하여 jupyter notebook 을 실행했을 때,</p>
-<div class="highlight"><pre><span></span>$ jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">8080</span>
-</pre></div>
-<p>다음과 같은 화면이 표시된다면.... 이 화면은 링크스(Lynx)라는 텍스트 브라우저 화면이다. 
-기본 브라우저를 지정하지 않았을 경우 디폴트로 텍스트 브라우저인 lynx 가 실행된다.</p>
-<p><img src="http://i.imgur.com/P6eTyDc.png"></p>
-<p>이 Lynx 브라우저 종료 하려면  q, y 를 차례로 눌러준다.</p>
-
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>로컬 PC가 아닌 jupyter notebook을 서버로 띄우거나 클라우드 IDE에서 실행하는 경우는 --no-browser 옵션을 사용한다.</p>
-<div class="highlight"><pre><span></span>$ jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">8080</span> --no-browser
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="2016,-2017-facebook.com/financedata">2016, 2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="posts/jupyter_notebook_text_browser_lynx.html#2016,-2017-facebook.com/financedata">¶</a>
-</h5>
-</div>
-</div>
-</div>
-    </div>
-  </div>
-
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/headless_dropbox.html" class="u-url">헤드리스 Dropbox</a></h1>
         <div class="metadata">
@@ -171,149 +133,12 @@
 <p>Dropbox는 우분투에서도 잘 수행 된다. 하지만, 다수의 서버를 운영하거나 클라우드의 우부투 박스를 활용하는 경우 GUI가 없는 상황에서도 Dropbox와 같은 클라우드 동기화 서비스를 활용할 수 있다면 편리한 점이 많다. 백업을 자동화 할 수 있고, 서버간의 동기화도 Dropbox를 이용해 해결할 수 있다.
 GUI나 콘솔 없이 터미널로만 접근해서 사용해야 하는 소프트웨어 혹은 시스템을 헤드리스(headless) 소프트웨어 혹은 헤드리스 시스템이라고 한다.
 물론 리눅스에 Rsync와 같은 좋은 동기화 솔루션이 있지만, 데스크탑과 함께 사용하는 편의성을 따지자면 Dropbox 만큼 간편하고 편리한 것은 드물다.</p>
-
+<p class="more"><a href="posts/headless_dropbox.html">더 읽기…</a></p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="설치">설치<a class="anchor-link" href="posts/headless_dropbox.html#%EC%84%A4%EC%B9%98">¶</a>
-</h2>
-<p>홈 디렉토리에서 작업을 시작</p>
-<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
-</pre></div>
-<p>아래와 같이 wget 명령으로 설치한다</p>
-<div class="highlight"><pre><span></span>$ wget -O - <span class="s2">"https://www.dropbox.com/download?plat=lnx.x86_64"</span> <span class="p">|</span> tar xzf -
-</pre></div>
-
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="데몬-실행-+-계정연결">데몬 실행 + 계정연결<a class="anchor-link" href="posts/headless_dropbox.html#%EB%8D%B0%EB%AA%AC-%EC%8B%A4%ED%96%89-+-%EA%B3%84%EC%A0%95%EC%97%B0%EA%B2%B0">¶</a>
-</h2>
-<div class="highlight"><pre><span></span>$ .dropbox-dist/dropboxd
-
-This computer isn<span class="s1">''</span>t linked to any Dropbox account...
-Please visit https://www.dropbox.com/cli_link_no... to link this device.
-This computer isn<span class="s1">''</span>t linked to any Dropbox account...
-
-<span class="o">(</span>위 링크를 브라우저에서 열고, 접근을 허용한다<span class="o">)</span>
-
-Please visit https://www.dropbox.com/cli_link_no... to link this device.
-This computer is now linked to Dropbox. Welcome seung-june
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="dropbox.py">dropbox.py<a class="anchor-link" href="posts/headless_dropbox.html#dropbox.py">¶</a>
-</h2>
-<p>데몬을 실행하면, 명령라인에 링크가 표시된다. 이 링크를 브라우저 주소창에 복사넣고 열면 Dropbox 사이트로 연결되며, Dropbox에 로그인하면 연결된다.
-제어를 위해 "dropbox.py"라는 파이썬 스크립트 파일이 필요하다. 아래와 같이 "dropbox.py"를 다운로드하고 실행 모드를 부여한다.</p>
-<div class="highlight"><pre><span></span>$ wget -O ~/dropbox.py <span class="s2">"https://www.dropbox.com/download?dl=packages/dropbox.py"</span>
-$ chmod +x ~/dropbox.py
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="동기화-시작">동기화 시작<a class="anchor-link" href="posts/headless_dropbox.html#%EB%8F%99%EA%B8%B0%ED%99%94-%EC%8B%9C%EC%9E%91">¶</a>
-</h2>
-<div class="highlight"><pre><span></span>$ ~/dropbox.py start
-</pre></div>
-<p>시스템 전체에서 Python3를 기본으로 사용하고 있다면, ~/dropbox.py 파일의 첫 줄을 다음과 같이 수정한다. (현재 dropbox.py 스크립트는 Python2 용으로 만들어져 있어서, Python3이 기본인 경우 문법 에러가 난다)</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python      # 수정전</span>
-<span class="c1">#!/usr/bin/python2    # 수정후</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="실행">실행<a class="anchor-link" href="posts/headless_dropbox.html#%EC%8B%A4%ED%96%89">¶</a>
-</h2>
-<div class="highlight"><pre><span></span>$ ~/dropbox.py start
-Starting Dropbox...Done!
-$ ~/dropbox.py status
-Starting...
-</pre></div>
-<div class="highlight"><pre><span></span>$ ~/dropbox.py status
-Downloading file list...
-Syncing <span class="o">(</span><span class="m">6</span>,719 files remaining, <span class="m">1</span> min left<span class="o">)</span>
-Downloading <span class="m">6</span>,719 files <span class="o">(</span><span class="m">0</span>.6 KB/sec, <span class="m">1</span> min left<span class="o">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="유용한-명령">유용한 명령<a class="anchor-link" href="posts/headless_dropbox.html#%EC%9C%A0%EC%9A%A9%ED%95%9C-%EB%AA%85%EB%A0%B9">¶</a>
-</h2>
-<div class="highlight"><pre><span></span>~/dropbox.py <span class="nb">help</span>                               <span class="c1"># 도움말</span>
-~/dropbox.py start                               <span class="c1"># 시작</span>
-~/dropbox.py autostart y                      <span class="c1"># 로그인시 dropbox 자동실행 설정</span>
-~/dropbox.py exclude add backup dev  <span class="c1"># 지정한 backup dev 두 개 폴더를 동기화 대상에서 제외</span>
-~/dropbox.py exclude list                     <span class="c1"># 동기화 제외 목록 확인</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="설명">설명<a class="anchor-link" href="posts/headless_dropbox.html#%EC%84%A4%EB%AA%85">¶</a>
-</h2>
-<p>대부분의 설명은 아래 링크에 자세하게 설명되어 있다.</p>
-<ul>
-<li><a href="https://www.dropbox.com/install?os=lnx">https://www.dropbox.com/install?os=lnx</a></li>
-<li>
-<a href="http://goo.gl/jaxOXq">http://goo.gl/jaxOXq</a> Using the Official Dropbox Command Line Interface (CLI)</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="2016,-2017-facebook.com/financedata">2016, 2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="posts/headless_dropbox.html#2016,-2017-facebook.com/financedata">¶</a>
-</h5>
-</div>
-</div>
-</div>
-    </div>
-  </div>
-
     </div>
     </article>
 </div>
