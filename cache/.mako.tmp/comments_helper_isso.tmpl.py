@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1486526593.5760243
+_modified_time = 1486526676.0531998
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_isso.tmpl'
 _template_uri = 'comments_helper_isso.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_form', 'comment_link_script', 'comment_link']
+_exports = ['comment_form', 'comment_link', 'comment_link_script']
 
 
 def render_body(context,**pageargs):
@@ -45,6 +45,21 @@ def render_comment_form(context,url,title,identifier):
         context.caller_stack._pop_frame()
 
 
+def render_comment_link(context,link,identifier):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        comment_system_id = context.get('comment_system_id', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if comment_system_id:
+            __M_writer('        <a href="')
+            __M_writer(str(link))
+            __M_writer('#isso-thread">Comments</a>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_comment_link_script(context):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -63,23 +78,8 @@ def render_comment_link_script(context):
         context.caller_stack._pop_frame()
 
 
-def render_comment_link(context,link,identifier):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        comment_system_id = context.get('comment_system_id', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        if comment_system_id:
-            __M_writer('        <a href="')
-            __M_writer(str(link))
-            __M_writer('#isso-thread">Comments</a>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_isso.tmpl", "uri": "comments_helper_isso.tmpl", "source_encoding": "utf-8", "line_map": {"66": 9, "71": 9, "72": 10, "73": 11, "74": 11, "75": 11, "16": 0, "81": 75, "21": 7, "22": 13, "23": 20, "29": 2, "34": 2, "35": 3, "36": 4, "37": 4, "38": 4, "39": 5, "40": 5, "41": 5, "42": 5, "48": 16, "54": 16, "55": 17, "56": 18, "57": 18, "58": 18, "59": 18, "60": 18}}
+{"line_map": {"69": 16, "70": 17, "71": 18, "72": 18, "73": 18, "74": 18, "75": 18, "16": 0, "81": 75, "21": 7, "22": 13, "23": 20, "29": 2, "34": 2, "35": 3, "36": 4, "37": 4, "38": 4, "39": 5, "40": 5, "41": 5, "42": 5, "48": 9, "53": 9, "54": 10, "55": 11, "56": 11, "57": 11, "63": 16}, "source_encoding": "utf-8", "uri": "comments_helper_isso.tmpl", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_isso.tmpl"}
 __M_END_METADATA
 """
