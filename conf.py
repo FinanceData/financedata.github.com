@@ -136,6 +136,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/index.html", "홈"),
         ("/archive.html", "저장소"),
+        ("/categories/cat_faq.html", "FAQ"),
         ("/categories/", "태그"),
         ("/rss.xml", "RSS 목록"),
     ),
