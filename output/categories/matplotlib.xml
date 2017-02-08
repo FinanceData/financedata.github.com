@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>FinanceData (matplotlib에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://financedata.github.com/categories/matplotlib.xml"></atom:link><language>ko</language><lastBuildDate>Wed, 08 Feb 2017 04:03:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] matplotlib 특정 구간을 강조하려면</title><link>https://financedata.github.com/posts/faq_matplotlib_highlight.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>FinanceData (matplotlib에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://financedata.github.com/categories/matplotlib.xml"></atom:link><language>ko</language><lastBuildDate>Wed, 08 Feb 2017 04:08:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] matplotlib 특정 구간을 강조하려면</title><link>https://financedata.github.com/posts/faq_matplotlib_highlight.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -269,7 +269,7 @@
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><category>faq</category><category>highlight</category><category>matplotlib</category><guid>https://financedata.github.com/posts/faq_matplotlib_highlight.html</guid><pubDate>Sun, 29 Jan 2017 00:00:00 GMT</pubDate></item><item><title>FAQ - matplotlib 차트의 기본 크기 설정</title><link>https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+</description><category>faq</category><category>highlight</category><category>matplotlib</category><guid>https://financedata.github.com/posts/faq_matplotlib_highlight.html</guid><pubDate>Sun, 29 Jan 2017 00:00:00 GMT</pubDate></item><item><title>[FAQ] matplotlib 차트의 기본 크기 설정</title><link>https://financedata.github.com/posts/faq_matplotlib_default_chart_size.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
