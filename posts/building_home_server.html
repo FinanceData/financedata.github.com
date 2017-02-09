@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="홈 서버 만들기">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홈 서버 만들기 | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/building_home_server.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="홈 서버 만들기">
+<meta name="author" content="plusjune">
+<link rel="prev" href="building_ubuntu_python_data_analysis_environment_summary.html" title="Python3 데이터 환경 만들기 요약" type="text/html">
+<link rel="next" href="matplotlib_hline_and_vline.html" title="[FAQ] matplotlib 지정 위치에 수직 수평선을 그리려면" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="홈 서버 만들기">
+<meta property="og:url" content="https://financedata.github.com/posts/building_home_server.html">
+<meta property="og:description" content="홈 서버 만들기">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-11-07T20:30:10+09:00">
+<meta property="article:tag" content="home">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="server">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="building_home_server.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">홈 서버 만들기</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-11-07T20:30:10+09:00" itemprop="datePublished" title="2016-11-07 20:30">2016-11-07 20:30</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/building_home_server.html">
+
+
+            
+        <p class="sourceline"><a href="building_home_server.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="홈 서버 만들기"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="집에-서버가-필요한가?">집에 서버가 필요한가?<a class="anchor-link" href="building_home_server.html#%EC%A7%91%EC%97%90-%EC%84%9C%EB%B2%84%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80?">¶</a>
+</h2>
+<p><img src="http://i.imgur.com/cHv88N7.png"></p>
+<p>서버(server)란 서비스를 제공하는 컴퓨터 혹은 프로그램을 말하지만, 간단하게 한마디로 말하면 24시간 켜져 있는 컴퓨터를 말합니다.</p>
+<!-- TEASER_END -->
+
+<p>"홈서버 이야기 – 집에 서버가 왜 필요하지?" <a href="https://goo.gl/n2yV6p">https://goo.gl/n2yV6p</a> 를 한번 읽어보십시오.</p>
+<p>서버를 사용하기 위해, 아마존이나 구글에 제공하는 클라우드 서비스를 사용할 수 도 있고, cafe24.com 같은 호스팅 업체의 서비스를 이용할 수 도 있습니다.
+그래도 역시 가장 적은 비용으로 가장 높은 효용을 얻을 수 있는 것은 직접 서버를 만들어 운영하는 것입니다. 단지 비용의 문제가 아니라 직접 운영하면서 아주 많은 실용 지식을 얻게 됩니다.</p>
+<p>오래된 노트북 컴퓨터에 우분투를 설치해서 홈 서버로 구축하는 것을 권해 드립니다. (혹은 20만원 안밖의 저전력 PC를 추천드립니다). 구형 노트북에 윈도우를 쓰기는 어렵지만, 우분투는 쌩쌩 잘 돌아갑니다. (환경을 생각해서도...). 더욱이 노트북은 정전에도 대비하는 기능을 가지고 있습니다 <strike>배터리가 UPS 기능을 하지요 ^^</strike></p>
+<h2 id="우선-알아야-할-것은-딱-하나---포트-포워딩">우선 알아야 할 것은 딱 하나 - 포트 포워딩<a class="anchor-link" href="building_home_server.html#%EC%9A%B0%EC%84%A0-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-%EA%B2%83%EC%9D%80-%EB%94%B1-%ED%95%98%EB%82%98---%ED%8F%AC%ED%8A%B8-%ED%8F%AC%EC%9B%8C%EB%94%A9">¶</a>
+</h2>
+<p>우분투 14.04를 USB로 설치 ( <a href="https://goo.gl/eizwIb">https://goo.gl/eizwIb</a> "우분투 설치하기" ) 하시고, 공유기에 포트포워딩(Port Forwarding) 설정만 하셔도 ( <a href="https://goo.gl/R1ybzz">https://goo.gl/R1ybzz</a> "포트포워딩하기" ) 홈 서버를 구축할 수 있습니다.</p>
+<p>공유기에 포트포워딩에 대한 좀 더 쉬운 강좌 <a href="https://opentutorials.org/course/228/6040">https://opentutorials.org/course/228/6040</a> 도 있습니다.</p>
+<h2 id="홈-서버에-데이터-분석-환경-구축">홈 서버에 데이터 분석 환경 구축<a class="anchor-link" href="building_home_server.html#%ED%99%88-%EC%84%9C%EB%B2%84%EC%97%90-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95">¶</a>
+</h2>
+<p>이렇게 만든 서버에 아래 내용들을 설치해 두면 언제 어디서나 사용이 가능한 데이터 분석 환경이 됩니다. (“Python3 데이터 분석 환경 만들기 요약”  <a href="https://goo.gl/fKOMcV">https://goo.gl/fKOMcV</a> 참고)</p>
+<ul>
+<li>Python 데이터 분석 도구들</li>
+<li>MySQL </li>
+<li>Jupyter Notebook</li>
+</ul>
+<p>Jupyter Notebook은 서버로 켜둡니다.</p>
+<p>고성능 컴퓨터나 머신러닝을 위해 병렬 GPU가 정말 필요하시게 되면 그 때 구하셔도 늦지 않습니다.</p>
+<p>도메인을 설정한다거나 웹 서비스를 운영하는 것을 더 해보시고 싶으시면 <a href="https://goo.gl/zC1dPs">https://goo.gl/zC1dPs</a> "우분투 14.04 LTS로 홈서버 만들기"에 매우 상세한 내용들이 정리되어 있습니다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2016,-2017-facebook.com/financedata">2016, 2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="building_home_server.html#2016,-2017-facebook.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/home.html" rel="tag">home</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../categories/server.html" rel="tag">server</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="building_ubuntu_python_data_analysis_environment_summary.html" rel="prev" title="Python3 데이터 환경 만들기 요약">이전 포스트</a>
+            </li>
+            <li class="next">
+                <a href="matplotlib_hline_and_vline.html" rel="next" title="[FAQ] matplotlib 지정 위치에 수직 수평선을 그리려면">다음 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/building_home_server.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

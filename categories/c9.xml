@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>FinanceData (c9에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://financedata.github.com/categories/c9.xml"></atom:link><language>ko</language><lastBuildDate>Thu, 09 Feb 2017 02:53:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] c9.io 얼마나 쓸만한가</title><link>https://financedata.github.com/posts/c9_io_features.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-c9.io-활동-상태가-얼마나-유지되나요?"&gt;[FAQ] c9.io 활동 상태가 얼마나 유지되나요?&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%5BFAQ%5D-c9.io-%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EA%B0%80-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98%EC%9A%94?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="240" src="http://i.imgur.com/AczuNfy.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="활동-상태는-얼마나-유지되나"&gt;활동 상태는 얼마나 유지되나&lt;a class="anchor-link" href="https://financedata.github.com/posts/c9_io_features.html#%ED%99%9C%EB%8F%99-%EC%83%81%ED%83%9C%EB%8A%94-%EC%96%BC%EB%A7%88%EB%82%98-%EC%9C%A0%EC%A7%80%EB%90%98%EB%82%98"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;c9.io 를 닫은 상태로 2시간이 지나면, 프로세스가 내려 간다. jupyter 노트북 서버가 바로 프로세스(process)다. 
+다시 c9.io 를 열었을 때 다음과 같은 명령으로 jupyter 노트북 서버를 다시 시작하면 된다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ jupyter notebook --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.0.0 --port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt; --no-browser
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/c9_io_features.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>c9</category><category>cloud9</category><guid>https://financedata.github.com/posts/c9_io_features.html</guid><pubDate>Thu, 30 Jun 2016 11:30:10 GMT</pubDate></item></channel></rss>
