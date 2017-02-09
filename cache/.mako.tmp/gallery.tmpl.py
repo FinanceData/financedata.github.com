@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1486609375.5229065
+_modified_time = 1486609475.6510208
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/bootstrap3/templates/gallery.tmpl'
 _template_uri = 'gallery.tmpl'
@@ -35,27 +35,27 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
-        def extra_head():
-            return render_extra_head(context._locals(__M_locals))
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
-        def sourcelink():
-            return render_sourcelink(context._locals(__M_locals))
-        photo_array = _import_ns.get('photo_array', context.get('photo_array', UNDEFINED))
-        def extra_js():
-            return render_extra_js(context._locals(__M_locals))
-        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
-        site_has_comments = _import_ns.get('site_has_comments', context.get('site_has_comments', UNDEFINED))
-        ui = _mako_get_namespace(context, 'ui')
         parent = _import_ns.get('parent', context.get('parent', UNDEFINED))
         title = _import_ns.get('title', context.get('title', UNDEFINED))
-        post = _import_ns.get('post', context.get('post', UNDEFINED))
-        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
-        comments = _mako_get_namespace(context, 'comments')
-        def content():
-            return render_content(context._locals(__M_locals))
-        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
         photo_array_json = _import_ns.get('photo_array_json', context.get('photo_array_json', UNDEFINED))
         thumbnail_size = _import_ns.get('thumbnail_size', context.get('thumbnail_size', UNDEFINED))
+        def extra_js():
+            return render_extra_js(context._locals(__M_locals))
+        comments = _mako_get_namespace(context, 'comments')
+        def sourcelink():
+            return render_sourcelink(context._locals(__M_locals))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
+        folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
+        photo_array = _import_ns.get('photo_array', context.get('photo_array', UNDEFINED))
+        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
+        site_has_comments = _import_ns.get('site_has_comments', context.get('site_has_comments', UNDEFINED))
+        def content():
+            return render_content(context._locals(__M_locals))
+        ui = _mako_get_namespace(context, 'ui')
+        post = _import_ns.get('post', context.get('post', UNDEFINED))
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -127,18 +127,18 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
-        post = _import_ns.get('post', context.get('post', UNDEFINED))
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
-        photo_array = _import_ns.get('photo_array', context.get('photo_array', UNDEFINED))
         folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
-        comments = _mako_get_namespace(context, 'comments')
+        photo_array = _import_ns.get('photo_array', context.get('photo_array', UNDEFINED))
+        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        site_has_comments = _import_ns.get('site_has_comments', context.get('site_has_comments', UNDEFINED))
         def content():
             return render_content(context)
-        enable_comments = _import_ns.get('enable_comments', context.get('enable_comments', UNDEFINED))
-        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
-        site_has_comments = _import_ns.get('site_has_comments', context.get('site_has_comments', UNDEFINED))
         ui = _mako_get_namespace(context, 'ui')
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        post = _import_ns.get('post', context.get('post', UNDEFINED))
+        comments = _mako_get_namespace(context, 'comments')
+        permalink = _import_ns.get('permalink', context.get('permalink', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n    ')
         __M_writer(str(ui.bar(crumbs)))
@@ -197,6 +197,6 @@ def render_sourcelink(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "gallery.tmpl", "line_map": {"23": 3, "175": 31, "143": 7, "144": 8, "145": 8, "146": 9, "147": 10, "148": 10, "149": 10, "150": 12, "151": 13, "152": 14, "153": 14, "26": 4, "155": 18, "156": 19, "154": 17, "158": 20, "159": 20, "160": 20, "161": 20, "162": 22, "163": 24, "164": 26, "165": 27, "166": 29, "167": 30, "168": 30, "169": 30, "170": 30, "171": 30, "172": 31, "173": 31, "174": 31, "157": 20, "176": 33, "177": 36, "178": 37, "179": 37, "185": 5, "60": 2, "61": 3, "62": 4, "32": 0, "67": 5, "198": 185, "72": 39, "77": 52, "82": 95, "88": 41, "97": 41, "98": 42, "99": 42, "105": 55, "115": 55, "116": 58, "117": 58, "118": 61, "119": 61, "125": 7}, "source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/bootstrap3/templates/gallery.tmpl"}
+{"line_map": {"23": 3, "175": 31, "143": 7, "144": 8, "145": 8, "146": 9, "147": 10, "148": 10, "149": 10, "150": 12, "151": 13, "152": 14, "153": 14, "26": 4, "155": 18, "156": 19, "154": 17, "158": 20, "159": 20, "160": 20, "161": 20, "162": 22, "163": 24, "164": 26, "165": 27, "166": 29, "167": 30, "168": 30, "169": 30, "170": 30, "171": 30, "172": 31, "173": 31, "174": 31, "157": 20, "176": 33, "177": 36, "178": 37, "179": 37, "185": 5, "60": 2, "61": 3, "62": 4, "32": 0, "67": 5, "198": 185, "72": 39, "77": 52, "82": 95, "88": 41, "97": 41, "98": 42, "99": 42, "105": 55, "115": 55, "116": 58, "117": 58, "118": 61, "119": 61, "125": 7}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/bootstrap3/templates/gallery.tmpl", "source_encoding": "utf-8", "uri": "gallery.tmpl"}
 __M_END_METADATA
 """
