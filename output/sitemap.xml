@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-02-08T20:44:00Z</lastmod>
+  <lastmod>2017-02-09T02:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
@@ -43,7 +43,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-02-08T21:31:00Z</lastmod>
+  <lastmod>2017-02-09T01:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -63,7 +63,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/course.html</loc>
-  <lastmod>2017-02-08T21:31:00Z</lastmod>
+  <lastmod>2017-02-09T01:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/crawling.html</loc>
@@ -99,7 +99,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/free.html</loc>
-  <lastmod>2017-02-08T21:31:00Z</lastmod>
+  <lastmod>2017-02-09T01:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangul.html</loc>
@@ -143,7 +143,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/online.html</loc>
-  <lastmod>2017-02-08T21:31:00Z</lastmod>
+  <lastmod>2017-02-09T01:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/pip.html</loc>
@@ -155,7 +155,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python.html</loc>
-  <lastmod>2017-02-08T21:31:00Z</lastmod>
+  <lastmod>2017-02-09T01:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python3.html</loc>
@@ -243,6 +243,10 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
-  <lastmod>2017-02-08T21:31:00Z</lastmod>
+  <lastmod>2017-02-09T01:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/this-is-template.html</loc>
+  <lastmod>2017-02-09T01:55:00Z</lastmod>
  </url>
 </urlset>
