@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>FinanceData (headless에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://financedata.github.com/categories/headless.xml"></atom:link><language>ko</language><lastBuildDate>Thu, 09 Feb 2017 02:53:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>헤드리스 Dropbox</title><link>https://financedata.github.com/posts/headless_dropbox.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="헤드리스-Dropbox"&gt;헤드리스 Dropbox&lt;a class="anchor-link" href="https://financedata.github.com/posts/headless_dropbox.html#%ED%97%A4%EB%93%9C%EB%A6%AC%EC%8A%A4-Dropbox"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="480" src="https://cf.dropboxstatic.com/static/images/brand/logotype-vflHjIsop.svg"&gt;&lt;/p&gt;
+&lt;p&gt;Dropbox는 우분투에서도 잘 수행 된다. 하지만, 다수의 서버를 운영하거나 클라우드의 우부투 박스를 활용하는 경우 GUI가 없는 상황에서도 Dropbox와 같은 클라우드 동기화 서비스를 활용할 수 있다면 편리한 점이 많다. 백업을 자동화 할 수 있고, 서버간의 동기화도 Dropbox를 이용해 해결할 수 있다.
+GUI나 콘솔 없이 터미널로만 접근해서 사용해야 하는 소프트웨어 혹은 시스템을 헤드리스(headless) 소프트웨어 혹은 헤드리스 시스템이라고 한다.
+물론 리눅스에 Rsync와 같은 좋은 동기화 솔루션이 있지만, 데스크탑과 함께 사용하는 편의성을 따지자면 Dropbox 만큼 간편하고 편리한 것은 드물다.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/headless_dropbox.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dropbox</category><category>headless</category><guid>https://financedata.github.com/posts/headless_dropbox.html</guid><pubDate>Thu, 23 Jun 2016 12:30:10 GMT</pubDate></item></channel></rss>
