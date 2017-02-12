@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1486707787.2783766
+_modified_time = 1486863871.5918155
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl'
 _template_uri = 'comments_helper_disqus.tmpl'
@@ -96,6 +96,6 @@ def render_comment_form(context,url,title,identifier):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"16": 3, "18": 0, "23": 2, "24": 3, "25": 31, "26": 37, "27": 44, "33": 33, "38": 33, "39": 34, "40": 35, "41": 35, "42": 35, "43": 35, "44": 35, "50": 40, "55": 40, "56": 41, "57": 42, "58": 42, "59": 42, "65": 5, "71": 5, "72": 6, "73": 7, "74": 9, "75": 9, "76": 10, "77": 11, "78": 11, "79": 11, "80": 13, "81": 13, "82": 13, "83": 14, "84": 14, "85": 16, "86": 17, "87": 18, "88": 19, "89": 19, "90": 19, "91": 21, "97": 91}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl", "uri": "comments_helper_disqus.tmpl"}
+{"source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl", "line_map": {"16": 3, "18": 0, "23": 2, "24": 3, "25": 31, "26": 37, "27": 44, "33": 33, "38": 33, "39": 34, "40": 35, "41": 35, "42": 35, "43": 35, "44": 35, "50": 40, "55": 40, "56": 41, "57": 42, "58": 42, "59": 42, "65": 5, "71": 5, "72": 6, "73": 7, "74": 9, "75": 9, "76": 10, "77": 11, "78": 11, "79": 11, "80": 13, "81": 13, "82": 13, "83": 14, "84": 14, "85": 16, "86": 17, "87": 18, "88": 19, "89": 19, "90": 19, "91": 21, "97": 91}, "uri": "comments_helper_disqus.tmpl"}
 __M_END_METADATA
 """
