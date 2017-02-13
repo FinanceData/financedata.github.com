@@ -11792,7 +11792,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Jupyter-Notebook-&#51064;&#51613;">Jupyter Notebook &#51064;&#51613;<a class="anchor-link" href="#Jupyter-Notebook-&#51064;&#51613;">&#182;</a></h1><p>jupyter notebook 을 서버로 실행하고 접속할 때, 아래와 같이 token 혹은 패스워드를 입력하라고 표시된다. 보안 강화를 위해 jupyter 4.3 (2016년 12월)에 토큰 인증(token authentication)은 이 추가되었다. 화면에 표시되는 내용을 살펴보면 토큰(token)을 입력하거나 패스워드 설정하라는 메시지를 볼 수 있다.</p>
+<h1 id="Jupyter-Notebook-&#51064;&#51613;">Jupyter Notebook &#51064;&#51613;<a class="anchor-link" href="#Jupyter-Notebook-&#51064;&#51613;">&#182;</a></h1><p>다음과 같이 jupyter notebook 서버로 실행 (로컬에서 jupyter notebook을 실행하는 것이 아니라 서버로 실행하고 브라우저로 접속)하고,</p>
+<div class="highlight"><pre><span></span>$ jupyter notebook --ip<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">8080</span> --no-browser
+</pre></div>
+<p>jupyter notebook 서버에 접속할 때, 아래와 같이 token 혹은 패스워드를 입력하라고 표시된다. 보안성을 높이기 위한 기능으로jupyter 4.3 (2016년 12월)에 토큰 인증(token authentication)은 이 추가되었다. 화면에 표시되는 내용을 살펴보면 토큰(token)을 입력하거나 패스워드 설정하라는 메시지를 볼 수 있다.</p>
 <p><img src="http://i.imgur.com/gSzITRs.png" ></p>
 
 </div>
