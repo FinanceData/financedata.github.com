@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Jupyter Notebook 의 토큰 인증과 패스워드 설정 방법">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다 | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/jupyter-notebook-authentication.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="Jupyter Notebook 의 토큰 인증과 패스워드 설정 방법">
+<meta name="author" content="plusjune">
+<link rel="prev" href="faq_pip_packge_fail.html" title="[FAQ] pip로 패키지 설치가 되지 않습니다" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다">
+<meta property="og:url" content="https://financedata.github.com/posts/jupyter-notebook-authentication.html">
+<meta property="og:description" content="Jupyter Notebook 의 토큰 인증과 패스워드 설정 방법">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-02-13T09:10:26+09:00">
+<meta property="article:tag" content="authentication">
+<meta property="article:tag" content="jupyter">
+<meta property="article:tag" content="notebookm">
+<meta property="article:tag" content="python">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="jupyter-notebook-authentication.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-02-13T09:10:26+09:00" itemprop="datePublished" title="2017-02-13 09:10">2017-02-13 09:10</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/jupyter-notebook-authentication.html">
+
+
+            
+        <p class="sourceline"><a href="jupyter-notebook-authentication.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="Jupyter Notebook 의 토큰 인증과 패스워드 설정 방법"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="[FAQ]-Jupyter-Notebook-실행시-토큰을-입력하라고-나옵니다">[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다<a class="anchor-link" href="jupyter-notebook-authentication.html#%5BFAQ%5D-Jupyter-Notebook-%EC%8B%A4%ED%96%89%EC%8B%9C-%ED%86%A0%ED%81%B0%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%98%EB%9D%BC%EA%B3%A0-%EB%82%98%EC%98%B5%EB%8B%88%EB%8B%A4">¶</a>
+</h2>
+<ul>
+<li>Q: Jupyter Notebook 실행시 토큰 혹은 패스워드를 입력하라고 나옵니다.</li>
+<li>A: "jupyter notebook list" 명령하여 표시되는 토큰을 입력하거나 프로파일을 생성하여 패스워드를 설정합니다. </li>
+</ul>
+<p><img width="320" src="http://i.imgur.com/1M0SKt3.png"></p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Jupyter-Notebook-인증">Jupyter Notebook 인증<a class="anchor-link" href="jupyter-notebook-authentication.html#Jupyter-Notebook-%EC%9D%B8%EC%A6%9D">¶</a>
+</h2>
+<p>jupyter notebook 을 서버로 실행하고 접속할 때, 아래와 같이 token 혹은 패스워드를 입력하라고 표시된다. 보안 강화를 위해 jupyter 4.3 (2016년 12월)에 토큰 인증(token authentication)은 이 추가되었다. 화면에 표시되는 내용을 살펴보면 토큰(token)을 입력하거나 패스워드 설정하라는 메시지를 볼 수 있다.</p>
+<p><img src="http://i.imgur.com/gSzITRs.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="토큰-인증">토큰 인증<a class="anchor-link" href="jupyter-notebook-authentication.html#%ED%86%A0%ED%81%B0-%EC%9D%B8%EC%A6%9D">¶</a>
+</h2>
+<p>다음과 같이 명령을 입력하여 표시되는 토큰(token)을 입력해 주면 된다.</p>
+<div class="highlight"><pre><span></span>$ jupyter notebook list
+Currently running servers:
+http://0.0.0.0:8080/?token<span class="o">=</span>8bb77bd37304a54f770cb9f8b8374bdcd6a552284bd9b7ba :: /home/ubuntu/workspace
+</pre></div>
+<p>아래와 같은 URL을 사용할 수 도 있다.</p>
+<div class="highlight"><pre><span></span>http://your-server:8080/?token<span class="o">=</span>8bb77bd37304a54f770cb9f8b8374bdcd6a552284bd9b7ba
+</pre></div>
+<p>1회만 입력하면 토큰이 만료되기 전까지 다시 물어보지 않는다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="패스워드-설정과-프로파일">패스워드 설정과 프로파일<a class="anchor-link" href="jupyter-notebook-authentication.html#%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%EC%84%A4%EC%A0%95%EA%B3%BC-%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC">¶</a>
+</h2>
+<p>또 다른 방법으로 jupyter Notebook 서버에 프로파일을 생성하고 자신이 원하는 패스워드를 설정하는 방법이 있다.</p>
+<h4 id="1.-프로파일-생성">1. 프로파일 생성<a class="anchor-link" href="jupyter-notebook-authentication.html#1.-%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1">¶</a>
+</h4>
+<div class="highlight"><pre><span></span>$ jupyter notebook --generate-config
+</pre></div>
+<p>~/.jupyter 디렉토리가 생기고, 하위에 jupyter_notebook_config.py 파일이 생성된다.</p>
+<h4 id="2.-패스워드-생성">2. 패스워드 생성<a class="anchor-link" href="jupyter-notebook-authentication.html#2.-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-%EC%83%9D%EC%84%B1">¶</a>
+</h4>
+<p>아래와 같이 ipython 실행하고, 패스워드 해시(hash) 생성한다.</p>
+<div class="highlight"><pre><span></span>$ ipython                                                                                                                                   
+Python <span class="m">3</span>.4.3 <span class="o">(</span>default, Sep <span class="m">14</span> <span class="m">2016</span>, <span class="m">12</span>:36:27<span class="o">)</span> 
+Type <span class="s2">"copyright"</span>, <span class="s2">"credits"</span> or <span class="s2">"license"</span> <span class="k">for</span> more information.
+
+IPython <span class="m">5</span>.2.2 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython<span class="s1">'s features.</span>
+<span class="s1">%quickref -&gt; Quick reference.</span>
+<span class="s1">help      -&gt; Python'</span>s own <span class="nb">help</span> system.
+object?   -&gt; Details about <span class="s1">'object'</span>, use <span class="s1">'object??'</span> <span class="k">for</span> extra details.
+
+In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: from IPython.lib import passwd
+
+In <span class="o">[</span><span class="m">2</span><span class="o">]</span>: passwd<span class="o">()</span>
+Enter password: 
+Verify password: 
+Out<span class="o">[</span><span class="m">2</span><span class="o">]</span>: <span class="s1">'sha1:f0bf7a023f60:25920410f68d70c03175e3fec4619c497b84193f'</span>
+
+In <span class="o">[</span><span class="m">3</span><span class="o">]</span>: ^D  <span class="c1">#(^D를 입력하여 종료)                                                                                                              </span>
+Do you really want to <span class="nb">exit</span> <span class="o">([</span>y<span class="o">]</span>/n<span class="o">)</span>? y
+</pre></div>
+<h4 id="3.-jupyter_notebook_config.py-파일-수정">3. jupyter_notebook_config.py 파일 수정<a class="anchor-link" href="jupyter-notebook-authentication.html#3.-jupyter_notebook_config.py-%ED%8C%8C%EC%9D%BC-%EC%88%98%EC%A0%95">¶</a>
+</h4>
+<p>~/.jupyter/jupyter_notebook_config.py 파일에 아래 내용을 추가 한다.</p>
+<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s1">'0.0.0.0'</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">8080</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="s1">'sha1:f0bf7a023f60:25920410f68d70c03175e3fec4619c497b84193'</span>
+</pre></div>
+<h4 id="4.-jupyter-notebook-실행">4. jupyter notebook 실행<a class="anchor-link" href="jupyter-notebook-authentication.html#4.-jupyter-notebook-%EC%8B%A4%ED%96%89">¶</a>
+</h4>
+<p>다음과 같이 jupyter notebook 을 실행한다.</p>
+<div class="highlight"><pre><span></span>$ jupyter notebook
+</pre></div>
+<p>jupyter_notebook_config.py 설정에 ip, port 등의 옵션을 설정하였으므로 "--ip=0.0.0.0 --port=8080 --no-browser" 옵션을 따로 지정하지 않아도 된다.</p>
+<p><img src="http://i.imgur.com/ZxTpBRq.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="참고자료">참고자료<a class="anchor-link" href="jupyter-notebook-authentication.html#%EC%B0%B8%EA%B3%A0%EC%9E%90%EB%A3%8C">¶</a>
+</h2>
+<ul>
+<li>
+<a href="http://jupyter-notebook.readthedocs.io/en/latest/security.html">http://jupyter-notebook.readthedocs.io/en/latest/security.html</a> Security in the Jupyter notebook server</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2017-facebook.com/financedata">2017 <a href="https://facebook.com/financedata">facebook.com/financedata</a><a class="anchor-link" href="jupyter-notebook-authentication.html#2017-facebook.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/authentication.html" rel="tag">authentication</a></li>
+            <li><a class="tag p-category" href="../categories/jupyter.html" rel="tag">jupyter</a></li>
+            <li><a class="tag p-category" href="../categories/notebookm.html" rel="tag">notebookm</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="faq_pip_packge_fail.html" rel="prev" title="[FAQ] pip로 패키지 설치가 되지 않습니다">이전 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/jupyter-notebook-authentication.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link rel="self" href="https://financedata.github.com/rss.xml" type="application/rss+xml"></atom:link><language>ko</language><lastBuildDate>Sun, 12 Feb 2017 01:44:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Jupyter Notebook 키보드 바로가기</title><link>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link rel="self" href="https://financedata.github.com/rss.xml" type="application/rss+xml"></atom:link><language>ko</language><lastBuildDate>Mon, 13 Feb 2017 00:50:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다</title><link>https://financedata.github.com/posts/jupyter-notebook-authentication.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-Jupyter-Notebook-실행시-토큰을-입력하라고-나옵니다"&gt;[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-authentication.html#%5BFAQ%5D-Jupyter-Notebook-%EC%8B%A4%ED%96%89%EC%8B%9C-%ED%86%A0%ED%81%B0%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%98%EB%9D%BC%EA%B3%A0-%EB%82%98%EC%98%B5%EB%8B%88%EB%8B%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: Jupyter Notebook 실행시 토큰 혹은 패스워드를 입력하라고 나옵니다.&lt;/li&gt;
+&lt;li&gt;A: "jupyter notebook list" 명령하여 표시되는 토큰을 입력하거나 프로파일을 생성하여 패스워드를 설정합니다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/1M0SKt3.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter-notebook-authentication.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>authentication</category><category>jupyter</category><category>notebookm</category><category>python</category><guid>https://financedata.github.com/posts/jupyter-notebook-authentication.html</guid><pubDate>Mon, 13 Feb 2017 00:10:26 GMT</pubDate></item><item><title>[FAQ] pip로 패키지 설치가 되지 않습니다</title><link>https://financedata.github.com/posts/faq_pip_packge_fail.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="FAQ---pip로-패키지-설치가-되지-않습니다"&gt;FAQ - pip로 패키지 설치가 되지 않습니다&lt;a class="anchor-link" href="https://financedata.github.com/posts/faq_pip_packge_fail.html#FAQ---pip%EB%A1%9C-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98%EA%B0%80-%EB%90%98%EC%A7%80-%EC%95%8A%EC%8A%B5%EB%8B%88%EB%8B%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: pip로 패키지 설치시, 계속 No module named 'packaging' 에러를 내며 설치가 되지 않습니다&lt;/li&gt;
+&lt;li&gt;A: pip를 업그레이드 하십시오. "sudo pip3 install -U pip"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/5zFdnEA.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/faq_pip_packge_fail.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>faq</category><category>list</category><category>packaging</category><category>pip</category><guid>https://financedata.github.com/posts/faq_pip_packge_fail.html</guid><pubDate>Sun, 12 Feb 2017 23:30:10 GMT</pubDate></item><item><title>Jupyter Notebook 키보드 바로가기</title><link>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -138,27 +164,4 @@
 &lt;li&gt;Q: 데이터를 크롤링하는데 한글이 외계어로 표시 됩니다&lt;/li&gt;
 &lt;li&gt;A: 대부분의 경우 한글 인코딩의 문제 입니다. decode('euc-kr') 시도해 보세요.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/faq_crawling_data_encoding.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>crawling</category><category>data</category><category>encoding</category><category>faq</category><category>hangul</category><guid>https://financedata.github.com/posts/faq_crawling_data_encoding.html</guid><pubDate>Thu, 26 Jan 2017 00:00:00 GMT</pubDate></item><item><title>[FAQ] matplotlib 지정 위치에 수직 수평선을 그리려면</title><link>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;img src="http://i.imgur.com/0dywhdR.png"&gt;&lt;/p&gt;
-&lt;h2 id="[FAQ]-matplotlib:-지정-위치에-수직/수평선을-그리려면?"&gt;[FAQ] matplotlib: 지정 위치에 수직/수평선을 그리려면?&lt;a class="anchor-link" href="https://financedata.github.com/posts/matplotlib_hline_and_vline.html#%5BFAQ%5D-matplotlib:-%EC%A7%80%EC%A0%95-%EC%9C%84%EC%B9%98%EC%97%90-%EC%88%98%EC%A7%81/%EC%88%98%ED%8F%89%EC%84%A0%EC%9D%84-%EA%B7%B8%EB%A6%AC%EB%A0%A4%EB%A9%B4?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Q: 설명을 위해 특정 위치에 수직선 혹은 수평선을 그리고 싶습니다.&lt;/li&gt;
-&lt;li&gt;A: axhline(), axvline() 함수를 사용하시면 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/matplotlib_hline_and_vline.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>axhline</category><category>axvline</category><category>hline</category><category>matplotlib</category><category>vline</category><guid>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</guid><pubDate>Tue, 24 Jan 2017 23:22:11 GMT</pubDate></item><item><title>홈 서버 만들기</title><link>https://financedata.github.com/posts/building_home_server.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="집에-서버가-필요한가?"&gt;집에 서버가 필요한가?&lt;a class="anchor-link" href="https://financedata.github.com/posts/building_home_server.html#%EC%A7%91%EC%97%90-%EC%84%9C%EB%B2%84%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="http://i.imgur.com/cHv88N7.png"&gt;&lt;/p&gt;
-&lt;p&gt;서버(server)란 서비스를 제공하는 컴퓨터 혹은 프로그램을 말하지만, 간단하게 한마디로 말하면 24시간 켜져 있는 컴퓨터를 말합니다.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/building_home_server.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>home</category><category>python</category><category>server</category><guid>https://financedata.github.com/posts/building_home_server.html</guid><pubDate>Mon, 07 Nov 2016 11:30:10 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/faq_crawling_data_encoding.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>crawling</category><category>data</category><category>encoding</category><category>faq</category><category>hangul</category><guid>https://financedata.github.com/posts/faq_crawling_data_encoding.html</guid><pubDate>Thu, 26 Jan 2017 00:00:00 GMT</pubDate></item></channel></rss>

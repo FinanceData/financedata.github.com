@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1486863871.60798
+_modified_time = 1486947055.481302
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl'
 _template_uri = 'comments_helper_intensedebate.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_link', 'comment_link_script', 'comment_form']
+_exports = ['comment_link_script', 'comment_link', 'comment_form']
 
 
 def render_body(context,**pageargs):
@@ -20,6 +20,16 @@ def render_body(context,**pageargs):
         __M_writer = context.writer()
         __M_writer('\n\n')
         __M_writer('\n\n')
+        __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_comment_link_script(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        __M_writer = context.writer()
         __M_writer('\n')
         return ''
     finally:
@@ -47,16 +57,6 @@ def render_comment_link(context,link,identifier):
         context.caller_stack._pop_frame()
 
 
-def render_comment_link_script(context):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        __M_writer = context.writer()
-        __M_writer('\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_comment_form(context,url,title,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -76,6 +76,6 @@ def render_comment_form(context,url,title,identifier):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl", "line_map": {"65": 2, "66": 4, "67": 4, "68": 5, "69": 5, "70": 6, "71": 6, "77": 71, "16": 0, "21": 11, "22": 22, "23": 25, "29": 13, "34": 13, "35": 14, "36": 14, "37": 14, "38": 14, "39": 16, "40": 16, "41": 17, "42": 17, "43": 18, "44": 18, "50": 24, "54": 24, "60": 2}, "uri": "comments_helper_intensedebate.tmpl"}
+{"uri": "comments_helper_intensedebate.tmpl", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl", "source_encoding": "utf-8", "line_map": {"65": 2, "66": 4, "67": 4, "68": 5, "69": 5, "70": 6, "71": 6, "77": 71, "16": 0, "21": 11, "22": 22, "23": 25, "29": 24, "33": 24, "39": 13, "44": 13, "45": 14, "46": 14, "47": 14, "48": 14, "49": 16, "50": 16, "51": 17, "52": 17, "53": 18, "54": 18, "60": 2}}
 __M_END_METADATA
 """
