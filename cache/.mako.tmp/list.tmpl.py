@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1486952045.1749444
+_modified_time = 1486974653.3711925
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list.tmpl'
 _template_uri = 'list.tmpl'
@@ -35,9 +35,9 @@ def render_body(context,**pageargs):
         def content():
             return render_content(context._locals(__M_locals))
         title = _import_ns.get('title', context.get('title', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n\n')
@@ -59,9 +59,9 @@ def render_content(context,**pageargs):
         def content():
             return render_content(context)
         title = _import_ns.get('title', context.get('title', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         __M_writer = context.writer()
         __M_writer('\n<article class="listpage">\n    <header>\n        <h1>')
         __M_writer(filters.html_escape(str(title)))
@@ -93,6 +93,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"66": 5, "67": 8, "68": 8, "69": 10, "70": 10, "71": 11, "72": 12, "73": 13, "74": 14, "75": 14, "76": 14, "77": 14, "78": 14, "79": 15, "80": 16, "81": 16, "82": 16, "83": 19, "84": 20, "85": 21, "86": 21, "23": 3, "88": 23, "29": 0, "94": 88, "42": 2, "43": 3, "48": 24, "54": 5, "87": 21}, "source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list.tmpl", "uri": "list.tmpl"}
+{"filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list.tmpl", "uri": "list.tmpl", "source_encoding": "utf-8", "line_map": {"66": 5, "67": 8, "68": 8, "69": 10, "70": 10, "71": 11, "72": 12, "73": 13, "74": 14, "75": 14, "76": 14, "77": 14, "78": 14, "79": 15, "80": 16, "81": 16, "82": 16, "83": 19, "84": 20, "85": 21, "86": 21, "23": 3, "88": 23, "29": 0, "94": 88, "42": 2, "43": 3, "48": 24, "54": 5, "87": 21}}
 __M_END_METADATA
 """
