@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/authentication.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-13T02:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/axhline.html</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-13T02:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -131,7 +131,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/jupyter.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-13T02:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/keyboard.html</loc>
@@ -159,7 +159,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/notebookm.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-13T02:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/online.html</loc>
@@ -179,7 +179,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-13T02:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python3.html</loc>
@@ -263,7 +263,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/jupyter-notebook-authentication.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-13T02:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</loc>
@@ -272,10 +272,6 @@
  <url>
   <loc>https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html</loc>
   <lastmod>2017-02-09T02:53:00Z</lastmod>
- </url>
- <url>
-  <loc>https://financedata.github.com/posts/jupyter_token.html</loc>
-  <lastmod>2017-02-13T00:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</loc>
