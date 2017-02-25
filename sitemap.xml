@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-02-13T02:17:00Z</lastmod>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/assertionerror.html</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-02-13T08:30:00Z</lastmod>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -71,7 +71,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/crawling.html</loc>
-  <lastmod>2017-02-09T02:53:00Z</lastmod>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/data.html</loc>
@@ -154,6 +154,10 @@
   <lastmod>2017-02-09T02:53:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/naver.html</loc>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/notebook.html</loc>
   <lastmod>2017-02-10T06:23:00Z</lastmod>
  </url>
@@ -207,7 +211,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-1.html</loc>
-  <lastmod>2017-02-13T00:50:00Z</lastmod>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -259,7 +263,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/headless_dropbox.html</loc>
-  <lastmod>2017-02-09T02:53:00Z</lastmod>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/jupyter-notebook-authentication.html</loc>
@@ -276,6 +280,10 @@
  <url>
   <loc>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</loc>
   <lastmod>2017-02-09T02:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</loc>
+  <lastmod>2017-02-25T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
