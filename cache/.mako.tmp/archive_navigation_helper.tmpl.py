@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1488043245.1403208
+_modified_time = 1488043425.6996357
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/archive_navigation_helper.tmpl'
 _template_uri = 'archive_navigation_helper.tmpl'
@@ -28,10 +28,10 @@ def render_body(context,**pageargs):
 def render_archive_navigation(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        up_archive = context.get('up_archive', UNDEFINED)
-        previous_archive = context.get('previous_archive', UNDEFINED)
-        messages = context.get('messages', UNDEFINED)
         pagekind = context.get('pagekind', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
+        previous_archive = context.get('previous_archive', UNDEFINED)
+        up_archive = context.get('up_archive', UNDEFINED)
         has_archive_navigation = context.get('has_archive_navigation', UNDEFINED)
         next_archive = context.get('next_archive', UNDEFINED)
         __M_writer = context.writer()
@@ -77,6 +77,6 @@ def render_archive_navigation(context):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "uri": "archive_navigation_helper.tmpl", "line_map": {"64": 19, "65": 19, "66": 19, "67": 19, "68": 20, "69": 21, "70": 21, "71": 21, "72": 23, "78": 72, "16": 0, "21": 2, "22": 27, "28": 3, "38": 3, "39": 4, "40": 5, "41": 6, "42": 8, "43": 9, "44": 9, "45": 9, "46": 9, "47": 9, "48": 10, "49": 11, "50": 11, "51": 11, "52": 13, "53": 14, "54": 14, "55": 14, "56": 14, "57": 14, "58": 15, "59": 16, "60": 16, "61": 16, "62": 18, "63": 19}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/archive_navigation_helper.tmpl"}
+{"line_map": {"64": 19, "65": 19, "66": 19, "67": 19, "68": 20, "69": 21, "70": 21, "71": 21, "72": 23, "78": 72, "16": 0, "21": 2, "22": 27, "28": 3, "38": 3, "39": 4, "40": 5, "41": 6, "42": 8, "43": 9, "44": 9, "45": 9, "46": 9, "47": 9, "48": 10, "49": 11, "50": 11, "51": 11, "52": 13, "53": 14, "54": 14, "55": 14, "56": 14, "57": 14, "58": 15, "59": 16, "60": 16, "61": 16, "62": 18, "63": 19}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/archive_navigation_helper.tmpl", "uri": "archive_navigation_helper.tmpl", "source_encoding": "utf-8"}
 __M_END_METADATA
 """
