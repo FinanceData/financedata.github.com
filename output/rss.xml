@@ -1,5 +1,1527 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link type="application/rss+xml" href="https://financedata.github.com/rss.xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Sat, 25 Feb 2017 17:16:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다</title><link>https://financedata.github.com/posts/jupyter-notebook-authentication.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link rel="self" type="application/rss+xml" href="https://financedata.github.com/rss.xml"></atom:link><language>ko</language><lastBuildDate>Sat, 25 Feb 2017 17:17:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>네이버 파이낸스 - 재무제표 크롤링</title><link>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="네이버-파이낸스---재무제표-크롤링"&gt;네이버 파이낸스 - 재무제표 크롤링&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%EB%84%A4%EC%9D%B4%EB%B2%84-%ED%8C%8C%EC%9D%B4%EB%82%B8%EC%8A%A4---%EC%9E%AC%EB%AC%B4%EC%A0%9C%ED%91%9C-%ED%81%AC%EB%A1%A4%EB%A7%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="http://i.imgur.com/9xZ5t2P.png"&gt;&lt;/p&gt;
+&lt;h5 id="2016-이승준-fb.com/plusjune"&gt;2016 이승준 fb.com/plusjune&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#2016-%EC%9D%B4%EC%8A%B9%EC%A4%80-fb.com/plusjune"&gt;¶&lt;/a&gt;&lt;/h5&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="네이버-파이낸스-크롤링"&gt;네이버 파이낸스 크롤링&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%EB%84%A4%EC%9D%B4%EB%B2%84-%ED%8C%8C%EC%9D%B4%EB%82%B8%EC%8A%A4-%ED%81%AC%EB%A1%A4%EB%A7%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;파이썬으로 데이터 크롤링 할 때 requests 와 BeautifulSoup 를 많이 사용한다. 표(table)로 정리된 데이터의 경우 pandas의 read_html()을 활용하면 간편하게 크롤링 할 수 있는 경우가 많다. 이 글에서는 네이버 파이낸스의 페이지 구조를 파악하고, 재무제표 정보를 pandas DataFrame으로 읽어 처리하는 방법을 살펴본다. 종목별 예제로는 삼성전자(005930)을 사용한다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="페이지-구성"&gt;페이지 구성&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B5%AC%EC%84%B1"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="http://finance.naver.com"&gt;네이버 파이낸스&lt;/a&gt;에서 005930(삼성전자) 종목의 재무제표 정보 페이지의 구성을 단계별로 살펴보자. (이 구성은 크롬 혹은 파이어폭스의 개발자 도구로 살펴볼 수 있다)&lt;/p&gt;
+&lt;h3 id="1)-종목정보"&gt;1) 종목정보&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#1)-%EC%A2%85%EB%AA%A9%EC%A0%95%EB%B3%B4"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;아래 링크에서 종목정보를 볼 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://finance.naver.com/item/coinfo.nhn?code=005930"&gt;http://finance.naver.com/item/coinfo.nhn?code=005930&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;페이지 아래 부분 "Financial Summary" 영역에 재무제표가 있는데 iframe으로 구성되어 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2)-Financial-Summary-영역"&gt;2) Financial Summary 영역&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#2)-Financial-Summary-%EC%98%81%EC%97%AD"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;iframe 의 src 링크는 아래와 같이 구성되어 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://companyinfo.stock.naver.com/v1/company/c1010001.aspx?cmp_cd=005930&amp;amp;target=finsum_more"&gt;http://companyinfo.stock.naver.com/v1/company/c1010001.aspx?cmp_cd=005930&amp;amp;target=finsum_more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;실제 내용은 JavaScript가 HTML 문서를 가져와 붙이도록 되어 있다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3)-재무제표"&gt;3) 재무제표&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#3)-%EC%9E%AC%EB%AC%B4%EC%A0%9C%ED%91%9C"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;JavaScript가 요청하는 URL은 아래와 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?cmp_cd=005930&amp;amp;fin_typ=0&amp;amp;freq_typ=Y"&gt;http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?cmp_cd=005930&amp;amp;fin_typ=0&amp;amp;freq_typ=Y&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;네이버 파이낸스에서 재무제표 데이터를 크롤링 하기 위해 알아야 할 정보는 아래 URL이 전부다.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?cmp_cd=105560&amp;amp;fin_typ=0&amp;amp;freq_typ=Y"&gt;http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?cmp_cd=105560&amp;amp;fin_typ=0&amp;amp;freq_typ=Y&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;URL을 구성하는 파라미터의 의미는 다음과 같다.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th&gt;인자&lt;/th&gt;
+&lt;th&gt;의미&lt;/th&gt;
+&lt;th&gt;값&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cmp_cd&lt;/td&gt;
+&lt;td&gt;종목코드&lt;/td&gt;
+&lt;td&gt;005930 (종목코드)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fin_typ&lt;/td&gt;
+&lt;td&gt;재무제표 타입&lt;/td&gt;
+&lt;td&gt;0: 주재무제표, 1: GAAP개별, 2: GAAP연결, 3: IFRS별도, 4:IFRS연결&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;freq_typ&lt;/td&gt;
+&lt;td&gt;기간&lt;/td&gt;
+&lt;td&gt;Y:년, Q:분기&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;IFrame&lt;/span&gt;
+
+&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?cmp_cd=005930&amp;amp;fin_typ=0&amp;amp;freq_typ=Y"&lt;/span&gt;
+&lt;span class="n"&gt;IFrame&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"100%"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"350"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+
+        &lt;iframe width="100%" height="350" src="http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?cmp_cd=005930&amp;amp;fin_typ=0&amp;amp;freq_typ=Y" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+        
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="pandas.read_html-활용한-크롤링"&gt;pandas.read_html 활용한 크롤링&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#pandas.read_html-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%81%AC%EB%A1%A4%EB%A7%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;pandas.read_html(url)은 HTML 페이지에 포함된 TABLE들을 DataFrame 의 리스트로 반환한다. 우리가 사용하는 재무제표 URL 페이지는 1개의 TABLE만을 가지고 있기 때문에 첫번째 [0] 요소가 바로 재무제표 정보를 담은 DataFrame이 된다.&lt;/p&gt;
+&lt;p&gt;pd.set_option('display.float_format', '{:,.1f}'.format)&lt;/p&gt;
+&lt;p&gt;DataFrame 을 화면에 표시할 때 보기 좋도록 하기 위한 것이다. 천 단위에 ',' 표시와 소수점 이하 1자리를 표시하도록 했다. 쓰지 않더라고 아무런 지장은 없다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="n"&gt;url_tmpl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?cmp_cd=&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;&amp;amp;fin_typ=&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;&amp;amp;freq_typ=&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;
+&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url_tmpl&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'005930'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'4'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Y'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 삼성전자, 4(IFRS 연결), Y:년 단위&lt;/span&gt;
+
+&lt;span class="n"&gt;dfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dfs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'주요재무정보'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 10개 항목만 표시(실제 32개 항목)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;연간&lt;/th&gt;
+      &lt;th&gt;2011/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2012/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2013/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2014/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2015/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2016/12(E)
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2017/12(E)
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2018/12(E)
+									
+									(IFRS연결)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주요재무정보&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;매출액&lt;/th&gt;
+      &lt;td&gt;1650018&lt;/td&gt;
+      &lt;td&gt;2011036&lt;/td&gt;
+      &lt;td&gt;2286927&lt;/td&gt;
+      &lt;td&gt;2062060&lt;/td&gt;
+      &lt;td&gt;2006535&lt;/td&gt;
+      &lt;td&gt;2004675&lt;/td&gt;
+      &lt;td&gt;2208352&lt;/td&gt;
+      &lt;td&gt;2331110&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;영업이익&lt;/th&gt;
+      &lt;td&gt;156443&lt;/td&gt;
+      &lt;td&gt;290493&lt;/td&gt;
+      &lt;td&gt;367850&lt;/td&gt;
+      &lt;td&gt;250251&lt;/td&gt;
+      &lt;td&gt;264134&lt;/td&gt;
+      &lt;td&gt;282505&lt;/td&gt;
+      &lt;td&gt;411526&lt;/td&gt;
+      &lt;td&gt;438342&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;세전계속사업이익&lt;/th&gt;
+      &lt;td&gt;171919&lt;/td&gt;
+      &lt;td&gt;299150&lt;/td&gt;
+      &lt;td&gt;383643&lt;/td&gt;
+      &lt;td&gt;278750&lt;/td&gt;
+      &lt;td&gt;259610&lt;/td&gt;
+      &lt;td&gt;296454&lt;/td&gt;
+      &lt;td&gt;424088&lt;/td&gt;
+      &lt;td&gt;452837&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;당기순이익&lt;/th&gt;
+      &lt;td&gt;137590&lt;/td&gt;
+      &lt;td&gt;238453&lt;/td&gt;
+      &lt;td&gt;304748&lt;/td&gt;
+      &lt;td&gt;233944&lt;/td&gt;
+      &lt;td&gt;190601&lt;/td&gt;
+      &lt;td&gt;220057&lt;/td&gt;
+      &lt;td&gt;314203&lt;/td&gt;
+      &lt;td&gt;335387&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;당기순이익(지배)&lt;/th&gt;
+      &lt;td&gt;133826&lt;/td&gt;
+      &lt;td&gt;231854&lt;/td&gt;
+      &lt;td&gt;298212&lt;/td&gt;
+      &lt;td&gt;230825&lt;/td&gt;
+      &lt;td&gt;186946&lt;/td&gt;
+      &lt;td&gt;217184&lt;/td&gt;
+      &lt;td&gt;310029&lt;/td&gt;
+      &lt;td&gt;330858&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;당기순이익(비지배)&lt;/th&gt;
+      &lt;td&gt;3764&lt;/td&gt;
+      &lt;td&gt;6599&lt;/td&gt;
+      &lt;td&gt;6535&lt;/td&gt;
+      &lt;td&gt;3119&lt;/td&gt;
+      &lt;td&gt;3655&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;자산총계&lt;/th&gt;
+      &lt;td&gt;1558003&lt;/td&gt;
+      &lt;td&gt;1810716&lt;/td&gt;
+      &lt;td&gt;2140750&lt;/td&gt;
+      &lt;td&gt;2304230&lt;/td&gt;
+      &lt;td&gt;2421795&lt;/td&gt;
+      &lt;td&gt;2552193&lt;/td&gt;
+      &lt;td&gt;2827016&lt;/td&gt;
+      &lt;td&gt;3099505&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;부채총계&lt;/th&gt;
+      &lt;td&gt;544866&lt;/td&gt;
+      &lt;td&gt;595914&lt;/td&gt;
+      &lt;td&gt;640590&lt;/td&gt;
+      &lt;td&gt;623348&lt;/td&gt;
+      &lt;td&gt;631197&lt;/td&gt;
+      &lt;td&gt;648497&lt;/td&gt;
+      &lt;td&gt;691565&lt;/td&gt;
+      &lt;td&gt;715024&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;자본총계&lt;/th&gt;
+      &lt;td&gt;1013136&lt;/td&gt;
+      &lt;td&gt;1214802&lt;/td&gt;
+      &lt;td&gt;1500160&lt;/td&gt;
+      &lt;td&gt;1680882&lt;/td&gt;
+      &lt;td&gt;1790598&lt;/td&gt;
+      &lt;td&gt;1900904&lt;/td&gt;
+      &lt;td&gt;2136128&lt;/td&gt;
+      &lt;td&gt;2385824&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;자본총계(지배)&lt;/th&gt;
+      &lt;td&gt;970904&lt;/td&gt;
+      &lt;td&gt;1170941&lt;/td&gt;
+      &lt;td&gt;1444426&lt;/td&gt;
+      &lt;td&gt;1621817&lt;/td&gt;
+      &lt;td&gt;1728768&lt;/td&gt;
+      &lt;td&gt;1838676&lt;/td&gt;
+      &lt;td&gt;2074968&lt;/td&gt;
+      &lt;td&gt;2319315&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;단, 5줄의 코드로 삼성전자 재무제표를 크롤링 했다! (의외로 이렇게 크롤링 할 수 있는 정보들이 꽤 많다)&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="문제점과-해결방안"&gt;문제점과 해결방안&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%EB%AC%B8%EC%A0%9C%EC%A0%90%EA%B3%BC-%ED%95%B4%EA%B2%B0%EB%B0%A9%EC%95%88"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;표시된 DataFrame을 자세히 살펴보면 아래와 같은 문제점들이 있다. (대부분 네이버 파이낸스 페이지의 HTML TABLE 표현의 문제다)&lt;/p&gt;
+&lt;h4 id="문제점"&gt;문제점&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%EB%AC%B8%EC%A0%9C%EC%A0%90"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;'연간'이른 컬럼명이 추가되었고, 컬럼 이름이 한 컬럼씩 오른쪽으로 밀렸다. &lt;/li&gt;
+&lt;li&gt;마지막 컬럼의 값이 NaN 값 (컬럼 이름이 밀려서 발생)&lt;/li&gt;
+&lt;li&gt;날짜에 "(IFRS연결)"와 같이 불필요한 문자열 포함하고 있다.&lt;/li&gt;
+&lt;li&gt;시계열 데이터로 처리하려면, '주요재무정보'가 컬럼이 되고 날짜가 행(row)가 되는 것이 편리하다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="각-문제에-대한-해결방안"&gt;각 문제에 대한 해결방안&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%EA%B0%81-%EB%AC%B8%EC%A0%9C%EC%97%90-%EB%8C%80%ED%95%9C-%ED%95%B4%EA%B2%B0%EB%B0%A9%EC%95%88"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;컬럼명 '연간' 삭제&lt;/li&gt;
+&lt;li&gt;컬럼 문자열에서 날짜(년, 월)만 추출 (정규식 사용)&lt;/li&gt;
+&lt;li&gt;마지막 컬럼 삭제&lt;/li&gt;
+&lt;li&gt;컬럼과 로우를 전환 (df.T) 한다 (transpose 우리말로 전치행렬 이라고 한다)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="1.-컬럼명-'연간'-삭제"&gt;1. 컬럼명 '연간' 삭제&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#1.-%EC%BB%AC%EB%9F%BC%EB%AA%85-'%EC%97%B0%EA%B0%84'-%EC%82%AD%EC%A0%9C"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 리스트로 전환&lt;/span&gt;
+&lt;span class="n"&gt;cols&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;cols&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;['연간',
+ '\n\t\t\t\t\t\t\t\t\t2011/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2012/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2013/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2014/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2015/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2016/12(E)\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2017/12(E)\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2018/12(E)\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t']&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'연간'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;cols&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[4]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;['\n\t\t\t\t\t\t\t\t\t2011/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2012/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2013/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2014/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2015/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2016/12(E)\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2017/12(E)\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t',
+ '\n\t\t\t\t\t\t\t\t\t2018/12(E)\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t']&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="2.-컬럼-문자열에서-날짜(년,-월)-추출"&gt;2. 컬럼 문자열에서 날짜(년, 월) 추출&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#2.-%EC%BB%AC%EB%9F%BC-%EB%AC%B8%EC%9E%90%EC%97%B4%EC%97%90%EC%84%9C-%EB%82%A0%EC%A7%9C(%EB%85%84,-%EC%9B%94)-%EC%B6%94%EC%B6%9C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;컬럼은 날짜 데이터이다. 그러나 불필요한 문자('\n', '\t', '(IFRS연결)' 등)이 포함되어 있다. 추후 Datetime으로 활용하기 위해 날짜에 해당하는 문자열만 추출해 보자.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;'\n\t\t\t\t\t\t\t\t\t2011/12\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t(IFRS연결)\n\t\t\t\t\t\t\t\t'&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 문자열에서 '2011/12' 문자열만 추출하기 위해 아래와 같은 코드를 사용할 수 도 있겠지만,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'date'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;date_str&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'(E)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;date_str&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'-'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;date_str&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;')'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;정규식(regular expression)을 사용하는 것이 훨씬 깔끔하고 적응력이 좋아진다. 
+날짜 추출에 필요한 정규식을 만들어 보자.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;
+
+&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;  &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\n\t\t\t\t\t\t\t\t\t&lt;/span&gt;&lt;span class="s1"&gt;2011/12&lt;/span&gt;&lt;span class="se"&gt;\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t&lt;/span&gt;&lt;span class="s1"&gt;(IFRS연결)&lt;/span&gt;&lt;span class="se"&gt;\n\t\t\t\t\t\t\t\t&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;
+
+&lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;
+&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"\d&lt;/span&gt;&lt;span class="si"&gt;{4}&lt;/span&gt;&lt;span class="s2"&gt;/\d&lt;/span&gt;&lt;span class="si"&gt;{2}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;date_str&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;'2011/12'&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;날짜를 추출하는 내용을 함수로 만들어 컬럼 이름에 적용한다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_date_str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;
+    &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"\d&lt;/span&gt;&lt;span class="si"&gt;{4}&lt;/span&gt;&lt;span class="s2"&gt;/\d&lt;/span&gt;&lt;span class="si"&gt;{2}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;date_str&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'-'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;date_str&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;이 함수를 사용하여 아래와 같이 모든 컬럼에서 날짜에 해당하는 문자열을 추출할 수 있다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cols&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;get_date_str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;cols&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[7]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;['2011-12',
+ '2012-12',
+ '2013-12',
+ '2014-12',
+ '2015-12',
+ '2016-12',
+ '2017-12',
+ '2018-12']&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="3.-마지막-컬럼-제외"&gt;3. 마지막 컬럼 제외&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#3.-%EB%A7%88%EC%A7%80%EB%A7%89-%EC%BB%AC%EB%9F%BC-%EC%A0%9C%EC%99%B8"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[8]:&lt;/div&gt;
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;연간&lt;/th&gt;
+      &lt;th&gt;2011/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2012/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2013/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2014/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2015/12
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2016/12(E)
+									
+									(IFRS연결)&lt;/th&gt;
+      &lt;th&gt;2017/12(E)
+									
+									(IFRS연결)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주요재무정보&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;매출액&lt;/th&gt;
+      &lt;td&gt;1650018&lt;/td&gt;
+      &lt;td&gt;2011036&lt;/td&gt;
+      &lt;td&gt;2286927&lt;/td&gt;
+      &lt;td&gt;2062060&lt;/td&gt;
+      &lt;td&gt;2006535&lt;/td&gt;
+      &lt;td&gt;2004675&lt;/td&gt;
+      &lt;td&gt;2208352&lt;/td&gt;
+      &lt;td&gt;2331110&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;영업이익&lt;/th&gt;
+      &lt;td&gt;156443&lt;/td&gt;
+      &lt;td&gt;290493&lt;/td&gt;
+      &lt;td&gt;367850&lt;/td&gt;
+      &lt;td&gt;250251&lt;/td&gt;
+      &lt;td&gt;264134&lt;/td&gt;
+      &lt;td&gt;282505&lt;/td&gt;
+      &lt;td&gt;411526&lt;/td&gt;
+      &lt;td&gt;438342&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;세전계속사업이익&lt;/th&gt;
+      &lt;td&gt;171919&lt;/td&gt;
+      &lt;td&gt;299150&lt;/td&gt;
+      &lt;td&gt;383643&lt;/td&gt;
+      &lt;td&gt;278750&lt;/td&gt;
+      &lt;td&gt;259610&lt;/td&gt;
+      &lt;td&gt;296454&lt;/td&gt;
+      &lt;td&gt;424088&lt;/td&gt;
+      &lt;td&gt;452837&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;당기순이익&lt;/th&gt;
+      &lt;td&gt;137590&lt;/td&gt;
+      &lt;td&gt;238453&lt;/td&gt;
+      &lt;td&gt;304748&lt;/td&gt;
+      &lt;td&gt;233944&lt;/td&gt;
+      &lt;td&gt;190601&lt;/td&gt;
+      &lt;td&gt;220057&lt;/td&gt;
+      &lt;td&gt;314203&lt;/td&gt;
+      &lt;td&gt;335387&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;당기순이익(지배)&lt;/th&gt;
+      &lt;td&gt;133826&lt;/td&gt;
+      &lt;td&gt;231854&lt;/td&gt;
+      &lt;td&gt;298212&lt;/td&gt;
+      &lt;td&gt;230825&lt;/td&gt;
+      &lt;td&gt;186946&lt;/td&gt;
+      &lt;td&gt;217184&lt;/td&gt;
+      &lt;td&gt;310029&lt;/td&gt;
+      &lt;td&gt;330858&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 컬럼이름 변경&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;2011-12&lt;/th&gt;
+      &lt;th&gt;2012-12&lt;/th&gt;
+      &lt;th&gt;2013-12&lt;/th&gt;
+      &lt;th&gt;2014-12&lt;/th&gt;
+      &lt;th&gt;2015-12&lt;/th&gt;
+      &lt;th&gt;2016-12&lt;/th&gt;
+      &lt;th&gt;2017-12&lt;/th&gt;
+      &lt;th&gt;2018-12&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주요재무정보&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;매출액&lt;/th&gt;
+      &lt;td&gt;1650018&lt;/td&gt;
+      &lt;td&gt;2011036&lt;/td&gt;
+      &lt;td&gt;2286927&lt;/td&gt;
+      &lt;td&gt;2062060&lt;/td&gt;
+      &lt;td&gt;2006535&lt;/td&gt;
+      &lt;td&gt;2004675&lt;/td&gt;
+      &lt;td&gt;2208352&lt;/td&gt;
+      &lt;td&gt;2331110&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;영업이익&lt;/th&gt;
+      &lt;td&gt;156443&lt;/td&gt;
+      &lt;td&gt;290493&lt;/td&gt;
+      &lt;td&gt;367850&lt;/td&gt;
+      &lt;td&gt;250251&lt;/td&gt;
+      &lt;td&gt;264134&lt;/td&gt;
+      &lt;td&gt;282505&lt;/td&gt;
+      &lt;td&gt;411526&lt;/td&gt;
+      &lt;td&gt;438342&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;세전계속사업이익&lt;/th&gt;
+      &lt;td&gt;171919&lt;/td&gt;
+      &lt;td&gt;299150&lt;/td&gt;
+      &lt;td&gt;383643&lt;/td&gt;
+      &lt;td&gt;278750&lt;/td&gt;
+      &lt;td&gt;259610&lt;/td&gt;
+      &lt;td&gt;296454&lt;/td&gt;
+      &lt;td&gt;424088&lt;/td&gt;
+      &lt;td&gt;452837&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;당기순이익&lt;/th&gt;
+      &lt;td&gt;137590&lt;/td&gt;
+      &lt;td&gt;238453&lt;/td&gt;
+      &lt;td&gt;304748&lt;/td&gt;
+      &lt;td&gt;233944&lt;/td&gt;
+      &lt;td&gt;190601&lt;/td&gt;
+      &lt;td&gt;220057&lt;/td&gt;
+      &lt;td&gt;314203&lt;/td&gt;
+      &lt;td&gt;335387&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;당기순이익(지배)&lt;/th&gt;
+      &lt;td&gt;133826&lt;/td&gt;
+      &lt;td&gt;231854&lt;/td&gt;
+      &lt;td&gt;298212&lt;/td&gt;
+      &lt;td&gt;230825&lt;/td&gt;
+      &lt;td&gt;186946&lt;/td&gt;
+      &lt;td&gt;217184&lt;/td&gt;
+      &lt;td&gt;310029&lt;/td&gt;
+      &lt;td&gt;330858&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="4.-컬럼과-로우-전환"&gt;4. 컬럼과 로우 전환&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#4.-%EC%BB%AC%EB%9F%BC%EA%B3%BC-%EB%A1%9C%EC%9A%B0-%EC%A0%84%ED%99%98"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;DataFrame.T (transpose, 전치행열)를 사용하면 행, 열이 전환된 DataFrame을 구할 수 있다. 시간을 인덱스로하여 시계열 데이터로 만드는 것이 데이터 분석과 시각화에 유리하다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;dft&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 첫번째 컬럼 이름을 data로 변경&lt;/span&gt;
+&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'주요재무정보'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s1"&gt;'date'&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 인덱스를 날짜형식(datetime)으로 변환&lt;/span&gt;
+&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 필요한 컬럼만 출력해 본다&lt;/span&gt;
+&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="s1"&gt;'매출액'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'당기순이익'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'부채총계'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PER(배)'&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PBR(배)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'현금배당수익률'&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;주요재무정보&lt;/th&gt;
+      &lt;th&gt;매출액&lt;/th&gt;
+      &lt;th&gt;당기순이익&lt;/th&gt;
+      &lt;th&gt;부채총계&lt;/th&gt;
+      &lt;th&gt;PER(배)&lt;/th&gt;
+      &lt;th&gt;PBR(배)&lt;/th&gt;
+      &lt;th&gt;현금배당수익률&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011-12-01&lt;/th&gt;
+      &lt;td&gt;1650018&lt;/td&gt;
+      &lt;td&gt;137590&lt;/td&gt;
+      &lt;td&gt;544866&lt;/td&gt;
+      &lt;td&gt;13.45&lt;/td&gt;
+      &lt;td&gt;1.64&lt;/td&gt;
+      &lt;td&gt;0.52&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-12-01&lt;/th&gt;
+      &lt;td&gt;2011036&lt;/td&gt;
+      &lt;td&gt;238453&lt;/td&gt;
+      &lt;td&gt;595914&lt;/td&gt;
+      &lt;td&gt;11.17&lt;/td&gt;
+      &lt;td&gt;1.96&lt;/td&gt;
+      &lt;td&gt;0.53&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013-12-01&lt;/th&gt;
+      &lt;td&gt;2286927&lt;/td&gt;
+      &lt;td&gt;304748&lt;/td&gt;
+      &lt;td&gt;640590&lt;/td&gt;
+      &lt;td&gt;7.83&lt;/td&gt;
+      &lt;td&gt;1.43&lt;/td&gt;
+      &lt;td&gt;1.04&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014-12-01&lt;/th&gt;
+      &lt;td&gt;2062060&lt;/td&gt;
+      &lt;td&gt;233944&lt;/td&gt;
+      &lt;td&gt;623348&lt;/td&gt;
+      &lt;td&gt;9.78&lt;/td&gt;
+      &lt;td&gt;1.23&lt;/td&gt;
+      &lt;td&gt;1.51&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2015-12-01&lt;/th&gt;
+      &lt;td&gt;2006535&lt;/td&gt;
+      &lt;td&gt;190601&lt;/td&gt;
+      &lt;td&gt;631197&lt;/td&gt;
+      &lt;td&gt;11.47&lt;/td&gt;
+      &lt;td&gt;1.06&lt;/td&gt;
+      &lt;td&gt;1.67&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2016-12-01&lt;/th&gt;
+      &lt;td&gt;2004675&lt;/td&gt;
+      &lt;td&gt;220057&lt;/td&gt;
+      &lt;td&gt;648497&lt;/td&gt;
+      &lt;td&gt;13.60&lt;/td&gt;
+      &lt;td&gt;1.37&lt;/td&gt;
+      &lt;td&gt;1.56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2017-12-01&lt;/th&gt;
+      &lt;td&gt;2208352&lt;/td&gt;
+      &lt;td&gt;314203&lt;/td&gt;
+      &lt;td&gt;691565&lt;/td&gt;
+      &lt;td&gt;9.94&lt;/td&gt;
+      &lt;td&gt;1.28&lt;/td&gt;
+      &lt;td&gt;1.66&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2018-12-01&lt;/th&gt;
+      &lt;td&gt;2331110&lt;/td&gt;
+      &lt;td&gt;335387&lt;/td&gt;
+      &lt;td&gt;715024&lt;/td&gt;
+      &lt;td&gt;9.31&lt;/td&gt;
+      &lt;td&gt;1.15&lt;/td&gt;
+      &lt;td&gt;1.77&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 컬럼 확인&lt;/span&gt;
+
+&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;Index(['매출액', '영업이익', '세전계속사업이익', '당기순이익', '당기순이익(지배)', '당기순이익(비지배)', '자산총계',
+       '부채총계', '자본총계', '자본총계(지배)', '자본총계(비지배)', '자본금', '영업활동현금흐름', '투자활동현금흐름',
+       '재무활동현금흐름', 'CAPEX', 'FCF', '이자발생부채', '영업이익률', '순이익률', 'ROE(%)',
+       'ROA(%)', '부채비율', '자본유보율', 'EPS(원)', 'PER(배)', 'BPS(원)', 'PBR(배)',
+       '현금DPS(원)', '현금배당수익률', '현금배당성향(%)', '발행주식수(보통주)'],
+      dtype='object', name='주요재무정보')&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 인덱스 확인&lt;/span&gt;
+
+&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[12]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;DatetimeIndex(['2011-12-01', '2012-12-01', '2013-12-01', '2014-12-01',
+               '2015-12-01', '2016-12-01', '2017-12-01', '2018-12-01'],
+              dtype='datetime64[ns]', freq=None)&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="정리:-함수로-만들기"&gt;정리: 함수로 만들기&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%EC%A0%95%EB%A6%AC:-%ED%95%A8%EC%88%98%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;재사용하기 위해 앞선 내용을 정리하여 함수로 만든다.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;
+
+&lt;span class="sd"&gt;'''&lt;/span&gt;
+&lt;span class="sd"&gt;get_date_str(s) - 문자열 s 에서 "YYYY/MM" 문자열 추출&lt;/span&gt;
+&lt;span class="sd"&gt;'''&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_date_str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;
+    &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"\d&lt;/span&gt;&lt;span class="si"&gt;{4}&lt;/span&gt;&lt;span class="s2"&gt;/\d&lt;/span&gt;&lt;span class="si"&gt;{2}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;date_str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;date_str&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'-'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;date_str&lt;/span&gt;
+
+&lt;span class="sd"&gt;'''&lt;/span&gt;
+&lt;span class="sd"&gt;* code: 종목코드&lt;/span&gt;
+&lt;span class="sd"&gt;* fin_type = '0': 재무제표 종류 (0: 주재무제표, 1: GAAP개별, 2: GAAP연결, 3: IFRS별도, 4:IFRS연결)&lt;/span&gt;
+&lt;span class="sd"&gt;* freq_type = 'Y': 기간 (Y:년, Q:분기)&lt;/span&gt;
+&lt;span class="sd"&gt;'''&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_finstate_naver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fin_type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'0'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;freq_type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'Y'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;url_tmpl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'http://companyinfo.stock.naver.com/v1/company/ajax/cF1001.aspx?'&lt;/span&gt; \
+                   &lt;span class="s1"&gt;'cmp_cd=&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;&amp;amp;fin_typ=&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;&amp;amp;freq_typ=&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;
+
+    &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url_tmpl&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fin_type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;freq_type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;#print(url)&lt;/span&gt;
+
+    &lt;span class="n"&gt;dfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dfs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'해당 데이터가 존재하지 않습니다'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
+
+    &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'주요재무정보'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s1"&gt;'date'&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'date'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;cols&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;'연간'&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'연간'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;'분기'&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'분기'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;cols&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;get_date_str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[:,&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cols&lt;/span&gt;
+    &lt;span class="n"&gt;dft&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;
+    &lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# remove if index is NaT&lt;/span&gt;
+    &lt;span class="n"&gt;dft&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;notnull&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dft&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;dft&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 삼성전자 (년간, IFRS연결)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_finstate_naver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'005930'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="s1"&gt;'매출액'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'영업이익'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'당기순이익'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'영업활동현금흐름'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'순이익률'&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;매출액&lt;/th&gt;
+      &lt;th&gt;영업이익&lt;/th&gt;
+      &lt;th&gt;당기순이익&lt;/th&gt;
+      &lt;th&gt;영업활동현금흐름&lt;/th&gt;
+      &lt;th&gt;순이익률&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011-12-01&lt;/th&gt;
+      &lt;td&gt;1650018&lt;/td&gt;
+      &lt;td&gt;156443&lt;/td&gt;
+      &lt;td&gt;137590&lt;/td&gt;
+      &lt;td&gt;229179&lt;/td&gt;
+      &lt;td&gt;8.34&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-12-01&lt;/th&gt;
+      &lt;td&gt;2011036&lt;/td&gt;
+      &lt;td&gt;290493&lt;/td&gt;
+      &lt;td&gt;238453&lt;/td&gt;
+      &lt;td&gt;379728&lt;/td&gt;
+      &lt;td&gt;11.86&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013-12-01&lt;/th&gt;
+      &lt;td&gt;2286927&lt;/td&gt;
+      &lt;td&gt;367850&lt;/td&gt;
+      &lt;td&gt;304748&lt;/td&gt;
+      &lt;td&gt;467074&lt;/td&gt;
+      &lt;td&gt;13.33&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014-12-01&lt;/th&gt;
+      &lt;td&gt;2062060&lt;/td&gt;
+      &lt;td&gt;250251&lt;/td&gt;
+      &lt;td&gt;233944&lt;/td&gt;
+      &lt;td&gt;369754&lt;/td&gt;
+      &lt;td&gt;11.34&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2015-12-01&lt;/th&gt;
+      &lt;td&gt;2006535&lt;/td&gt;
+      &lt;td&gt;264134&lt;/td&gt;
+      &lt;td&gt;190601&lt;/td&gt;
+      &lt;td&gt;400618&lt;/td&gt;
+      &lt;td&gt;9.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2016-12-01&lt;/th&gt;
+      &lt;td&gt;2004675&lt;/td&gt;
+      &lt;td&gt;282505&lt;/td&gt;
+      &lt;td&gt;220057&lt;/td&gt;
+      &lt;td&gt;455796&lt;/td&gt;
+      &lt;td&gt;10.98&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2017-12-01&lt;/th&gt;
+      &lt;td&gt;2208352&lt;/td&gt;
+      &lt;td&gt;411526&lt;/td&gt;
+      &lt;td&gt;314203&lt;/td&gt;
+      &lt;td&gt;516450&lt;/td&gt;
+      &lt;td&gt;14.23&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2018-12-01&lt;/th&gt;
+      &lt;td&gt;2331110&lt;/td&gt;
+      &lt;td&gt;438342&lt;/td&gt;
+      &lt;td&gt;335387&lt;/td&gt;
+      &lt;td&gt;557257&lt;/td&gt;
+      &lt;td&gt;14.39&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="활용-예"&gt;활용 예&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%ED%99%9C%EC%9A%A9-%EC%98%88"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#df = get_finstate_naver('035720') # 셀트리온 068270 &lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_finstate_naver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'035720'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 카카오 035720&lt;/span&gt;
+&lt;span class="c1"&gt;#df = get_finstate_naver('035720') # CJ E&amp;amp;M 130960&lt;/span&gt;
+&lt;span class="c1"&gt;#df = get_finstate_naver('035720') # 메디톡스 086900&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="s1"&gt;'ROE(%)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ROA(%)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'부채비율'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'자본유보율'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'EPS(원)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PER(배)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'BPS(원)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'PBR(배)'&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
+
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;ROE(%)&lt;/th&gt;
+      &lt;th&gt;ROA(%)&lt;/th&gt;
+      &lt;th&gt;부채비율&lt;/th&gt;
+      &lt;th&gt;자본유보율&lt;/th&gt;
+      &lt;th&gt;EPS(원)&lt;/th&gt;
+      &lt;th&gt;PER(배)&lt;/th&gt;
+      &lt;th&gt;BPS(원)&lt;/th&gt;
+      &lt;th&gt;PBR(배)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2011-12-01&lt;/th&gt;
+      &lt;td&gt;26.86&lt;/td&gt;
+      &lt;td&gt;21.45&lt;/td&gt;
+      &lt;td&gt;22.46&lt;/td&gt;
+      &lt;td&gt;6533.61&lt;/td&gt;
+      &lt;td&gt;8079&lt;/td&gt;
+      &lt;td&gt;14.85&lt;/td&gt;
+      &lt;td&gt;34031&lt;/td&gt;
+      &lt;td&gt;3.53&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2012-12-01&lt;/th&gt;
+      &lt;td&gt;15.70&lt;/td&gt;
+      &lt;td&gt;13.09&lt;/td&gt;
+      &lt;td&gt;17.68&lt;/td&gt;
+      &lt;td&gt;7376.32&lt;/td&gt;
+      &lt;td&gt;5656&lt;/td&gt;
+      &lt;td&gt;16.11&lt;/td&gt;
+      &lt;td&gt;38158&lt;/td&gt;
+      &lt;td&gt;2.39&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2013-12-01&lt;/th&gt;
+      &lt;td&gt;17.73&lt;/td&gt;
+      &lt;td&gt;14.81&lt;/td&gt;
+      &lt;td&gt;22.53&lt;/td&gt;
+      &lt;td&gt;728.30&lt;/td&gt;
+      &lt;td&gt;4532&lt;/td&gt;
+      &lt;td&gt;18.54&lt;/td&gt;
+      &lt;td&gt;13398&lt;/td&gt;
+      &lt;td&gt;6.27&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2014-12-01&lt;/th&gt;
+      &lt;td&gt;11.41&lt;/td&gt;
+      &lt;td&gt;10.04&lt;/td&gt;
+      &lt;td&gt;12.37&lt;/td&gt;
+      &lt;td&gt;8411.95&lt;/td&gt;
+      &lt;td&gt;6116&lt;/td&gt;
+      &lt;td&gt;20.21&lt;/td&gt;
+      &lt;td&gt;42337&lt;/td&gt;
+      &lt;td&gt;2.92&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2015-12-01&lt;/th&gt;
+      &lt;td&gt;3.02&lt;/td&gt;
+      &lt;td&gt;2.65&lt;/td&gt;
+      &lt;td&gt;23.32&lt;/td&gt;
+      &lt;td&gt;8407.52&lt;/td&gt;
+      &lt;td&gt;1269&lt;/td&gt;
+      &lt;td&gt;91.24&lt;/td&gt;
+      &lt;td&gt;42476&lt;/td&gt;
+      &lt;td&gt;2.73&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2016-12-01&lt;/th&gt;
+      &lt;td&gt;1.87&lt;/td&gt;
+      &lt;td&gt;1.49&lt;/td&gt;
+      &lt;td&gt;48.06&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;828&lt;/td&gt;
+      &lt;td&gt;94.18&lt;/td&gt;
+      &lt;td&gt;48994&lt;/td&gt;
+      &lt;td&gt;1.59&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2017-12-01&lt;/th&gt;
+      &lt;td&gt;3.43&lt;/td&gt;
+      &lt;td&gt;2.53&lt;/td&gt;
+      &lt;td&gt;45.85&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;1719&lt;/td&gt;
+      &lt;td&gt;51.25&lt;/td&gt;
+      &lt;td&gt;51292&lt;/td&gt;
+      &lt;td&gt;1.72&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2018-12-01&lt;/th&gt;
+      &lt;td&gt;4.53&lt;/td&gt;
+      &lt;td&gt;3.36&lt;/td&gt;
+      &lt;td&gt;44.74&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;2375&lt;/td&gt;
+      &lt;td&gt;37.09&lt;/td&gt;
+      &lt;td&gt;53621&lt;/td&gt;
+      &lt;td&gt;1.64&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [16]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="s1"&gt;'ROE(%)'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'ROA(%)'&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x7f33d7b0c278&amp;gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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"&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="csv로-저장"&gt;csv로 저장&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#csv%EB%A1%9C-%EC%A0%80%EC%9E%A5"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;DataFrmae (재무제표 데이터)를 .csv로 저장하고자 한다면,&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [17]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'035720.csv'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [18]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# 확인&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt; head &lt;span class="m"&gt;035720&lt;/span&gt;.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;,매출액,영업이익,세전계속사업이익,당기순이익,당기순이익(지배),당기순이익(비지배),자산총계,부채총계,자본총계,자본총계(지배),자본총계(비지배),자본금,영업활동현금흐름,투자활동현금흐름,재무활동현금흐름,CAPEX,FCF,이자발생부채,영업이익률,순이익률,ROE(%),ROA(%),부채비율,자본유보율,EPS(원),PER(배),BPS(원),PBR(배),현금DPS(원),현금배당수익률,현금배당성향(%),발행주식수(보통주)
+2011-12-01,4213.0,1168.0,1274.0,1080.0,1085.0,-5.0,5587.0,1025.0,4562.0,4565.0,-3.0,68.0,1118.0,-1140.0,-140.0,428.0,690.0,6.0,27.71,25.63,26.86,21.45,22.46,6533.61,8079.0,14.85,34031.0,3.53,1607.0,1.34,19.9,13454569.0
+2012-12-01,4534.0,1018.0,1009.0,766.0,763.0,4.0,6119.0,919.0,5199.0,5153.0,46.0,68.0,1233.0,-513.0,-322.0,368.0,865.0,1.0,22.44,16.9,15.7,13.09,17.68,7376.32,5656.0,16.11,38158.0,2.39,1110.0,1.22,19.65,13504829.0
+2013-12-01,2108.0,659.0,604.0,614.0,614.0,0.0,2172.0,399.0,1773.0,1773.0,0.0,210.0,705.0,-583.0,12.0,133.0,572.0,,31.24,29.13,17.73,14.81,22.53,728.3,4532.0,18.54,13398.0,6.27,1133.0,1.35,24.41,13560229.0
+2014-12-01,4989.0,1764.0,1688.0,1498.0,1501.0,-3.0,27680.0,3048.0,24632.0,24546.0,86.0,291.0,2203.0,1726.0,354.0,128.0,2075.0,3.0,35.37,30.03,11.41,10.04,12.37,8411.95,6116.0,20.21,42337.0,2.92,173.0,0.14,6.68,58142204.0
+2015-12-01,9322.0,886.0,1095.0,788.0,757.0,31.0,31885.0,6030.0,25855.0,25524.0,331.0,301.0,1622.0,-4142.0,1972.0,761.0,861.0,2218.0,9.5,8.45,3.02,2.65,23.32,8407.52,1269.0,91.24,42476.0,2.73,167.0,0.14,13.26,60096088.0
+2016-12-01,14295.0,1129.0,920.0,619.0,547.0,,51254.0,16650.0,34646.0,33125.0,,337.0,3270.0,-10317.0,10341.0,788.0,-1165.0,,7.9,4.33,1.87,1.49,48.06,,828.0,94.18,48994.0,1.59,160.0,0.2,0.19,
+2017-12-01,18179.0,1949.0,1828.0,1318.0,1163.0,,52925.0,16640.0,36296.0,34704.0,,338.0,3042.0,-1292.0,-372.0,670.0,2569.0,,10.72,7.25,3.43,2.53,45.85,,1719.0,51.25,51292.0,1.72,177.0,0.2,0.1,
+2018-12-01,20370.0,2632.0,2519.0,1814.0,1607.0,,55021.0,17008.0,38013.0,36279.0,,338.0,3661.0,-1409.0,-270.0,694.0,3075.0,,12.92,8.9,4.53,3.36,44.74,,2375.0,37.09,53621.0,1.64,195.0,0.22,0.08,
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="요약"&gt;요약&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver-finance-finstate-crawling.html#%EC%9A%94%EC%95%BD"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;파이썬 데이터 크롤링, requests를 주로 사용하지만 TABLE에 pandas.read_html()를 사용하여 간결하게 처리할 수 있다.&lt;/li&gt;
+&lt;li&gt;정규식을 사용하여 문자열을 추출하는 것이 유연성과 적응성이 뛰어나다. (replace 같은 문자열 처리함수를 사용하는 것 보다.&lt;/li&gt;
+&lt;li&gt;pandas.DataFrame의 컬럼, 인덱스 조작을 통해 DataFrame을 적절하게 가공할 수 있다.&lt;/li&gt;
+&lt;li&gt;DataFrame으로 만들어지면 파일(csv, excel, RDB)등으로 변환하기 좋고, 시각화 하기도 용이하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>crawling</category><category>naver</category><guid>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</guid><pubDate>Fri, 24 Feb 2017 17:30:35 GMT</pubDate></item><item><title>[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다</title><link>https://financedata.github.com/posts/jupyter-notebook-authentication.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -151,17 +1673,4 @@
 &lt;li&gt;Q: 라인 차트에서 라인 사이를 특정한 색으로 채우고 싶습니다.&lt;/li&gt;
 &lt;li&gt;A: fill_between() 함수를 활용하시면 됩니다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/faq_matplotlib_fill_chart.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>chart</category><category>faq</category><category>fill</category><category>matplotlib</category><guid>https://financedata.github.com/posts/faq_matplotlib_fill_chart.html</guid><pubDate>Thu, 26 Jan 2017 23:22:11 GMT</pubDate></item><item><title>[FAQ] 크롤링 데이터의 한글이 깨져요</title><link>https://financedata.github.com/posts/faq_crawling_data_encoding.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;img src="http://i.imgur.com/BsJa7RR.png"&gt;&lt;/p&gt;
-&lt;h2 id="[FAQ]---크롤링-데이터의-한글이-깨져요"&gt;[FAQ] - 크롤링 데이터의 한글이 깨져요&lt;a class="anchor-link" href="https://financedata.github.com/posts/faq_crawling_data_encoding.html#%5BFAQ%5D---%ED%81%AC%EB%A1%A4%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%ED%95%9C%EA%B8%80%EC%9D%B4-%EA%B9%A8%EC%A0%B8%EC%9A%94"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Q: 데이터를 크롤링하는데 한글이 외계어로 표시 됩니다&lt;/li&gt;
-&lt;li&gt;A: 대부분의 경우 한글 인코딩의 문제 입니다. decode('euc-kr') 시도해 보세요.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/faq_crawling_data_encoding.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>crawling</category><category>data</category><category>encoding</category><category>faq</category><category>hangul</category><guid>https://financedata.github.com/posts/faq_crawling_data_encoding.html</guid><pubDate>Thu, 26 Jan 2017 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/faq_matplotlib_fill_chart.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>chart</category><category>faq</category><category>fill</category><category>matplotlib</category><guid>https://financedata.github.com/posts/faq_matplotlib_fill_chart.html</guid><pubDate>Thu, 26 Jan 2017 23:22:11 GMT</pubDate></item></channel></rss>

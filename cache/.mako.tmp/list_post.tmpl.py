@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1488042971.6504421
+_modified_time = 1488043052.360892
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list_post.tmpl'
 _template_uri = 'list_post.tmpl'
@@ -32,13 +32,13 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
         def content():
             return render_content(context._locals(__M_locals))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n\n')
@@ -57,13 +57,13 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
         def content():
             return render_content(context)
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<article class="listpage">\n    <header>\n        <h1>')
         __M_writer(filters.html_escape(str(title)))
@@ -97,6 +97,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"68": 5, "69": 8, "70": 8, "71": 10, "72": 10, "73": 11, "74": 12, "75": 13, "76": 14, "77": 14, "78": 14, "79": 14, "80": 14, "81": 14, "82": 14, "83": 14, "84": 14, "85": 14, "86": 14, "23": 3, "88": 17, "89": 18, "90": 18, "91": 18, "92": 20, "29": 0, "98": 92, "43": 2, "44": 3, "49": 21, "55": 5, "87": 16}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list_post.tmpl", "uri": "list_post.tmpl"}
+{"filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list_post.tmpl", "source_encoding": "utf-8", "line_map": {"68": 5, "69": 8, "70": 8, "71": 10, "72": 10, "73": 11, "74": 12, "75": 13, "76": 14, "77": 14, "78": 14, "79": 14, "80": 14, "81": 14, "82": 14, "83": 14, "84": 14, "85": 14, "86": 14, "23": 3, "88": 17, "89": 18, "90": 18, "91": 18, "92": 20, "29": 0, "98": 92, "43": 2, "44": 3, "49": 21, "55": 5, "87": 16}, "uri": "list_post.tmpl"}
 __M_END_METADATA
 """

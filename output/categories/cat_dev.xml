@@ -1,126 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FinanceData (dev에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" href="https://financedata.github.com/categories/cat_dev.xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Sat, 25 Feb 2017 17:16:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다</title><link>https://financedata.github.com/posts/jupyter-notebook-authentication.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="[FAQ]-Jupyter-Notebook-실행시-토큰을-입력하라고-나옵니다"&gt;[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-authentication.html#%5BFAQ%5D-Jupyter-Notebook-%EC%8B%A4%ED%96%89%EC%8B%9C-%ED%86%A0%ED%81%B0%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%98%EB%9D%BC%EA%B3%A0-%EB%82%98%EC%98%B5%EB%8B%88%EB%8B%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Q: Jupyter Notebook 실행시 토큰 혹은 패스워드를 입력하라고 나옵니다.&lt;/li&gt;
-&lt;li&gt;A: "jupyter notebook list" 명령하여 표시되는 토큰을 입력하거나 프로파일을 생성하여 패스워드를 설정합니다. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/1M0SKt3.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter-notebook-authentication.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>authentication</category><category>jupyter</category><category>notebookm</category><category>python</category><guid>https://financedata.github.com/posts/jupyter-notebook-authentication.html</guid><pubDate>Mon, 13 Feb 2017 00:10:26 GMT</pubDate></item><item><title>Jupyter Notebook 키보드 바로가기</title><link>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Jupyter-Notebook-키보드-바로가기"&gt;Jupyter Notebook 키보드 바로가기&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html#Jupyter-Notebook-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h5 id="Jupyter-Notebook의-몇가지-키보드-바로가기-조합을-익혀-두면-훨씬-빠르게-그리고-편리하게-사용할-수-있다."&gt;Jupyter Notebook의 몇가지 키보드 바로가기 조합을 익혀 두면 훨씬 빠르게 그리고 편리하게 사용할 수 있다.&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html#Jupyter-Notebook%EC%9D%98-%EB%AA%87%EA%B0%80%EC%A7%80-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EC%A1%B0%ED%95%A9%EC%9D%84-%EC%9D%B5%ED%98%80-%EB%91%90%EB%A9%B4-%ED%9B%A8%EC%94%AC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4."&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/AWtjxpH.jpg"&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="명령모드와-편집모드"&gt;명령모드와 편집모드&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html#%EB%AA%85%EB%A0%B9%EB%AA%A8%EB%93%9C%EC%99%80-%ED%8E%B8%EC%A7%91%EB%AA%A8%EB%93%9C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Jupyter Notebook 키보드 입력에는 두 가지 모드가 있다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;명령모드(Command mode): 노트북의 셀을 편집 (셀에 회색 테두리)&lt;/li&gt;
-&lt;li&gt;편집모드(Edit mode): 셀에 있는 텍스트나 코드를 편집 (셀에 녹색 테두리)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;Esc&lt;/code&gt;키를 누르면 명령모드로, &lt;code&gt;Enter&lt;/code&gt;를 누르면 편집모드로 상호전환 된다. 명령모드에서 &lt;code&gt;J&lt;/code&gt;, &lt;code&gt;K&lt;/code&gt; 키로 아래/위로 이동 할 수 있다 (페이스북, 트위터, Google+ 같은 SNS 서비스에서도 &lt;code&gt;J&lt;/code&gt;, &lt;code&gt;K&lt;/code&gt;키를 써서 아래/위로 이동할 수 있다. 의외로 편리하다).&lt;/p&gt;
-&lt;p&gt;처음 접했다면 명령모드와 편집모드를 나누는 것이 다소 불편해 볼 수 있으나 손에 익으면 훨씬 조작이 빠르다. 마우스나 화살표키로 손을 이동하지 않아도 되기 때문이다. &lt;strike&gt;유닉스 vi (혹은 GNU vim) 에디터에 익숙한 사람들은 바로 이해할 수 있을 것이다.&lt;/strike&gt;
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>jupyter</category><category>keyboard</category><category>notebook</category><guid>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</guid><pubDate>Thu, 09 Feb 2017 02:41:16 GMT</pubDate></item><item><title>추천 무료 온라인 강좌</title><link>https://financedata.github.com/posts/recommended-free-online-courses.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="(파이썬-데이터-사이언스-입문자를-위한)"&gt;(파이썬 데이터 사이언스 입문자를 위한)&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#(%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%EC%9E%85%EB%AC%B8%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h2 id="무료-추천-온라인-강좌"&gt;무료 추천 온라인 강좌&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%AC%B4%EB%A3%8C-%EC%B6%94%EC%B2%9C-%EC%98%A8%EB%9D%BC%EC%9D%B8-%EA%B0%95%EC%A2%8C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/ClIQff8.jpg"&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="파이썬"&gt;파이썬&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%ED%8C%8C%EC%9D%B4%EC%8D%AC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="140" src="http://i.imgur.com/5g6Q1xj.png" style="float: right"&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 코드카데미 파이썬(한국어)&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://tryhelloworld.co.kr/courses/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9E%85%EB%AC%B8"&gt;http://tryhelloworld.co.kr/courses/파이썬-입문&lt;/a&gt; [helloworld] 파이썬 입문&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://goo.gl/wnMDvJ"&gt;https://goo.gl/wnMDvJ&lt;/a&gt; [인프런] Python(파이썬) 프로그래밍 입문부터 활용까지&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/"&gt;https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/&lt;/a&gt; 파이썬을 배우는 최고의 방법&lt;p&gt;&lt;a href="https://financedata.github.com/posts/recommended-free-online-courses.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>course</category><category>free</category><category>online</category><category>python</category><guid>https://financedata.github.com/posts/recommended-free-online-courses.html</guid><pubDate>Wed, 08 Feb 2017 19:45:16 GMT</pubDate></item><item><title>코드카데미 파이썬 주피터 노트북</title><link>https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="코드카데미-파이썬-주피터-노트북"&gt;코드카데미 파이썬 주피터 노트북&lt;a class="anchor-link" href="https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html#%EC%BD%94%EB%93%9C%EC%B9%B4%EB%8D%B0%EB%AF%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A3%BC%ED%94%BC%ED%84%B0-%EB%85%B8%ED%8A%B8%EB%B6%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;img align="left" src="http://i.imgur.com/WPFSTu7.png"&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;본 문서는 코드카데미 파이썬(한국어) 강좌 &lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 의 각 Chapter의 내용을 Jupyter Notebook 으로 정리한 문서입니다.  &lt;br&gt; 파이썬을 처음 접하시는 분에게 추천 합니다.
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>codeademy</category><category>jupyter notebook</category><category>python</category><guid>https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html</guid><pubDate>Fri, 27 Jan 2017 11:45:11 GMT</pubDate></item><item><title>홈 서버 만들기</title><link>https://financedata.github.com/posts/building_home_server.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="집에-서버가-필요한가?"&gt;집에 서버가 필요한가?&lt;a class="anchor-link" href="https://financedata.github.com/posts/building_home_server.html#%EC%A7%91%EC%97%90-%EC%84%9C%EB%B2%84%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="http://i.imgur.com/cHv88N7.png"&gt;&lt;/p&gt;
-&lt;p&gt;서버(server)란 서비스를 제공하는 컴퓨터 혹은 프로그램을 말하지만, 간단하게 한마디로 말하면 24시간 켜져 있는 컴퓨터를 말합니다.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/building_home_server.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>home</category><category>python</category><category>server</category><guid>https://financedata.github.com/posts/building_home_server.html</guid><pubDate>Mon, 07 Nov 2016 11:30:10 GMT</pubDate></item><item><title>Python3 데이터 환경 만들기 요약</title><link>https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Python3-개발-환경-만들기-요약"&gt;Python3 개발 환경 만들기 요약&lt;a class="anchor-link" href="https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html#Python3-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9A%94%EC%95%BD"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;데이터 분석을 위한 Python3 개발 환경을 만드는 과정을 요약
-&lt;img width="60%" src="http://i.imgur.com/iMzS1Gr.png"&gt;
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dev</category><category>python</category><category>python3</category><category>ubuntu</category><guid>https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html</guid><pubDate>Mon, 07 Nov 2016 10:22:10 GMT</pubDate></item><item><title>헤드리스 Dropbox</title><link>https://financedata.github.com/posts/headless_dropbox.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="헤드리스-Dropbox"&gt;헤드리스 Dropbox&lt;a class="anchor-link" href="https://financedata.github.com/posts/headless_dropbox.html#%ED%97%A4%EB%93%9C%EB%A6%AC%EC%8A%A4-Dropbox"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="480" src="https://cf.dropboxstatic.com/static/images/brand/logotype-vflHjIsop.svg"&gt;&lt;/p&gt;
-&lt;p&gt;Dropbox는 우분투에서도 잘 수행 된다. 하지만, 다수의 서버를 운영하거나 클라우드의 우부투 박스를 활용하는 경우 GUI가 없는 상황에서도 Dropbox와 같은 클라우드 동기화 서비스를 활용할 수 있다면 편리한 점이 많다. 백업을 자동화 할 수 있고, 서버간의 동기화도 Dropbox를 이용해 해결할 수 있다.
-GUI나 콘솔 없이 터미널로만 접근해서 사용해야 하는 소프트웨어 혹은 시스템을 헤드리스(headless) 소프트웨어 혹은 헤드리스 시스템이라고 한다.
-물론 리눅스에 Rsync와 같은 좋은 동기화 솔루션이 있지만, 데스크탑과 함께 사용하는 편의성을 따지자면 Dropbox 만큼 간편하고 편리한 것은 드물다.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/headless_dropbox.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dropbox</category><category>headless</category><guid>https://financedata.github.com/posts/headless_dropbox.html</guid><pubDate>Thu, 23 Jun 2016 12:30:10 GMT</pubDate></item><item><title>네이버 파이낸스 - 재무제표 크롤링</title><link>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>FinanceData (dev에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://financedata.github.com/categories/cat_dev.xml"></atom:link><language>ko</language><lastBuildDate>Sat, 25 Feb 2017 17:17:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>네이버 파이낸스 - 재무제표 크롤링</title><link>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -1642,4 +1521,125 @@ GUI나 콘솔 없이 터미널로만 접근해서 사용해야 하는 소프트�
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><category>crawling</category><category>naver</category><guid>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</guid><pubDate>Wed, 24 Feb 2016 17:30:35 GMT</pubDate></item></channel></rss>
+</description><category>crawling</category><category>naver</category><guid>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</guid><pubDate>Fri, 24 Feb 2017 17:30:35 GMT</pubDate></item><item><title>[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다</title><link>https://financedata.github.com/posts/jupyter-notebook-authentication.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-Jupyter-Notebook-실행시-토큰을-입력하라고-나옵니다"&gt;[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-authentication.html#%5BFAQ%5D-Jupyter-Notebook-%EC%8B%A4%ED%96%89%EC%8B%9C-%ED%86%A0%ED%81%B0%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%98%EB%9D%BC%EA%B3%A0-%EB%82%98%EC%98%B5%EB%8B%88%EB%8B%A4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: Jupyter Notebook 실행시 토큰 혹은 패스워드를 입력하라고 나옵니다.&lt;/li&gt;
+&lt;li&gt;A: "jupyter notebook list" 명령하여 표시되는 토큰을 입력하거나 프로파일을 생성하여 패스워드를 설정합니다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/1M0SKt3.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter-notebook-authentication.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>authentication</category><category>jupyter</category><category>notebookm</category><category>python</category><guid>https://financedata.github.com/posts/jupyter-notebook-authentication.html</guid><pubDate>Mon, 13 Feb 2017 00:10:26 GMT</pubDate></item><item><title>Jupyter Notebook 키보드 바로가기</title><link>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Jupyter-Notebook-키보드-바로가기"&gt;Jupyter Notebook 키보드 바로가기&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html#Jupyter-Notebook-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h5 id="Jupyter-Notebook의-몇가지-키보드-바로가기-조합을-익혀-두면-훨씬-빠르게-그리고-편리하게-사용할-수-있다."&gt;Jupyter Notebook의 몇가지 키보드 바로가기 조합을 익혀 두면 훨씬 빠르게 그리고 편리하게 사용할 수 있다.&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html#Jupyter-Notebook%EC%9D%98-%EB%AA%87%EA%B0%80%EC%A7%80-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EC%A1%B0%ED%95%A9%EC%9D%84-%EC%9D%B5%ED%98%80-%EB%91%90%EB%A9%B4-%ED%9B%A8%EC%94%AC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4."&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/AWtjxpH.jpg"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="명령모드와-편집모드"&gt;명령모드와 편집모드&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html#%EB%AA%85%EB%A0%B9%EB%AA%A8%EB%93%9C%EC%99%80-%ED%8E%B8%EC%A7%91%EB%AA%A8%EB%93%9C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Jupyter Notebook 키보드 입력에는 두 가지 모드가 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;명령모드(Command mode): 노트북의 셀을 편집 (셀에 회색 테두리)&lt;/li&gt;
+&lt;li&gt;편집모드(Edit mode): 셀에 있는 텍스트나 코드를 편집 (셀에 녹색 테두리)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Esc&lt;/code&gt;키를 누르면 명령모드로, &lt;code&gt;Enter&lt;/code&gt;를 누르면 편집모드로 상호전환 된다. 명령모드에서 &lt;code&gt;J&lt;/code&gt;, &lt;code&gt;K&lt;/code&gt; 키로 아래/위로 이동 할 수 있다 (페이스북, 트위터, Google+ 같은 SNS 서비스에서도 &lt;code&gt;J&lt;/code&gt;, &lt;code&gt;K&lt;/code&gt;키를 써서 아래/위로 이동할 수 있다. 의외로 편리하다).&lt;/p&gt;
+&lt;p&gt;처음 접했다면 명령모드와 편집모드를 나누는 것이 다소 불편해 볼 수 있으나 손에 익으면 훨씬 조작이 빠르다. 마우스나 화살표키로 손을 이동하지 않아도 되기 때문이다. &lt;strike&gt;유닉스 vi (혹은 GNU vim) 에디터에 익숙한 사람들은 바로 이해할 수 있을 것이다.&lt;/strike&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>jupyter</category><category>keyboard</category><category>notebook</category><guid>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</guid><pubDate>Thu, 09 Feb 2017 02:41:16 GMT</pubDate></item><item><title>추천 무료 온라인 강좌</title><link>https://financedata.github.com/posts/recommended-free-online-courses.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h4 id="(파이썬-데이터-사이언스-입문자를-위한)"&gt;(파이썬 데이터 사이언스 입문자를 위한)&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#(%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%EC%9E%85%EB%AC%B8%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h2 id="무료-추천-온라인-강좌"&gt;무료 추천 온라인 강좌&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%AC%B4%EB%A3%8C-%EC%B6%94%EC%B2%9C-%EC%98%A8%EB%9D%BC%EC%9D%B8-%EA%B0%95%EC%A2%8C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/ClIQff8.jpg"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="파이썬"&gt;파이썬&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%ED%8C%8C%EC%9D%B4%EC%8D%AC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="140" src="http://i.imgur.com/5g6Q1xj.png" style="float: right"&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 코드카데미 파이썬(한국어)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://tryhelloworld.co.kr/courses/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9E%85%EB%AC%B8"&gt;http://tryhelloworld.co.kr/courses/파이썬-입문&lt;/a&gt; [helloworld] 파이썬 입문&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://goo.gl/wnMDvJ"&gt;https://goo.gl/wnMDvJ&lt;/a&gt; [인프런] Python(파이썬) 프로그래밍 입문부터 활용까지&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/"&gt;https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/&lt;/a&gt; 파이썬을 배우는 최고의 방법&lt;p&gt;&lt;a href="https://financedata.github.com/posts/recommended-free-online-courses.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>course</category><category>free</category><category>online</category><category>python</category><guid>https://financedata.github.com/posts/recommended-free-online-courses.html</guid><pubDate>Wed, 08 Feb 2017 19:45:16 GMT</pubDate></item><item><title>코드카데미 파이썬 주피터 노트북</title><link>https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="코드카데미-파이썬-주피터-노트북"&gt;코드카데미 파이썬 주피터 노트북&lt;a class="anchor-link" href="https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html#%EC%BD%94%EB%93%9C%EC%B9%B4%EB%8D%B0%EB%AF%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A3%BC%ED%94%BC%ED%84%B0-%EB%85%B8%ED%8A%B8%EB%B6%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img align="left" src="http://i.imgur.com/WPFSTu7.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;본 문서는 코드카데미 파이썬(한국어) 강좌 &lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 의 각 Chapter의 내용을 Jupyter Notebook 으로 정리한 문서입니다.  &lt;br&gt; 파이썬을 처음 접하시는 분에게 추천 합니다.
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>codeademy</category><category>jupyter notebook</category><category>python</category><guid>https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html</guid><pubDate>Fri, 27 Jan 2017 11:45:11 GMT</pubDate></item><item><title>홈 서버 만들기</title><link>https://financedata.github.com/posts/building_home_server.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="집에-서버가-필요한가?"&gt;집에 서버가 필요한가?&lt;a class="anchor-link" href="https://financedata.github.com/posts/building_home_server.html#%EC%A7%91%EC%97%90-%EC%84%9C%EB%B2%84%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="http://i.imgur.com/cHv88N7.png"&gt;&lt;/p&gt;
+&lt;p&gt;서버(server)란 서비스를 제공하는 컴퓨터 혹은 프로그램을 말하지만, 간단하게 한마디로 말하면 24시간 켜져 있는 컴퓨터를 말합니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/building_home_server.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>home</category><category>python</category><category>server</category><guid>https://financedata.github.com/posts/building_home_server.html</guid><pubDate>Mon, 07 Nov 2016 11:30:10 GMT</pubDate></item><item><title>Python3 데이터 환경 만들기 요약</title><link>https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Python3-개발-환경-만들기-요약"&gt;Python3 개발 환경 만들기 요약&lt;a class="anchor-link" href="https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html#Python3-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%9A%94%EC%95%BD"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;데이터 분석을 위한 Python3 개발 환경을 만드는 과정을 요약
+&lt;img width="60%" src="http://i.imgur.com/iMzS1Gr.png"&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dev</category><category>python</category><category>python3</category><category>ubuntu</category><guid>https://financedata.github.com/posts/building_ubuntu_python_data_analysis_environment_summary.html</guid><pubDate>Mon, 07 Nov 2016 10:22:10 GMT</pubDate></item><item><title>헤드리스 Dropbox</title><link>https://financedata.github.com/posts/headless_dropbox.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="헤드리스-Dropbox"&gt;헤드리스 Dropbox&lt;a class="anchor-link" href="https://financedata.github.com/posts/headless_dropbox.html#%ED%97%A4%EB%93%9C%EB%A6%AC%EC%8A%A4-Dropbox"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="480" src="https://cf.dropboxstatic.com/static/images/brand/logotype-vflHjIsop.svg"&gt;&lt;/p&gt;
+&lt;p&gt;Dropbox는 우분투에서도 잘 수행 된다. 하지만, 다수의 서버를 운영하거나 클라우드의 우부투 박스를 활용하는 경우 GUI가 없는 상황에서도 Dropbox와 같은 클라우드 동기화 서비스를 활용할 수 있다면 편리한 점이 많다. 백업을 자동화 할 수 있고, 서버간의 동기화도 Dropbox를 이용해 해결할 수 있다.
+GUI나 콘솔 없이 터미널로만 접근해서 사용해야 하는 소프트웨어 혹은 시스템을 헤드리스(headless) 소프트웨어 혹은 헤드리스 시스템이라고 한다.
+물론 리눅스에 Rsync와 같은 좋은 동기화 솔루션이 있지만, 데스크탑과 함께 사용하는 편의성을 따지자면 Dropbox 만큼 간편하고 편리한 것은 드물다.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/headless_dropbox.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dropbox</category><category>headless</category><guid>https://financedata.github.com/posts/headless_dropbox.html</guid><pubDate>Thu, 23 Jun 2016 12:30:10 GMT</pubDate></item></channel></rss>
