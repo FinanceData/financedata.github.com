@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1488043052.155608
+_modified_time = 1488043245.2814338
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl'
 _template_uri = 'comments_helper_googleplus.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_link', 'comment_link_script', 'comment_form']
+_exports = ['comment_link_script', 'comment_link', 'comment_form']
 
 
 def render_body(context,**pageargs):
@@ -26,6 +26,16 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_comment_link_script(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        __M_writer = context.writer()
+        __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_comment_link(context,link,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -33,16 +43,6 @@ def render_comment_link(context,link,identifier):
         __M_writer('\n<div class="g-commentcount" data-href="')
         __M_writer(str(link))
         __M_writer('"></div>\n<script src="https://apis.google.com/js/plusone.js"></script>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_comment_link_script(context):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        __M_writer = context.writer()
-        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -62,6 +62,6 @@ def render_comment_form(context,url,title,identifier):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl", "source_encoding": "utf-8", "line_map": {"33": 11, "34": 12, "35": 12, "41": 16, "55": 2, "45": 16, "16": 0, "51": 2, "21": 9, "22": 14, "23": 17, "56": 5, "57": 5, "29": 11, "63": 57}, "uri": "comments_helper_googleplus.tmpl"}
+{"source_encoding": "utf-8", "uri": "comments_helper_googleplus.tmpl", "line_map": {"33": 16, "39": 11, "57": 5, "43": 11, "44": 12, "45": 12, "16": 0, "51": 2, "21": 9, "22": 14, "23": 17, "56": 5, "55": 2, "29": 16, "63": 57}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl"}
 __M_END_METADATA
 """

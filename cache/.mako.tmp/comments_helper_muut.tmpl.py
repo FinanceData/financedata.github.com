@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1488043052.1519146
+_modified_time = 1488043245.2774029
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_muut.tmpl'
 _template_uri = 'comments_helper_muut.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_link', 'comment_link_script', 'comment_form']
+_exports = ['comment_link_script', 'comment_link', 'comment_form']
 
 
 def render_body(context,**pageargs):
@@ -27,21 +27,21 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_comment_link(context,link,identifier):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        __M_writer = context.writer()
-        __M_writer('\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_comment_link_script(context):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
         __M_writer('\n<script src="https://cdn.muut.com/1/moot.min.js"></script>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_comment_link(context,link,identifier):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        __M_writer = context.writer()
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -66,6 +66,6 @@ def render_comment_form(context,url,title,identifier):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_muut.tmpl", "source_encoding": "utf-8", "line_map": {"34": 7, "67": 61, "40": 11, "55": 3, "44": 11, "16": 0, "56": 4, "50": 3, "21": 2, "22": 5, "23": 8, "24": 13, "57": 4, "58": 4, "59": 4, "60": 4, "61": 4, "30": 7}, "uri": "comments_helper_muut.tmpl"}
+{"source_encoding": "utf-8", "uri": "comments_helper_muut.tmpl", "line_map": {"34": 11, "67": 61, "40": 7, "55": 3, "44": 7, "16": 0, "56": 4, "50": 3, "21": 2, "22": 5, "23": 8, "24": 13, "57": 4, "58": 4, "59": 4, "60": 4, "61": 4, "30": 11}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_muut.tmpl"}
 __M_END_METADATA
 """
