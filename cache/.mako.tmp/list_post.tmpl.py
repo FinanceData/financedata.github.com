@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1488043571.2440283
+_modified_time = 1488353447.462012
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list_post.tmpl'
 _template_uri = 'list_post.tmpl'
@@ -32,13 +32,13 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
-        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         def content():
             return render_content(context._locals(__M_locals))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
         title = _import_ns.get('title', context.get('title', UNDEFINED))
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n\n')
@@ -57,13 +57,13 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
-        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         def content():
             return render_content(context)
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
         title = _import_ns.get('title', context.get('title', UNDEFINED))
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<article class="listpage">\n    <header>\n        <h1>')
         __M_writer(filters.html_escape(str(title)))
