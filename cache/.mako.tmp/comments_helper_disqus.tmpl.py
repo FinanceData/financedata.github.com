@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1488386322.912795
+_modified_time = 1488386606.3993433
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl'
 _template_uri = 'comments_helper_disqus.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_form', 'comment_link_script', 'comment_link']
+_exports = ['comment_link', 'comment_form', 'comment_link_script']
 
 
 import json 
@@ -25,6 +25,23 @@ def render_body(context,**pageargs):
         __M_writer('\n\n')
         __M_writer('\n\n\n')
         __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_comment_link(context,link,identifier):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        comment_system_id = context.get('comment_system_id', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if comment_system_id:
+            __M_writer('    <a href="')
+            __M_writer(str(link))
+            __M_writer('#disqus_thread" data-disqus-identifier="')
+            __M_writer(str(identifier))
+            __M_writer('">Comments</a>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -77,25 +94,8 @@ def render_comment_link_script(context):
         context.caller_stack._pop_frame()
 
 
-def render_comment_link(context,link,identifier):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        comment_system_id = context.get('comment_system_id', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        if comment_system_id:
-            __M_writer('    <a href="')
-            __M_writer(str(link))
-            __M_writer('#disqus_thread" data-disqus-identifier="')
-            __M_writer(str(identifier))
-            __M_writer('">Comments</a>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"uri": "comments_helper_disqus.tmpl", "line_map": {"16": 3, "18": 0, "23": 2, "24": 3, "25": 31, "26": 37, "27": 44, "33": 5, "39": 5, "40": 6, "41": 7, "42": 9, "43": 9, "44": 10, "45": 11, "46": 11, "47": 11, "48": 13, "49": 13, "50": 13, "51": 14, "52": 14, "53": 16, "54": 17, "55": 18, "56": 19, "57": 19, "58": 19, "59": 21, "65": 40, "70": 40, "71": 41, "72": 42, "73": 42, "74": 42, "80": 33, "85": 33, "86": 34, "87": 35, "88": 35, "89": 35, "90": 35, "91": 35, "97": 91}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl", "source_encoding": "utf-8"}
+{"line_map": {"16": 3, "18": 0, "23": 2, "24": 3, "25": 31, "26": 37, "27": 44, "33": 33, "38": 33, "39": 34, "40": 35, "41": 35, "42": 35, "43": 35, "44": 35, "50": 5, "56": 5, "57": 6, "58": 7, "59": 9, "60": 9, "61": 10, "62": 11, "63": 11, "64": 11, "65": 13, "66": 13, "67": 13, "68": 14, "69": 14, "70": 16, "71": 17, "72": 18, "73": 19, "74": 19, "75": 19, "76": 21, "82": 40, "87": 40, "88": 41, "89": 42, "90": 42, "91": 42, "97": 91}, "source_encoding": "utf-8", "uri": "comments_helper_disqus.tmpl", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl"}
 __M_END_METADATA
 """
