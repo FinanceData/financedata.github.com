@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-03-01T16:38:00Z</lastmod>
+  <lastmod>2017-03-02T04:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-03-01T07:41:00Z</lastmod>
+  <lastmod>2017-03-02T04:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/assertionerror.html</loc>
@@ -51,7 +51,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
-  <lastmod>2017-03-01T16:43:00Z</lastmod>
+  <lastmod>2017-03-02T04:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/chart.html</loc>
@@ -75,7 +75,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/crawling.html</loc>
-  <lastmod>2017-03-01T16:38:00Z</lastmod>
+  <lastmod>2017-03-02T04:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/data.html</loc>
@@ -107,7 +107,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/encoding.html</loc>
-  <lastmod>2017-03-01T16:38:00Z</lastmod>
+  <lastmod>2017-03-02T04:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/faq.html</loc>
@@ -182,12 +182,20 @@
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/numbser.html</loc>
+  <lastmod>2017-03-02T04:52:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/online.html</loc>
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/packaging.html</loc>
   <lastmod>2017-03-01T16:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/phone.html</loc>
+  <lastmod>2017-03-02T04:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/pip.html</loc>
@@ -199,7 +207,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python.html</loc>
-  <lastmod>2017-03-01T16:38:00Z</lastmod>
+  <lastmod>2017-03-02T04:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python3.html</loc>
@@ -231,7 +239,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-1.html</loc>
-  <lastmod>2017-03-01T16:38:00Z</lastmod>
+  <lastmod>2017-03-02T04:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -255,7 +263,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/dataframe-extract-rows-and-concat-as-column.html</loc>
-  <lastmod>2017-03-01T16:43:00Z</lastmod>
+  <lastmod>2017-03-02T04:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/definitions-of-designations.html</loc>
@@ -308,6 +316,10 @@
  <url>
   <loc>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</loc>
   <lastmod>2017-03-01T16:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/phone-numbser-site-crawling.html</loc>
+  <lastmod>2017-03-02T04:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
