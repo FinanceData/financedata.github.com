@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2017-03-01T16:43:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/crawling.xml</loc>
-  <lastmod>2017-03-02T04:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/data.xml</loc>
@@ -78,6 +78,10 @@
   <lastmod>2017-02-09T02:53:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/display.xml</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/dropbox.xml</loc>
   <lastmod>2017-02-09T02:53:00Z</lastmod>
  </sitemap>
@@ -96,6 +100,10 @@
  <sitemap>
   <loc>https://financedata.github.com/categories/fill.xml</loc>
   <lastmod>2017-02-09T02:53:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://financedata.github.com/categories/format.xml</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/free.xml</loc>
@@ -151,7 +159,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/naver.xml</loc>
-  <lastmod>2017-02-25T17:26:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/notebook.xml</loc>
@@ -174,6 +182,10 @@
   <lastmod>2017-02-13T00:01:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/pandas.xml</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/phone.xml</loc>
   <lastmod>2017-03-02T04:53:00Z</lastmod>
  </sitemap>
@@ -194,8 +206,20 @@
   <lastmod>2017-02-09T02:53:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/re.xml</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/realestate.xml</loc>
   <lastmod>2017-03-01T16:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://financedata.github.com/categories/regex.xml</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://financedata.github.com/categories/requests.xml</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/server.xml</loc>
@@ -219,10 +243,10 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2017-03-02T04:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2017-03-02T04:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </sitemap>
 </sitemapindex>
