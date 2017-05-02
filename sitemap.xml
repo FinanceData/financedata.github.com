@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://financedata.github.com/</loc>
-  <lastmod>2017-02-09T02:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/2016/</loc>
@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-03-02T04:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-03-02T04:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/assertionerror.html</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-03-01T16:43:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -75,7 +75,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/crawling.html</loc>
-  <lastmod>2017-03-02T04:52:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/data.html</loc>
@@ -98,6 +98,10 @@
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/display.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/dropbox.html</loc>
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
@@ -116,6 +120,10 @@
  <url>
   <loc>https://financedata.github.com/categories/fill.html</loc>
   <lastmod>2017-03-01T16:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/format.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/free.html</loc>
@@ -171,7 +179,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/naver.html</loc>
-  <lastmod>2017-03-01T16:38:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/notebook.html</loc>
@@ -194,6 +202,10 @@
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/pandas.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/phone.html</loc>
   <lastmod>2017-03-02T04:52:00Z</lastmod>
  </url>
@@ -214,8 +226,20 @@
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/re.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/realestate.html</loc>
   <lastmod>2017-03-01T16:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/regex.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/requests.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/server.html</loc>
@@ -239,7 +263,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-1.html</loc>
-  <lastmod>2017-03-02T04:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/index-2.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -318,8 +346,16 @@
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/posts/naver_realtime_search_crawling.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/pandas-display-format.html</loc>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/posts/phone-numbser-site-crawling.html</loc>
-  <lastmod>2017-03-02T04:53:00Z</lastmod>
+  <lastmod>2017-05-02T17:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
