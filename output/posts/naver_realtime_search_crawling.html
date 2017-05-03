@@ -16,6 +16,7 @@
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="네이버 실시간 검색어 크롤링">
 <meta name="author" content="plusjune">
 <link rel="prev" href="pandas-display-format.html" title="pandas 출력 포맷팅" type="text/html">
+<link rel="next" href="naver_realtime_search_json.html" title="네이버 실시간 검색어 크롤링 (2줄) JSON 버전" type="text/html">
 <meta property="og:site_name" content="FinanceData">
 <meta property="og:title" content="네이버 실시간 검색어 크롤링 (1줄)">
 <meta property="og:url" content="https://financedata.github.com/posts/naver_realtime_search_crawling.html">
@@ -116,11 +117,21 @@
 <h2 id="네이버-실시간-급상승-크롤링">네이버 실시간 급상승 크롤링<a class="anchor-link" href="naver_realtime_search_crawling.html#%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EA%B8%89%EC%83%81%EC%8A%B9-%ED%81%AC%EB%A1%A4%EB%A7%81">¶</a>
 </h2>
 <p><a href="http://naver.com">http://naver.com</a>
-<img src="http://i.imgur.com/6U6miC9.png"></p>
+<img src="http://i.imgur.com/AJH8h1d.png"></p>
 <p>짧으면서 최대한 많은 의미를 담기 위한 Python 크롤링 코드. import 문을 제외하면 딱 1줄 !</p>
-<h5 id="2017-https://financedata.github.io">2017 <a href="https://financedata.github.io">https://financedata.github.io</a><a class="anchor-link" href="naver_realtime_search_crawling.html#2017-https://financedata.github.io">¶</a>
+<h5 id="2017-https://fb.com/financedata">2017 <a href="https://fb.com/financedata">https://fb.com/financedata</a><a class="anchor-link" href="naver_realtime_search_crawling.html#2017-https://fb.com/financedata">¶</a>
 </h5>
 <!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="딱-한줄">딱 한줄<a class="anchor-link" href="naver_realtime_search_crawling.html#%EB%94%B1-%ED%95%9C%EC%A4%84">¶</a>
+</h2>
 </div>
 </div>
 </div>
@@ -132,7 +143,7 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'&lt;span class="ah_k"&gt;(.*)&lt;/span&gt;'</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://naver.com'</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'&lt;span class="ah_k"&gt;(.*?)&lt;/span&gt;'</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://naver.com'</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -149,26 +160,26 @@
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>['조윤희',
- '라이언 방',
- '문재인 세월호',
- '가디언즈 오브 더 갤럭시2',
- '역적 결방',
- '레알마드리드 아틀레티코마드리드',
- '석가탄신일',
- '장제원',
+<pre>['사전투표소',
+ '사전투표 시간',
+ '사전투표 장소',
+ '함소원',
+ '중앙선거관리위원회',
+ '이태곤',
+ '사전투표',
+ '2017년 대통령선거 사전투표',
+ '사전투표 방법',
+ '한끼줍쇼',
+ '연금복권',
+ '이수경',
+ '가족관계증명서 인터넷발급',
+ '공유',
+ '유담',
  '챔피언스리그',
- '바른정당',
- '역적',
- '복학왕',
- '유승민',
- '국민의당',
- '완벽한 아내',
- '지지율',
- '대선후보 지지율',
- '어버이날',
- '귓속말',
- '유담']</pre>
+ '백상예술대상',
+ '추리의 여왕',
+ '날씨예보',
+ 'sbs']</pre>
 </div>
 
 </div>
@@ -182,7 +193,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="2017-https://fb.com/financedata">2017 <a href="https://fb.com/financedata">https://fb.com/financedata</a><a class="anchor-link" href="naver_realtime_search_crawling.html#2017-https://fb.com/financedata">¶</a>
+<h5 id="2017-https://financedata.github.io">2017 <a href="https://financedata.github.io">https://financedata.github.io</a><a class="anchor-link" href="naver_realtime_search_crawling.html#2017-https://financedata.github.io">¶</a>
 </h5>
 </div>
 </div>
@@ -201,6 +212,9 @@
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="pandas-display-format.html" rel="prev" title="pandas 출력 포맷팅">이전 포스트</a>
+            </li>
+            <li class="next">
+                <a href="naver_realtime_search_json.html" rel="next" title="네이버 실시간 검색어 크롤링 (2줄) JSON 버전">다음 포스트</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
         
