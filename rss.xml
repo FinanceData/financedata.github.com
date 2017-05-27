@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link href="https://financedata.github.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>ko</language><lastBuildDate>Sat, 06 May 2017 12:36:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>네이버 실시간 검색어 크롤링 (2줄) JSON 버전</title><link>https://financedata.github.com/posts/naver_realtime_search_json.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link href="https://financedata.github.com/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Sat, 27 May 2017 01:55:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?</title><link>https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-Jupyter-Notebook에서-값을-연속적으로-출력하려면?"&gt;[FAQ] Jupyter Notebook에서 값을 연속적으로 출력하려면?&lt;a class="anchor-link" href="https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html#%5BFAQ%5D-Jupyter-Notebook%EC%97%90%EC%84%9C-%EA%B0%92%EC%9D%84-%EC%97%B0%EC%86%8D%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EB%A0%A4%EB%A9%B4?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: Jupyter Notebook 셀에서 마지막 값 하나만이 아니라 중간에 모든 값을 차례로 출력하고 싶습니다.&lt;/li&gt;
+&lt;li&gt;A: print(), IPython.display를 써서 매번 출력하거나 InteractiveShell의 옵션을 지정합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/tXzBmZX.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>jupyter</category><category>notebook</category><category>python</category><guid>https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html</guid><pubDate>Sat, 27 May 2017 01:40:11 GMT</pubDate></item><item><title>네이버 실시간 검색어 크롤링 (2줄) JSON 버전</title><link>https://financedata.github.com/posts/naver_realtime_search_json.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -141,27 +154,4 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;Esc&lt;/code&gt;키를 누르면 명령모드로, &lt;code&gt;Enter&lt;/code&gt;를 누르면 편집모드로 상호전환 된다. 명령모드에서 &lt;code&gt;J&lt;/code&gt;, &lt;code&gt;K&lt;/code&gt; 키로 아래/위로 이동 할 수 있다 (페이스북, 트위터, Google+ 같은 SNS 서비스에서도 &lt;code&gt;J&lt;/code&gt;, &lt;code&gt;K&lt;/code&gt;키를 써서 아래/위로 이동할 수 있다. 의외로 편리하다).&lt;/p&gt;
 &lt;p&gt;처음 접했다면 명령모드와 편집모드를 나누는 것이 다소 불편해 볼 수 있으나 손에 익으면 훨씬 조작이 빠르다. 마우스나 화살표키로 손을 이동하지 않아도 되기 때문이다. &lt;strike&gt;유닉스 vi (혹은 GNU vim) 에디터에 익숙한 사람들은 바로 이해할 수 있을 것이다.&lt;/strike&gt;
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>jupyter</category><category>keyboard</category><category>notebook</category><guid>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</guid><pubDate>Thu, 09 Feb 2017 02:41:16 GMT</pubDate></item><item><title>추천 무료 온라인 강좌</title><link>https://financedata.github.com/posts/recommended-free-online-courses.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="(파이썬-데이터-사이언스-입문자를-위한)"&gt;(파이썬 데이터 사이언스 입문자를 위한)&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#(%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%EC%9E%85%EB%AC%B8%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;h2 id="무료-추천-온라인-강좌"&gt;무료 추천 온라인 강좌&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%EB%AC%B4%EB%A3%8C-%EC%B6%94%EC%B2%9C-%EC%98%A8%EB%9D%BC%EC%9D%B8-%EA%B0%95%EC%A2%8C"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/ClIQff8.jpg"&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="파이썬"&gt;파이썬&lt;a class="anchor-link" href="https://financedata.github.com/posts/recommended-free-online-courses.html#%ED%8C%8C%EC%9D%B4%EC%8D%AC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img width="140" src="http://i.imgur.com/5g6Q1xj.png" style="float: right"&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 코드카데미 파이썬(한국어)&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://tryhelloworld.co.kr/courses/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9E%85%EB%AC%B8"&gt;http://tryhelloworld.co.kr/courses/파이썬-입문&lt;/a&gt; [helloworld] 파이썬 입문&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://goo.gl/wnMDvJ"&gt;https://goo.gl/wnMDvJ&lt;/a&gt; [인프런] Python(파이썬) 프로그래밍 입문부터 활용까지&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/"&gt;https://nolboo.kim/blog/2014/08/10/the-best-way-to-learn-python/&lt;/a&gt; 파이썬을 배우는 최고의 방법&lt;p&gt;&lt;a href="https://financedata.github.com/posts/recommended-free-online-courses.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>course</category><category>free</category><category>online</category><category>python</category><guid>https://financedata.github.com/posts/recommended-free-online-courses.html</guid><pubDate>Wed, 08 Feb 2017 19:45:16 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter-notebook-shortcuts.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>jupyter</category><category>keyboard</category><category>notebook</category><guid>https://financedata.github.com/posts/jupyter-notebook-shortcuts.html</guid><pubDate>Thu, 09 Feb 2017 02:41:16 GMT</pubDate></item></channel></rss>
