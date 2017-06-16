@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://financedata.github.com/</loc>
-  <lastmod>2017-05-02T17:36:00Z</lastmod>
+  <lastmod>2017-06-16T18:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/2016/</loc>
@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-06-16T16:39:00Z</lastmod>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-06-16T16:44:00Z</lastmod>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/assertionerror.html</loc>
@@ -51,7 +51,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-06-16T16:44:00Z</lastmod>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -158,6 +158,10 @@
   <lastmod>2017-06-16T16:44:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/google.html</loc>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/hangul.html</loc>
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
@@ -250,6 +254,10 @@
   <lastmod>2017-05-02T18:24:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/pandas_datareader.html</loc>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/phone.html</loc>
   <lastmod>2017-03-02T04:52:00Z</lastmod>
  </url>
@@ -326,6 +334,10 @@
   <lastmod>2017-03-01T16:38:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/yahoo.html</loc>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/galleries/</loc>
   <lastmod>2017-01-27T19:28:00Z</lastmod>
  </url>
@@ -335,11 +347,15 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-2.html</loc>
-  <lastmod>2017-06-16T16:39:00Z</lastmod>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
   <lastmod>2017-01-27T19:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/pages/yahu-painaenseu-johoe-munje.html</loc>
+  <lastmod>2017-06-16T18:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/building_home_server.html</loc>
@@ -367,7 +383,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html</loc>
-  <lastmod>2017-06-16T16:35:00Z</lastmod>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/faq_crawling_data_encoding.html</loc>
@@ -435,7 +451,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/python-basics-part-1.html</loc>
-  <lastmod>2017-06-16T16:44:00Z</lastmod>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/python-basics-part-2.html</loc>
@@ -456,5 +472,9 @@
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
   <lastmod>2017-03-01T16:38:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/yahoo-finance-to-google-finance.html</loc>
+  <lastmod>2017-06-16T18:27:00Z</lastmod>
  </url>
 </urlset>

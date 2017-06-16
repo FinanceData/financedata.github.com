@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link href="https://financedata.github.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>ko</language><lastBuildDate>Fri, 16 Jun 2017 16:44:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python Basics for Data Science - PART 5</title><link>https://financedata.github.com/posts/python-basics-part-5.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FinanceData</title><link>https://financedata.github.com/</link><description>Automate financial data collection and analysis</description><atom:link href="https://financedata.github.com/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Fri, 16 Jun 2017 18:27:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python Basics for Data Science - PART 5</title><link>https://financedata.github.com/posts/python-basics-part-5.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -49,7 +49,25 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Python-Basics-for-Data-Science---PART-1"&gt;Python Basics for Data Science - PART 1&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-1.html#Python-Basics-for-Data-Science---PART-1"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;(파이낸스 데이터 사이언스를 위한 파이썬 언어 기초)&lt;/p&gt;
 &lt;h4 id="주석,-변수와-값,-기본-데이터-타입,-타입-전환,-print()-출력"&gt;주석, 변수와 값, 기본 데이터 타입, 타입 전환, print() 출력&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-1.html#%EC%A3%BC%EC%84%9D,-%EB%B3%80%EC%88%98%EC%99%80-%EA%B0%92,-%EA%B8%B0%EB%B3%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85,-%ED%83%80%EC%9E%85-%EC%A0%84%ED%99%98,-print()-%EC%B6%9C%EB%A0%A5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;img width="300" src="http://i.imgur.com/tHmNhjm.png"&gt;&lt;/p&gt;
-&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-1.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python-basics-part-1.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>basic</category><category>print</category><category>python</category><category>type</category><category>value</category><category>variable</category><guid>https://financedata.github.com/posts/python-basics-part-1.html</guid><pubDate>Thu, 15 Jun 2017 19:45:10 GMT</pubDate></item><item><title>Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?</title><link>https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-1.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python-basics-part-1.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>basic</category><category>print</category><category>python</category><category>type</category><category>value</category><category>variable</category><guid>https://financedata.github.com/posts/python-basics-part-1.html</guid><pubDate>Thu, 15 Jun 2017 19:45:10 GMT</pubDate></item><item><title>Yahoo Finance to Google Finance</title><link>https://financedata.github.com/posts/yahoo-finance-to-google-finance.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Yahoo-Finance-to-Google-Finance"&gt;Yahoo Finance to Google Finance&lt;a class="anchor-link" href="https://financedata.github.com/posts/yahoo-finance-to-google-finance.html#Yahoo-Finance-to-Google-Finance"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Yahoo의 서비스 구조 변경 (2017년 5월 15일 부터 아래 2개 URL 서비스 불가)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ichart.finance.yahoo.com/table.csv"&gt;https://ichart.finance.yahoo.com/table.csv&lt;/a&gt; (pandas_datareader 에서 사용하는 URL)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://real-chart.finance.yahoo.com/table.csv"&gt;http://real-chart.finance.yahoo.com/table.csv&lt;/a&gt; (URL을 통해 직접 가격 데이터 가져오는 URL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 때문에, pandas_datareader 에서 yahoo로 지정했을 경우 동작하지 않음 (2017년 6월 현재)&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/JGlGylO.png"&gt;&lt;/p&gt;
+&lt;p&gt;이 부분들을 Google Finance 대체 할 수 있으며, &lt;br&gt;
+아래와 같이 코스피 지수, 개별종목, 가격을 URL에서 직접 가져오기 3가지로 부분을 정리하였습니다 &lt;br&gt;
+(다른 Yahoo finance API는 잘 동작합니다)&lt;/p&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/yahoo-finance-to-google-finance.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/yahoo-finance-to-google-finance.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>google</category><category>pandas_datareader</category><category>yahoo</category><guid>https://financedata.github.com/posts/yahoo-finance-to-google-finance.html</guid><pubDate>Sat, 03 Jun 2017 18:20:25 GMT</pubDate></item><item><title>Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?</title><link>https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -96,29 +114,4 @@
 &lt;li&gt;Q: pandas 포맷팅 - 숫자에 e가 표시여부, 소수점 자리수 등을 지정하여 읽기 쉽게 하고자 합니다&lt;/li&gt;
 &lt;li&gt;A: pd.set_option()으로 상세한 조정이 가능합니다&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5 id="2017-https://financedata.github.io"&gt;2017 &lt;a href="https://financedata.github.io"&gt;https://financedata.github.io&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/pandas-display-format.html#2017-https://financedata.github.io"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/pandas-display-format.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>display</category><category>format</category><category>pandas</category><guid>https://financedata.github.com/posts/pandas-display-format.html</guid><pubDate>Tue, 02 May 2017 05:45:16 GMT</pubDate></item><item><title>[FAQ] 전화번호부 사이트 크롤링</title><link>https://financedata.github.com/posts/phone-numbser-site-crawling.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="전화번호부-사이트-크롤링"&gt;전화번호부 사이트 크롤링&lt;a class="anchor-link" href="https://financedata.github.com/posts/phone-numbser-site-crawling.html#%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%ED%81%AC%EB%A1%A4%EB%A7%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="http://www.isuperpage.co.kr/image/logo.png"&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Q: 전화번호부 사이트를 검색하여 목록을 추출하고자 하는데, 데이터 전달이 되지 않습니다.&lt;/li&gt;
-&lt;li&gt;A: 데이터를 인코딩 해주세요. 국내 사이트의 경우 종종 EUC-KR로 인코딩된 데이터만 수용하도록 설계된 경우가 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id="http://fb.com/financedata"&gt;&lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/phone-numbser-site-crawling.html#http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="전화번호부-사이트"&gt;전화번호부 사이트&lt;a class="anchor-link" href="https://financedata.github.com/posts/phone-numbser-site-crawling.html#%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="http://www.isuperpage.co.kr"&gt;http://www.isuperpage.co.kr&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;지역과 범주를 입력하고 검색하면,
-&lt;img src="http://i.imgur.com/jMesQJZ.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://financedata.github.com/posts/phone-numbser-site-crawling.html"&gt;더 읽기…&lt;/a&gt; (읽기 3분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>crawling</category><category>encoding</category><category>numbser</category><category>phone</category><category>python</category><guid>https://financedata.github.com/posts/phone-numbser-site-crawling.html</guid><pubDate>Thu, 02 Mar 2017 04:00:16 GMT</pubDate></item></channel></rss>
+&lt;h5 id="2017-https://financedata.github.io"&gt;2017 &lt;a href="https://financedata.github.io"&gt;https://financedata.github.io&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/pandas-display-format.html#2017-https://financedata.github.io"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/pandas-display-format.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>display</category><category>format</category><category>pandas</category><guid>https://financedata.github.com/posts/pandas-display-format.html</guid><pubDate>Tue, 02 May 2017 05:45:16 GMT</pubDate></item></channel></rss>
