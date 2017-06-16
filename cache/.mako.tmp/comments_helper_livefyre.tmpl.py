@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1497631269.7161684
+_modified_time = 1497631485.478572
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl'
 _template_uri = 'comments_helper_livefyre.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_link_script', 'comment_form', 'comment_link']
+_exports = ['comment_link', 'comment_link_script', 'comment_form']
 
 
 def render_body(context,**pageargs):
@@ -21,6 +21,23 @@ def render_body(context,**pageargs):
         __M_writer('\n\n')
         __M_writer('\n\n\n')
         __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_comment_link(context,link,identifier):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        comment_system_id = context.get('comment_system_id', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer('\n    <a href="')
+        __M_writer(str(link))
+        __M_writer('">\n    <span class="livefyre-commentcount" data-lf-site-id="')
+        __M_writer(str(comment_system_id))
+        __M_writer('" data-lf-article-id="')
+        __M_writer(str(identifier))
+        __M_writer('">\n    0 Comments\n    </span>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -51,25 +68,8 @@ def render_comment_form(context,url,title,identifier):
         context.caller_stack._pop_frame()
 
 
-def render_comment_link(context,link,identifier):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        comment_system_id = context.get('comment_system_id', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n    <a href="')
-        __M_writer(str(link))
-        __M_writer('">\n    <span class="livefyre-commentcount" data-lf-site-id="')
-        __M_writer(str(comment_system_id))
-        __M_writer('" data-lf-article-id="')
-        __M_writer(str(identifier))
-        __M_writer('">\n    0 Comments\n    </span>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"uri": "comments_helper_livefyre.tmpl", "source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl", "line_map": {"64": 25, "33": 31, "61": 24, "48": 11, "54": 23, "65": 25, "39": 2, "71": 65, "44": 2, "45": 7, "46": 7, "47": 11, "16": 0, "21": 21, "22": 28, "23": 33, "59": 23, "60": 24, "29": 31, "62": 25, "63": 25}}
+{"source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl", "line_map": {"64": 11, "65": 11, "34": 23, "35": 24, "36": 24, "37": 25, "38": 25, "39": 25, "40": 25, "71": 65, "46": 31, "61": 2, "16": 0, "50": 31, "21": 21, "22": 28, "23": 33, "56": 2, "29": 23, "62": 7, "63": 7}, "uri": "comments_helper_livefyre.tmpl"}
 __M_END_METADATA
 """
