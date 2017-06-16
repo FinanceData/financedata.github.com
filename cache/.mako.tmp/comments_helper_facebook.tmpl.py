@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1497631485.5176535
+_modified_time = 1497637737.3621335
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_facebook.tmpl'
 _template_uri = 'comments_helper_facebook.tmpl'
@@ -68,6 +68,6 @@ def render_comment_form(context,url,title,identifier):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_facebook.tmpl", "line_map": {"33": 28, "34": 29, "35": 29, "54": 2, "48": 46, "41": 32, "61": 8, "46": 32, "47": 46, "16": 0, "69": 63, "21": 26, "22": 30, "23": 62, "59": 2, "60": 8, "29": 28, "62": 25, "63": 25}, "uri": "comments_helper_facebook.tmpl"}
+{"source_encoding": "utf-8", "uri": "comments_helper_facebook.tmpl", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_facebook.tmpl", "line_map": {"33": 28, "34": 29, "35": 29, "54": 2, "48": 46, "41": 32, "61": 8, "46": 32, "47": 46, "16": 0, "69": 63, "21": 26, "22": 30, "23": 62, "59": 2, "60": 8, "29": 28, "62": 25, "63": 25}}
 __M_END_METADATA
 """

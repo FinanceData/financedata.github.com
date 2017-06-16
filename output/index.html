@@ -255,6 +255,51 @@
 </div>
 </div>
     </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/yahoo-finance-to-google-finance.html" class="u-url">Yahoo Finance to Google Finance</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/yahoo-finance-to-google-finance.html" rel="bookmark"><time class="published dt-published" datetime="2017-06-04T03:20:25+09:00" title="2017-06-04 03:20">2017-06-04 03:20</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/yahoo-finance-to-google-finance.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Yahoo-Finance-to-Google-Finance">Yahoo Finance to Google Finance<a class="anchor-link" href="posts/yahoo-finance-to-google-finance.html#Yahoo-Finance-to-Google-Finance">¶</a>
+</h2>
+<p>Yahoo의 서비스 구조 변경 (2017년 5월 15일 부터 아래 2개 URL 서비스 불가)</p>
+<ul>
+<li>
+<a href="https://ichart.finance.yahoo.com/table.csv">https://ichart.finance.yahoo.com/table.csv</a> (pandas_datareader 에서 사용하는 URL)</li>
+<li>
+<a href="http://real-chart.finance.yahoo.com/table.csv">http://real-chart.finance.yahoo.com/table.csv</a> (URL을 통해 직접 가격 데이터 가져오는 URL)</li>
+</ul>
+<p>이 때문에, pandas_datareader 에서 yahoo로 지정했을 경우 동작하지 않음 (2017년 6월 현재)</p>
+<p><img src="http://i.imgur.com/JGlGylO.png"></p>
+<p>이 부분들을 Google Finance 대체 할 수 있으며, <br>
+아래와 같이 코스피 지수, 개별종목, 가격을 URL에서 직접 가져오기 3가지로 부분을 정리하였습니다 <br>
+(다른 Yahoo finance API는 잘 동작합니다)</p>
+<h5 id="2017-FinanceData-http://fb.com/financedata">2017 FinanceData <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="posts/yahoo-finance-to-google-finance.html#2017-FinanceData-http://fb.com/financedata">¶</a>
+</h5>
+<p class="more"><a href="posts/yahoo-finance-to-google-finance.html">더 읽기…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/display-all-values-in-cell-jupyter-notebook.html" class="u-url">Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
@@ -396,58 +441,6 @@
 <h5 id="2017-https://financedata.github.io">2017 <a href="https://financedata.github.io">https://financedata.github.io</a><a class="anchor-link" href="posts/pandas-display-format.html#2017-https://financedata.github.io">¶</a>
 </h5>
 <p class="more"><a href="posts/pandas-display-format.html">더 읽기…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/phone-numbser-site-crawling.html" class="u-url">[FAQ] 전화번호부 사이트 크롤링</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                plusjune
-            </span></p>
-            <p class="dateline"><a href="posts/phone-numbser-site-crawling.html" rel="bookmark"><time class="published dt-published" datetime="2017-03-02T13:00:16+09:00" title="2017-03-02 13:00">2017-03-02 13:00</time></a></p>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/phone-numbser-site-crawling.html">
-
-
-        </span></p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="전화번호부-사이트-크롤링">전화번호부 사이트 크롤링<a class="anchor-link" href="posts/phone-numbser-site-crawling.html#%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%ED%81%AC%EB%A1%A4%EB%A7%81">¶</a>
-</h2>
-<p><img src="http://www.isuperpage.co.kr/image/logo.png"></p>
-<ul>
-<li>Q: 전화번호부 사이트를 검색하여 목록을 추출하고자 하는데, 데이터 전달이 되지 않습니다.</li>
-<li>A: 데이터를 인코딩 해주세요. 국내 사이트의 경우 종종 EUC-KR로 인코딩된 데이터만 수용하도록 설계된 경우가 있습니다.</li>
-</ul>
-<h5 id="http://fb.com/financedata">
-<a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="posts/phone-numbser-site-crawling.html#http://fb.com/financedata">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="전화번호부-사이트">전화번호부 사이트<a class="anchor-link" href="posts/phone-numbser-site-crawling.html#%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8">¶</a>
-</h2>
-<p><a href="http://www.isuperpage.co.kr">http://www.isuperpage.co.kr</a></p>
-<p>지역과 범주를 입력하고 검색하면,
-<img src="http://i.imgur.com/jMesQJZ.png"></p>
-<p class="more"><a href="posts/phone-numbser-site-crawling.html">더 읽기…</a></p>
 </div>
 </div>
 </div>
