@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="날짜와 시간, 통계, 파일 입출력">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Basics for Data Science - PART 5 | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/python-basics-part-5.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="날짜와 시간, 통계, 파일 입출력">
+<meta name="author" content="plusjune">
+<link rel="prev" href="python-basics-part-4.html" title="Python Basics for Data Science - PART 4" type="text/html">
+<link rel="next" href="headless_dropbox.html" title="헤드리스 Dropbox" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="Python Basics for Data Science - PART 5">
+<meta property="og:url" content="https://financedata.github.com/posts/python-basics-part-5.html">
+<meta property="og:description" content="날짜와 시간, 통계, 파일 입출력">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-06-17T08:45:10+09:00">
+<meta property="article:tag" content="python">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="python-basics-part-5.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Python Basics for Data Science - PART 5</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-06-17T08:45:10+09:00" itemprop="datePublished" title="2016-06-17 08:45">2016-06-17 08:45</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/python-basics-part-5.html">
+
+
+            
+        <p class="sourceline"><a href="python-basics-part-5.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="날짜와 시간, 통계, 파일 입출력"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Basics-for-Data-Science---PART-5">Python Basics for Data Science - PART 5<a class="anchor-link" href="python-basics-part-5.html#Python-Basics-for-Data-Science---PART-5">¶</a>
+</h2>
+<p>( 파이낸스 데이터 사이언스를 위한 파이썬 언어 기초 )</p>
+<h4 id="날짜와-시간,-통계,-파일-입출력">날짜와 시간, 통계, 파일 입출력<a class="anchor-link" href="python-basics-part-5.html#%EB%82%A0%EC%A7%9C%EC%99%80-%EC%8B%9C%EA%B0%84,-%ED%86%B5%EA%B3%84,-%ED%8C%8C%EC%9D%BC-%EC%9E%85%EC%B6%9C%EB%A0%A5">¶</a>
+</h4>
+<p><img width="300" src="http://i.imgur.com/tHmNhjm.png"></p>
+<h5 id="2017-FinanceData-http://fb.com/financedata">2017 FinanceData <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="python-basics-part-5.html#2017-FinanceData-http://fb.com/financedata">¶</a>
+</h5>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="날짜와-시간">날짜와 시간<a class="anchor-link" href="python-basics-part-5.html#%EB%82%A0%EC%A7%9C%EC%99%80-%EC%8B%9C%EA%B0%84">¶</a>
+</h2>
+<p>현재 시간을 얻거나, 문자열을 datetime값으로, datetime값을  문자열로 바꾸기</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 도움말</span>
+
+datetime.strptime<span class="o">?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 현재 시간</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> 
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">now</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2017-06-17 00:44:41.634723
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 현재 시간과 날짜 포맷팅</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">now</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">minute</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">-</span><span class="si">%02d</span><span class="s2">-</span><span class="si">%02d</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"</span><span class="si">{:d}</span><span class="s2">-</span><span class="si">{:02d}</span><span class="s2">-</span><span class="si">{:02d}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2017-06-17 00:45:07.870129
+2017 6 17 0 45
+2017-06-17
+2017-06-17
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 문자열을 시간으로 strptime()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"2017년 3월 10일 11:00"</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s2">"%Y년 %m월 </span><span class="si">%d</span><span class="s2">일 %H:%M"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># 시간을 문자열로  strftime()</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2">"</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2017-03-10 11:00:00
+2017-06-17
+2017-06-17 00:45:07
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="통계-(Statistics)">통계 (Statistics)<a class="anchor-link" href="python-basics-part-5.html#%ED%86%B5%EA%B3%84-(Statistics)">¶</a>
+</h2>
+<p>리스트 데이터의 개수, 합계, 최대, 최소</p>
+<p><a href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a>     기본 내장 함수(Built-in Function)들</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 요약 통계량</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">'count = '</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">'sum = '</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">'max = '</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">'min = '</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>count =  10
+sum =  0.73
+max =  0.28
+min =  -0.14
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span> <span class="p">]</span>
+
+<span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s2">"평균 수익률 = </span><span class="si">{:.1f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>평균 수익률 = 7.3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 분산과 표준편차</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span> <span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">ret_variance</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">var_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">var_sum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="n">avg</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">var_sum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">red_std_dev</span><span class="p">(</span><span class="n">variance</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">variance</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+<span class="c1"># 분산(variance)은 편차 제곱의 평균</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">ret_variance</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"분산(variance) = </span><span class="si">{:.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
+
+<span class="c1"># 표준편차(SD, standard deviation): 분산(variance)의 제곱근</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">red_std_dev</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"표준편차(standard deviation) = </span><span class="si">{:.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sd</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>분산(variance) = 0.02
+표준편차(standard deviation) = 0.14
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="파일-입출력">파일 입출력<a class="anchor-link" href="python-basics-part-5.html#%ED%8C%8C%EC%9D%BC-%EC%9E%85%EC%B6%9C%EB%A0%A5">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 쓰기</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="s2">"output.txt"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 읽기</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s2">"output.txt"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h5 id="2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">2017 FinanceData <a href="http://financedata.github.com">http://financedata.github.com</a> , <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="python-basics-part-5.html#2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="python-basics-part-4.html" rel="prev" title="Python Basics for Data Science - PART 4">이전 포스트</a>
+            </li>
+            <li class="next">
+                <a href="headless_dropbox.html" rel="next" title="헤드리스 Dropbox">다음 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/python-basics-part-5.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92851530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

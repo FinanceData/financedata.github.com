@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="연산자, 문자열, 흐름 제어(if, for, while)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Basics for Data Science - PART 2 | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/python-basics-part-2.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="연산자, 문자열, 흐름 제어(if, for, while)">
+<meta name="author" content="plusjune">
+<link rel="prev" href="display-all-values-in-cell-jupyter-notebook.html" title="Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?" type="text/html">
+<link rel="next" href="python-basics-part-1.html" title="Python Basics for Data Science - PART 1" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="Python Basics for Data Science - PART 2">
+<meta property="og:url" content="https://financedata.github.com/posts/python-basics-part-2.html">
+<meta property="og:description" content="연산자, 문자열, 흐름 제어(if, for, while)">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-06-15T05:45:10+09:00">
+<meta property="article:tag" content="python">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="python-basics-part-2.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Python Basics for Data Science - PART 2</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-06-15T05:45:10+09:00" itemprop="datePublished" title="2017-06-15 05:45">2017-06-15 05:45</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/python-basics-part-2.html">
+
+
+            
+        <p class="sourceline"><a href="python-basics-part-2.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="연산자, 문자열, 흐름 제어(if, for, while)"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Basics-for-Data-Science---PART-2">Python Basics for Data Science - PART 2<a class="anchor-link" href="python-basics-part-2.html#Python-Basics-for-Data-Science---PART-2">¶</a>
+</h2>
+<p>( 파이낸스 데이터 사이언스를 위한 파이썬 언어 기초 )</p>
+<h4 id="연산자,-문자열,-흐름-제어(if,-for,-while)">연산자, 문자열, 흐름 제어(if, for, while)<a class="anchor-link" href="python-basics-part-2.html#%EC%97%B0%EC%82%B0%EC%9E%90,-%EB%AC%B8%EC%9E%90%EC%97%B4,-%ED%9D%90%EB%A6%84-%EC%A0%9C%EC%96%B4(if,-for,-while)">¶</a>
+</h4>
+<p><img width="300" src="http://i.imgur.com/tHmNhjm.png"></p>
+<h5 id="2017-FinanceData-http://fb.com/financedata">2017 FinanceData <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="python-basics-part-2.html#2017-FinanceData-http://fb.com/financedata">¶</a>
+</h5>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="산술-연산자">산술 연산자<a class="anchor-link" href="python-basics-part-2.html#%EC%82%B0%EC%88%A0-%EC%97%B0%EC%82%B0%EC%9E%90">¶</a>
+</h2>
+<p>산술 연산자(arithmetic operator)는 사칙연산, 나머지, 제곱 등의 연산을 수행한다.</p>
+<ul>
+<li>+, -, *, / (사칙연산)</li>
+<li>% (나머지)</li>
+<li>// (정수 나눗셈)</li>
+<li>** (제곱) </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(19, 11, 60, 3.75)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># a를 b로 나눈 나머지</span>
+
+<span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">10.5</span> <span class="o">//</span> <span class="mf">3.5</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1024</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="부울-연산자">부울 연산자<a class="anchor-link" href="python-basics-part-2.html#%EB%B6%80%EC%9A%B8-%EC%97%B0%EC%82%B0%EC%9E%90">¶</a>
+</h2>
+<p>부울 연산자 (boolean operator 혹은 논리 연산)는 and, or, not 연산을 수행한다. 결과는 항상 True 혹은 False 이다.</p>
+<ul>
+<li>and, or, not</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="kc">False</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="비교-연산자">비교 연산자<a class="anchor-link" href="python-basics-part-2.html#%EB%B9%84%EA%B5%90-%EC%97%B0%EC%82%B0%EC%9E%90">¶</a>
+</h2>
+<p>비교 연산자 (Comparison operators)는 두 대상의 대소비교 혹은 같은지 여부를 비교한다. 연산의 결과는 항상 True 혹은 False 이다</p>
+<ul>
+<li>
+<code>&gt;</code> (크다), <code>&lt;</code> (작다), <code>&gt;=</code> (크거나 같다), <code>&lt;=</code> (작거나 같다)</li>
+<li>
+<code>!=</code> (다르다), <code>==</code> (같은 값인가), <code>is</code> (같은 객체인가)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="mi">20</span> <span class="o">!=</span> <span class="mi">20</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="mi">17</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">118</span> <span class="o">%</span><span class="k">100</span>) )
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True
+False
+True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>==</code> 연산자는 값을 비교, <code>is</code> 연산자 동일한 객체인지 비교한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span> <span class="ow">is</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True
+False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="문자열">문자열<a class="anchor-link" href="python-basics-part-2.html#%EB%AC%B8%EC%9E%90%EC%97%B4">¶</a>
+</h2>
+<p>작은 따옴표(' single quote) 혹은 큰 따옴표(" double quote)로 표현</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'Hello, Python!'</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, 'Python'!"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Hello, "Python"!'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello, 'Python'!
+Hello, "Python"!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>탭 문자(\t), 리턴 문자(\n) 등 타이핑해서 입력할 수 없는 특수 문자들을 역슬래시(\)문자와 함께 표시하여 사용할 수 있다. 이를 이스케이프 문자열(escape sequence)라고 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># new line(\n) 문자</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello, </span><span class="se">\n</span><span class="s2">Python!"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello, 
+Python!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 문자열 연결(덧셈)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello"</span> <span class="o">+</span> <span class="s2">", World"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello"</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s2">", World"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello, World
+Hello, World
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 문자열의 길이</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello, Python!"</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>14</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="문자열-슬라이스">문자열 슬라이스<a class="anchor-link" href="python-basics-part-2.html#%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8A%A4">¶</a>
+</h2>
+<ul>
+<li>문자열중의 부분을 지정하기 위해 s[인덱스] 형식으로 사용할 수 있으며, "인덱스"는 0부터 시작한다.</li>
+<li>s[시작:끝]으로 문자열을 잘라(slice)낼 수 있다. "끝"은 포함되지 않는다.</li>
+<li>s[시작:끝] 형식을 사용할 때 시작, 끝을 지정하지 않을 수도 있다. "시작"을 지정하지 않으면 '처음부터', "끝"을 지정하지 않으면 '끝까지'라는 의미가 된다.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello, Python!"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>H
+o
+Hello, Python!
+Hello
+Py
+!
+thon
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="문자열-자르기와-바꾸기">문자열 자르기와 바꾸기<a class="anchor-link" href="python-basics-part-2.html#%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0%EC%99%80-%EB%B0%94%EA%BE%B8%EA%B8%B0">¶</a>
+</h2>
+<ul>
+<li>s.split() 함수는 문자열s 를 공백 문자를 기준으로 잘라 그 결과를 리스트로 반환한다.</li>
+<li>s.replace(현재문자열, 대체문자열) 함수는 문자열 s에 있는 '현재문자열'을 '대체문자열'로 바꾼다.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 문자열 분리(split)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"화학,출판,전기제품,제약,은행"</span>
+<span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['화학', '출판', '전기제품', '제약', '은행']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sectors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'화학'</span><span class="p">,</span> <span class="s1">'출판'</span><span class="p">,</span> <span class="s1">'전기제품'</span><span class="p">,</span> <span class="s1">'제약'</span><span class="p">,</span> <span class="s1">'은행'</span><span class="p">]</span>
+<span class="s2">"|"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sectors</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'화학|출판|전기제품|제약|은행'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 문자열 대체 (replace)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"Hello, Python!"</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Python'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">)</span>
+<span class="n">w</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'Hello, World!'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'&amp;lt;img width=&amp;quot;300&amp;quot; src=&amp;quot;http://i.imgur.com/tHmNhjm.png&amp;quot;&amp;gt;'</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'&amp;lt;'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'&amp;gt;'</span><span class="p">,</span> <span class="s1">'&gt;'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'&amp;quot;'</span><span class="p">,</span> <span class="s1">'"'</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;img width="300" src="http://i.imgur.com/tHmNhjm.png"&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="if,-elif,-else">if, elif, else<a class="anchor-link" href="python-basics-part-2.html#if,-elif,-else">¶</a>
+</h2>
+<p>조건에 따라 실행을 달리하기 위한 문으로 if, elif, else 가 있다</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ret</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="k">if</span> <span class="n">ret</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"상승"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'같은 레벨의 들여쓰기로로 블럭을 구분합니다'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"하락"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>상승
+같은 레벨의 들여쓰기로로 블럭을 구분합니다
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># True/False를 상승 여부로 가정</span>
+<span class="c1"># stock01, stock02 True 혹은 False 할당을 바꾸어가면서 실행해보자</span>
+
+<span class="n">stock01</span> <span class="o">=</span> <span class="kc">False</span> 
+<span class="n">stock02</span> <span class="o">=</span> <span class="kc">True</span>  
+
+<span class="k">if</span> <span class="n">stock01</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"stock01 상승"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">stock02</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"stock02 상승"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"stock01 하락, stock02 하락"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stock02 상승
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stock01</span> <span class="o">=</span> <span class="kc">True</span> 
+<span class="n">stock02</span> <span class="o">=</span> <span class="kc">True</span>  
+
+<span class="k">if</span> <span class="n">stock01</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">stock02</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"stock01 상승, stock02 상승"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>stock01 상승, stock02 상승
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="들여쓰기">들여쓰기<a class="anchor-link" href="python-basics-part-2.html#%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0">¶</a>
+</h2>
+<ul>
+<li>파이썬에서 들여쓰기는 매우 중요하다.</li>
+<li>같은 칸을 들여쓴 연속된 문장들을 들여쓰기 블럭이라고 한다.</li>
+<li>블럭 중간에 공백 라인도 가능하다. 하지만, 들여쓰기 레벨이 달라지면 달라지면 다른 블럭으로 인식된다.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"문장01"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"문장02"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"문장03"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>문장03
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"문장01"</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"문장02"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>문장01
+문장02
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"문장01"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"문장02"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>문장01
+문장02
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="반복문">반복문<a class="anchor-link" href="python-basics-part-2.html#%EB%B0%98%EB%B3%B5%EB%AC%B8">¶</a>
+</h2>
+<ul>
+<li>주로 while과 for가 있는데 절대적으로 for를 많이 사용한다.</li>
+<li>for 문은 주로 순회 가능한 객체(iterable object)와 함께 사용한다. list, range 등을 for 문과 함께 자주 사용한다.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>파이썬의 range는 지정한 범위의 정수를 발생시키는데 for 문과 함께 많이 사용한다.</p>
+<p>보통 range(시작,끝) 형식으로 사용하는 정수 범위를 만들어낸다. '끝'은 포함되지 않는다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># 0~9 (0에서 시작, 10은 미포함)</span>
+<span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># 1~9</span>
+<span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 10~19, 2씩 건너뛰어서</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[27]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>range(10, 20, 2)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>list()를 사용하여 리스트로 변환할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+[10, 12, 14, 16, 18]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">', '</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0, 1, 2, 3, </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">', '</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-2, -1, 0, 1, </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 -3
+1 -2
+2 -1
+3 0
+4 1
+5 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="목록-조건제시법">목록 조건제시법<a class="anchor-link" href="python-basics-part-2.html#%EB%AA%A9%EB%A1%9D-%EC%A1%B0%EA%B1%B4%EC%A0%9C%EC%8B%9C%EB%B2%95">¶</a>
+</h2>
+<p>목록 조건제시법 (list comprehension)을 사용하면 축약된 형식으로 리스트를 생성할 수 있다.</p>
+<ul>
+<li>
+<code>[for ... in ... ]</code> 형식으로 새로운 리스트를 생성하는데 주로 사용한다.</li>
+<li>간편하고 축약된 방식으로 표현할 수 있다</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  1~9까지 각 수의 제곱</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">19</span><span class="p">))</span>
+<span class="n">lst</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[32]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[33]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">even_squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">even_squares</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[37]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[4, 16, 36, 64, 100]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="while-문">while 문<a class="anchor-link" href="python-basics-part-2.html#while-%EB%AC%B8">¶</a>
+</h3>
+<p>while에 주어진 조건이 True 인 동안 while의 몸체 부분을 실행</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="err">조건</span><span class="p">:</span>
+  <span class="err">조건이</span> <span class="n">True인</span> <span class="err">동안</span> <span class="err">실행할</span> <span class="err">내용</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">"count: "</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>    
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>count:  0
+count:  1
+count:  2
+count:  3
+count:  4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="for-문">for 문<a class="anchor-link" href="python-basics-part-2.html#for-%EB%AC%B8">¶</a>
+</h2>
+<p>주로 목록 형태의 자료구조를 순회하면서 for의 몸체 부분을 실행</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="err">항목</span> <span class="ow">in</span> <span class="err">목록</span><span class="p">:</span>
+    <span class="err">개별</span> <span class="err">항목을</span> <span class="err">가지고</span> <span class="err">실행</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tech_stocks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'AAPL'</span><span class="p">,</span> <span class="s1">'GOOGL'</span><span class="p">,</span> <span class="s1">'AMZN'</span><span class="p">,</span> <span class="s1">'FB'</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tech_stocks</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>AAPL
+GOOGL
+AMZN
+FB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+20
+40
+60
+80
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h5 id="2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">2017 FinanceData <a href="http://financedata.github.com">http://financedata.github.com</a> , <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="python-basics-part-2.html#2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="display-all-values-in-cell-jupyter-notebook.html" rel="prev" title="Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?">이전 포스트</a>
+            </li>
+            <li class="next">
+                <a href="python-basics-part-1.html" rel="next" title="Python Basics for Data Science - PART 1">다음 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/python-basics-part-2.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92851530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
