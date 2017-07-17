@@ -24,7 +24,7 @@ BLOG_TITLE = "FinanceData"  # (translatable)
 SITE_URL = "https://financedata.github.com/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://plusjune.github.com/"
+# BASE_URL = "https://financedata.github.com/"
 BLOG_EMAIL = "plusjune@gmail.com"
 BLOG_DESCRIPTION = "Automate financial data collection and analysis"  # (translatable)
 
