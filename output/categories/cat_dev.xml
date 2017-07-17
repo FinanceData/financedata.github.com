@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>FinanceData (dev에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://financedata.github.com/categories/cat_dev.xml"></atom:link><language>ko</language><lastBuildDate>Mon, 17 Jul 2017 06:22:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>영업일과 휴일 - 한국거래소</title><link>https://financedata.github.com/posts/market-days-krx.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="영업일-캘린더-(KRX)"&gt;영업일 캘린더 (KRX)&lt;a class="anchor-link" href="https://financedata.github.com/posts/market-days-krx.html#%EC%98%81%EC%97%85%EC%9D%BC-%EC%BA%98%EB%A6%B0%EB%8D%94-(KRX)"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;한국거래소 홈페이지에서 휴장일을 xls로 받을 수 있다&lt;/li&gt;
+&lt;li&gt;휴장일 데이터로 부터 개장일(market days)를 생성&lt;/li&gt;
+&lt;li&gt;해외 시장(CME, EUREX)등은  pandas-market-calendars를 활용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img width="320" src="http://i.imgur.com/ClIQff8.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/market-days-krx.html"&gt;더 읽기…&lt;/a&gt; (읽기 4분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>krx</category><category>market days</category><category>python</category><guid>https://financedata.github.com/posts/market-days-krx.html</guid><pubDate>Sun, 16 Jul 2017 06:45:16 GMT</pubDate></item><item><title>Python Basics for Data Science - PART 5</title><link>https://financedata.github.com/posts/python-basics-part-5.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Python-Basics-for-Data-Science---PART-5"&gt;Python Basics for Data Science - PART 5&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-5.html#Python-Basics-for-Data-Science---PART-5"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;( 파이낸스 데이터 사이언스를 위한 파이썬 언어 기초 )&lt;/p&gt;
+&lt;h4 id="날짜와-시간,-통계,-파일-입출력"&gt;날짜와 시간, 통계, 파일 입출력&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-5.html#%EB%82%A0%EC%A7%9C%EC%99%80-%EC%8B%9C%EA%B0%84,-%ED%86%B5%EA%B3%84,-%ED%8C%8C%EC%9D%BC-%EC%9E%85%EC%B6%9C%EB%A0%A5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;img width="300" src="http://i.imgur.com/tHmNhjm.png"&gt;&lt;/p&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-5.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python-basics-part-5.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>datetime</category><category>file</category><category>io</category><category>python</category><category>statistics</category><guid>https://financedata.github.com/posts/python-basics-part-5.html</guid><pubDate>Thu, 15 Jun 2017 23:46:10 GMT</pubDate></item><item><title>Python Basics for Data Science - PART 4</title><link>https://financedata.github.com/posts/python-basics-part-4.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Python-Basics-for-Data-Science---PART-4"&gt;Python Basics for Data Science - PART 4&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-4.html#Python-Basics-for-Data-Science---PART-4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;( 파이낸스 데이터 사이언스를 위한 파이썬 언어 기초 )&lt;/p&gt;
+&lt;h4 id="함수,-모듈"&gt;함수, 모듈&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-4.html#%ED%95%A8%EC%88%98,-%EB%AA%A8%EB%93%88"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;img width="300" src="http://i.imgur.com/tHmNhjm.png"&gt;&lt;/p&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-4.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python-basics-part-4.html"&gt;더 읽기…&lt;/a&gt; (읽기 3분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>function</category><category>module</category><category>python</category><guid>https://financedata.github.com/posts/python-basics-part-4.html</guid><pubDate>Thu, 15 Jun 2017 22:45:30 GMT</pubDate></item><item><title>Python Basics for Data Science - PART 3</title><link>https://financedata.github.com/posts/python-basics-part-3.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Python-Basics-for-Data-Science---PART-3"&gt;Python Basics for Data Science - PART 3&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-3.html#Python-Basics-for-Data-Science---PART-3"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;( 파이낸스 데이터 사이언스를 위한 파이썬 언어 기초 )&lt;/p&gt;
+&lt;h4 id="자료구조:-리스트,-튜플,-딕셔너리"&gt;자료구조: 리스트, 튜플, 딕셔너리&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-3.html#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0:-%EB%A6%AC%EC%8A%A4%ED%8A%B8,-%ED%8A%9C%ED%94%8C,-%EB%94%95%EC%85%94%EB%84%88%EB%A6%AC"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;img width="300" src="http://i.imgur.com/tHmNhjm.png"&gt;&lt;/p&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-3.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python-basics-part-3.html"&gt;더 읽기…&lt;/a&gt; (읽기 3분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>dictionary</category><category>list</category><category>python</category><category>tuple</category><guid>https://financedata.github.com/posts/python-basics-part-3.html</guid><pubDate>Thu, 15 Jun 2017 21:45:10 GMT</pubDate></item><item><title>Python Basics for Data Science - PART 2</title><link>https://financedata.github.com/posts/python-basics-part-2.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Python-Basics-for-Data-Science---PART-2"&gt;Python Basics for Data Science - PART 2&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-2.html#Python-Basics-for-Data-Science---PART-2"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;( 파이낸스 데이터 사이언스를 위한 파이썬 언어 기초 )&lt;/p&gt;
+&lt;h4 id="연산자,-문자열,-흐름-제어(if,-for,-while)"&gt;연산자, 문자열, 흐름 제어(if, for, while)&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-2.html#%EC%97%B0%EC%82%B0%EC%9E%90,-%EB%AC%B8%EC%9E%90%EC%97%B4,-%ED%9D%90%EB%A6%84-%EC%A0%9C%EC%96%B4(if,-for,-while)"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;img width="300" src="http://i.imgur.com/tHmNhjm.png"&gt;&lt;/p&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-2.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python-basics-part-2.html"&gt;더 읽기…&lt;/a&gt; (읽기 4분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>basic</category><category>flow control</category><category>for</category><category>if</category><category>operator</category><category>python</category><guid>https://financedata.github.com/posts/python-basics-part-2.html</guid><pubDate>Thu, 15 Jun 2017 20:45:10 GMT</pubDate></item><item><title>Python Basics for Data Science - PART 1</title><link>https://financedata.github.com/posts/python-basics-part-1.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Python-Basics-for-Data-Science---PART-1"&gt;Python Basics for Data Science - PART 1&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-1.html#Python-Basics-for-Data-Science---PART-1"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;(파이낸스 데이터 사이언스를 위한 파이썬 언어 기초)&lt;/p&gt;
+&lt;h4 id="주석,-변수와-값,-기본-데이터-타입,-타입-전환,-print()-출력"&gt;주석, 변수와 값, 기본 데이터 타입, 타입 전환, print() 출력&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-1.html#%EC%A3%BC%EC%84%9D,-%EB%B3%80%EC%88%98%EC%99%80-%EA%B0%92,-%EA%B8%B0%EB%B3%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85,-%ED%83%80%EC%9E%85-%EC%A0%84%ED%99%98,-print()-%EC%B6%9C%EB%A0%A5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;img width="300" src="http://i.imgur.com/tHmNhjm.png"&gt;&lt;/p&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/python-basics-part-1.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python-basics-part-1.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>basic</category><category>print</category><category>python</category><category>type</category><category>value</category><category>variable</category><guid>https://financedata.github.com/posts/python-basics-part-1.html</guid><pubDate>Thu, 15 Jun 2017 19:45:10 GMT</pubDate></item><item><title>Yahoo Finance to Google Finance</title><link>https://financedata.github.com/posts/yahoo-finance-to-google-finance.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Yahoo-Finance-to-Google-Finance"&gt;Yahoo Finance to Google Finance&lt;a class="anchor-link" href="https://financedata.github.com/posts/yahoo-finance-to-google-finance.html#Yahoo-Finance-to-Google-Finance"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Yahoo의 서비스 구조 변경 (2017년 5월 15일 부터 아래 2개 URL 서비스 불가)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ichart.finance.yahoo.com/table.csv"&gt;https://ichart.finance.yahoo.com/table.csv&lt;/a&gt; (pandas_datareader 에서 사용하는 URL)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://real-chart.finance.yahoo.com/table.csv"&gt;http://real-chart.finance.yahoo.com/table.csv&lt;/a&gt; (URL을 통해 직접 가격 데이터 가져오는 URL)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 때문에, pandas_datareader 에서 yahoo로 지정했을 경우 동작하지 않음 (2017년 6월 현재)&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/JGlGylO.png"&gt;&lt;/p&gt;
+&lt;p&gt;이 부분들을 Google Finance 대체 할 수 있으며, &lt;br&gt;
+아래와 같이 코스피 지수, 개별종목, 가격을 URL에서 직접 가져오기 3가지로 부분을 정리하였습니다 &lt;br&gt;
+(다른 Yahoo finance API는 잘 동작합니다)&lt;/p&gt;
+&lt;h5 id="2017-FinanceData-http://fb.com/financedata"&gt;2017 FinanceData &lt;a href="http://fb.com/financedata"&gt;http://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/yahoo-finance-to-google-finance.html#2017-FinanceData-http://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/yahoo-finance-to-google-finance.html"&gt;더 읽기…&lt;/a&gt; (읽기 2분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>google</category><category>pandas_datareader</category><category>yahoo</category><guid>https://financedata.github.com/posts/yahoo-finance-to-google-finance.html</guid><pubDate>Sat, 03 Jun 2017 18:20:25 GMT</pubDate></item><item><title>네이버 실시간 검색어 크롤링 (2줄) JSON 버전</title><link>https://financedata.github.com/posts/naver_realtime_search_json.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="네이버-실시간-급상승-크롤링-02"&gt;네이버 실시간 급상승 크롤링 02&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver_realtime_search_json.html#%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EA%B8%89%EC%83%81%EC%8A%B9-%ED%81%AC%EB%A1%A4%EB%A7%81-02"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="http://naver.com"&gt;http://naver.com&lt;/a&gt;
+&lt;img src="http://i.imgur.com/AJH8h1d.png"&gt;&lt;/p&gt;
+&lt;p&gt;JSON 데이터를 받아 DataFrame으로 만들기 import 문을 제외하면 딱 2줄 !&lt;/p&gt;
+&lt;h5 id="2017-https://fb.com/financedata"&gt;2017 &lt;a href="https://fb.com/financedata"&gt;https://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver_realtime_search_json.html#2017-https://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/naver_realtime_search_json.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>crawling</category><category>naver</category><category>re</category><category>regex</category><category>requests</category><guid>https://financedata.github.com/posts/naver_realtime_search_json.html</guid><pubDate>Wed, 03 May 2017 02:43:00 GMT</pubDate></item><item><title>네이버 실시간 검색어 크롤링 (1줄)</title><link>https://financedata.github.com/posts/naver_realtime_search_crawling.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="네이버-실시간-급상승-크롤링"&gt;네이버 실시간 급상승 크롤링&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver_realtime_search_crawling.html#%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EA%B8%89%EC%83%81%EC%8A%B9-%ED%81%AC%EB%A1%A4%EB%A7%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="http://naver.com"&gt;http://naver.com&lt;/a&gt;
+&lt;img src="http://i.imgur.com/AJH8h1d.png"&gt;&lt;/p&gt;
+&lt;p&gt;짧으면서 최대한 많은 의미를 담기 위한 Python 크롤링 코드. import 문을 제외하면 딱 1줄 !&lt;/p&gt;
+&lt;h5 id="2017-https://fb.com/financedata"&gt;2017 &lt;a href="https://fb.com/financedata"&gt;https://fb.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/naver_realtime_search_crawling.html#2017-https://fb.com/financedata"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/naver_realtime_search_crawling.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>crawling</category><category>naver</category><category>re</category><category>regex</category><category>requests</category><guid>https://financedata.github.com/posts/naver_realtime_search_crawling.html</guid><pubDate>Tue, 02 May 2017 16:58:00 GMT</pubDate></item><item><title>pandas 출력 포맷팅</title><link>https://financedata.github.com/posts/pandas-display-format.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="FAQ---pandas-출력-포맷팅"&gt;FAQ - pandas 출력 포맷팅&lt;a class="anchor-link" href="https://financedata.github.com/posts/pandas-display-format.html#FAQ---pandas-%EC%B6%9C%EB%A0%A5-%ED%8F%AC%EB%A7%B7%ED%8C%85"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: pandas 포맷팅 - 숫자에 e가 표시여부, 소수점 자리수 등을 지정하여 읽기 쉽게 하고자 합니다&lt;/li&gt;
+&lt;li&gt;A: pd.set_option()으로 상세한 조정이 가능합니다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="2017-https://financedata.github.io"&gt;2017 &lt;a href="https://financedata.github.io"&gt;https://financedata.github.io&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/pandas-display-format.html#2017-https://financedata.github.io"&gt;¶&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/pandas-display-format.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>display</category><category>format</category><category>pandas</category><guid>https://financedata.github.com/posts/pandas-display-format.html</guid><pubDate>Tue, 02 May 2017 05:45:16 GMT</pubDate></item></channel></rss>
