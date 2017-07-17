@@ -11,14 +11,14 @@
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="https://financedata.github.com/posts/market-days-krx.html">
+<link rel="canonical" href="https://financedata.github.com/posts/pandas-market-days-krx.html">
 <meta property="fb:app_id" content="">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="휴장일 데이터로 부터 개장일(market days)를 생성">
 <meta name="author" content="plusjune">
 <link rel="prev" href="python-basics-part-5.html" title="Python Basics for Data Science - PART 5" type="text/html">
 <meta property="og:site_name" content="FinanceData">
 <meta property="og:title" content="영업일과 휴일 - 한국거래소">
-<meta property="og:url" content="https://financedata.github.com/posts/market-days-krx.html">
+<meta property="og:url" content="https://financedata.github.com/posts/pandas-market-days-krx.html">
 <meta property="og:description" content="휴장일 데이터로 부터 개장일(market days)를 생성">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-07-16T15:45:16+09:00">
@@ -68,7 +68,7 @@
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="market-days-krx.ipynb" id="sourcelink">원문</a>
+    <a href="pandas-market-days-krx.ipynb" id="sourcelink">원문</a>
     </li>
 
                 
@@ -92,11 +92,11 @@
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-07-16T15:45:16+09:00" itemprop="datePublished" title="2017-07-16 15:45">2017-07-16 15:45</time></a></p>
                 <p class="commentline">
         
-<span class="fb-comments-count" data-url="/posts/market-days-krx.html">
+<span class="fb-comments-count" data-url="/posts/pandas-market-days-krx.html">
 
 
             
-        <p class="sourceline"><a href="market-days-krx.ipynb" id="sourcelink">원문</a></p>
+        <p class="sourceline"><a href="pandas-market-days-krx.ipynb" id="sourcelink">원문</a></p>
 
                 <meta name="description" itemprop="description" content="휴장일 데이터로 부터 개장일(market days)를 생성"></span></p>
 </div>
@@ -111,7 +111,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="영업일-캘린더-(KRX)">영업일 캘린더 (KRX)<a class="anchor-link" href="market-days-krx.html#%EC%98%81%EC%97%85%EC%9D%BC-%EC%BA%98%EB%A6%B0%EB%8D%94-(KRX)">¶</a>
+<h2 id="영업일-캘린더-(KRX)">영업일 캘린더 (KRX)<a class="anchor-link" href="pandas-market-days-krx.html#%EC%98%81%EC%97%85%EC%9D%BC-%EC%BA%98%EB%A6%B0%EB%8D%94-(KRX)">¶</a>
 </h2>
 <ul>
 <li>한국거래소 홈페이지에서 휴장일을 xls로 받을 수 있다</li>
@@ -119,7 +119,7 @@
 <li>해외 시장(CME, EUREX)등은  pandas-market-calendars를 활용</li>
 </ul>
 <p><img width="320" src="http://i.imgur.com/ClIQff8.jpg"></p>
-<h5 id="2017-http://fb.com/financedata-,-http://financedata.github.io">2017 <a href="http://fb.com/financedata">http://fb.com/financedata</a> , <a href="http://financedata.github.io">http://financedata.github.io</a><a class="anchor-link" href="market-days-krx.html#2017-http://fb.com/financedata-,-http://financedata.github.io">¶</a>
+<h5 id="2017-http://fb.com/financedata-,-http://financedata.github.io">2017 <a href="http://fb.com/financedata">http://fb.com/financedata</a> , <a href="http://financedata.github.io">http://financedata.github.io</a><a class="anchor-link" href="pandas-market-days-krx.html#2017-http://fb.com/financedata-,-http://financedata.github.io">¶</a>
 </h5>
 <!-- TEASER_END -->
 </div>
@@ -130,10 +130,10 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="한국거래소-홈페이지-휴장일-조회">한국거래소 홈페이지 휴장일 조회<a class="anchor-link" href="market-days-krx.html#%ED%95%9C%EA%B5%AD%EA%B1%B0%EB%9E%98%EC%86%8C-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%9C%B4%EC%9E%A5%EC%9D%BC-%EC%A1%B0%ED%9A%8C">¶</a>
+<h2 id="한국거래소-홈페이지-휴장일-조회">한국거래소 홈페이지 휴장일 조회<a class="anchor-link" href="pandas-market-days-krx.html#%ED%95%9C%EA%B5%AD%EA%B1%B0%EB%9E%98%EC%86%8C-%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%9C%B4%EC%9E%A5%EC%9D%BC-%EC%A1%B0%ED%9A%8C">¶</a>
 </h2>
 <p>한국거래소 홈페이지 <a href="http://marketdata.krx.co.kr">http://marketdata.krx.co.kr</a> 에서 아래 메뉴에서 휴장일을 조회할 수 있다</p>
-<h5 id="시장정보-&gt;-시장동향-&gt;-공시-&gt;-증시일정-&gt;-휴장일">시장정보 &gt; 시장동향 &gt; 공시 &gt; 증시일정 &gt; 휴장일<a class="anchor-link" href="market-days-krx.html#%EC%8B%9C%EC%9E%A5%EC%A0%95%EB%B3%B4-&gt;-%EC%8B%9C%EC%9E%A5%EB%8F%99%ED%96%A5-&gt;-%EA%B3%B5%EC%8B%9C-&gt;-%EC%A6%9D%EC%8B%9C%EC%9D%BC%EC%A0%95-&gt;-%ED%9C%B4%EC%9E%A5%EC%9D%BC">¶</a>
+<h5 id="시장정보-&gt;-시장동향-&gt;-공시-&gt;-증시일정-&gt;-휴장일">시장정보 &gt; 시장동향 &gt; 공시 &gt; 증시일정 &gt; 휴장일<a class="anchor-link" href="pandas-market-days-krx.html#%EC%8B%9C%EC%9E%A5%EC%A0%95%EB%B3%B4-&gt;-%EC%8B%9C%EC%9E%A5%EB%8F%99%ED%96%A5-&gt;-%EA%B3%B5%EC%8B%9C-&gt;-%EC%A6%9D%EC%8B%9C%EC%9D%BC%EC%A0%95-&gt;-%ED%9C%B4%EC%9E%A5%EC%9D%BC">¶</a>
 </h5>
 <p>링크는 아래와 같다</p>
 <p><a href="http://marketdata.krx.co.kr/contents/MKD/01/0110/01100305/MKD01100305.jsp">http://marketdata.krx.co.kr/contents/MKD/01/0110/01100305/MKD01100305.jsp</a></p>
@@ -356,7 +356,7 @@ Name: 날짜, dtype: datetime64[ns]</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="개장일(market-day)">개장일(market day)<a class="anchor-link" href="market-days-krx.html#%EA%B0%9C%EC%9E%A5%EC%9D%BC(market-day)">¶</a>
+<h2 id="개장일(market-day)">개장일(market day)<a class="anchor-link" href="pandas-market-days-krx.html#%EA%B0%9C%EC%9E%A5%EC%9D%BC(market-day)">¶</a>
 </h2>
 </div>
 </div>
@@ -517,7 +517,7 @@ Name: 날짜, dtype: datetime64[ns]</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="DataFrame에-휴장일-적용하기">DataFrame에 휴장일 적용하기<a class="anchor-link" href="market-days-krx.html#DataFrame%EC%97%90-%ED%9C%B4%EC%9E%A5%EC%9D%BC-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">¶</a>
+<h2 id="DataFrame에-휴장일-적용하기">DataFrame에 휴장일 적용하기<a class="anchor-link" href="pandas-market-days-krx.html#DataFrame%EC%97%90-%ED%9C%B4%EC%9E%A5%EC%9D%BC-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">¶</a>
 </h2>
 </div>
 </div>
@@ -749,7 +749,7 @@ Name: 날짜, dtype: datetime64[ns]</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="CME,-EUREX-휴장일">CME, EUREX 휴장일<a class="anchor-link" href="market-days-krx.html#CME,-EUREX-%ED%9C%B4%EC%9E%A5%EC%9D%BC">¶</a>
+<h2 id="CME,-EUREX-휴장일">CME, EUREX 휴장일<a class="anchor-link" href="pandas-market-days-krx.html#CME,-EUREX-%ED%9C%B4%EC%9E%A5%EC%9D%BC">¶</a>
 </h2>
 <p>영업일 캘린더 메뉴에서 한국거래소(KRX)외에 CME, EUREX와 캘린더도 제공하며, 엑셀로 다운로드 한 2017년 데이터는 다음과 같다.</p>
 <ul>
@@ -948,7 +948,7 @@ Name: 날짜, dtype: datetime64[ns]</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="pandas-market-calendars">pandas-market-calendars<a class="anchor-link" href="market-days-krx.html#pandas-market-calendars">¶</a>
+<h2 id="pandas-market-calendars">pandas-market-calendars<a class="anchor-link" href="pandas-market-days-krx.html#pandas-market-calendars">¶</a>
 </h2>
 </div>
 </div>
@@ -970,7 +970,7 @@ Name: 날짜, dtype: datetime64[ns]</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="2017-https://fb.com/financedata">2017 <a href="https://fb.com/financedata">https://fb.com/financedata</a><a class="anchor-link" href="market-days-krx.html#2017-https://fb.com/financedata">¶</a>
+<h5 id="2017-https://fb.com/financedata">2017 <a href="https://fb.com/financedata">https://fb.com/financedata</a><a class="anchor-link" href="pandas-market-days-krx.html#2017-https://fb.com/financedata">¶</a>
 </h5>
 </div>
 </div>
@@ -1011,7 +1011,7 @@ Name: 날짜, dtype: datetime64[ns]</pre>
      js.src = "https://connect.facebook.net/en_US/all.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script><div class="fb-comments" data-href="https://financedata.github.com/posts/market-days-krx.html" data-width="470"></div>
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/pandas-market-days-krx.html" data-width="470"></div>
 
 
         </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">

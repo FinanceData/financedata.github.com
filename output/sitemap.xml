@@ -51,7 +51,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-07-17T06:24:00Z</lastmod>
+  <lastmod>2017-07-17T06:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -203,7 +203,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/krx.html</loc>
-  <lastmod>2017-07-17T06:24:00Z</lastmod>
+  <lastmod>2017-07-17T06:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/list.html</loc>
@@ -219,7 +219,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/market-days.html</loc>
-  <lastmod>2017-07-17T06:24:00Z</lastmod>
+  <lastmod>2017-07-17T06:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/matplotlib.html</loc>
@@ -283,7 +283,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python.html</loc>
-  <lastmod>2017-07-17T06:24:00Z</lastmod>
+  <lastmod>2017-07-17T06:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python3.html</loc>
@@ -458,6 +458,10 @@
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/posts/pandas-market-days-krx.html</loc>
+  <lastmod>2017-07-17T06:26:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/posts/phone-numbser-site-crawling.html</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </url>
@@ -479,7 +483,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/python-basics-part-5.html</loc>
-  <lastmod>2017-07-17T06:22:00Z</lastmod>
+  <lastmod>2017-07-17T06:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
