@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (codeademy에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" href="https://financedata.github.com/categories/codeademy.xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Mon, 17 Jul 2017 06:20:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>코드카데미 파이썬 주피터 노트북</title><link>https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="코드카데미-파이썬-주피터-노트북"&gt;코드카데미 파이썬 주피터 노트북&lt;a class="anchor-link" href="https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html#%EC%BD%94%EB%93%9C%EC%B9%B4%EB%8D%B0%EB%AF%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A3%BC%ED%94%BC%ED%84%B0-%EB%85%B8%ED%8A%B8%EB%B6%81"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img align="left" src="http://i.imgur.com/WPFSTu7.png"&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;본 문서는 코드카데미 파이썬(한국어) 강좌 &lt;a href="https://codecademy.com/ko/tracks/python-ko"&gt;https://codecademy.com/ko/tracks/python-ko&lt;/a&gt; 의 각 Chapter의 내용을 Jupyter Notebook 으로 정리한 문서입니다.  &lt;br&gt; 파이썬을 처음 접하시는 분에게 추천 합니다.
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>codeademy</category><category>jupyter notebook</category><category>python</category><guid>https://financedata.github.com/posts/codeademy_python_jupyter_notebook.html</guid><pubDate>Fri, 27 Jan 2017 11:45:11 GMT</pubDate></item></channel></rss>

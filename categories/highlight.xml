@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (highlight에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" href="https://financedata.github.com/categories/highlight.xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Mon, 17 Jul 2017 06:20:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] matplotlib 특정 구간을 강조하려면</title><link>https://financedata.github.com/posts/faq_matplotlib_highlight.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/0dywhdR.png"&gt;&lt;/p&gt;
+&lt;h2 id="[FAQ]-matplotlib:-특정-구간을-강조하려면?"&gt;[FAQ] matplotlib: 특정 구간을 강조하려면?&lt;a class="anchor-link" href="https://financedata.github.com/posts/faq_matplotlib_highlight.html#%5BFAQ%5D-matplotlib:-%ED%8A%B9%EC%A0%95-%EA%B5%AC%EA%B0%84%EC%9D%84-%EA%B0%95%EC%A1%B0%ED%95%98%EB%A0%A4%EB%A9%B4?"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: 차트에서 특정 구간(기간)을 강조하려면 어떻게 하나요?&lt;/li&gt;
+&lt;li&gt;A: axvspan() 함수를 활용 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/faq_matplotlib_highlight.html"&gt;더 읽기…&lt;/a&gt; (읽기 3분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>faq</category><category>highlight</category><category>matplotlib</category><guid>https://financedata.github.com/posts/faq_matplotlib_highlight.html</guid><pubDate>Sun, 29 Jan 2017 00:00:00 GMT</pubDate></item></channel></rss>

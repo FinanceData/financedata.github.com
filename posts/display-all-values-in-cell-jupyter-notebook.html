@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하기">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면? | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하기">
+<meta name="author" content="plusjune">
+<link rel="prev" href="naver_realtime_search_json.html" title="네이버 실시간 검색어 크롤링 (2줄) JSON 버전" type="text/html">
+<link rel="next" href="yahoo-finance-to-google-finance.html" title="Yahoo Finance to Google Finance" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?">
+<meta property="og:url" content="https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html">
+<meta property="og:description" content="Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하기">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-05-27T10:40:11+09:00">
+<meta property="article:tag" content="jupyter">
+<meta property="article:tag" content="notebook">
+<meta property="article:tag" content="python">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="display-all-values-in-cell-jupyter-notebook.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하려면?</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-05-27T10:40:11+09:00" itemprop="datePublished" title="2017-05-27 10:40">2017-05-27 10:40</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/display-all-values-in-cell-jupyter-notebook.html">
+
+
+            
+        <p class="sourceline"><a href="display-all-values-in-cell-jupyter-notebook.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="Jupyter Notebook 셀에서 값을 연속적으로 모두 출력하기"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="[FAQ]-Jupyter-Notebook에서-값을-연속적으로-출력하려면?">[FAQ] Jupyter Notebook에서 값을 연속적으로 출력하려면?<a class="anchor-link" href="display-all-values-in-cell-jupyter-notebook.html#%5BFAQ%5D-Jupyter-Notebook%EC%97%90%EC%84%9C-%EA%B0%92%EC%9D%84-%EC%97%B0%EC%86%8D%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%B6%9C%EB%A0%A5%ED%95%98%EB%A0%A4%EB%A9%B4?">¶</a>
+</h2>
+<ul>
+<li>Q: Jupyter Notebook 셀에서 마지막 값 하나만이 아니라 중간에 모든 값을 차례로 출력하고 싶습니다.</li>
+<li>A: print(), IPython.display를 써서 매번 출력하거나 InteractiveShell의 옵션을 지정합니다.</li>
+</ul>
+<p><img src="http://i.imgur.com/tXzBmZX.png"></p>
+<h5 id="2017-https://fb.com/financedata-,-https://financedata.github.io">2017 <a href="https://fb.com/financedata">https://fb.com/financedata</a> , <a href="https://financedata.github.io">https://financedata.github.io</a><a class="anchor-link" href="display-all-values-in-cell-jupyter-notebook.html#2017-https://fb.com/financedata-,-https://financedata.github.io">¶</a>
+</h5>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Jupyter Notebook에서 항상 마지막 값만 출력된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">'ABC'</span><span class="p">))</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">df</span>
+<span class="n">lst</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>모든 출력값을 매번 연속적으로 출력하려면 어떻게 할까? 즉, df, lst 값을 모두 차례로 출력하려면?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="방법-1---매번-print()를-사용">방법 1 - 매번 print()를 사용<a class="anchor-link" href="display-all-values-in-cell-jupyter-notebook.html#%EB%B0%A9%EB%B2%95-1---%EB%A7%A4%EB%B2%88-print()%EB%A5%BC-%EC%82%AC%EC%9A%A9">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>          A         B         C
+0 -0.975347  0.785468 -1.242341
+1  0.278320 -2.819004 -1.543017
+2  0.012055  0.549362  0.970234
+3 -0.985156  1.670095 -0.563928
+4 -0.088859  1.582515  0.881899
+[0 1 2 3 4 5 6 7 8 9]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="방법-2---display로-출력">방법 2 - display로 출력<a class="anchor-link" href="display-all-values-in-cell-jupyter-notebook.html#%EB%B0%A9%EB%B2%95-2---display%EB%A1%9C-%EC%B6%9C%EB%A0%A5">¶</a>
+</h2>
+<p>DataFrame()을 HTML로 출력하기 위해 print() 대신 IPython.display를 사용할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>-0.975347</td>
+      <td>0.785468</td>
+      <td>-1.242341</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.278320</td>
+      <td>-2.819004</td>
+      <td>-1.543017</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.012055</td>
+      <td>0.549362</td>
+      <td>0.970234</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>-0.985156</td>
+      <td>1.670095</td>
+      <td>-0.563928</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>-0.088859</td>
+      <td>1.582515</td>
+      <td>0.881899</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+
+<div class="output_text output_subarea ">
+<pre>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="방법-3---InteractiveShell의-옵션-지정">방법 3 - InteractiveShell의 옵션 지정<a class="anchor-link" href="display-all-values-in-cell-jupyter-notebook.html#%EB%B0%A9%EB%B2%95-3---InteractiveShell%EC%9D%98-%EC%98%B5%EC%85%98-%EC%A7%80%EC%A0%95">¶</a>
+</h2>
+<p>InteractiveShell의 옵션을 지정하여 모두 출력되도록 할 수 있다</p>
+<p>InteractiveShell.ast_node_interactivity : 'all' | 'last' | 'last_expr' | 'none'  (기본값은 'last_expr')</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="k">import</span> <span class="n">InteractiveShell</span>
+<span class="n">InteractiveShell</span><span class="o">.</span><span class="n">ast_node_interactivity</span> <span class="o">=</span> <span class="s2">"all"</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
+<span class="n">lst</span>
+<span class="s1">'hello, world'</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>-0.975347</td>
+      <td>0.785468</td>
+      <td>-1.242341</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.278320</td>
+      <td>-2.819004</td>
+      <td>-1.543017</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.012055</td>
+      <td>0.549362</td>
+      <td>0.970234</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>-0.985156</td>
+      <td>1.670095</td>
+      <td>-0.563928</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>-0.088859</td>
+      <td>1.582515</td>
+      <td>0.881899</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'hello, world'</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 0,  1,  4,  9, 16, 25, 36, 49, 64, 81])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(참고) <a href="http://ipython.readthedocs.io/en/stable/config/options/terminal.html">http://ipython.readthedocs.io/en/stable/config/options/terminal.html</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2017-https://fb.com/financedata">2017 <a href="https://fb.com/financedata">https://fb.com/financedata</a><a class="anchor-link" href="display-all-values-in-cell-jupyter-notebook.html#2017-https://fb.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/jupyter.html" rel="tag">jupyter</a></li>
+            <li><a class="tag p-category" href="../categories/notebook.html" rel="tag">notebook</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="naver_realtime_search_json.html" rel="prev" title="네이버 실시간 검색어 크롤링 (2줄) JSON 버전">이전 포스트</a>
+            </li>
+            <li class="next">
+                <a href="yahoo-finance-to-google-finance.html" rel="next" title="Yahoo Finance to Google Finance">다음 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/display-all-values-in-cell-jupyter-notebook.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92851530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="DataFrame 행(row) 정보를 추출하여 컬럼으로 합치기">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[FAQ] (Daum부동산) DataFrame 행 추출과 컬럼으로 합치기 | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/dataframe-extract-rows-and-concat-as-column.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="DataFrame 행(row) 정보를 추출하여 컬럼으로 합치기">
+<meta name="author" content="plusjune">
+<link rel="prev" href="naver-finance-finstate-crawling.html" title="네이버 파이낸스 - 재무제표 크롤링" type="text/html">
+<link rel="next" href="phone-numbser-site-crawling.html" title="[FAQ] 전화번호부 사이트 크롤링" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="[FAQ] (Daum부동산) DataFrame 행 추출과 컬럼으로 합치기">
+<meta property="og:url" content="https://financedata.github.com/posts/dataframe-extract-rows-and-concat-as-column.html">
+<meta property="og:description" content="DataFrame 행(row) 정보를 추출하여 컬럼으로 합치기">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-03-01T13:20:46+09:00">
+<meta property="article:tag" content="concat">
+<meta property="article:tag" content="dataframe">
+<meta property="article:tag" content="daum">
+<meta property="article:tag" content="dropna">
+<meta property="article:tag" content="faq">
+<meta property="article:tag" content="realestate">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="dataframe-extract-rows-and-concat-as-column.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">[FAQ] (Daum부동산) DataFrame 행 추출과 컬럼으로 합치기</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-03-01T13:20:46+09:00" itemprop="datePublished" title="2017-03-01 13:20">2017-03-01 13:20</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/dataframe-extract-rows-and-concat-as-column.html">
+
+
+            
+        <p class="sourceline"><a href="dataframe-extract-rows-and-concat-as-column.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="DataFrame 행(row) 정보를 추출하여 컬럼으로 합치기"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="[FAQ]-DataFrame-행(row)-정보를-추출하여-컬럼으로-합치기">[FAQ] DataFrame 행(row) 정보를 추출하여 컬럼으로 합치기<a class="anchor-link" href="dataframe-extract-rows-and-concat-as-column.html#%5BFAQ%5D-DataFrame-%ED%96%89(row)-%EC%A0%95%EB%B3%B4%EB%A5%BC-%EC%B6%94%EC%B6%9C%ED%95%98%EC%97%AC-%EC%BB%AC%EB%9F%BC%EC%9C%BC%EB%A1%9C-%ED%95%A9%EC%B9%98%EA%B8%B0">¶</a>
+</h2>
+<p>크롤링 데이터 가공과 결측치 처리 예제 (Daum 부동산 예제)</p>
+<ul>
+<li>Q: DataFrame의 두 행(row)이 하나의 데이터를 이룹니다. 짝수 행의 데이터를 추출하여 컬럼으로 만드려면 어떻게 하나요?</li>
+<li>A: DataFrame.ix[] 인덱싱을 사용하여 짝수행 전체를 얻어 가공하고, pd.concat()을 이용여 합칠 수 있습니다.</li>
+</ul>
+<p><img width="320" src="http://i.imgur.com/9WYp6pK.png"></p>
+<h5 id="http://fb.com/financedata">
+<a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="dataframe-extract-rows-and-concat-as-column.html#http://fb.com/financedata">¶</a>
+</h5>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"http://realestate.daum.net/iframe/maemul/maemulList.daum?areaCode=2130010&amp;mcateCode=A1&amp;saleTypeCode=S&amp;tabName=maemulList&amp;isExpanded=false&amp;page=1"</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://i.imgur.com/kFxXIcw.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2개의 DataFrame을 읽었다</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">dfs</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>두번째 DataFrame을 얻는다.</p>
+<p>총 60 행(row)이지만, 2개의 행(row)가 하나의 데이터를 이루고 있다. 짝수번째 행(row)는 부가적인 설명이 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="s1">'rows'</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>60 rows
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>최초게재일</th>
+      <th>종류/소재지</th>
+      <th>단지명</th>
+      <th>공급/전용(㎡)</th>
+      <th>매매가(만원)</th>
+      <th>동</th>
+      <th>층</th>
+      <th>문의처</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>매매  17.03.01</td>
+      <td>아파트장안동</td>
+      <td>한신  한신</td>
+      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
+      <td>37500</td>
+      <td>102</td>
+      <td>14/18</td>
+      <td>동원공인중개사사무. .  02-2216-8600</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
+      <td>54000</td>
+      <td>103</td>
+      <td>중/20</td>
+      <td>백산 공인중개사  02-3291-0088</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34700</td>
+      <td>101</td>
+      <td>6/22</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>급매물  대단지  중랑천조망 ,</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34000</td>
+      <td>115</td>
+      <td>25/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>35000</td>
+      <td>113</td>
+      <td>중/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>짝수번째 행(인덱스가 1,3,5,7..)은 NaN을 포함하고 있다.</p>
+<p>가장 간단한 방법은  NaN을 가지고 있는 행을 제거(drop)하는 것이다. (DataFrame.dropna)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_tmp</span><span class="p">),</span> <span class="s1">'rows'</span><span class="p">)</span>
+
+<span class="n">df_tmp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>30 rows
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>최초게재일</th>
+      <th>종류/소재지</th>
+      <th>단지명</th>
+      <th>공급/전용(㎡)</th>
+      <th>매매가(만원)</th>
+      <th>동</th>
+      <th>층</th>
+      <th>문의처</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>매매  17.03.01</td>
+      <td>아파트장안동</td>
+      <td>한신  한신</td>
+      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
+      <td>37500</td>
+      <td>102</td>
+      <td>14/18</td>
+      <td>동원공인중개사사무. .  02-2216-8600</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
+      <td>54000</td>
+      <td>103</td>
+      <td>중/20</td>
+      <td>백산 공인중개사  02-3291-0088</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34700</td>
+      <td>101</td>
+      <td>6/22</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34000</td>
+      <td>115</td>
+      <td>25/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>35000</td>
+      <td>113</td>
+      <td>중/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>10</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>55000</td>
+      <td>101</td>
+      <td>13/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+    </tr>
+<tr>
+<th>12</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
+      <td>53500</td>
+      <td>103</td>
+      <td>12/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+    </tr>
+<tr>
+<th>14</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>54000</td>
+      <td>102</td>
+      <td>11/19</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+    </tr>
+<tr>
+<th>16</th>
+      <td>매매  17.03.01</td>
+      <td>아파트전농동</td>
+      <td>래미안크레시티  래미안크레시티</td>
+      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
+      <td>62000</td>
+      <td>207</td>
+      <td>3/21</td>
+      <td>금강부동산공인중개. .  02-2245-0006</td>
+    </tr>
+<tr>
+<th>18</th>
+      <td>매매  17.03.01</td>
+      <td>아파트답십리동</td>
+      <td>답십리대우  답십리대우</td>
+      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
+      <td>42000</td>
+      <td>102</td>
+      <td>저/21</td>
+      <td>스마일부동산공인중. .  02-2246-8944</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame의-행,열-조작">DataFrame의 행,열 조작<a class="anchor-link" href="dataframe-extract-rows-and-concat-as-column.html#DataFrame%EC%9D%98-%ED%96%89,%EC%97%B4-%EC%A1%B0%EC%9E%91">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ix[] 인덱싱을 사용하여 짝수번째 행(row)만 추출한다.</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[::</span><span class="mi">2</span><span class="p">,:]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df1</span><span class="p">),</span> <span class="s1">'rows'</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>30 rows
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>최초게재일</th>
+      <th>종류/소재지</th>
+      <th>단지명</th>
+      <th>공급/전용(㎡)</th>
+      <th>매매가(만원)</th>
+      <th>동</th>
+      <th>층</th>
+      <th>문의처</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>매매  17.03.01</td>
+      <td>아파트장안동</td>
+      <td>한신  한신</td>
+      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
+      <td>37500</td>
+      <td>102</td>
+      <td>14/18</td>
+      <td>동원공인중개사사무. .  02-2216-8600</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
+      <td>54000</td>
+      <td>103</td>
+      <td>중/20</td>
+      <td>백산 공인중개사  02-3291-0088</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34700</td>
+      <td>101</td>
+      <td>6/22</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34000</td>
+      <td>115</td>
+      <td>25/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>35000</td>
+      <td>113</td>
+      <td>중/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+    </tr>
+<tr>
+<th>10</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>55000</td>
+      <td>101</td>
+      <td>13/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+    </tr>
+<tr>
+<th>12</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
+      <td>53500</td>
+      <td>103</td>
+      <td>12/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+    </tr>
+<tr>
+<th>14</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>54000</td>
+      <td>102</td>
+      <td>11/19</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+    </tr>
+<tr>
+<th>16</th>
+      <td>매매  17.03.01</td>
+      <td>아파트전농동</td>
+      <td>래미안크레시티  래미안크레시티</td>
+      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
+      <td>62000</td>
+      <td>207</td>
+      <td>3/21</td>
+      <td>금강부동산공인중개. .  02-2245-0006</td>
+    </tr>
+<tr>
+<th>18</th>
+      <td>매매  17.03.01</td>
+      <td>아파트답십리동</td>
+      <td>답십리대우  답십리대우</td>
+      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
+      <td>42000</td>
+      <td>102</td>
+      <td>저/21</td>
+      <td>스마일부동산공인중. .  02-2246-8944</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이번에는 홀수번째 행(row)만 추출한다.</span>
+
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'비고'</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1       무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의
+3              하루종일 밝고 환한 남향 확장형 매매예요
+5                   급매물  대단지  중랑천조망 ,
+7     대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매
+9          대단지  역세권  내부 수리 ,거실및 방확장 ,
+11                역세권  로얄동, 햇빛 잘 드는 집
+13            역세권  확장형  베란다 확장된 깔끔한 집
+15                    역세권  기본형, 입주 가능
+17            대단지  확장형  확장형 채광좋음 입주가능
+19                                NaN
+Name: 비고, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># df1과 df2를 합치기(concat)위해 위해 index를 동일하게 초기화 한다.</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># df1 과  df2 를 컬럼으로 합치기</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>최초게재일</th>
+      <th>종류/소재지</th>
+      <th>단지명</th>
+      <th>공급/전용(㎡)</th>
+      <th>매매가(만원)</th>
+      <th>동</th>
+      <th>층</th>
+      <th>문의처</th>
+      <th>비고</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>매매  17.03.01</td>
+      <td>아파트장안동</td>
+      <td>한신  한신</td>
+      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
+      <td>37500</td>
+      <td>102</td>
+      <td>14/18</td>
+      <td>동원공인중개사사무. .  02-2216-8600</td>
+      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
+      <td>54000</td>
+      <td>103</td>
+      <td>중/20</td>
+      <td>백산 공인중개사  02-3291-0088</td>
+      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34700</td>
+      <td>101</td>
+      <td>6/22</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>급매물  대단지  중랑천조망 ,</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34000</td>
+      <td>115</td>
+      <td>25/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>35000</td>
+      <td>113</td>
+      <td>중/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>55000</td>
+      <td>101</td>
+      <td>13/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  로얄동, 햇빛 잘 드는 집</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
+      <td>53500</td>
+      <td>103</td>
+      <td>12/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  확장형  베란다 확장된 깔끔한 집</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>54000</td>
+      <td>102</td>
+      <td>11/19</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  기본형, 입주 가능</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>매매  17.03.01</td>
+      <td>아파트전농동</td>
+      <td>래미안크레시티  래미안크레시티</td>
+      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
+      <td>62000</td>
+      <td>207</td>
+      <td>3/21</td>
+      <td>금강부동산공인중개. .  02-2245-0006</td>
+      <td>대단지  확장형  확장형 채광좋음 입주가능</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>매매  17.03.01</td>
+      <td>아파트답십리동</td>
+      <td>답십리대우  답십리대우</td>
+      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
+      <td>42000</td>
+      <td>102</td>
+      <td>저/21</td>
+      <td>스마일부동산공인중. .  02-2246-8944</td>
+      <td>NaN</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="컬럼-다듬기">컬럼 다듬기<a class="anchor-link" href="dataframe-extract-rows-and-concat-as-column.html#%EC%BB%AC%EB%9F%BC-%EB%8B%A4%EB%93%AC%EA%B8%B0">¶</a>
+</h2>
+<p>'최초게재일' 컬럼에 거래종류와 날짜가 함께 있다. 거래종류는 매매, 전세, 월세 등이 있다. 
+이 데이터를 둘로 나누어 각각 '거래종류'를 추출하고, '최초게제일'에는 날짜만 남도록 해보자.</p>
+<p>Series.str.extract() 에 정규식을 사용하여 매치되는 문자열을 추출할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># '매매 17.03.01' 데이터에 대해,</span>
+<span class="c1"># 정규식 '(.*) '을 적용하면 '매매'만 추출</span>
+
+<span class="n">result</span><span class="p">[</span><span class="s1">'거래종류'</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">'최초게재일'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(.*) '</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>최초게재일</th>
+      <th>종류/소재지</th>
+      <th>단지명</th>
+      <th>공급/전용(㎡)</th>
+      <th>매매가(만원)</th>
+      <th>동</th>
+      <th>층</th>
+      <th>문의처</th>
+      <th>비고</th>
+      <th>거래종류</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>매매  17.03.01</td>
+      <td>아파트장안동</td>
+      <td>한신  한신</td>
+      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
+      <td>37500</td>
+      <td>102</td>
+      <td>14/18</td>
+      <td>동원공인중개사사무. .  02-2216-8600</td>
+      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
+      <td>54000</td>
+      <td>103</td>
+      <td>중/20</td>
+      <td>백산 공인중개사  02-3291-0088</td>
+      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34700</td>
+      <td>101</td>
+      <td>6/22</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>급매물  대단지  중랑천조망 ,</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34000</td>
+      <td>115</td>
+      <td>25/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>매매  17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>35000</td>
+      <td>113</td>
+      <td>중/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>55000</td>
+      <td>101</td>
+      <td>13/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  로얄동, 햇빛 잘 드는 집</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
+      <td>53500</td>
+      <td>103</td>
+      <td>12/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  확장형  베란다 확장된 깔끔한 집</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>매매  17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>54000</td>
+      <td>102</td>
+      <td>11/19</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  기본형, 입주 가능</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>매매  17.03.01</td>
+      <td>아파트전농동</td>
+      <td>래미안크레시티  래미안크레시티</td>
+      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
+      <td>62000</td>
+      <td>207</td>
+      <td>3/21</td>
+      <td>금강부동산공인중개. .  02-2245-0006</td>
+      <td>대단지  확장형  확장형 채광좋음 입주가능</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>매매  17.03.01</td>
+      <td>아파트답십리동</td>
+      <td>답십리대우  답십리대우</td>
+      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
+      <td>42000</td>
+      <td>102</td>
+      <td>저/21</td>
+      <td>스마일부동산공인중. .  02-2246-8944</td>
+      <td>NaN</td>
+      <td>매매</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># '매매 17.03.01' 데이터에 대해, </span>
+<span class="c1"># 정규식 '(\d+.\d+.\d+)'을 적용하여 추출하면 '17.03.01'만 추출</span>
+
+<span class="n">result</span><span class="p">[</span><span class="s1">'최초게재일'</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">'최초게재일'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+.\d+.\d+)'</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>최초게재일</th>
+      <th>종류/소재지</th>
+      <th>단지명</th>
+      <th>공급/전용(㎡)</th>
+      <th>매매가(만원)</th>
+      <th>동</th>
+      <th>층</th>
+      <th>문의처</th>
+      <th>비고</th>
+      <th>거래종류</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>17.03.01</td>
+      <td>아파트장안동</td>
+      <td>한신  한신</td>
+      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
+      <td>37500</td>
+      <td>102</td>
+      <td>14/18</td>
+      <td>동원공인중개사사무. .  02-2216-8600</td>
+      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
+      <td>54000</td>
+      <td>103</td>
+      <td>중/20</td>
+      <td>백산 공인중개사  02-3291-0088</td>
+      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34700</td>
+      <td>101</td>
+      <td>6/22</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>급매물  대단지  중랑천조망 ,</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>34000</td>
+      <td>115</td>
+      <td>25/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>17.03.01</td>
+      <td>아파트이문동</td>
+      <td>쌍용  쌍용</td>
+      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
+      <td>35000</td>
+      <td>113</td>
+      <td>중/25</td>
+      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>55000</td>
+      <td>101</td>
+      <td>13/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  로얄동, 햇빛 잘 드는 집</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
+      <td>53500</td>
+      <td>103</td>
+      <td>12/20</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  확장형  베란다 확장된 깔끔한 집</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>17.03.01</td>
+      <td>아파트용두동</td>
+      <td>래미안허브리츠  래미안허브리츠</td>
+      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
+      <td>54000</td>
+      <td>102</td>
+      <td>11/19</td>
+      <td>미래공인중개사사무. .  02-960-6800</td>
+      <td>역세권  기본형, 입주 가능</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>17.03.01</td>
+      <td>아파트전농동</td>
+      <td>래미안크레시티  래미안크레시티</td>
+      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
+      <td>62000</td>
+      <td>207</td>
+      <td>3/21</td>
+      <td>금강부동산공인중개. .  02-2245-0006</td>
+      <td>대단지  확장형  확장형 채광좋음 입주가능</td>
+      <td>매매</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>17.03.01</td>
+      <td>아파트답십리동</td>
+      <td>답십리대우  답십리대우</td>
+      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
+      <td>42000</td>
+      <td>102</td>
+      <td>저/21</td>
+      <td>스마일부동산공인중. .  02-2246-8944</td>
+      <td>NaN</td>
+      <td>매매</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="2017-http://fb.com/financedata">2017 <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="dataframe-extract-rows-and-concat-as-column.html#2017-http://fb.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/concat.html" rel="tag">concat</a></li>
+            <li><a class="tag p-category" href="../categories/dataframe.html" rel="tag">dataframe</a></li>
+            <li><a class="tag p-category" href="../categories/daum.html" rel="tag">daum</a></li>
+            <li><a class="tag p-category" href="../categories/dropna.html" rel="tag">dropna</a></li>
+            <li><a class="tag p-category" href="../categories/faq.html" rel="tag">faq</a></li>
+            <li><a class="tag p-category" href="../categories/realestate.html" rel="tag">realestate</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="naver-finance-finstate-crawling.html" rel="prev" title="네이버 파이낸스 - 재무제표 크롤링">이전 포스트</a>
+            </li>
+            <li class="next">
+                <a href="phone-numbser-site-crawling.html" rel="next" title="[FAQ] 전화번호부 사이트 크롤링">다음 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/dataframe-extract-rows-and-concat-as-column.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92851530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

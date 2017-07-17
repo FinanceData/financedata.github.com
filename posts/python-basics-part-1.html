@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="주석, 변수와 값, 기본 데이터 타입, 타입 전환, print() 출력">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Basics for Data Science - PART 1 | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/python-basics-part-1.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="주석, 변수와 값, 기본 데이터 타입, 타입 전환, print() 출력">
+<meta name="author" content="plusjune">
+<link rel="prev" href="yahoo-finance-to-google-finance.html" title="Yahoo Finance to Google Finance" type="text/html">
+<link rel="next" href="python-basics-part-2.html" title="Python Basics for Data Science - PART 2" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="Python Basics for Data Science - PART 1">
+<meta property="og:url" content="https://financedata.github.com/posts/python-basics-part-1.html">
+<meta property="og:description" content="주석, 변수와 값, 기본 데이터 타입, 타입 전환, print() 출력">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-06-16T04:45:10+09:00">
+<meta property="article:tag" content="basic">
+<meta property="article:tag" content="print">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="type">
+<meta property="article:tag" content="value">
+<meta property="article:tag" content="variable">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="python-basics-part-1.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Python Basics for Data Science - PART 1</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-06-16T04:45:10+09:00" itemprop="datePublished" title="2017-06-16 04:45">2017-06-16 04:45</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/python-basics-part-1.html">
+
+
+            
+        <p class="sourceline"><a href="python-basics-part-1.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="주석, 변수와 값, 기본 데이터 타입, 타입 전환, print() 출력"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Basics-for-Data-Science---PART-1">Python Basics for Data Science - PART 1<a class="anchor-link" href="python-basics-part-1.html#Python-Basics-for-Data-Science---PART-1">¶</a>
+</h2>
+<p>(파이낸스 데이터 사이언스를 위한 파이썬 언어 기초)</p>
+<h4 id="주석,-변수와-값,-기본-데이터-타입,-타입-전환,-print()-출력">주석, 변수와 값, 기본 데이터 타입, 타입 전환, print() 출력<a class="anchor-link" href="python-basics-part-1.html#%EC%A3%BC%EC%84%9D,-%EB%B3%80%EC%88%98%EC%99%80-%EA%B0%92,-%EA%B8%B0%EB%B3%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85,-%ED%83%80%EC%9E%85-%EC%A0%84%ED%99%98,-print()-%EC%B6%9C%EB%A0%A5">¶</a>
+</h4>
+<p><img width="300" src="http://i.imgur.com/tHmNhjm.png"></p>
+<h5 id="2017-FinanceData-http://fb.com/financedata">2017 FinanceData <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="python-basics-part-1.html#2017-FinanceData-http://fb.com/financedata">¶</a>
+</h5>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hello,-Python!">Hello, Python!<a class="anchor-link" href="python-basics-part-1.html#Hello,-Python!">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello, World!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="주석-(comment)">주석 (comment)<a class="anchor-link" href="python-basics-part-1.html#%EC%A3%BC%EC%84%9D-(comment)">¶</a>
+</h2>
+<p>실행하지 않는 내용으로 주로 코드에 대한 설명을 위해 사용</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 한 줄짜리 주석</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">여러 줄에 </span>
+<span class="s2">걸친 </span>
+<span class="s2">문자열 </span>
+<span class="s2">입니다</span>
+<span class="s2">"""</span>
+
+<span class="n">s</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'\n여러 줄에 \n걸친 \n문자열 \n입니다\n'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">여러 줄의</span>
+<span class="sd">주석을 만드는데도 사용하죠</span>
+<span class="sd">"""</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'\n여러 줄의\n주석을 만드는데도 사용하죠\n'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="변수와-값">변수와 값<a class="anchor-link" href="python-basics-part-1.html#%EB%B3%80%EC%88%98%EC%99%80-%EA%B0%92">¶</a>
+</h2>
+<p>변수(variable)에 값(value)을 할당(assign)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># = 는 변수(my_var)에 값(10)을 할당(assign)하는 연산자(operator)</span>
+<span class="n">my_var</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="기본-데이터-타입">기본 데이터 타입<a class="anchor-link" href="python-basics-part-1.html#%EA%B8%B0%EB%B3%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85">¶</a>
+</h2>
+<p>엑셀의 데이터 타입(type)에는 숫자값과 텍스트(문자열)이 있으며, 덧붙여 논리값이 있다. 파이썬에서 주로 사용하는 데이터 타입도 비숫하다. 다만 숫자값을 정수(int)와 실수(float)를 구분한다.</p>
+<p>주로 사용하는 파이썬의 데이터 타입에는,</p>
+<ul>
+<li>정수(int): 0, 10, 20</li>
+<li>실수(float): 0.1, 3.14, .015</li>
+<li>불린(bool): True, False</li>
+<li>문자열(str): 'Hello', "World"</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.23</span>
+<span class="n">c</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">d</span> <span class="o">=</span> <span class="s1">'문자열'</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(7, 1.23, True, '문자열')</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(int, float, bool, str)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 데이터 타입</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mf">1.</span><span class="p">))</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;
+&lt;class 'builtin_function_or_method'&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>파이썬에는 복소수(complex)  타입등 더 다양한 타입들이 있지만,  우선은 문자열(str), 정수(int), 실수(float), 불린(bool) 4가지 정도의 타입만 알아도 파이썬을 충분히 활용할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="타입-변환">타입 변환<a class="anchor-link" href="python-basics-part-1.html#%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98">¶</a>
+</h2>
+<p>우리가 처리하는 데이터들은 숫자가 많지만, 대부분 원천 데이터는 문자열 형태로 저장되어 있다. 문자열(str)을 수치형 타입(int, float)로 바꾸거나 출력이나 포맷팅을 위해 수치를 문자열로 바꾸는 경우들도 있다. 이처럼 서로 다른 데이터 타입을 바꾸어는 작업을 타입 변환(type conversion)이라고 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span><span class="s1">'9.14'</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'str'&gt;
+9.14
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>부동소수점(float)을 정수(int)로 바꾸면 소수점 이하 자리가 버림(floor)된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3.6
+&lt;class 'float'&gt;
+3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>문자열과 문자열에 + 연산이 가능하지만, 문자열과 수치값에 + 연산을 할 수 없다. 연산이 가능하도록 타입을 맞추기 위해 타입 전환을 사용하기도 한다.</p>
+<div class="highlight"><pre><span></span><span class="s2">"The value of pi is around "</span> <span class="o">+</span> <span class="mf">3.14</span> <span class="c1"># 에러</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">"The value of pi is around "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'The value of pi is around 3.14'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="간단한-출력">간단한 출력<a class="anchor-link" href="python-basics-part-1.html#%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%B6%9C%EB%A0%A5">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">"Hello, python"</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Hello, python"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Hello, python"</span><span class="p">,</span> <span class="mi">1024</span> <span class="o">**</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello, python
+Hello, python 3.14
+Hello, python 1267650600228229401496703205376
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="다양한-출력">다양한 출력<a class="anchor-link" href="python-basics-part-1.html#%EB%8B%A4%EC%96%91%ED%95%9C-%EC%B6%9C%EB%A0%A5">¶</a>
+</h2>
+<ul>
+<li>%f - float</li>
+<li>%d - decimal (int)</li>
+<li>%s - str</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 포맷 출력</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> is short, You need </span><span class="si">%s</span><span class="s2">!"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"Life"</span><span class="p">,</span> <span class="s2">"파이썬"</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Today is Pi (</span><span class="si">%.2f</span><span class="s2">) day  !"</span> <span class="o">%</span> <span class="p">(</span><span class="mf">3.1415926535</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Life is short, You need 파이썬!
+Today is Pi (3.14) day  !
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 포맷 문자열 생성</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">%.2f</span><span class="s2">, y = </span><span class="si">%d</span><span class="s2">, z = </span><span class="si">%.3f</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">0.0150</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x = 3.14, y = 2, z = 0.015
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 포맷 문자열 생성 (Python3 스타일)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">{:.2f}</span><span class="s2">, y = </span><span class="si">{}</span><span class="s2">, z = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">0.015</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">{0:.2f}</span><span class="s2">, y = </span><span class="si">{1}</span><span class="s2">, z = </span><span class="si">{2}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">0.015</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"x = </span><span class="si">{x:.2f}</span><span class="s2">, y = </span><span class="si">{y}</span><span class="s2">, z = </span><span class="si">{z}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">3.1415</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">2.8</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mf">0.015</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x = 3.14, y = 2.8, z = 0.015
+x = 3.14, y = 2.8, z = 0.015
+x = 3.14, y = 2.8, z = 0.015
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h5 id="2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">2017 FinanceData <a href="http://financedata.github.com">http://financedata.github.com</a> , <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="python-basics-part-1.html#2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">¶</a>
+</h5>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/basic.html" rel="tag">basic</a></li>
+            <li><a class="tag p-category" href="../categories/print.html" rel="tag">print</a></li>
+            <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../categories/type.html" rel="tag">type</a></li>
+            <li><a class="tag p-category" href="../categories/value.html" rel="tag">value</a></li>
+            <li><a class="tag p-category" href="../categories/variable.html" rel="tag">variable</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="yahoo-finance-to-google-finance.html" rel="prev" title="Yahoo Finance to Google Finance">이전 포스트</a>
+            </li>
+            <li class="next">
+                <a href="python-basics-part-2.html" rel="next" title="Python Basics for Data Science - PART 2">다음 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/python-basics-part-1.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92851530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (lynx에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" href="https://financedata.github.com/categories/lynx.xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Mon, 17 Jul 2017 06:20:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>[FAQ] Jupyter notebook 텍스트 화면</title><link>https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="[FAQ]-Jupyter-notebook-실행시-텍스트-브라우저-화면"&gt;[FAQ] Jupyter notebook 실행시 텍스트 브라우저 화면&lt;a class="anchor-link" href="https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html#%5BFAQ%5D-Jupyter-notebook-%EC%8B%A4%ED%96%89%EC%8B%9C-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%ED%99%94%EB%A9%B4"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Q: Jupyter notebook 실행했을 때, 이상한 텍스트 화면이 표시 됩니다&lt;/li&gt;
+&lt;li&gt;A: Jupyter notebook 실행시 --no-browser 옵션을 추가하세요&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html"&gt;더 읽기…&lt;/a&gt; (읽기 1분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>faq</category><category>jupyter notebook</category><category>lynx</category><guid>https://financedata.github.com/posts/jupyter_notebook_text_browser_lynx.html</guid><pubDate>Tue, 28 Jun 2016 11:30:10 GMT</pubDate></item></channel></rss>
