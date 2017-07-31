@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://financedata.github.com/categories/acrea-code.xml</loc>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/assertionerror.xml</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </sitemap>
@@ -31,11 +35,11 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2017-07-17T06:26:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/chart.xml</loc>
@@ -51,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/concat.xml</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/course.xml</loc>
@@ -67,7 +71,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/dataframe.xml</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/datetime.xml</loc>
@@ -75,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/daum.xml</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/default.xml</loc>
@@ -99,7 +103,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/dropna.xml</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/encoding.xml</loc>
@@ -107,7 +111,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/faq.xml</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/file.xml</loc>
@@ -275,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/realestate.xml</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/regex.xml</loc>
@@ -331,10 +335,10 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2017-07-17T06:26:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2017-07-17T06:26:00Z</lastmod>
+  <lastmod>2017-07-31T04:29:00Z</lastmod>
  </sitemap>
 </sitemapindex>
