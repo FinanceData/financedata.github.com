@@ -11778,28 +11778,45 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="[FAQ]-DataFrame-&#54665;(row)-&#51221;&#48372;&#47484;-&#52628;&#52636;&#54616;&#50668;-&#52972;&#47100;&#51004;&#47196;-&#54633;&#52824;&#44592;">[FAQ] DataFrame &#54665;(row) &#51221;&#48372;&#47484; &#52628;&#52636;&#54616;&#50668; &#52972;&#47100;&#51004;&#47196; &#54633;&#52824;&#44592;<a class="anchor-link" href="#[FAQ]-DataFrame-&#54665;(row)-&#51221;&#48372;&#47484;-&#52628;&#52636;&#54616;&#50668;-&#52972;&#47100;&#51004;&#47196;-&#54633;&#52824;&#44592;">&#182;</a></h1><p>크롤링 데이터 가공과 결측치 처리 예제 (Daum 부동산 예제)</p>
-<ul>
-<li>Q: DataFrame의 두 행(row)이 하나의 데이터를 이룹니다. 짝수 행의 데이터를 추출하여 컬럼으로 만드려면 어떻게 하나요?</li>
-<li>A: DataFrame.ix[] 인덱싱을 사용하여 짝수행 전체를 얻어 가공하고, pd.concat()을 이용여 합칠 수 있습니다.</li>
-</ul>
-<p><img width="320" src="http://i.imgur.com/9WYp6pK.png" ></p>
-<h4 id="http://fb.com/financedata"><a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="#http://fb.com/financedata">&#182;</a></h4><!-- TEASER_END -->
+<h1 id="&#54620;&#44397;&#54665;&#51221;&#44396;&#50669;---&#54665;&#51221;&#46041;&#44284;-&#48277;&#51221;&#46041;">&#54620;&#44397;&#54665;&#51221;&#44396;&#50669; - &#54665;&#51221;&#46041;&#44284; &#48277;&#51221;&#46041;<a class="anchor-link" href="#&#54620;&#44397;&#54665;&#51221;&#44396;&#50669;---&#54665;&#51221;&#46041;&#44284;-&#48277;&#51221;&#46041;">&#182;</a></h1><p>행정동과 법정동 코드 파일 사용 방법</p>
+<p><img width="320" src="http://i.imgur.com/DpSdPH5.png" ></p>
+<p>한국의 행정구역은 행정동과 법정동이 있다. 부동산 정보등에는 법정동 코드가 사용된다. 이 코드를 얻는 방법과 파이썬에서 불러오는 방법을 알아본다.</p>
+<h4 id="2017-FinanceData-http://fb.com/financedata">2017 FinanceData <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="#2017-FinanceData-http://fb.com/financedata">&#182;</a></h4><!-- TEASER_END -->
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#54665;&#51221;&#46041;&#44284;-&#48277;&#51221;&#46041;">&#54665;&#51221;&#46041;&#44284; &#48277;&#51221;&#46041;<a class="anchor-link" href="#&#54665;&#51221;&#46041;&#44284;-&#48277;&#51221;&#46041;">&#182;</a></h1><p>행정동</p>
+<ul>
+<li>행정 편의를 위해 언제든지 통폐합이 가능</li>
+<li>지역 여건 변화(도시 확장, 인구 이동 등)를 반영</li>
+</ul>
+<p>법정동(法定洞)</p>
+<ul>
+<li>전통적인 지역구분, 거의 바뀌지 않는다</li>
+<li>재산권, 권리 행사, 호적, 주소 등 법률 행위 때 이용</li>
+</ul>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#54665;&#51221;&#46041;-&#53076;&#46300;-&#50641;&#49472;-&#54028;&#51068;">&#54665;&#51221;&#46041; &#53076;&#46300; &#50641;&#49472; &#54028;&#51068;<a class="anchor-link" href="#&#54665;&#51221;&#46041;-&#53076;&#46300;-&#50641;&#49472;-&#54028;&#51068;">&#182;</a></h1><p><a href="https://kssc.kostat.go.kr">https://kssc.kostat.go.kr</a> 통계청, 통계분류포털</p>
+<p>"한국행정구역분류_2017.7.1.기준.xls" (18M)</p>
+<p>이 파일을 다운로드하여 pandas로 읽을 수 있다.</p>
+<p><img width="70%" src="http://i.imgur.com/TYLGNlu.png" ></p>
+<p><img width="70%" src="http://i.imgur.com/ZehvmFW.png" ></p>
 
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -11808,33 +11825,126 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://realestate.daum.net/iframe/maemul/maemulList.daum?areaCode=2130010&amp;mcateCode=A1&amp;saleTypeCode=S&amp;tabName=maemulList&amp;isExpanded=false&amp;page=1&quot;</span>
-<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;한국행정구역분류_2017.7.1.기준.xls&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;대분류&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;중분류&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;소분류&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>대분류</th>
+      <th>시도</th>
+      <th>중분류</th>
+      <th>시군구</th>
+      <th>소분류</th>
+      <th>읍면동</th>
+      <th>영문 표기</th>
+      <th>한자 표기</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>nan</td>
+      <td>NaN</td>
+      <td>nan</td>
+      <td>NaN</td>
+      <td>Seoul</td>
+      <td>서울特別市</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>nan</td>
+      <td>NaN</td>
+      <td>Jongno-gu</td>
+      <td>鍾路區</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101053</td>
+      <td>사직동</td>
+      <td>Sajik-dong</td>
+      <td>社稷洞</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101054</td>
+      <td>삼청동</td>
+      <td>Samcheong-dong</td>
+      <td>三淸洞</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101055</td>
+      <td>부암동</td>
+      <td>Buam-dong</td>
+      <td>付岩洞</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="http://i.imgur.com/kFxXIcw.png" ></p>
+
+</div>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2개의 DataFrame을 읽었다</span>
-
-<span class="nb">len</span><span class="p">(</span><span class="n">dfs</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11849,9 +11959,94 @@ div#notebook {
 <div class="prompt output_prompt">Out[2]:</div>
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>대분류</th>
+      <th>시도</th>
+      <th>중분류</th>
+      <th>시군구</th>
+      <th>소분류</th>
+      <th>읍면동</th>
+      <th>영문 표기</th>
+      <th>한자 표기</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3787</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902058</td>
+      <td>서홍동</td>
+      <td>Seohong-dong</td>
+      <td>西烘洞</td>
+    </tr>
+    <tr>
+      <th>3788</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902059</td>
+      <td>대륜동</td>
+      <td>Daeryun-dong</td>
+      <td>大倫洞</td>
+    </tr>
+    <tr>
+      <th>3789</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902060</td>
+      <td>대천동</td>
+      <td>Daecheon-dong</td>
+      <td>大川洞</td>
+    </tr>
+    <tr>
+      <th>3790</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902061</td>
+      <td>중문동</td>
+      <td>Jungmun-dong</td>
+      <td>中文洞</td>
+    </tr>
+    <tr>
+      <th>3791</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902062</td>
+      <td>예래동</td>
+      <td>Yerae-dong</td>
+      <td>猊來洞</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -11865,8 +12060,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>두번째 DataFrame을 얻는다.</p>
-<p>총 60 행(row)이지만, 2개의 행(row)가 하나의 데이터를 이루고 있다. 짝수번째 행(row)는 부가적인 설명이 있다.</p>
+<h2 id="&#54665;&#51221;&#46041;-&#50641;&#49472;-&#54028;&#51068;-&#48148;&#47196;-&#50836;&#52397;&#54616;&#50668;-&#51069;&#44592;">&#54665;&#51221;&#46041; &#50641;&#49472; &#54028;&#51068; &#48148;&#47196; &#50836;&#52397;&#54616;&#50668; &#51069;&#44592;<a class="anchor-link" href="#&#54665;&#51221;&#46041;-&#50641;&#49472;-&#54028;&#51068;-&#48148;&#47196;-&#50836;&#52397;&#54616;&#50668;-&#51069;&#44592;">&#182;</a></h2><p>통계청의 통계지리정보시스템은 '행정구역 코드 검색 API'를 제공하고 있다</p>
+<p><a href="http://sgis.kostat.go.kr/OpenAPI2/subpage/openAPI2_10.jsp">http://sgis.kostat.go.kr/OpenAPI2/subpage/openAPI2_10.jsp</a></p>
+<p>행정구역 코드 검색을 위해 행정구역 코드를 엑셀 파일로 제공하며, 그 URL은 다음과 같다.</p>
+<p><a href="http://sgis.kostat.go.kr/OpenAPI2/upload/unitarea_code.xls">http://sgis.kostat.go.kr/OpenAPI2/upload/unitarea_code.xls</a></p>
+<p>위 URL을 바로 읽어 사용할 수 도 있다</p>
 
 </div>
 </div>
@@ -11876,10 +12074,11 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="s1">&#39;rows&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://sgis.kostat.go.kr/OpenAPI2/upload/unitarea_code.xls&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11889,15 +12088,6 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>60 rows
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 <div class="prompt output_prompt">Out[3]:</div>
@@ -11905,130 +12095,76 @@ div#notebook {
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>최초게재일</th>
-      <th>종류/소재지</th>
-      <th>단지명</th>
-      <th>공급/전용(㎡)</th>
-      <th>매매가(만원)</th>
-      <th>동</th>
-      <th>층</th>
-      <th>문의처</th>
+      <th>시도코드</th>
+      <th>시도명칭</th>
+      <th>시군구코드</th>
+      <th>시군구명칭</th>
+      <th>읍면동코드</th>
+      <th>읍면동명칭</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>매매  17.03.01</td>
-      <td>아파트장안동</td>
-      <td>한신  한신</td>
-      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
-      <td>37500</td>
-      <td>102</td>
-      <td>14/18</td>
-      <td>동원공인중개사사무. .  02-2216-8600</td>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101053</td>
+      <td>사직동</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101054</td>
+      <td>삼청동</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
-      <td>54000</td>
-      <td>103</td>
-      <td>중/20</td>
-      <td>백산 공인중개사  02-3291-0088</td>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101055</td>
+      <td>부암동</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101056</td>
+      <td>평창동</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34700</td>
-      <td>101</td>
-      <td>6/22</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>급매물  대단지  중랑천조망 ,</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34000</td>
-      <td>115</td>
-      <td>25/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>35000</td>
-      <td>113</td>
-      <td>중/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>11</td>
+      <td>서울특별시</td>
+      <td>11010</td>
+      <td>종로구</td>
+      <td>1101057</td>
+      <td>무악동</td>
     </tr>
   </tbody>
 </table>
@@ -12041,26 +12177,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>짝수번째 행(인덱스가 1,3,5,7..)은 NaN을 포함하고 있다.</p>
-<p>가장 간단한 방법은  NaN을 가지고 있는 행을 제거(drop)하는 것이다. (DataFrame.dropna)</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_tmp</span><span class="p">),</span> <span class="s1">&#39;rows&#39;</span><span class="p">)</span>
-
-<span class="n">df_tmp</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12072,144 +12194,81 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>30 rows
-</pre>
-</div>
-</div>
-
-<div class="output_area">
 <div class="prompt output_prompt">Out[4]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>최초게재일</th>
-      <th>종류/소재지</th>
-      <th>단지명</th>
-      <th>공급/전용(㎡)</th>
-      <th>매매가(만원)</th>
-      <th>동</th>
-      <th>층</th>
-      <th>문의처</th>
+      <th>시도코드</th>
+      <th>시도명칭</th>
+      <th>시군구코드</th>
+      <th>시군구명칭</th>
+      <th>읍면동코드</th>
+      <th>읍면동명칭</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>매매  17.03.01</td>
-      <td>아파트장안동</td>
-      <td>한신  한신</td>
-      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
-      <td>37500</td>
-      <td>102</td>
-      <td>14/18</td>
-      <td>동원공인중개사사무. .  02-2216-8600</td>
+      <th>3477</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902058</td>
+      <td>서홍동</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
-      <td>54000</td>
-      <td>103</td>
-      <td>중/20</td>
-      <td>백산 공인중개사  02-3291-0088</td>
+      <th>3478</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902059</td>
+      <td>대륜동</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34700</td>
-      <td>101</td>
-      <td>6/22</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <th>3479</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902060</td>
+      <td>대천동</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34000</td>
-      <td>115</td>
-      <td>25/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
+      <th>3480</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902061</td>
+      <td>중문동</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>35000</td>
-      <td>113</td>
-      <td>중/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>55000</td>
-      <td>101</td>
-      <td>13/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
-      <td>53500</td>
-      <td>103</td>
-      <td>12/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>54000</td>
-      <td>102</td>
-      <td>11/19</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>매매  17.03.01</td>
-      <td>아파트전농동</td>
-      <td>래미안크레시티  래미안크레시티</td>
-      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
-      <td>62000</td>
-      <td>207</td>
-      <td>3/21</td>
-      <td>금강부동산공인중개. .  02-2245-0006</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>매매  17.03.01</td>
-      <td>아파트답십리동</td>
-      <td>답십리대우  답십리대우</td>
-      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
-      <td>42000</td>
-      <td>102</td>
-      <td>저/21</td>
-      <td>스마일부동산공인중. .  02-2246-8944</td>
+      <th>3481</th>
+      <td>39</td>
+      <td>제주특별자치도</td>
+      <td>39020</td>
+      <td>서귀포시</td>
+      <td>3902062</td>
+      <td>예래동</td>
     </tr>
   </tbody>
 </table>
@@ -12227,7 +12286,24 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="DataFrame&#51032;-&#54665;,&#50676;-&#51312;&#51089;">DataFrame&#51032; &#54665;,&#50676; &#51312;&#51089;<a class="anchor-link" href="#DataFrame&#51032;-&#54665;,&#50676;-&#51312;&#51089;">&#182;</a></h1>
+<h1 id="&#48277;&#51221;&#46041;-&#53076;&#46300;">&#48277;&#51221;&#46041; &#53076;&#46300;<a class="anchor-link" href="#&#48277;&#51221;&#46041;-&#53076;&#46300;">&#182;</a></h1><p><a href="https://www.code.go.kr/">https://www.code.go.kr/</a> 행정표준코드 관리시스템</p>
+<p>상단의 코드검색을 선택하고, 분류별 탭에서 공통&gt;법정동을 선택</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="70%" src="http://i.imgur.com/WZOyQG4.png" ></p>
+<p>법정동 코드를 다운로드 할 수 있다.
+<img width="70%" src="http://i.imgur.com/gxwWvWU.png" ></p>
+<p>"법정동코드 전체자료.zip" 라는 이름으로 다운로드 할 수 있으며, .txt 파일을 포함하고 있다.</p>
+<p>이 .txt 파일을 다음 URL에 공유하였다.</p>
+<p><a href="https://goo.gl/tM6r3v">https://goo.gl/tM6r3v</a></p>
+
 </div>
 </div>
 </div>
@@ -12236,12 +12312,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ix[] 인덱싱을 사용하여 짝수번째 행(row)만 추출한다.</span>
-
-<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[::</span><span class="mi">2</span><span class="p">,:]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df1</span><span class="p">),</span> <span class="s1">&#39;rows&#39;</span><span class="p">)</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_areacode</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://goo.gl/tM6r3v&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;법정동코드&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+<span class="n">df_areacode</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12253,144 +12325,63 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>30 rows
-</pre>
-</div>
-</div>
-
-<div class="output_area">
 <div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>최초게재일</th>
-      <th>종류/소재지</th>
-      <th>단지명</th>
-      <th>공급/전용(㎡)</th>
-      <th>매매가(만원)</th>
-      <th>동</th>
-      <th>층</th>
-      <th>문의처</th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+      <th>폐지여부</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>매매  17.03.01</td>
-      <td>아파트장안동</td>
-      <td>한신  한신</td>
-      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
-      <td>37500</td>
-      <td>102</td>
-      <td>14/18</td>
-      <td>동원공인중개사사무. .  02-2216-8600</td>
+      <td>1100000000</td>
+      <td>서울특별시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1111000000</td>
+      <td>서울특별시 종로구</td>
+      <td>존재</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
-      <td>54000</td>
-      <td>103</td>
-      <td>중/20</td>
-      <td>백산 공인중개사  02-3291-0088</td>
+      <td>1111010100</td>
+      <td>서울특별시 종로구 청운동</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1111010200</td>
+      <td>서울특별시 종로구 신교동</td>
+      <td>존재</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34700</td>
-      <td>101</td>
-      <td>6/22</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34000</td>
-      <td>115</td>
-      <td>25/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>35000</td>
-      <td>113</td>
-      <td>중/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>55000</td>
-      <td>101</td>
-      <td>13/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
-      <td>53500</td>
-      <td>103</td>
-      <td>12/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>54000</td>
-      <td>102</td>
-      <td>11/19</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>매매  17.03.01</td>
-      <td>아파트전농동</td>
-      <td>래미안크레시티  래미안크레시티</td>
-      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
-      <td>62000</td>
-      <td>207</td>
-      <td>3/21</td>
-      <td>금강부동산공인중개. .  02-2245-0006</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>매매  17.03.01</td>
-      <td>아파트답십리동</td>
-      <td>답십리대우  답십리대우</td>
-      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
-      <td>42000</td>
-      <td>102</td>
-      <td>저/21</td>
-      <td>스마일부동산공인중. .  02-2246-8944</td>
+      <td>1111010300</td>
+      <td>서울특별시 종로구 궁정동</td>
+      <td>존재</td>
     </tr>
   </tbody>
 </table>
@@ -12408,11 +12399,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이번에는 홀수번째 행(row)만 추출한다.</span>
-
-<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">df2</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;비고&#39;</span>
-<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df_areacode</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12429,17 +12416,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1       무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의
-3              하루종일 밝고 환한 남향 확장형 매매예요
-5                   급매물  대단지  중랑천조망 ,
-7     대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매
-9          대단지  역세권  내부 수리 ,거실및 방확장 ,
-11                역세권  로얄동, 햇빛 잘 드는 집
-13            역세권  확장형  베란다 확장된 깔끔한 집
-15                    역세권  기본형, 입주 가능
-17            대단지  확장형  확장형 채광좋음 입주가능
-19                                NaN
-Name: 비고, dtype: object</pre>
+<pre>45957</pre>
 </div>
 
 </div>
@@ -12447,19 +12424,24 @@ Name: 비고, dtype: object</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>현재 사용하고 있지 않은 법정동코드는 삭제 한다. (폐지여부가 '존재'인 행만 남긴다)</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># df1과 df2를 합치기(concat)위해 위해 index를 동일하게 초기화 한다.</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># df1 과  df2 를 컬럼으로 합치기</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_areacode</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span><span class="n">df_areacode</span><span class="p">[</span><span class="s1">&#39;폐지여부&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;존재&#39;</span><span class="p">]</span>
+<span class="n">df_areacode</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12476,141 +12458,58 @@ Name: 비고, dtype: object</pre>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>최초게재일</th>
-      <th>종류/소재지</th>
-      <th>단지명</th>
-      <th>공급/전용(㎡)</th>
-      <th>매매가(만원)</th>
-      <th>동</th>
-      <th>층</th>
-      <th>문의처</th>
-      <th>비고</th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+      <th>폐지여부</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>매매  17.03.01</td>
-      <td>아파트장안동</td>
-      <td>한신  한신</td>
-      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
-      <td>37500</td>
-      <td>102</td>
-      <td>14/18</td>
-      <td>동원공인중개사사무. .  02-2216-8600</td>
-      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
+      <td>1100000000</td>
+      <td>서울특별시</td>
+      <td>존재</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
-      <td>54000</td>
-      <td>103</td>
-      <td>중/20</td>
-      <td>백산 공인중개사  02-3291-0088</td>
-      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
+      <td>1111000000</td>
+      <td>서울특별시 종로구</td>
+      <td>존재</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34700</td>
-      <td>101</td>
-      <td>6/22</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>급매물  대단지  중랑천조망 ,</td>
+      <td>1111010100</td>
+      <td>서울특별시 종로구 청운동</td>
+      <td>존재</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34000</td>
-      <td>115</td>
-      <td>25/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
+      <td>1111010200</td>
+      <td>서울특별시 종로구 신교동</td>
+      <td>존재</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>35000</td>
-      <td>113</td>
-      <td>중/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>55000</td>
-      <td>101</td>
-      <td>13/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  로얄동, 햇빛 잘 드는 집</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
-      <td>53500</td>
-      <td>103</td>
-      <td>12/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  확장형  베란다 확장된 깔끔한 집</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>54000</td>
-      <td>102</td>
-      <td>11/19</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  기본형, 입주 가능</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>매매  17.03.01</td>
-      <td>아파트전농동</td>
-      <td>래미안크레시티  래미안크레시티</td>
-      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
-      <td>62000</td>
-      <td>207</td>
-      <td>3/21</td>
-      <td>금강부동산공인중개. .  02-2245-0006</td>
-      <td>대단지  확장형  확장형 채광좋음 입주가능</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>매매  17.03.01</td>
-      <td>아파트답십리동</td>
-      <td>답십리대우  답십리대우</td>
-      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
-      <td>42000</td>
-      <td>102</td>
-      <td>저/21</td>
-      <td>스마일부동산공인중. .  02-2246-8944</td>
-      <td>NaN</td>
+      <td>1111010300</td>
+      <td>서울특별시 종로구 궁정동</td>
+      <td>존재</td>
     </tr>
   </tbody>
 </table>
@@ -12623,28 +12522,12 @@ Name: 비고, dtype: object</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#52972;&#47100;-&#45796;&#46316;&#44592;">&#52972;&#47100; &#45796;&#46316;&#44592;<a class="anchor-link" href="#&#52972;&#47100;-&#45796;&#46316;&#44592;">&#182;</a></h1><p>'최초게재일' 컬럼에 거래종류와 날짜가 함께 있다. 거래종류는 매매, 전세, 월세 등이 있다. 
-이 데이터를 둘로 나누어 각각 '거래종류'를 추출하고, '최초게제일'에는 날짜만 남도록 해보자.</p>
-<p>Series.str.extract() 에 정규식을 사용하여 매치되는 문자열을 추출할 수 있다.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;매매 17.03.01&#39; 데이터에 대해,</span>
-<span class="c1"># 정규식 &#39;(.*) &#39;을 적용하면 &#39;매매&#39;만 추출</span>
-
-<span class="n">result</span><span class="p">[</span><span class="s1">&#39;거래종류&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;최초게재일&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;(.*) &#39;</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df_areacode</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12659,158 +12542,9 @@ Name: 비고, dtype: object</pre>
 <div class="prompt output_prompt">Out[8]:</div>
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>최초게재일</th>
-      <th>종류/소재지</th>
-      <th>단지명</th>
-      <th>공급/전용(㎡)</th>
-      <th>매매가(만원)</th>
-      <th>동</th>
-      <th>층</th>
-      <th>문의처</th>
-      <th>비고</th>
-      <th>거래종류</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>매매  17.03.01</td>
-      <td>아파트장안동</td>
-      <td>한신  한신</td>
-      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
-      <td>37500</td>
-      <td>102</td>
-      <td>14/18</td>
-      <td>동원공인중개사사무. .  02-2216-8600</td>
-      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
-      <td>54000</td>
-      <td>103</td>
-      <td>중/20</td>
-      <td>백산 공인중개사  02-3291-0088</td>
-      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34700</td>
-      <td>101</td>
-      <td>6/22</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>급매물  대단지  중랑천조망 ,</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34000</td>
-      <td>115</td>
-      <td>25/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>매매  17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>35000</td>
-      <td>113</td>
-      <td>중/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>55000</td>
-      <td>101</td>
-      <td>13/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  로얄동, 햇빛 잘 드는 집</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
-      <td>53500</td>
-      <td>103</td>
-      <td>12/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  확장형  베란다 확장된 깔끔한 집</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>매매  17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>54000</td>
-      <td>102</td>
-      <td>11/19</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  기본형, 입주 가능</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>매매  17.03.01</td>
-      <td>아파트전농동</td>
-      <td>래미안크레시티  래미안크레시티</td>
-      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
-      <td>62000</td>
-      <td>207</td>
-      <td>3/21</td>
-      <td>금강부동산공인중개. .  02-2245-0006</td>
-      <td>대단지  확장형  확장형 채광좋음 입주가능</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>매매  17.03.01</td>
-      <td>아파트답십리동</td>
-      <td>답십리대우  답십리대우</td>
-      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
-      <td>42000</td>
-      <td>102</td>
-      <td>저/21</td>
-      <td>스마일부동산공인중. .  02-2246-8944</td>
-      <td>NaN</td>
-      <td>매매</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>20544</pre>
 </div>
 
 </div>
@@ -12818,17 +12552,23 @@ Name: 비고, dtype: object</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>'법정동코드' 컬럼이 숫자로만 되어있어 기본적으로 정수(int) 타입으로 읽힌다. 코드로 사용하기 위해 문자열(str)로 타입을 지정하였다.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;매매 17.03.01&#39; 데이터에 대해, </span>
-<span class="c1"># 정규식 &#39;(\d+.\d+.\d+)&#39;을 적용하여 추출하면 &#39;17.03.01&#39;만 추출</span>
-
-<span class="n">result</span><span class="p">[</span><span class="s1">&#39;최초게재일&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;최초게재일&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;(\d+.\d+.\d+)&#39;</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_areacode</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12845,152 +12585,58 @@ Name: 비고, dtype: object</pre>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>최초게재일</th>
-      <th>종류/소재지</th>
-      <th>단지명</th>
-      <th>공급/전용(㎡)</th>
-      <th>매매가(만원)</th>
-      <th>동</th>
-      <th>층</th>
-      <th>문의처</th>
-      <th>비고</th>
-      <th>거래종류</th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+      <th>폐지여부</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>17.03.01</td>
-      <td>아파트장안동</td>
-      <td>한신  한신</td>
-      <td>109C/84  공급면적  109.46㎡  전용면적  84.4㎡</td>
-      <td>37500</td>
-      <td>102</td>
-      <td>14/18</td>
-      <td>동원공인중개사사무. .  02-2216-8600</td>
-      <td>무융자  로얄층,기본구조,확트인조망굿,주차굿,입주협의</td>
-      <td>매매</td>
+      <th>45952</th>
+      <td>5013032022</td>
+      <td>제주특별자치도 서귀포시 표선면 하천리</td>
+      <td>존재</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>80B/59  공급면적  80.37㎡  전용면적  59.9㎡</td>
-      <td>54000</td>
-      <td>103</td>
-      <td>중/20</td>
-      <td>백산 공인중개사  02-3291-0088</td>
-      <td>하루종일 밝고 환한 남향 확장형 매매예요</td>
-      <td>매매</td>
+      <th>45953</th>
+      <td>5013032023</td>
+      <td>제주특별자치도 서귀포시 표선면 성읍리</td>
+      <td>존재</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34700</td>
-      <td>101</td>
-      <td>6/22</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>급매물  대단지  중랑천조망 ,</td>
-      <td>매매</td>
+      <th>45954</th>
+      <td>5013032024</td>
+      <td>제주특별자치도 서귀포시 표선면 가시리</td>
+      <td>존재</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>34000</td>
-      <td>115</td>
-      <td>25/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>대단지  역세권  조망틔이고 일조권좋은집 , 세끼고 매매</td>
-      <td>매매</td>
+      <th>45955</th>
+      <td>5013032025</td>
+      <td>제주특별자치도 서귀포시 표선면 세화리</td>
+      <td>존재</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>17.03.01</td>
-      <td>아파트이문동</td>
-      <td>쌍용  쌍용</td>
-      <td>81/59  공급면적  81.19㎡  전용면적  59.99㎡</td>
-      <td>35000</td>
-      <td>113</td>
-      <td>중/25</td>
-      <td>쌍용공인중개사사무. .  02-962-2244</td>
-      <td>대단지  역세권  내부 수리 ,거실및 방확장 ,</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>55000</td>
-      <td>101</td>
-      <td>13/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  로얄동, 햇빛 잘 드는 집</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79C/59  공급면적  79.18㎡  전용면적  59.96㎡</td>
-      <td>53500</td>
-      <td>103</td>
-      <td>12/20</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  확장형  베란다 확장된 깔끔한 집</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>17.03.01</td>
-      <td>아파트용두동</td>
-      <td>래미안허브리츠  래미안허브리츠</td>
-      <td>79A/59  공급면적  79.7㎡  전용면적  59.98㎡</td>
-      <td>54000</td>
-      <td>102</td>
-      <td>11/19</td>
-      <td>미래공인중개사사무. .  02-960-6800</td>
-      <td>역세권  기본형, 입주 가능</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>17.03.01</td>
-      <td>아파트전농동</td>
-      <td>래미안크레시티  래미안크레시티</td>
-      <td>112A/84  공급면적  112.21㎡  전용면적  84.96㎡</td>
-      <td>62000</td>
-      <td>207</td>
-      <td>3/21</td>
-      <td>금강부동산공인중개. .  02-2245-0006</td>
-      <td>대단지  확장형  확장형 채광좋음 입주가능</td>
-      <td>매매</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>17.03.01</td>
-      <td>아파트답십리동</td>
-      <td>답십리대우  답십리대우</td>
-      <td>108/84  공급면적  108.45㎡  전용면적  84.99㎡</td>
-      <td>42000</td>
-      <td>102</td>
-      <td>저/21</td>
-      <td>스마일부동산공인중. .  02-2246-8944</td>
-      <td>NaN</td>
-      <td>매매</td>
+      <th>45956</th>
+      <td>5013032026</td>
+      <td>제주특별자치도 서귀포시 표선면 토산리</td>
+      <td>존재</td>
     </tr>
   </tbody>
 </table>
@@ -13008,7 +12654,529 @@ Name: 비고, dtype: object</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2017-http://fb.com/financedata">2017 <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="#2017-http://fb.com/financedata">&#182;</a></h4>
+<p>단위는 "시/도", "시/군/구", "읍/면/동", "리" 각 2자리로 구성되어 있다. (총 8자리)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#49884;/&#46020;&#47564;-&#52628;&#52636;&#54616;&#44592;">&#49884;/&#46020;&#47564; &#52628;&#52636;&#54616;&#44592;<a class="anchor-link" href="#&#49884;/&#46020;&#47564;-&#52628;&#52636;&#54616;&#44592;">&#182;</a></h1><p>지역 구분이 총 4개 레벨("시/도", "시/군/구", "읍/면/동", "리")</p>
+<p>이중에서 '시/도' 추출하고자 한다면, 총 8자리 숫자중 뒤쪽 6자리가 모두 '0'인 행(row)를 추출하는 방법을 사용할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &#39;\d{2}0{8}&#39; : 임의정수 2개, 숫자 0이 8개</span>
+<span class="c1"># 3611000000 : 세종특별자치시</span>
+
+<span class="n">df_province</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span> <span class="n">df_areacode</span><span class="p">[</span><span class="s1">&#39;법정동코드&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1">0</span><span class="si">{8}</span><span class="s1">|36110</span><span class="si">{6}</span><span class="s1">&#39;</span><span class="p">)]</span>
+<span class="n">df_province</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+      <th>폐지여부</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1100000000</td>
+      <td>서울특별시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>2615</th>
+      <td>2600000000</td>
+      <td>부산광역시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>2912</th>
+      <td>2700000000</td>
+      <td>대구광역시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>3244</th>
+      <td>2800000000</td>
+      <td>인천광역시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>3579</th>
+      <td>2900000000</td>
+      <td>광주광역시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>3825</th>
+      <td>3000000000</td>
+      <td>대전광역시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>4009</th>
+      <td>3100000000</td>
+      <td>울산광역시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>4241</th>
+      <td>3611000000</td>
+      <td>세종특별자치시</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>4391</th>
+      <td>4100000000</td>
+      <td>경기도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>10867</th>
+      <td>4200000000</td>
+      <td>강원도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>13666</th>
+      <td>4300000000</td>
+      <td>충청북도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>16797</th>
+      <td>4400000000</td>
+      <td>충청남도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>22050</th>
+      <td>4500000000</td>
+      <td>전라북도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>25397</th>
+      <td>4600000000</td>
+      <td>전라남도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>30169</th>
+      <td>4700000000</td>
+      <td>경상북도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>39299</th>
+      <td>4800000000</td>
+      <td>경상남도</td>
+      <td>존재</td>
+    </tr>
+    <tr>
+      <th>45741</th>
+      <td>5000000000</td>
+      <td>제주특별자치도</td>
+      <td>존재</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>우리나라 시/도는 모두 17개 이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df_province</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>17</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#54632;&#49688;&#47196;-&#51221;&#47532;">&#54632;&#49688;&#47196; &#51221;&#47532;<a class="anchor-link" href="#&#54632;&#49688;&#47196;-&#51221;&#47532;">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">get_areacode</span><span class="p">():</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://goo.gl/tM6r3v&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;법정동코드&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;법정동명&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span><span class="n">df_areacode</span><span class="p">[</span><span class="s1">&#39;폐지여부&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;존재&#39;</span><span class="p">]</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[[</span><span class="s1">&#39;법정동코드&#39;</span><span class="p">,</span> <span class="s1">&#39;법정동명&#39;</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">df_areacode</span>
+
+<span class="k">def</span> <span class="nf">get_province</span><span class="p">():</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">get_areacode</span><span class="p">()</span>
+    <span class="n">df_province</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span> <span class="n">df_areacode</span><span class="p">[</span><span class="s1">&#39;법정동코드&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1">0</span><span class="si">{8}</span><span class="s1">|36110</span><span class="si">{6}</span><span class="s1">&#39;</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">df_province</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_areacode</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1100000000</td>
+      <td>서울특별시</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1111000000</td>
+      <td>서울특별시 종로구</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1111010100</td>
+      <td>서울특별시 종로구 청운동</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1111010200</td>
+      <td>서울특별시 종로구 신교동</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1111010300</td>
+      <td>서울특별시 종로구 궁정동</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_province</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1100000000</td>
+      <td>서울특별시</td>
+    </tr>
+    <tr>
+      <th>2615</th>
+      <td>2600000000</td>
+      <td>부산광역시</td>
+    </tr>
+    <tr>
+      <th>2912</th>
+      <td>2700000000</td>
+      <td>대구광역시</td>
+    </tr>
+    <tr>
+      <th>3244</th>
+      <td>2800000000</td>
+      <td>인천광역시</td>
+    </tr>
+    <tr>
+      <th>3579</th>
+      <td>2900000000</td>
+      <td>광주광역시</td>
+    </tr>
+    <tr>
+      <th>3825</th>
+      <td>3000000000</td>
+      <td>대전광역시</td>
+    </tr>
+    <tr>
+      <th>4009</th>
+      <td>3100000000</td>
+      <td>울산광역시</td>
+    </tr>
+    <tr>
+      <th>4241</th>
+      <td>3611000000</td>
+      <td>세종특별자치시</td>
+    </tr>
+    <tr>
+      <th>4391</th>
+      <td>4100000000</td>
+      <td>경기도</td>
+    </tr>
+    <tr>
+      <th>10867</th>
+      <td>4200000000</td>
+      <td>강원도</td>
+    </tr>
+    <tr>
+      <th>13666</th>
+      <td>4300000000</td>
+      <td>충청북도</td>
+    </tr>
+    <tr>
+      <th>16797</th>
+      <td>4400000000</td>
+      <td>충청남도</td>
+    </tr>
+    <tr>
+      <th>22050</th>
+      <td>4500000000</td>
+      <td>전라북도</td>
+    </tr>
+    <tr>
+      <th>25397</th>
+      <td>4600000000</td>
+      <td>전라남도</td>
+    </tr>
+    <tr>
+      <th>30169</th>
+      <td>4700000000</td>
+      <td>경상북도</td>
+    </tr>
+    <tr>
+      <th>39299</th>
+      <td>4800000000</td>
+      <td>경상남도</td>
+    </tr>
+    <tr>
+      <th>45741</th>
+      <td>5000000000</td>
+      <td>제주특별자치도</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#53076;&#46300;-&#51312;&#54924;">&#53076;&#46300; &#51312;&#54924;<a class="anchor-link" href="#&#53076;&#46300;-&#51312;&#54924;">&#182;</a></h1><p>특정 "시/도"의 코드는 다음과 같이 얻을 수 있다</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;제주특별자치도&#39;</span>
+
+<span class="n">df_province</span> <span class="o">=</span> <span class="n">get_province</span><span class="p">()</span>
+<span class="n">df_province</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_province</span><span class="p">[</span><span class="s1">&#39;법정동명&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;법정동코드&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;5000000000&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h4 id="2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">2017 FinanceData <a href="http://financedata.github.com">http://financedata.github.com</a> , <a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="#2017-FinanceData-http://financedata.github.com-,-http://fb.com/financedata">&#182;</a></h4>
 </div>
 </div>
 </div>
