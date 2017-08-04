@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1501475440.142761
+_modified_time = 1501879092.2271743
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper.tmpl'
 _template_uri = 'comments_helper.tmpl'
@@ -23,23 +23,23 @@ def _mako_generate_namespaces(context):
     ns = runtime.TemplateNamespace('isso', context._clean_inheritance_tokens(), templateuri='comments_helper_isso.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'isso')] = ns
 
-    ns = runtime.TemplateNamespace('googleplus', context._clean_inheritance_tokens(), templateuri='comments_helper_googleplus.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'googleplus')] = ns
+    ns = runtime.TemplateNamespace('livefyre', context._clean_inheritance_tokens(), templateuri='comments_helper_livefyre.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'livefyre')] = ns
+
+    ns = runtime.TemplateNamespace('intensedebate', context._clean_inheritance_tokens(), templateuri='comments_helper_intensedebate.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'intensedebate')] = ns
 
     ns = runtime.TemplateNamespace('muut', context._clean_inheritance_tokens(), templateuri='comments_helper_muut.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'muut')] = ns
 
-    ns = runtime.TemplateNamespace('livefyre', context._clean_inheritance_tokens(), templateuri='comments_helper_livefyre.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'livefyre')] = ns
+    ns = runtime.TemplateNamespace('googleplus', context._clean_inheritance_tokens(), templateuri='comments_helper_googleplus.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'googleplus')] = ns
 
     ns = runtime.TemplateNamespace('disqus', context._clean_inheritance_tokens(), templateuri='comments_helper_disqus.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'disqus')] = ns
 
     ns = runtime.TemplateNamespace('facebook', context._clean_inheritance_tokens(), templateuri='comments_helper_facebook.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'facebook')] = ns
-
-    ns = runtime.TemplateNamespace('intensedebate', context._clean_inheritance_tokens(), templateuri='comments_helper_intensedebate.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'intensedebate')] = ns
 
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
@@ -65,13 +65,13 @@ def render_body(context,**pageargs):
 def render_comment_form(context,url,title,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
-        googleplus = _mako_get_namespace(context, 'googleplus')
-        muut = _mako_get_namespace(context, 'muut')
         comment_system = context.get('comment_system', UNDEFINED)
-        facebook = _mako_get_namespace(context, 'facebook')
         isso = _mako_get_namespace(context, 'isso')
+        facebook = _mako_get_namespace(context, 'facebook')
         intensedebate = _mako_get_namespace(context, 'intensedebate')
+        googleplus = _mako_get_namespace(context, 'googleplus')
         livefyre = _mako_get_namespace(context, 'livefyre')
+        muut = _mako_get_namespace(context, 'muut')
         disqus = _mako_get_namespace(context, 'disqus')
         __M_writer = context.writer()
         __M_writer('\n')
@@ -111,13 +111,13 @@ def render_comment_form(context,url,title,identifier):
 def render_comment_link_script(context):
     __M_caller = context.caller_stack._push_frame()
     try:
-        googleplus = _mako_get_namespace(context, 'googleplus')
-        muut = _mako_get_namespace(context, 'muut')
         comment_system = context.get('comment_system', UNDEFINED)
-        facebook = _mako_get_namespace(context, 'facebook')
         isso = _mako_get_namespace(context, 'isso')
+        facebook = _mako_get_namespace(context, 'facebook')
         intensedebate = _mako_get_namespace(context, 'intensedebate')
+        googleplus = _mako_get_namespace(context, 'googleplus')
         livefyre = _mako_get_namespace(context, 'livefyre')
+        muut = _mako_get_namespace(context, 'muut')
         disqus = _mako_get_namespace(context, 'disqus')
         __M_writer = context.writer()
         __M_writer('\n')
@@ -157,13 +157,13 @@ def render_comment_link_script(context):
 def render_comment_link(context,link,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
-        googleplus = _mako_get_namespace(context, 'googleplus')
-        muut = _mako_get_namespace(context, 'muut')
         comment_system = context.get('comment_system', UNDEFINED)
-        facebook = _mako_get_namespace(context, 'facebook')
         isso = _mako_get_namespace(context, 'isso')
+        facebook = _mako_get_namespace(context, 'facebook')
         intensedebate = _mako_get_namespace(context, 'intensedebate')
+        googleplus = _mako_get_namespace(context, 'googleplus')
         livefyre = _mako_get_namespace(context, 'livefyre')
+        muut = _mako_get_namespace(context, 'muut')
         disqus = _mako_get_namespace(context, 'disqus')
         __M_writer = context.writer()
         __M_writer('\n')
@@ -202,6 +202,6 @@ def render_comment_link(context,link,identifier):
 
 """
 __M_BEGIN_METADATA
-{"uri": "comments_helper.tmpl", "line_map": {"23": 9, "26": 7, "29": 6, "32": 4, "35": 3, "38": 8, "41": 5, "44": 0, "49": 2, "50": 3, "51": 4, "52": 5, "53": 6, "54": 7, "55": 8, "56": 9, "57": 27, "58": 45, "59": 63, "65": 11, "77": 11, "78": 12, "79": 13, "80": 13, "81": 13, "82": 14, "83": 15, "84": 15, "85": 15, "86": 16, "87": 17, "88": 17, "89": 17, "90": 18, "91": 19, "92": 19, "93": 19, "94": 20, "95": 21, "96": 21, "97": 21, "98": 22, "99": 23, "100": 23, "101": 23, "102": 24, "103": 25, "104": 25, "105": 25, "111": 47, "123": 47, "124": 48, "125": 49, "126": 49, "127": 49, "128": 50, "129": 51, "130": 51, "131": 51, "132": 52, "133": 53, "134": 53, "135": 53, "136": 54, "137": 55, "138": 55, "139": 55, "140": 56, "141": 57, "142": 57, "143": 57, "144": 58, "145": 59, "146": 59, "147": 59, "148": 60, "149": 61, "150": 61, "151": 61, "157": 29, "169": 29, "170": 30, "171": 31, "172": 31, "173": 31, "174": 32, "175": 33, "176": 33, "177": 33, "178": 34, "179": 35, "180": 35, "181": 35, "182": 36, "183": 37, "184": 37, "185": 37, "186": 38, "187": 39, "188": 39, "189": 39, "190": 40, "191": 41, "192": 41, "193": 41, "194": 42, "195": 43, "196": 43, "197": 43, "203": 197}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper.tmpl", "source_encoding": "utf-8"}
+{"uri": "comments_helper.tmpl", "line_map": {"23": 9, "26": 4, "29": 5, "32": 6, "35": 7, "38": 3, "41": 8, "44": 0, "49": 2, "50": 3, "51": 4, "52": 5, "53": 6, "54": 7, "55": 8, "56": 9, "57": 27, "58": 45, "59": 63, "65": 11, "77": 11, "78": 12, "79": 13, "80": 13, "81": 13, "82": 14, "83": 15, "84": 15, "85": 15, "86": 16, "87": 17, "88": 17, "89": 17, "90": 18, "91": 19, "92": 19, "93": 19, "94": 20, "95": 21, "96": 21, "97": 21, "98": 22, "99": 23, "100": 23, "101": 23, "102": 24, "103": 25, "104": 25, "105": 25, "111": 47, "123": 47, "124": 48, "125": 49, "126": 49, "127": 49, "128": 50, "129": 51, "130": 51, "131": 51, "132": 52, "133": 53, "134": 53, "135": 53, "136": 54, "137": 55, "138": 55, "139": 55, "140": 56, "141": 57, "142": 57, "143": 57, "144": 58, "145": 59, "146": 59, "147": 59, "148": 60, "149": 61, "150": 61, "151": 61, "157": 29, "169": 29, "170": 30, "171": 31, "172": 31, "173": 31, "174": 32, "175": 33, "176": 33, "177": 33, "178": 34, "179": 35, "180": 35, "181": 35, "182": 36, "183": 37, "184": 37, "185": 37, "186": 38, "187": 39, "188": 39, "189": 39, "190": 40, "191": 41, "192": 41, "193": 41, "194": 42, "195": 43, "196": 43, "197": 43, "203": 197}, "source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper.tmpl"}
 __M_END_METADATA
 """

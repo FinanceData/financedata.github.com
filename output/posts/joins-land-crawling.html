@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# fb: http://ogp.me/ns/fb# " lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="조인스랜드 데이터 크롤링">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부동산 - 조인스랜드 데이터 크롤링 | FinanceData</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="https://financedata.github.com/posts/joins-land-crawling.html">
+<meta property="fb:app_id" content="">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="조인스랜드 데이터 크롤링">
+<meta name="author" content="plusjune">
+<link rel="prev" href="naver-land-crawling.html" title="네이버 부동산 크롤링" type="text/html">
+<meta property="og:site_name" content="FinanceData">
+<meta property="og:title" content="부동산 - 조인스랜드 데이터 크롤링">
+<meta property="og:url" content="https://financedata.github.com/posts/joins-land-crawling.html">
+<meta property="og:description" content="조인스랜드 데이터 크롤링">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-08-04T06:40:23+09:00">
+<meta property="article:tag" content="crawling">
+<meta property="article:tag" content="joins">
+<meta property="article:tag" content="land">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">주 콘텐츠로 바로가기</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://financedata.github.com/">
+
+                <span id="blog-title">FinanceData</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">홈</a>
+                </li>
+<li>
+<a href="../archive.html">저장소</a>
+                </li>
+<li>
+<a href="../categories/cat_faq.html">FAQ</a>
+                </li>
+<li>
+<a href="../categories/">태그</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS 목록</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="joins-land-crawling.ipynb" id="sourcelink">원문</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">부동산 - 조인스랜드 데이터 크롤링</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    plusjune
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-08-04T06:40:23+09:00" itemprop="datePublished" title="2017-08-04 06:40">2017-08-04 06:40</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/joins-land-crawling.html">
+
+
+            
+        <p class="sourceline"><a href="joins-land-crawling.ipynb" id="sourcelink">원문</a></p>
+
+                <meta name="description" itemprop="description" content="조인스랜드 데이터 크롤링"></span></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="조인스랜드부동산">조인스랜드부동산<a class="anchor-link" href="joins-land-crawling.html#%EC%A1%B0%EC%9D%B8%EC%8A%A4%EB%9E%9C%EB%93%9C%EB%B6%80%EB%8F%99%EC%82%B0">¶</a>
+</h2>
+<p><a href="http://price.joinsland.joins.com/">http://price.joinsland.joins.com/</a> 데이터 크롤링</p>
+<p><img src="http://i.imgur.com/nvqhzvG.png"></p>
+<p>2017 FinanceData <a href="http://fb.com/financedata">http://fb.com/financedata</a></p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://price.joinsland.joins.com/area/index.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode=1168010600">http://price.joinsland.joins.com/area/index.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode=1168010600</a></p>
+<p><img width="80%" src="http://i.imgur.com/2i5uO2g.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>화면 하단에 다음과 같은 데이터가 테이블(table) 표시된다. 이 데이터들이 크롤링하고자 하는 데이터</p>
+<p><img width="80%" src="http://i.imgur.com/ZZHv319.png"></p>
+<p>여기에 표시되는 데이터가 어떻게 구성되어 있는지 개발자 도구로 살펴보자</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>개발자 도구에서 보면, id="sesae_info_gu" 인 div 태그 하위에 table이 있고, 여기에 데이터들이 구성되어 있음을 확인할 수 있다</p>
+<p><img width="80%" src="http://i.imgur.com/DWLXbjc.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>하지만 pandas.read_html()로 읽었을 때 테이블이 읽히지 않는다.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://price.joinsland.joins.com/area/index.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode=1168010600'</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">'lxml'</span><span class="p">)</span>
+<span class="n">dfs</span>
+</pre></div>
+<p>"ValueError: No tables found" 에러가 발생한다</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="페이지-소스-확인">페이지 소스 확인<a class="anchor-link" href="joins-land-crawling.html#%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%86%8C%EC%8A%A4-%ED%99%95%EC%9D%B8">¶</a>
+</h2>
+<p>메뉴에서 "보기 &gt; 개발자 보기 &gt; 소스보기" 선택하여 페이지 소스를 확인</p>
+<p>크롬 개발자 도구로 table과 데이터가 보이지만, 소스 보기를 하면 소스에는 데이터가 보이지 않는다</p>
+<p>id="sesae_info_gu" 인 div 태그에 table 도 없고 데이터도 없다</p>
+<p><img src="http://i.imgur.com/hzJFzQ1.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 처럼 크롬개발자 도구에서는 데이터가 있으나, 페이지 소스에는 데이터가 없는 경우는 다음 두 가지 중의 하나</p>
+<ul>
+<li>Ajax로 데이터를 요청하여 데이터를 표현 → 데이터 요청 URL을 따로 분석</li>
+<li>JavaScript가 실행되어 데이터를 표현 → Selenium 사용</li>
+</ul>
+<p>Ajax (Asynchronous JavaScript and XML, 에이잭스)는 자바스크립트로 요청하는 비동기 데이터 요청.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ajax-데이터-요청-확인">Ajax 데이터 요청 확인<a class="anchor-link" href="joins-land-crawling.html#Ajax-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9A%94%EC%B2%AD-%ED%99%95%EC%9D%B8">¶</a>
+</h2>
+<ul>
+<li>Network 탭을 열고</li>
+<li>검색조건이 달라질 때('동'을 선택), 어떤 데이터가 오가는지 살펴본다</li>
+<li>요청/응답 데이터들 중에 데이터기 포함되어 오가는지 살펴본다</li>
+</ul>
+<p><img src="http://i.imgur.com/5AG2YCg.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="joins.com/ajax">joins.com/ajax<a class="anchor-link" href="joins-land-crawling.html#joins.com/ajax">¶</a>
+</h2>
+<p>여기서는 다음 URL로 데이터가 요청/응답 되었음을 확인할 수 있다</p>
+<p><a href="http://price.joinsland.joins.com/ajax/price.info.dongapt.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode=1168010600&amp;danjiId=&amp;ptype=&amp;cpId=&amp;aptamt=&amp;aptarea=&amp;aptcnt=&amp;aptIpjudate=">http://price.joinsland.joins.com/ajax/price.info.dongapt.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode=1168010600&amp;danjiId=&amp;ptype=&amp;cpId=&amp;aptamt=&amp;aptarea=&amp;aptcnt=&amp;aptIpjudate=</a></p>
+<p><img width="70%" src="http://i.imgur.com/wAzM0TP.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음 URL의 인자로 다음 값들이 전달.</p>
+<p><a href="http://price.joinsland.joins.com/ajax/price.info.dongapt.asp">http://price.joinsland.joins.com/ajax/price.info.dongapt.asp</a></p>
+<ul>
+<li>mcateGroup: A1=아파트, A6=오피스텔</li>
+<li>mcateCode: A1A3A4</li>
+<li>areaCode=1168010600</li>
+</ul>
+<p>결과적으로 지역코드(areaCode)만 지정하면 가격  데이터를 가져올 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="지역이름과-코드">지역이름과 코드<a class="anchor-link" href="joins-land-crawling.html#%EC%A7%80%EC%97%AD%EC%9D%B4%EB%A6%84%EA%B3%BC-%EC%BD%94%EB%93%9C">¶</a>
+</h2>
+<p>(참고) joinsland.joins.com 자체에도 법정동을 조회하는 내용이 있으나 데이터가 온전한 JSON 이 아니어서 가공하기 어렵다</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 구/시/군 (MCODE) 코드 가져오기</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># 서울특별시 하위 '구/시/군' 읽기</span>
+<span class="n">area_code</span> <span class="o">=</span> <span class="s1">'110000000'</span> 
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://price.joinsland.joins.com/ajax/area_search.asp?div=MCODE&amp;areaCode='</span> <span class="o">+</span> <span class="n">area_code</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># JSON처럼 보이지만 JSON 규격을 따르지 않고 있다</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[{seq:'1', idx:1, name:'강남구', label:'강남구', value:'1168000000', cnt:'0'},{seq:'2', idx:2, name:'강동구', label:'강동구', value:'1174000000', cnt:'0'},{seq:'3', idx:3, name:'강북구', label:'강북구', value:'1130500000', cnt:'0'},{seq:'4', idx:4, name:'강서구', label:'강서구', value:'1150000000', cnt:'0'},{seq:'5', idx:5, name:'관악구', label:'관악구', value:'1162000000', cnt:'0'},{seq:'6', idx:6, name:'광진구', label:'광진구', value:'1121500000', cnt:'0'},{seq:'7', idx:7, name:'구로구', label:'구로구', value:'1153000000', cnt:'0'},{seq:'8', idx:8, name:'금천구', label:'금천구', value:'1154500000', cnt:'0'},{seq:'9', idx:9, name:'노원구', label:'노원구', value:'1135000000', cnt:'0'},{seq:'10', idx:10, name:'도봉구', label:'도봉구', value:'1132000000', cnt:'0'},{seq:'11', idx:11, name:'동대문구', label:'동대문구', value:'1123000000', cnt:'0'},{seq:'12', idx:12, name:'동작구', label:'동작구', value:'1159000000', cnt:'0'},{seq:'13', idx:13, name:'마포구', label:'마포구', value:'1144000000', cnt:'0'},{seq:'14', idx:14, name:'서대문구', label:'서대문구', value:'1141000000', cnt:'0'},{seq:'15', idx:15, name:'서초구', label:'서초구', value:'1165000000', cnt:'0'},{seq:'16', idx:16, name:'성동구', label:'성동구', value:'1120000000', cnt:'0'},{seq:'17', idx:17, name:'성북구', label:'성북구', value:'1129000000', cnt:'0'},{seq:'18', idx:18, name:'송파구', label:'송파구', value:'1171000000', cnt:'0'},{seq:'19', idx:19, name:'양천구', label:'양천구', value:'1147000000', cnt:'0'},{seq:'20', idx:20, name:'영등포구', label:'영등포구', value:'1156000000', cnt:'0'},{seq:'21', idx:21, name:'용산구', label:'용산구', value:'1117000000', cnt:'0'},{seq:'22', idx:22, name:'은평구', label:'은평구', value:'1138000000', cnt:'0'},{seq:'23', idx:23, name:'종로구', label:'종로구', value:'1111000000', cnt:'0'},{seq:'24', idx:24, name:'중구', label:'중구', value:'1114000000', cnt:'0'},{seq:'25', idx:25, name:'중랑구', label:'중랑구', value:'1126000000', cnt:'0'}]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="법정동-이름과-코드">법정동 이름과 코드<a class="anchor-link" href="joins-land-crawling.html#%EB%B2%95%EC%A0%95%EB%8F%99-%EC%9D%B4%EB%A6%84%EA%B3%BC-%EC%BD%94%EB%93%9C">¶</a>
+</h2>
+<p>부동산 정보등에는 법정동 코드가 사용된다.</p>
+<ul>
+<li>법정동 코드(8자리)</li>
+<li>2(시/도) + 2자리(구/군/구) + 2자리(읍/면/동) + 2자리(리/단지)</li>
+</ul>
+<p>법정동 전체 코드는 아래 링크</p>
+<ul>
+<li><a href="https://goo.gl/tM6r3v">https://goo.gl/tM6r3v</a></li>
+</ul>
+<p>상세한 내용은 다음 링크에 설명을 참고</p>
+<ul>
+<li><a href="http://nbviewer.jupyter.org/urls/financedata.github.io/posts/korea-area-code.ipynb">http://nbviewer.jupyter.org/urls/financedata.github.io/posts/korea-area-code.ipynb</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">get_areacode</span><span class="p">():</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://goo.gl/tM6r3v'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">'법정동코드'</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">'법정동명'</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span><span class="n">df_areacode</span><span class="p">[</span><span class="s1">'폐지여부'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'존재'</span><span class="p">]</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[[</span><span class="s1">'법정동코드'</span><span class="p">,</span> <span class="s1">'법정동명'</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">df_areacode</span>
+
+<span class="k">def</span> <span class="nf">get_province</span><span class="p">():</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">get_areacode</span><span class="p">()</span>
+    <span class="n">df_province</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span> <span class="n">df_areacode</span><span class="p">[</span><span class="s1">'법정동코드'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'\d</span><span class="si">{2}</span><span class="s1">0</span><span class="si">{8}</span><span class="s1">|36110</span><span class="si">{6}</span><span class="s1">'</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">df_province</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_areacode</span> <span class="o">=</span> <span class="n">get_areacode</span><span class="p">()</span>
+<span class="n">df_province</span> <span class="o">=</span> <span class="n">get_province</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_province</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>1100000000</td>
+      <td>서울특별시</td>
+    </tr>
+<tr>
+<th>2615</th>
+      <td>2600000000</td>
+      <td>부산광역시</td>
+    </tr>
+<tr>
+<th>2912</th>
+      <td>2700000000</td>
+      <td>대구광역시</td>
+    </tr>
+<tr>
+<th>3244</th>
+      <td>2800000000</td>
+      <td>인천광역시</td>
+    </tr>
+<tr>
+<th>3579</th>
+      <td>2900000000</td>
+      <td>광주광역시</td>
+    </tr>
+<tr>
+<th>3825</th>
+      <td>3000000000</td>
+      <td>대전광역시</td>
+    </tr>
+<tr>
+<th>4009</th>
+      <td>3100000000</td>
+      <td>울산광역시</td>
+    </tr>
+<tr>
+<th>4241</th>
+      <td>3611000000</td>
+      <td>세종특별자치시</td>
+    </tr>
+<tr>
+<th>4391</th>
+      <td>4100000000</td>
+      <td>경기도</td>
+    </tr>
+<tr>
+<th>10867</th>
+      <td>4200000000</td>
+      <td>강원도</td>
+    </tr>
+<tr>
+<th>13666</th>
+      <td>4300000000</td>
+      <td>충청북도</td>
+    </tr>
+<tr>
+<th>16797</th>
+      <td>4400000000</td>
+      <td>충청남도</td>
+    </tr>
+<tr>
+<th>22050</th>
+      <td>4500000000</td>
+      <td>전라북도</td>
+    </tr>
+<tr>
+<th>25397</th>
+      <td>4600000000</td>
+      <td>전라남도</td>
+    </tr>
+<tr>
+<th>30169</th>
+      <td>4700000000</td>
+      <td>경상북도</td>
+    </tr>
+<tr>
+<th>39299</th>
+      <td>4800000000</td>
+      <td>경상남도</td>
+    </tr>
+<tr>
+<th>45741</th>
+      <td>5000000000</td>
+      <td>제주특별자치도</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_areacode</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>1100000000</td>
+      <td>서울특별시</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>1111000000</td>
+      <td>서울특별시 종로구</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>1111010100</td>
+      <td>서울특별시 종로구 청운동</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>1111010200</td>
+      <td>서울특별시 종로구 신교동</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>1111010300</td>
+      <td>서울특별시 종로구 궁정동</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>1111010400</td>
+      <td>서울특별시 종로구 효자동</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>1111010500</td>
+      <td>서울특별시 종로구 창성동</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>1111010600</td>
+      <td>서울특별시 종로구 통의동</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>1111010700</td>
+      <td>서울특별시 종로구 적선동</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>1111010800</td>
+      <td>서울특별시 종로구 통인동</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_areacode</span><span class="p">[</span> <span class="n">df_areacode</span><span class="p">[</span><span class="s1">'법정동명'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'서울특별시 강남구'</span><span class="p">)</span> <span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>1003</th>
+      <td>1168000000</td>
+      <td>서울특별시 강남구</td>
+    </tr>
+<tr>
+<th>1037</th>
+      <td>1168010100</td>
+      <td>서울특별시 강남구 역삼동</td>
+    </tr>
+<tr>
+<th>1039</th>
+      <td>1168010300</td>
+      <td>서울특별시 강남구 개포동</td>
+    </tr>
+<tr>
+<th>1040</th>
+      <td>1168010400</td>
+      <td>서울특별시 강남구 청담동</td>
+    </tr>
+<tr>
+<th>1041</th>
+      <td>1168010500</td>
+      <td>서울특별시 강남구 삼성동</td>
+    </tr>
+<tr>
+<th>1042</th>
+      <td>1168010600</td>
+      <td>서울특별시 강남구 대치동</td>
+    </tr>
+<tr>
+<th>1043</th>
+      <td>1168010700</td>
+      <td>서울특별시 강남구 신사동</td>
+    </tr>
+<tr>
+<th>1044</th>
+      <td>1168010800</td>
+      <td>서울특별시 강남구 논현동</td>
+    </tr>
+<tr>
+<th>1045</th>
+      <td>1168011000</td>
+      <td>서울특별시 강남구 압구정동</td>
+    </tr>
+<tr>
+<th>1046</th>
+      <td>1168011100</td>
+      <td>서울특별시 강남구 세곡동</td>
+    </tr>
+<tr>
+<th>1047</th>
+      <td>1168011200</td>
+      <td>서울특별시 강남구 자곡동</td>
+    </tr>
+<tr>
+<th>1048</th>
+      <td>1168011300</td>
+      <td>서울특별시 강남구 율현동</td>
+    </tr>
+<tr>
+<th>1049</th>
+      <td>1168011400</td>
+      <td>서울특별시 강남구 일원동</td>
+    </tr>
+<tr>
+<th>1050</th>
+      <td>1168011500</td>
+      <td>서울특별시 강남구 수서동</td>
+    </tr>
+<tr>
+<th>1053</th>
+      <td>1168011800</td>
+      <td>서울특별시 강남구 도곡동</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="데이터-전처리">데이터 전처리<a class="anchor-link" href="joins-land-crawling.html#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://price.joinsland.joins.com/ajax/price.info.dongapt.asp">http://price.joinsland.joins.com/ajax/price.info.dongapt.asp</a></p>
+<ul>
+<li>mcateGroup A1=아파트, A6=오피스텔</li>
+<li>mcateCode: A1A3A4</li>
+<li>areaCode=1168010600 # 강남구 대치동</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://price.joinsland.joins.com/ajax/price.info.dongapt.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode='</span> <span class="o">+</span> <span class="s1">'1168010600'</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>http://price.joinsland.joins.com/ajax/price.info.dongapt.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode=1168010600
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>단지명</th>
+      <th>면적 (㎡)</th>
+      <th>매매가 (만원)</th>
+      <th>매물</th>
+      <th>전세가 (만원)</th>
+      <th>매물.1</th>
+      <th>문의처</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>개포우성1차(아파트)</td>
+      <td>102</td>
+      <td>167,500 ~ 177,500</td>
+      <td>0</td>
+      <td>75,000 ~ 85,000</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>148</td>
+      <td>215,000 ~ 235,000</td>
+      <td>0</td>
+      <td>110,000 ~ 125,000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>181</td>
+      <td>245,000 ~ 262,500</td>
+      <td>0</td>
+      <td>110,000 ~ 130,000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>214</td>
+      <td>270,000 ~ 310,000</td>
+      <td>0</td>
+      <td>130,000 ~ 150,000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>개포우성2차(아파트)</td>
+      <td>101</td>
+      <td>167,500 ~ 177,500</td>
+      <td>0</td>
+      <td>75,000 ~ 85,000</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>146</td>
+      <td>220,000 ~ 242,500</td>
+      <td>0</td>
+      <td>110,000 ~ 130,000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>180</td>
+      <td>242,500 ~ 270,000</td>
+      <td>0</td>
+      <td>125,000 ~ 140,000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>31</td>
+      <td>20,000 ~ 21,000</td>
+      <td>0</td>
+      <td>15,000 ~ 16,000</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>39</td>
+      <td>22,000 ~ 24,000</td>
+      <td>1</td>
+      <td>19,000 ~ 21,000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>44</td>
+      <td>28,000 ~ 30,000</td>
+      <td>0</td>
+      <td>23,000 ~ 24,000</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="80%" src="http://i.imgur.com/mEEA1PN.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'http://price.joinsland.joins.com/ajax/price.info.dongapt.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode='</span> <span class="o">+</span> <span class="s1">'1168010600'</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">'lxml'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'table'</span><span class="p">)</span>
+<span class="n">trs</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">tbody</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rowspan_val</span> <span class="o">=</span> <span class="s1">''</span>
+
+<span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">trs</span><span class="p">[:</span><span class="mi">20</span><span class="p">]:</span> <span class="c1"># 처음 20개 확인</span>
+    <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'td'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">has_attr</span><span class="p">(</span><span class="s1">'rowspan'</span><span class="p">):</span>
+        <span class="n">rowspan_val</span> <span class="o">=</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가</span><span class="p">,</span> <span class="n">전세_매물</span> <span class="o">=</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가</span><span class="p">,</span> <span class="n">전세_매물</span> <span class="o">=</span> <span class="n">rowspan_val</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">매매가_저</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">매매가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="n">매매가_고</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">매매가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="n">전세가_저</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">전세가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="n">전세가_고</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">전세가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가_저</span><span class="p">,</span> <span class="n">매매가_고</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가_저</span><span class="p">,</span> <span class="n">전세가_고</span><span class="p">,</span> <span class="n">전세_매물</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>개포우성1차(아파트) 102 167500 177500 0 75000 85000 0
+개포우성1차(아파트) 148 215000 235000 0 110000 125000 0
+개포우성1차(아파트) 181 245000 262500 0 110000 130000 0
+개포우성1차(아파트) 214 270000 310000 0 130000 150000 0
+개포우성2차(아파트) 101 167500 177500 0 75000 85000 0
+개포우성2차(아파트) 146 220000 242500 0 110000 130000 0
+개포우성2차(아파트) 180 242500 270000 0 125000 140000 0
+대치대우아이빌멤버스4차(주상복합) 31 20000 21000 0 15000 16000 0
+대치대우아이빌멤버스4차(주상복합) 39 22000 24000 1 19000 21000 0
+대치대우아이빌멤버스4차(주상복합) 44 28000 30000 0 23000 24000 0
+대치대우아이빌멤버스4차(주상복합) 51 32000 34000 0 24000 26000 1
+대치대우아이빌멤버스4차(주상복합) 53 33000 34000 0 25000 27000 0
+대치대우아이빌멤버스4차(주상복합) 58 37000 39000 0 30000 32000 0
+대치대우아이빌멤버스4차(주상복합) 63 44000 46000 1 32000 34000 0
+대치대우아이빌멤버스4차(주상복합) 68 44000 46000 0 32000 34000 0
+대치대우아이빌명문가7차(주상복합) 41A 28000 30000 0 22500 24500 0
+대치대우아이빌명문가7차(주상복합) 43B 28000 30000 0 22500 24500 1
+대치대우아이빌명문가7차(주상복합) 45 28500 30500 0 22500 24500 0
+대치대우아이빌명문가7차(주상복합) 53 32000 34000 0 25000 27500 0
+대치대우아이빌명문가7차(주상복합) 58 39000 42000 0 30500 32500 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DataFrame으로 만들기</span>
+<span class="n">values_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'table'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">'class'</span><span class="p">:</span><span class="s1">'tbl_compare'</span><span class="p">})</span>
+<span class="n">trs</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">tbody</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)</span>
+
+<span class="n">rowspan_val</span> <span class="o">=</span> <span class="s1">''</span>
+
+<span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">trs</span><span class="p">:</span>
+    <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'td'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">has_attr</span><span class="p">(</span><span class="s1">'rowspan'</span><span class="p">):</span>
+        <span class="n">rowspan_val</span> <span class="o">=</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가</span><span class="p">,</span> <span class="n">전세_매물</span> <span class="o">=</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가</span><span class="p">,</span> <span class="n">전세_매물</span> <span class="o">=</span> <span class="n">rowspan_val</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">매매가_저</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">매매가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="n">매매가_고</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">매매가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="n">전세가_저</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">전세가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="n">전세가_고</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">전세가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+    <span class="n">values_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가_저</span><span class="p">,</span> <span class="n">매매가_고</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가_저</span><span class="p">,</span> <span class="n">전세가_고</span><span class="p">,</span> <span class="n">전세_매물</span><span class="p">])</span>
+    
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'단지명'</span><span class="p">,</span> <span class="s1">'면적'</span><span class="p">,</span> <span class="s1">'매매가_저'</span><span class="p">,</span> <span class="s1">'매매가_고'</span><span class="p">,</span> <span class="s1">'매물'</span><span class="p">,</span> <span class="s1">'전세가_저'</span><span class="p">,</span> <span class="s1">'전세가_고'</span><span class="p">,</span> <span class="s1">'전세가_매물'</span><span class="p">]</span>   
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"건수:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>건수: 154
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>단지명</th>
+      <th>면적</th>
+      <th>매매가_저</th>
+      <th>매매가_고</th>
+      <th>매물</th>
+      <th>전세가_저</th>
+      <th>전세가_고</th>
+      <th>전세가_매물</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>개포우성1차(아파트)</td>
+      <td>102</td>
+      <td>167500</td>
+      <td>177500</td>
+      <td>0</td>
+      <td>75000</td>
+      <td>85000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>개포우성1차(아파트)</td>
+      <td>148</td>
+      <td>215000</td>
+      <td>235000</td>
+      <td>0</td>
+      <td>110000</td>
+      <td>125000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>개포우성1차(아파트)</td>
+      <td>181</td>
+      <td>245000</td>
+      <td>262500</td>
+      <td>0</td>
+      <td>110000</td>
+      <td>130000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>개포우성1차(아파트)</td>
+      <td>214</td>
+      <td>270000</td>
+      <td>310000</td>
+      <td>0</td>
+      <td>130000</td>
+      <td>150000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>개포우성2차(아파트)</td>
+      <td>101</td>
+      <td>167500</td>
+      <td>177500</td>
+      <td>0</td>
+      <td>75000</td>
+      <td>85000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>개포우성2차(아파트)</td>
+      <td>146</td>
+      <td>220000</td>
+      <td>242500</td>
+      <td>0</td>
+      <td>110000</td>
+      <td>130000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>개포우성2차(아파트)</td>
+      <td>180</td>
+      <td>242500</td>
+      <td>270000</td>
+      <td>0</td>
+      <td>125000</td>
+      <td>140000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>31</td>
+      <td>20000</td>
+      <td>21000</td>
+      <td>0</td>
+      <td>15000</td>
+      <td>16000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>39</td>
+      <td>22000</td>
+      <td>24000</td>
+      <td>1</td>
+      <td>19000</td>
+      <td>21000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>44</td>
+      <td>28000</td>
+      <td>30000</td>
+      <td>0</td>
+      <td>23000</td>
+      <td>24000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>10</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>51</td>
+      <td>32000</td>
+      <td>34000</td>
+      <td>0</td>
+      <td>24000</td>
+      <td>26000</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>11</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>53</td>
+      <td>33000</td>
+      <td>34000</td>
+      <td>0</td>
+      <td>25000</td>
+      <td>27000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>12</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>58</td>
+      <td>37000</td>
+      <td>39000</td>
+      <td>0</td>
+      <td>30000</td>
+      <td>32000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>13</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>63</td>
+      <td>44000</td>
+      <td>46000</td>
+      <td>1</td>
+      <td>32000</td>
+      <td>34000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>14</th>
+      <td>대치대우아이빌멤버스4차(주상복합)</td>
+      <td>68</td>
+      <td>44000</td>
+      <td>46000</td>
+      <td>0</td>
+      <td>32000</td>
+      <td>34000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>15</th>
+      <td>대치대우아이빌명문가7차(주상복합)</td>
+      <td>41A</td>
+      <td>28000</td>
+      <td>30000</td>
+      <td>0</td>
+      <td>22500</td>
+      <td>24500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>16</th>
+      <td>대치대우아이빌명문가7차(주상복합)</td>
+      <td>43B</td>
+      <td>28000</td>
+      <td>30000</td>
+      <td>0</td>
+      <td>22500</td>
+      <td>24500</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>17</th>
+      <td>대치대우아이빌명문가7차(주상복합)</td>
+      <td>45</td>
+      <td>28500</td>
+      <td>30500</td>
+      <td>0</td>
+      <td>22500</td>
+      <td>24500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>18</th>
+      <td>대치대우아이빌명문가7차(주상복합)</td>
+      <td>53</td>
+      <td>32000</td>
+      <td>34000</td>
+      <td>0</td>
+      <td>25000</td>
+      <td>27500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>19</th>
+      <td>대치대우아이빌명문가7차(주상복합)</td>
+      <td>58</td>
+      <td>39000</td>
+      <td>42000</td>
+      <td>0</td>
+      <td>30500</td>
+      <td>32500</td>
+      <td>0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="함수로-만들기">함수로 만들기<a class="anchor-link" href="joins-land-crawling.html#%ED%95%A8%EC%88%98%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 조인스부동산 아파트 조회</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="k">def</span> <span class="nf">get_areacode</span><span class="p">():</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://goo.gl/tM6r3v'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">'법정동코드'</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">'법정동명'</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span><span class="n">df_areacode</span><span class="p">[</span><span class="s1">'폐지여부'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'존재'</span><span class="p">]</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[[</span><span class="s1">'법정동코드'</span><span class="p">,</span> <span class="s1">'법정동명'</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">df_areacode</span>
+
+<span class="k">def</span> <span class="nf">get_province</span><span class="p">():</span>
+    <span class="n">df_areacode</span> <span class="o">=</span> <span class="n">get_areacode</span><span class="p">()</span>
+    <span class="n">df_province</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span> <span class="n">df_areacode</span><span class="p">[</span><span class="s1">'법정동코드'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'\d</span><span class="si">{2}</span><span class="s1">0</span><span class="si">{8}</span><span class="s1">|36110</span><span class="si">{6}</span><span class="s1">'</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">df_province</span>
+
+
+<span class="k">def</span> <span class="nf">joins_realasset</span><span class="p">(</span><span class="n">areacode</span> <span class="o">=</span> <span class="s1">''</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">'http://price.joinsland.joins.com/ajax/price.info.dongapt.asp?mcateGroup=A1&amp;mcateCode=A1A3A4&amp;areaCode='</span> <span class="o">+</span> <span class="n">areacode</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">'lxml'</span><span class="p">)</span>
+    <span class="n">values_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'table'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">'class'</span><span class="p">:</span><span class="s1">'tbl_compare'</span><span class="p">})</span>
+    <span class="n">trs</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">tbody</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)</span>
+    <span class="n">rowspan_val</span> <span class="o">=</span> <span class="s1">''</span>
+
+    <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">trs</span><span class="p">:</span>
+        <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'td'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">has_attr</span><span class="p">(</span><span class="s1">'rowspan'</span><span class="p">):</span>
+            <span class="n">rowspan_val</span> <span class="o">=</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가</span><span class="p">,</span> <span class="n">전세_매물</span> <span class="o">=</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가</span><span class="p">,</span> <span class="n">전세_매물</span> <span class="o">=</span> <span class="n">rowspan_val</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">tds</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">매매가_저</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">매매가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+        <span class="n">매매가_고</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">매매가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+        <span class="n">전세가_저</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">전세가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+        <span class="n">전세가_고</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">전세가</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' ~ '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+        <span class="n">values_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">단지명</span><span class="p">,</span> <span class="n">면적</span><span class="p">,</span> <span class="n">매매가_저</span><span class="p">,</span> <span class="n">매매가_고</span><span class="p">,</span> <span class="n">매물</span><span class="p">,</span> <span class="n">전세가_저</span><span class="p">,</span> <span class="n">전세가_고</span><span class="p">,</span> <span class="n">전세_매물</span><span class="p">])</span>
+
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'단지명'</span><span class="p">,</span> <span class="s1">'면적'</span><span class="p">,</span> <span class="s1">'매매가_저'</span><span class="p">,</span> <span class="s1">'매매가_고'</span><span class="p">,</span> <span class="s1">'매물'</span><span class="p">,</span> <span class="s1">'전세가_저'</span><span class="p">,</span> <span class="s1">'전세가_고'</span><span class="p">,</span> <span class="s1">'전세가_매물'</span><span class="p">]</span>   
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="검색과-활용">검색과 활용<a class="anchor-link" href="joins-land-crawling.html#%EA%B2%80%EC%83%89%EA%B3%BC-%ED%99%9C%EC%9A%A9">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_areacode</span> <span class="o">=</span> <span class="n">get_areacode</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="s1">'신사동'</span>
+<span class="n">area_code</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span> <span class="n">df_areacode</span><span class="p">[</span><span class="s1">'법정동명'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">area_code</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>법정동코드</th>
+      <th>법정동명</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>582</th>
+      <td>1138010900</td>
+      <td>서울특별시 은평구 신사동</td>
+    </tr>
+<tr>
+<th>1043</th>
+      <td>1168010700</td>
+      <td>서울특별시 강남구 신사동</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="s1">'강남구 신사동'</span>
+<span class="n">area_code</span> <span class="o">=</span> <span class="n">df_areacode</span><span class="p">[</span> <span class="n">df_areacode</span><span class="p">[</span><span class="s1">'법정동명'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="p">][</span><span class="s1">'법정동코드'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">area_code</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'1168010700'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">joins_realasset</span><span class="p">(</span><span class="n">area_code</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>단지명</th>
+      <th>면적</th>
+      <th>매매가_저</th>
+      <th>매매가_고</th>
+      <th>매물</th>
+      <th>전세가_저</th>
+      <th>전세가_고</th>
+      <th>전세가_매물</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>대원칸타빌(아파트)</td>
+      <td>85</td>
+      <td>61000</td>
+      <td>68500</td>
+      <td>0</td>
+      <td>43500</td>
+      <td>46500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>대원칸타빌(아파트)</td>
+      <td>107B</td>
+      <td>80000</td>
+      <td>85000</td>
+      <td>0</td>
+      <td>55000</td>
+      <td>60000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>대원칸타빌(아파트)</td>
+      <td>123</td>
+      <td>92500</td>
+      <td>101000</td>
+      <td>0</td>
+      <td>60000</td>
+      <td>65000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>대원칸타빌(아파트)</td>
+      <td>144</td>
+      <td>111000</td>
+      <td>122500</td>
+      <td>0</td>
+      <td>75000</td>
+      <td>85000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>로데오현대(아파트)</td>
+      <td>73</td>
+      <td>57500</td>
+      <td>62500</td>
+      <td>0</td>
+      <td>34500</td>
+      <td>38000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>로데오현대(아파트)</td>
+      <td>114</td>
+      <td>78000</td>
+      <td>85000</td>
+      <td>0</td>
+      <td>47500</td>
+      <td>52500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>로데오현대(아파트)</td>
+      <td>122</td>
+      <td>84000</td>
+      <td>91500</td>
+      <td>0</td>
+      <td>51000</td>
+      <td>58000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>신성(아파트)</td>
+      <td>72</td>
+      <td>58500</td>
+      <td>67500</td>
+      <td>0</td>
+      <td>37500</td>
+      <td>41000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>8</th>
+      <td>신성(아파트)</td>
+      <td>98</td>
+      <td>80500</td>
+      <td>88750</td>
+      <td>0</td>
+      <td>47500</td>
+      <td>55000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>9</th>
+      <td>압구정하이츠파크(아파트)</td>
+      <td>234</td>
+      <td>277500</td>
+      <td>297500</td>
+      <td>0</td>
+      <td>177500</td>
+      <td>190000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>10</th>
+      <td>압구정하이츠파크(아파트)</td>
+      <td>270</td>
+      <td>295000</td>
+      <td>316000</td>
+      <td>0</td>
+      <td>180000</td>
+      <td>200000</td>
+      <td>3</td>
+    </tr>
+<tr>
+<th>11</th>
+      <td>현대맨션(아파트)</td>
+      <td>147</td>
+      <td>166000</td>
+      <td>176000</td>
+      <td>0</td>
+      <td>74500</td>
+      <td>80000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>12</th>
+      <td>현대맨션(아파트)</td>
+      <td>147</td>
+      <td>166000</td>
+      <td>176000</td>
+      <td>0</td>
+      <td>74500</td>
+      <td>80000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>13</th>
+      <td>현대맨션(아파트)</td>
+      <td>159</td>
+      <td>172000</td>
+      <td>181500</td>
+      <td>0</td>
+      <td>79500</td>
+      <td>88000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>14</th>
+      <td>현대맨션(아파트)</td>
+      <td>162</td>
+      <td>172000</td>
+      <td>181500</td>
+      <td>0</td>
+      <td>79500</td>
+      <td>88000</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>15</th>
+      <td>현대맨션(아파트)</td>
+      <td>191</td>
+      <td>176500</td>
+      <td>184000</td>
+      <td>0</td>
+      <td>81500</td>
+      <td>89500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>16</th>
+      <td>현대맨션(아파트)</td>
+      <td>194</td>
+      <td>176500</td>
+      <td>184000</td>
+      <td>0</td>
+      <td>81500</td>
+      <td>89500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>17</th>
+      <td>현대맨션(아파트)</td>
+      <td>195B</td>
+      <td>176500</td>
+      <td>184000</td>
+      <td>0</td>
+      <td>81500</td>
+      <td>89500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>18</th>
+      <td>현대맨션(아파트)</td>
+      <td>215A</td>
+      <td>219500</td>
+      <td>237000</td>
+      <td>0</td>
+      <td>97500</td>
+      <td>106500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>19</th>
+      <td>현대맨션(아파트)</td>
+      <td>213B</td>
+      <td>219500</td>
+      <td>237000</td>
+      <td>0</td>
+      <td>97500</td>
+      <td>106500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>20</th>
+      <td>현대맨션(아파트)</td>
+      <td>215C</td>
+      <td>219500</td>
+      <td>237000</td>
+      <td>0</td>
+      <td>97500</td>
+      <td>106500</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>21</th>
+      <td>현대맨션(아파트)</td>
+      <td>218</td>
+      <td>219500</td>
+      <td>237000</td>
+      <td>0</td>
+      <td>97500</td>
+      <td>106500</td>
+      <td>0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<p>2017 FinanceData <a href="http://financedata.github.com">http://financedata.github.com</a> , <a href="http://fb.com/financedata">http://fb.com/financedata</a></p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/crawling.html" rel="tag">crawling</a></li>
+            <li><a class="tag p-category" href="../categories/joins.html" rel="tag">joins</a></li>
+            <li><a class="tag p-category" href="../categories/land.html" rel="tag">land</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="naver-land-crawling.html" rel="prev" title="네이버 부동산 크롤링">이전 포스트</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>댓글</h2>
+        
+        
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><div class="fb-comments" data-href="https://financedata.github.com/posts/joins-land-crawling.html" data-width="470"></div>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/colorbox-i18n/jquery.colorbox-kr.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+ <a class="addthis_button_more">Share</a>
+ <ul>
+<li>
+<a class="addthis_button_facebook"></a>
+ </li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+ </li>
+<li>
+<a class="addthis_button_linkedin"></a>
+ </li>
+<li>
+<a class="addthis_button_twitter"></a>
+ </li>
+</ul>
+</div>
+ <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("ko");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92851530-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
