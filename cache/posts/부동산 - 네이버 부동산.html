@@ -11883,7 +11883,7 @@ div#notebook {
 <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
 <span class="n">trs</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">tbody</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
 
-<span class="c1"># 거래, 종류, 확인일자, 확인주석, 매물명, 면적(㎡), 층, 매물가(만원), 연락처</span>
+<span class="c1"># 거래, 종류, 확인일자, 매물명, 면적(㎡), 층, 매물가(만원), 연락처</span>
 <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">trs</span><span class="p">[::</span><span class="mi">2</span><span class="p">]:</span>
     <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
     <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">tds</span><span class="p">]</span>
@@ -11895,7 +11895,7 @@ div#notebook {
     <span class="n">종류</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">확인일자</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;%y.%m.</span><span class="si">%d</span><span class="s1">.&#39;</span><span class="p">)</span>
     <span class="n">현장확인</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-    <span class="n">확인주석</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">매물명</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
     <span class="n">면적</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
     <span class="n">공급면적</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;공급면적(.*?)㎡&#39;</span><span class="p">,</span> <span class="n">면적</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="n">전용면적</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;전용면적(.*?)㎡&#39;</span><span class="p">,</span> <span class="n">면적</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -11905,7 +11905,7 @@ div#notebook {
     <span class="n">매물가</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span> 
     <span class="n">연락처</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
         
-    <span class="nb">print</span><span class="p">(</span><span class="n">거래</span><span class="p">,</span> <span class="n">종류</span><span class="p">,</span> <span class="n">확인일자</span><span class="p">,</span> <span class="n">현장확인</span><span class="p">,</span> <span class="n">확인주석</span><span class="p">,</span> <span class="n">공급면적</span><span class="p">,</span> <span class="n">전용면적</span><span class="p">,</span> <span class="n">층</span><span class="p">,</span> <span class="n">매물가</span><span class="p">,</span> <span class="n">연락처</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">거래</span><span class="p">,</span> <span class="n">종류</span><span class="p">,</span> <span class="n">확인일자</span><span class="p">,</span> <span class="n">현장확인</span><span class="p">,</span> <span class="n">매물명</span><span class="p">,</span> <span class="n">공급면적</span><span class="p">,</span> <span class="n">전용면적</span><span class="p">,</span> <span class="n">층</span><span class="p">,</span> <span class="n">매물가</span><span class="p">,</span> <span class="n">연락처</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11922,34 +11922,34 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>매매 아파트 2017-08-04 00:00:00 5/14 현장확인 대치SK뷰 110.89 84.38 4/14 170000 우리공인중개사02-565-0066
 매매 아파트 2017-08-03 00:00:00 5/13 현장확인 선경1,2차 182.22 160.76 7/15 265000 아성공인중개사사무소02-555-9918
+매매 아파트 2017-08-01 00:00:00 5/13 현장확인 한보미도맨션1,2차 220.92 191.06 8/14 320000 미도금성공인중개사사무소02-3453-8885
 매매 아파트 2017-08-01 00:00:00 5/13 현장확인 개포우성1차 102.48 84.81 3/15 178000 황금공인중개사사무소02-558-4949
 매매 아파트 2017-08-01 00:00:00 5/14 현장확인 선경1,2차 137.45 128.32 8/15 207000 황금공인중개사사무소02-558-4949
-매매 아파트 2017-08-01 00:00:00 5/13 현장확인 한보미도맨션1,2차 220.92 191.06 8/14 320000 미도금성공인중개사사무소02-3453-8885
 매매 아파트 2017-08-01 00:00:00 5/14 현장확인 대치SK뷰 110.89 84.38 16/17 170000 대치SK VIEW공인중개사사무소02-555-0230
 매매 아파트 2017-07-28 00:00:00 5/14 현장확인 선경1,2차 148.6 127.75 5/15 220000 대성공인중개사사무소02-556-8888
 매매 아파트 2017-07-28 00:00:00 5/14 현장확인 대치SK뷰 122.42 93.4 10/17 187000 금강공인중개사사무소02-565-8088
-매매 아파트 2017-07-25 00:00:00 5/13 현장확인 대치SK뷰 122.42 93.4 6/20 186000 우리공인중개사02-565-0066
 매매 아파트 2017-07-25 00:00:00 5/13 현장확인 대치SK뷰 145.94 112.36 5/14 240000 삼성플러스공인중개사사무소02-554-5985
+매매 아파트 2017-07-25 00:00:00 5/13 현장확인 대치SK뷰 122.42 93.4 6/20 186000 우리공인중개사02-565-0066
 매매 아파트 2017-07-24 00:00:00 5/11 현장확인 선경1,2차 157.36 146.75 6/15 240000 아성공인중개사사무소02-555-9918
 매매 아파트 2017-07-24 00:00:00 5/13 현장확인 대치SK뷰 122.42 93.4 8/17 187000 대치SK VIEW공인중개사사무소02-555-0230
 매매 아파트 2017-08-04 00:00:00  대치SK뷰 110.84 84.33 6/20 170000 우리공인중개사02-565-0066
-매매 아파트 2017-08-04 00:00:00  대치SK뷰 122.42 93.4 9/20 187000 OK공인중개사02-508-4933
 매매 아파트 2017-08-04 00:00:00  대치SK뷰 122.42 93.4 15/17 185000 래미안현대공인중개사사무소02-566-3993
-매매 아파트 2017-08-03 00:00:00  대치SK뷰 122.42 93.4 13/17 185000 제이스공인중개사사무소02-556-8245
-매매 아파트 2017-08-03 00:00:00  대치SK뷰 145.56 112.08 12/14 220000 제이스공인중개사사무소02-556-8245
+매매 아파트 2017-08-04 00:00:00  대치SK뷰 122.42 93.4 9/20 187000 OK공인중개사02-508-4933
 매매 아파트 2017-08-03 00:00:00  대치SK뷰 145.56 112.08 9/14 230000 제이스공인중개사사무소02-556-8245
+매매 아파트 2017-08-03 00:00:00  대치SK뷰 145.56 112.08 12/14 220000 제이스공인중개사사무소02-556-8245
+매매 아파트 2017-08-03 00:00:00  대치SK뷰 122.42 93.4 13/17 185000 제이스공인중개사사무소02-556-8245
 매매 아파트 2017-07-26 00:00:00  집주인 래미안대치팰리스2단지 122.96 91.91 16/35 190000 삼성플러스공인중개사사무소02-554-5985
 매매 아파트 2017-08-02 00:00:00  대치SK뷰 110.84 84.33 9/17 175000 OK공인중개사02-508-4933
 매매 아파트 2017-08-02 00:00:00  대치SK뷰 122.42 93.4 15/17 186000 우리공인중개사02-565-0066
-매매 아파트 2017-08-04 00:00:00  선경1,2차 102.27 84.55 8/15 170000 행복공인중개사사무소02-516-0001
-매매 재건축 2017-08-04 00:00:00  은마 101.52 76.79 6/14 134000 동아공인중개사사무소02-565-4200
-매매 아파트 2017-08-04 00:00:00  개포우성1차 102.48 84.81 6/15 178000 행복공인중개사사무소02-516-0001
-매매 아파트 2017-08-04 00:00:00  개포우성2차 146.6 137.36 6/15 228000 위드공인중개사사무소02-554-8888
 매매 아파트 2017-08-04 00:00:00  선경1,2차 182.22 160.76 6/15 260000 행복공인중개사사무소02-516-0001
-매매 아파트 2017-08-04 00:00:00  래미안대치팰리스1단지 125.49 94.49 14/29 195000 우리공인중개사02-565-0066
-매매 아파트 2017-08-04 00:00:00  개포우성1차 102.48 84.81 5/15 178000 위드공인중개사사무소02-554-8888
 매매 아파트 2017-08-04 00:00:00  개포우성1차 102.48 84.81 9/15 180000 위드공인중개사사무소02-554-8888
+매매 아파트 2017-08-04 00:00:00  개포우성1차 102.48 84.81 5/15 178000 위드공인중개사사무소02-554-8888
+매매 아파트 2017-08-04 00:00:00  개포우성2차 146.6 137.36 6/15 228000 위드공인중개사사무소02-554-8888
+매매 아파트 2017-08-04 00:00:00  선경1,2차 102.27 84.55 8/15 170000 행복공인중개사사무소02-516-0001
+매매 아파트 2017-08-04 00:00:00  래미안대치팰리스1단지 125.49 94.49 14/29 195000 우리공인중개사02-565-0066
+매매 재건축 2017-08-04 00:00:00  은마 101.52 76.79 6/14 134000 동아공인중개사사무소02-565-4200
 매매 아파트 2017-08-04 00:00:00  선경1,2차 137.45 128.32 8/15 204000 행복공인중개사사무소02-516-0001
+매매 아파트 2017-08-04 00:00:00  개포우성1차 102.48 84.81 6/15 178000 행복공인중개사사무소02-516-0001
 </pre>
 </div>
 </div>
@@ -11993,7 +11993,7 @@ div#notebook {
     
     <span class="n">value_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="c1"># 거래, 종류, 확인일자, 확인주석, 매물명, 면적(㎡), 층, 매물가(만원), 연락처</span>
+    <span class="c1"># 거래, 종류, 확인일자, 매물명, 매물명, 면적(㎡), 층, 매물가(만원), 연락처</span>
     <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">trs</span><span class="p">[::</span><span class="mi">2</span><span class="p">]:</span>
         <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">tds</span><span class="p">]</span>
@@ -12005,7 +12005,7 @@ div#notebook {
         <span class="n">종류</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">확인일자</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;%y.%m.</span><span class="si">%d</span><span class="s1">.&#39;</span><span class="p">)</span>
         <span class="n">현장확인</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-        <span class="n">확인주석</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">매물명</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
         <span class="n">면적</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
         <span class="n">공급면적</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;공급면적(.*?)㎡&#39;</span><span class="p">,</span> <span class="n">면적</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">전용면적</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;전용면적(.*?)㎡&#39;</span><span class="p">,</span> <span class="n">면적</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -12015,9 +12015,9 @@ div#notebook {
         <span class="n">매물가</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span> 
         <span class="n">연락처</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
         
-        <span class="n">value_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">거래</span><span class="p">,</span> <span class="n">종류</span><span class="p">,</span> <span class="n">확인일자</span><span class="p">,</span> <span class="n">현장확인</span><span class="p">,</span> <span class="n">확인주석</span><span class="p">,</span> <span class="n">공급면적</span><span class="p">,</span> <span class="n">전용면적</span><span class="p">,</span> <span class="n">층</span><span class="p">,</span> <span class="n">매물가</span><span class="p">,</span> <span class="n">연락처</span><span class="p">])</span>
+        <span class="n">value_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">거래</span><span class="p">,</span> <span class="n">종류</span><span class="p">,</span> <span class="n">확인일자</span><span class="p">,</span> <span class="n">현장확인</span><span class="p">,</span> <span class="n">매물명</span><span class="p">,</span> <span class="n">공급면적</span><span class="p">,</span> <span class="n">전용면적</span><span class="p">,</span> <span class="n">층</span><span class="p">,</span> <span class="n">매물가</span><span class="p">,</span> <span class="n">연락처</span><span class="p">])</span>
         
-    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;거래&#39;</span><span class="p">,</span> <span class="s1">&#39;종류&#39;</span><span class="p">,</span> <span class="s1">&#39;확인일자&#39;</span><span class="p">,</span> <span class="s1">&#39;현장확인&#39;</span><span class="p">,</span> <span class="s1">&#39;확인주석&#39;</span><span class="p">,</span> <span class="s1">&#39;공급면적&#39;</span><span class="p">,</span> <span class="s1">&#39;전용면적&#39;</span><span class="p">,</span> <span class="s1">&#39;층&#39;</span><span class="p">,</span> <span class="s1">&#39;매물가&#39;</span><span class="p">,</span> <span class="s1">&#39;연락처&#39;</span><span class="p">]</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;거래&#39;</span><span class="p">,</span> <span class="s1">&#39;종류&#39;</span><span class="p">,</span> <span class="s1">&#39;확인일자&#39;</span><span class="p">,</span> <span class="s1">&#39;현장확인&#39;</span><span class="p">,</span> <span class="s1">&#39;매물명&#39;</span><span class="p">,</span> <span class="s1">&#39;공급면적&#39;</span><span class="p">,</span> <span class="s1">&#39;전용면적&#39;</span><span class="p">,</span> <span class="s1">&#39;층&#39;</span><span class="p">,</span> <span class="s1">&#39;매물가&#39;</span><span class="p">,</span> <span class="s1">&#39;연락처&#39;</span><span class="p">]</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">value_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df</span>
 </pre></div>
@@ -12071,7 +12071,7 @@ div#notebook {
       <th>종류</th>
       <th>확인일자</th>
       <th>현장확인</th>
-      <th>확인주석</th>
+      <th>매물명</th>
       <th>공급면적</th>
       <th>전용면적</th>
       <th>층</th>
@@ -12112,6 +12112,19 @@ div#notebook {
       <td>아파트</td>
       <td>2017-08-01</td>
       <td>5/13</td>
+      <td>현장확인 개포우성1차</td>
+      <td>102.48</td>
+      <td>84.81</td>
+      <td>3/15</td>
+      <td>178000</td>
+      <td>황금공인중개사사무소02-558-4949</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-08-01</td>
+      <td>5/13</td>
       <td>현장확인 한보미도맨션1,2차</td>
       <td>220.92</td>
       <td>191.06</td>
@@ -12120,7 +12133,7 @@ div#notebook {
       <td>미도금성공인중개사사무소02-3453-8885</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>4</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-08-01</td>
@@ -12130,19 +12143,6 @@ div#notebook {
       <td>128.32</td>
       <td>8/15</td>
       <td>207000</td>
-      <td>황금공인중개사사무소02-558-4949</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-08-01</td>
-      <td>5/13</td>
-      <td>현장확인 개포우성1차</td>
-      <td>102.48</td>
-      <td>84.81</td>
-      <td>3/15</td>
-      <td>178000</td>
       <td>황금공인중개사사무소02-558-4949</td>
     </tr>
     <tr>
@@ -12191,11 +12191,11 @@ div#notebook {
       <td>2017-07-25</td>
       <td>5/13</td>
       <td>현장확인 대치SK뷰</td>
-      <td>122.42</td>
-      <td>93.40</td>
-      <td>6/20</td>
-      <td>186000</td>
-      <td>우리공인중개사02-565-0066</td>
+      <td>145.94</td>
+      <td>112.36</td>
+      <td>5/14</td>
+      <td>240000</td>
+      <td>삼성플러스공인중개사사무소02-554-5985</td>
     </tr>
     <tr>
       <th>9</th>
@@ -12204,11 +12204,11 @@ div#notebook {
       <td>2017-07-25</td>
       <td>5/13</td>
       <td>현장확인 대치SK뷰</td>
-      <td>145.94</td>
-      <td>112.36</td>
-      <td>5/14</td>
-      <td>240000</td>
-      <td>삼성플러스공인중개사사무소02-554-5985</td>
+      <td>122.42</td>
+      <td>93.40</td>
+      <td>6/20</td>
+      <td>186000</td>
+      <td>우리공인중개사02-565-0066</td>
     </tr>
     <tr>
       <th>10</th>
@@ -12243,11 +12243,11 @@ div#notebook {
       <td>2017-08-04</td>
       <td></td>
       <td>대치SK뷰</td>
-      <td>110.84</td>
-      <td>84.33</td>
-      <td>6/20</td>
-      <td>170000</td>
-      <td>우리공인중개사02-565-0066</td>
+      <td>122.42</td>
+      <td>93.40</td>
+      <td>15/17</td>
+      <td>185000</td>
+      <td>래미안현대공인중개사사무소02-566-3993</td>
     </tr>
     <tr>
       <th>13</th>
@@ -12269,11 +12269,11 @@ div#notebook {
       <td>2017-08-04</td>
       <td></td>
       <td>대치SK뷰</td>
-      <td>122.42</td>
-      <td>93.40</td>
-      <td>15/17</td>
-      <td>185000</td>
-      <td>래미안현대공인중개사사무소02-566-3993</td>
+      <td>110.84</td>
+      <td>84.33</td>
+      <td>6/20</td>
+      <td>170000</td>
+      <td>우리공인중개사02-565-0066</td>
     </tr>
     <tr>
       <th>15</th>
@@ -12359,6 +12359,19 @@ div#notebook {
       <td>아파트</td>
       <td>2017-08-04</td>
       <td></td>
+      <td>개포우성1차</td>
+      <td>102.48</td>
+      <td>84.81</td>
+      <td>6/15</td>
+      <td>178000</td>
+      <td>행복공인중개사사무소02-516-0001</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-08-04</td>
+      <td></td>
       <td>선경1,2차</td>
       <td>137.45</td>
       <td>128.32</td>
@@ -12367,7 +12380,7 @@ div#notebook {
       <td>행복공인중개사사무소02-516-0001</td>
     </tr>
     <tr>
-      <th>22</th>
+      <th>23</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-08-04</td>
@@ -12380,20 +12393,20 @@ div#notebook {
       <td>행복공인중개사사무소02-516-0001</td>
     </tr>
     <tr>
-      <th>23</th>
+      <th>24</th>
       <td>매매</td>
-      <td>재건축</td>
+      <td>아파트</td>
       <td>2017-08-04</td>
       <td></td>
-      <td>은마</td>
-      <td>101.52</td>
-      <td>76.79</td>
-      <td>6/14</td>
-      <td>134000</td>
-      <td>동아공인중개사사무소02-565-4200</td>
+      <td>개포우성1차</td>
+      <td>102.48</td>
+      <td>84.81</td>
+      <td>9/15</td>
+      <td>180000</td>
+      <td>위드공인중개사사무소02-554-8888</td>
     </tr>
     <tr>
-      <th>24</th>
+      <th>25</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-08-04</td>
@@ -12406,7 +12419,7 @@ div#notebook {
       <td>위드공인중개사사무소02-554-8888</td>
     </tr>
     <tr>
-      <th>25</th>
+      <th>26</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-08-04</td>
@@ -12419,7 +12432,20 @@ div#notebook {
       <td>우리공인중개사02-565-0066</td>
     </tr>
     <tr>
-      <th>26</th>
+      <th>27</th>
+      <td>매매</td>
+      <td>재건축</td>
+      <td>2017-08-04</td>
+      <td></td>
+      <td>은마</td>
+      <td>101.52</td>
+      <td>76.79</td>
+      <td>6/14</td>
+      <td>134000</td>
+      <td>동아공인중개사사무소02-565-4200</td>
+    </tr>
+    <tr>
+      <th>28</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-08-04</td>
@@ -12430,32 +12456,6 @@ div#notebook {
       <td>6/15</td>
       <td>260000</td>
       <td>행복공인중개사사무소02-516-0001</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-08-04</td>
-      <td></td>
-      <td>개포우성1차</td>
-      <td>102.48</td>
-      <td>84.81</td>
-      <td>6/15</td>
-      <td>178000</td>
-      <td>행복공인중개사사무소02-516-0001</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-08-04</td>
-      <td></td>
-      <td>개포우성1차</td>
-      <td>102.48</td>
-      <td>84.81</td>
-      <td>9/15</td>
-      <td>180000</td>
-      <td>위드공인중개사사무소02-554-8888</td>
     </tr>
     <tr>
       <th>29</th>
@@ -12519,7 +12519,7 @@ div#notebook {
     
     <span class="n">value_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="c1"># 거래, 종류, 확인일자, 확인주석, 매물명, 면적(㎡), 층, 매물가(만원), 연락처</span>
+    <span class="c1"># 거래, 종류, 확인일자, 매물명, 면적(㎡), 층, 매물가(만원), 연락처</span>
     <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">trs</span><span class="p">[::</span><span class="mi">2</span><span class="p">]:</span>
         <span class="n">tds</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">tds</span><span class="p">]</span>
@@ -12532,7 +12532,7 @@ div#notebook {
         <span class="n">종류</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">확인일자</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;%y.%m.</span><span class="si">%d</span><span class="s1">.&#39;</span><span class="p">)</span>
         <span class="n">현장확인</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-        <span class="n">확인주석</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">매물명</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
         <span class="n">면적</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
         <span class="n">공급면적</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;공급면적(.*?)㎡&#39;</span><span class="p">,</span> <span class="n">면적</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">전용면적</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;전용면적(.*?)㎡&#39;</span><span class="p">,</span> <span class="n">면적</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -12544,9 +12544,9 @@ div#notebook {
         <span class="n">매물가</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span> 
         <span class="n">연락처</span> <span class="o">=</span> <span class="n">cols</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
         
-        <span class="n">value_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">거래</span><span class="p">,</span> <span class="n">종류</span><span class="p">,</span> <span class="n">확인일자</span><span class="p">,</span> <span class="n">현장확인</span><span class="p">,</span> <span class="n">확인주석</span><span class="p">,</span> <span class="n">공급면적</span><span class="p">,</span> <span class="n">전용면적</span><span class="p">,</span> <span class="n">층</span><span class="p">,</span> <span class="n">매물가</span><span class="p">,</span> <span class="n">연락처</span><span class="p">])</span>
+        <span class="n">value_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">거래</span><span class="p">,</span> <span class="n">종류</span><span class="p">,</span> <span class="n">확인일자</span><span class="p">,</span> <span class="n">현장확인</span><span class="p">,</span> <span class="n">매물명</span><span class="p">,</span> <span class="n">공급면적</span><span class="p">,</span> <span class="n">전용면적</span><span class="p">,</span> <span class="n">층</span><span class="p">,</span> <span class="n">매물가</span><span class="p">,</span> <span class="n">연락처</span><span class="p">])</span>
         
-    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;거래&#39;</span><span class="p">,</span> <span class="s1">&#39;종류&#39;</span><span class="p">,</span> <span class="s1">&#39;확인일자&#39;</span><span class="p">,</span> <span class="s1">&#39;현장확인&#39;</span><span class="p">,</span> <span class="s1">&#39;확인주석&#39;</span><span class="p">,</span> <span class="s1">&#39;공급면적&#39;</span><span class="p">,</span> <span class="s1">&#39;전용면적&#39;</span><span class="p">,</span> <span class="s1">&#39;층&#39;</span><span class="p">,</span> <span class="s1">&#39;매물가&#39;</span><span class="p">,</span> <span class="s1">&#39;연락처&#39;</span><span class="p">]</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;거래&#39;</span><span class="p">,</span> <span class="s1">&#39;종류&#39;</span><span class="p">,</span> <span class="s1">&#39;확인일자&#39;</span><span class="p">,</span> <span class="s1">&#39;현장확인&#39;</span><span class="p">,</span> <span class="s1">&#39;매물명&#39;</span><span class="p">,</span> <span class="s1">&#39;공급면적&#39;</span><span class="p">,</span> <span class="s1">&#39;전용면적&#39;</span><span class="p">,</span> <span class="s1">&#39;층&#39;</span><span class="p">,</span> <span class="s1">&#39;매물가&#39;</span><span class="p">,</span> <span class="s1">&#39;연락처&#39;</span><span class="p">]</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">value_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df</span>
 </pre></div>
@@ -12600,7 +12600,7 @@ div#notebook {
       <th>종류</th>
       <th>확인일자</th>
       <th>현장확인</th>
-      <th>확인주석</th>
+      <th>매물명</th>
       <th>공급면적</th>
       <th>전용면적</th>
       <th>층</th>
@@ -12615,12 +12615,12 @@ div#notebook {
       <td>아파트</td>
       <td>2017-07-07</td>
       <td></td>
-      <td>래미안대치팰리스1단지</td>
-      <td>125.49</td>
-      <td>94.49</td>
-      <td>15/29</td>
-      <td>190000</td>
-      <td>뉴서울공인중개사사무소 02-555-2882</td>
+      <td>래미안대치팰리스2단지</td>
+      <td>122.96</td>
+      <td>91.91</td>
+      <td>10/35</td>
+      <td>180000</td>
+      <td>대치한화공인중개사사무소02-561-5588</td>
     </tr>
     <tr>
       <th>1</th>
@@ -12629,24 +12629,24 @@ div#notebook {
       <td>2017-07-07</td>
       <td></td>
       <td>동부센트레빌</td>
-      <td>178.76</td>
-      <td>145.83</td>
-      <td>28/29</td>
-      <td>225000</td>
+      <td>202.99</td>
+      <td>161.47</td>
+      <td>12/29</td>
+      <td>260000</td>
       <td>굿모닝공인중개사02-555-7755</td>
     </tr>
     <tr>
       <th>2</th>
       <td>매매</td>
-      <td>재건축</td>
-      <td>2017-07-07</td>
+      <td>아파트</td>
+      <td>2017-07-25</td>
       <td></td>
-      <td>은마</td>
-      <td>115.54</td>
-      <td>84.43</td>
-      <td>5/14</td>
-      <td>140000</td>
-      <td>금마로공인중개사사무소02-563-3600</td>
+      <td>대치삼성1차</td>
+      <td>124.57</td>
+      <td>97.35</td>
+      <td>4/16</td>
+      <td>141000</td>
+      <td>홈플러스공인02-564-2459</td>
     </tr>
     <tr>
       <th>3</th>
@@ -12654,12 +12654,12 @@ div#notebook {
       <td>아파트</td>
       <td>2017-07-07</td>
       <td></td>
-      <td>세영팔래스</td>
-      <td>103.37</td>
-      <td>84.85</td>
-      <td>8/13</td>
-      <td>93000</td>
-      <td>신현대부동산공인중개사02-555-8090</td>
+      <td>대치삼성1차</td>
+      <td>124.57</td>
+      <td>97.35</td>
+      <td>17/24</td>
+      <td>144000</td>
+      <td>반석공인중개사사무소02-3452-0088</td>
     </tr>
     <tr>
       <th>4</th>
@@ -12680,54 +12680,15 @@ div#notebook {
       <td>아파트</td>
       <td>2017-07-07</td>
       <td></td>
-      <td>동부센트레빌</td>
-      <td>202.99</td>
-      <td>161.47</td>
-      <td>6/26</td>
-      <td>258000</td>
-      <td>뉴동부 공인중개사02-552-6006</td>
+      <td>래미안대치팰리스1단지</td>
+      <td>125.32</td>
+      <td>94.50</td>
+      <td>8/26</td>
+      <td>185000</td>
+      <td>동부팰리스공인중개사사무소02-564-0001</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>동부센트레빌</td>
-      <td>178.76</td>
-      <td>145.83</td>
-      <td>19/29</td>
-      <td>225000</td>
-      <td>동부아이파크공인중개사02-564-8949</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>대치삼성1차</td>
-      <td>108.21</td>
-      <td>84.58</td>
-      <td>8/11</td>
-      <td>125000</td>
-      <td>홈플러스공인02-564-2459</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>동부센트레빌</td>
-      <td>178.76</td>
-      <td>145.83</td>
-      <td>20/29</td>
-      <td>225000</td>
-      <td>동부삼성공인중개사02-557-5688</td>
-    </tr>
-    <tr>
-      <th>9</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-07-07</td>
@@ -12740,176 +12701,20 @@ div#notebook {
       <td>연세공인중개사사무소02-3453-6800</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>7</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-07-07</td>
       <td></td>
-      <td>래미안대치팰리스2단지</td>
-      <td>123.26</td>
-      <td>91.89</td>
-      <td>14/35</td>
-      <td>179000</td>
-      <td>대치한화공인중개사사무소02-561-5588</td>
+      <td>세영팔래스</td>
+      <td>103.37</td>
+      <td>84.85</td>
+      <td>8/13</td>
+      <td>93000</td>
+      <td>신현대부동산공인중개사02-555-8090</td>
     </tr>
     <tr>
-      <th>11</th>
-      <td>매매</td>
-      <td>재건축</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>은마</td>
-      <td>115.54</td>
-      <td>84.43</td>
-      <td>8/14</td>
-      <td>140000</td>
-      <td>금마로공인중개사사무소02-563-3600</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>대치SK뷰</td>
-      <td>110.89</td>
-      <td>84.38</td>
-      <td>15/20</td>
-      <td>165000</td>
-      <td>대치공인중개사사무소02-508-2970</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>대치삼성1차</td>
-      <td>133.46</td>
-      <td>108.52</td>
-      <td>5/17</td>
-      <td>150000</td>
-      <td>대치래미안공인중개사사무소02-558-0123</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>래미안대치팰리스1단지</td>
-      <td>125.32</td>
-      <td>94.50</td>
-      <td>8/26</td>
-      <td>185000</td>
-      <td>동부팰리스공인중개사사무소02-564-0001</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>래미안대치팰리스2단지</td>
-      <td>123.26</td>
-      <td>91.89</td>
-      <td>17/35</td>
-      <td>178000</td>
-      <td>뉴서울공인중개사사무소 02-555-2882</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>대치삼성1차</td>
-      <td>124.57</td>
-      <td>97.35</td>
-      <td>16/24</td>
-      <td>145000</td>
-      <td>대치래미안공인중개사사무소02-558-0123</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-19</td>
-      <td></td>
-      <td>한보미도맨션1,2차</td>
-      <td>113.31</td>
-      <td>84.48</td>
-      <td>8/14</td>
-      <td>160000</td>
-      <td>중앙공인중개사사무소02-562-7474</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>동부센트레빌</td>
-      <td>202.99</td>
-      <td>161.47</td>
-      <td>12/29</td>
-      <td>260000</td>
-      <td>굿모닝공인중개사02-555-7755</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>대치삼성1차</td>
-      <td>124.57</td>
-      <td>97.35</td>
-      <td>17/24</td>
-      <td>144000</td>
-      <td>반석공인중개사사무소02-3452-0088</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>래미안대치팰리스2단지</td>
-      <td>122.96</td>
-      <td>91.91</td>
-      <td>10/35</td>
-      <td>180000</td>
-      <td>대치한화공인중개사사무소02-561-5588</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>대치삼성1차</td>
-      <td>124.57</td>
-      <td>97.35</td>
-      <td>5/21</td>
-      <td>136000</td>
-      <td>삼성공인중개사사무소02-568-4440</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>매매</td>
-      <td>아파트</td>
-      <td>2017-07-07</td>
-      <td></td>
-      <td>대치삼성1차</td>
-      <td>124.57</td>
-      <td>97.35</td>
-      <td>12/24</td>
-      <td>138000</td>
-      <td>반석공인중개사사무소02-3452-0088</td>
-    </tr>
-    <tr>
-      <th>23</th>
+      <th>8</th>
       <td>매매</td>
       <td>아파트</td>
       <td>2017-07-07</td>
@@ -12922,17 +12727,212 @@ div#notebook {
       <td>동부팰리스공인중개사사무소02-564-0001</td>
     </tr>
     <tr>
-      <th>24</th>
+      <th>9</th>
       <td>매매</td>
       <td>아파트</td>
-      <td>2017-07-25</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>대치삼성1차</td>
+      <td>108.21</td>
+      <td>84.58</td>
+      <td>8/11</td>
+      <td>125000</td>
+      <td>홈플러스공인02-564-2459</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>대치삼성1차</td>
+      <td>133.46</td>
+      <td>108.52</td>
+      <td>5/17</td>
+      <td>150000</td>
+      <td>대치래미안공인중개사사무소02-558-0123</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
       <td></td>
       <td>대치삼성1차</td>
       <td>124.57</td>
       <td>97.35</td>
-      <td>4/16</td>
-      <td>141000</td>
-      <td>홈플러스공인02-564-2459</td>
+      <td>5/21</td>
+      <td>136000</td>
+      <td>삼성공인중개사사무소02-568-4440</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>동부센트레빌</td>
+      <td>178.76</td>
+      <td>145.83</td>
+      <td>28/29</td>
+      <td>225000</td>
+      <td>굿모닝공인중개사02-555-7755</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>대치SK뷰</td>
+      <td>110.89</td>
+      <td>84.38</td>
+      <td>15/20</td>
+      <td>165000</td>
+      <td>대치공인중개사사무소02-508-2970</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-19</td>
+      <td></td>
+      <td>한보미도맨션1,2차</td>
+      <td>113.31</td>
+      <td>84.48</td>
+      <td>8/14</td>
+      <td>160000</td>
+      <td>중앙공인중개사사무소02-562-7474</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>동부센트레빌</td>
+      <td>178.76</td>
+      <td>145.83</td>
+      <td>19/29</td>
+      <td>225000</td>
+      <td>동부아이파크공인중개사02-564-8949</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>래미안대치팰리스2단지</td>
+      <td>123.26</td>
+      <td>91.89</td>
+      <td>14/35</td>
+      <td>179000</td>
+      <td>대치한화공인중개사사무소02-561-5588</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>매매</td>
+      <td>재건축</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>은마</td>
+      <td>115.54</td>
+      <td>84.43</td>
+      <td>8/14</td>
+      <td>140000</td>
+      <td>금마로공인중개사사무소02-563-3600</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>동부센트레빌</td>
+      <td>178.76</td>
+      <td>145.83</td>
+      <td>20/29</td>
+      <td>225000</td>
+      <td>동부삼성공인중개사02-557-5688</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>래미안대치팰리스1단지</td>
+      <td>125.49</td>
+      <td>94.49</td>
+      <td>15/29</td>
+      <td>190000</td>
+      <td>뉴서울공인중개사사무소 02-555-2882</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>대치삼성1차</td>
+      <td>124.57</td>
+      <td>97.35</td>
+      <td>16/24</td>
+      <td>145000</td>
+      <td>대치래미안공인중개사사무소02-558-0123</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>래미안대치팰리스2단지</td>
+      <td>123.26</td>
+      <td>91.89</td>
+      <td>17/35</td>
+      <td>178000</td>
+      <td>뉴서울공인중개사사무소 02-555-2882</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>매매</td>
+      <td>재건축</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>은마</td>
+      <td>115.54</td>
+      <td>84.43</td>
+      <td>5/14</td>
+      <td>140000</td>
+      <td>금마로공인중개사사무소02-563-3600</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>동부센트레빌</td>
+      <td>202.99</td>
+      <td>161.47</td>
+      <td>6/26</td>
+      <td>258000</td>
+      <td>뉴동부 공인중개사02-552-6006</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>매매</td>
+      <td>아파트</td>
+      <td>2017-07-07</td>
+      <td></td>
+      <td>대치삼성1차</td>
+      <td>124.57</td>
+      <td>97.35</td>
+      <td>12/24</td>
+      <td>138000</td>
+      <td>반석공인중개사사무소02-3452-0088</td>
     </tr>
     <tr>
       <th>25</th>
@@ -12940,12 +12940,12 @@ div#notebook {
       <td>아파트</td>
       <td>2017-07-07</td>
       <td></td>
-      <td>래미안대치하이스턴</td>
-      <td>142.62</td>
-      <td>110.39</td>
-      <td>4/16</td>
-      <td>150000</td>
-      <td>강남아빠공인중개사무소02-565-8949</td>
+      <td>하이캐슬</td>
+      <td>138.18</td>
+      <td>123.22</td>
+      <td>4/7</td>
+      <td>105000</td>
+      <td>미광공인중개사사무소02-3453-5800</td>
     </tr>
     <tr>
       <th>26</th>
@@ -12969,9 +12969,9 @@ div#notebook {
       <td>래미안대치하이스턴</td>
       <td>142.62</td>
       <td>110.39</td>
-      <td>7/16</td>
-      <td>148000</td>
-      <td>미광공인중개사사무소02-3453-5800</td>
+      <td>4/16</td>
+      <td>150000</td>
+      <td>강남아빠공인중개사무소02-565-8949</td>
     </tr>
     <tr>
       <th>28</th>
@@ -12979,11 +12979,11 @@ div#notebook {
       <td>아파트</td>
       <td>2017-07-07</td>
       <td></td>
-      <td>하이캐슬</td>
-      <td>138.18</td>
-      <td>123.22</td>
-      <td>4/7</td>
-      <td>105000</td>
+      <td>래미안대치하이스턴</td>
+      <td>142.62</td>
+      <td>110.39</td>
+      <td>11/13</td>
+      <td>150000</td>
       <td>미광공인중개사사무소02-3453-5800</td>
     </tr>
     <tr>
@@ -12995,8 +12995,8 @@ div#notebook {
       <td>래미안대치하이스턴</td>
       <td>142.62</td>
       <td>110.39</td>
-      <td>11/13</td>
-      <td>150000</td>
+      <td>7/16</td>
+      <td>148000</td>
       <td>미광공인중개사사무소02-3453-5800</td>
     </tr>
   </tbody>
@@ -13025,7 +13025,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">area_code</span> <span class="o">=</span> <span class="s1">&#39;1168010600&#39;</span> <span class="c1"># 강남구, 대치동</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">area_code</span> <span class="o">=</span> <span class="s1">&#39;1168010600&#39;</span> <span class="c1"># 강남구, 대치동 (법정동 코드 https://goo.gl/P6ni8Q 참조)</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span> <span class="c1"># 최대 100 페이지</span>
@@ -13072,7 +13072,7 @@ div#notebook {
       <th>종류</th>
       <th>확인일자</th>
       <th>현장확인</th>
-      <th>확인주석</th>
+      <th>매물명</th>
       <th>공급면적</th>
       <th>전용면적</th>
       <th>층</th>
@@ -13231,7 +13231,7 @@ div#notebook {
       <th>종류</th>
       <th>확인일자</th>
       <th>현장확인</th>
-      <th>확인주석</th>
+      <th>매물명</th>
       <th>공급면적</th>
       <th>전용면적</th>
       <th>층</th>
@@ -13282,19 +13282,6 @@ div#notebook {
     <tr>
       <th>1904</th>
       <td>매매</td>
-      <td>주상복합</td>
-      <td>2017-07-10</td>
-      <td></td>
-      <td>대치대우아이빌명문가7차</td>
-      <td>41.88</td>
-      <td>33.06</td>
-      <td>8/11</td>
-      <td>30500</td>
-      <td>파란공인중개..02-567-8249</td>
-    </tr>
-    <tr>
-      <th>1905</th>
-      <td>매매</td>
       <td>아파트</td>
       <td>2017-07-10</td>
       <td></td>
@@ -13304,6 +13291,19 @@ div#notebook {
       <td>11/13</td>
       <td>150000</td>
       <td>선우공인중개..02-566-0700</td>
+    </tr>
+    <tr>
+      <th>1905</th>
+      <td>매매</td>
+      <td>주상복합</td>
+      <td>2017-07-10</td>
+      <td></td>
+      <td>대치대우아이빌명문가7차</td>
+      <td>41.88</td>
+      <td>33.06</td>
+      <td>8/11</td>
+      <td>30500</td>
+      <td>파란공인중개..02-567-8249</td>
     </tr>
   </tbody>
 </table>
