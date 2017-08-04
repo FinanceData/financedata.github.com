@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-07-31T04:29:00Z</lastmod>
+  <lastmod>2017-08-04T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-07-31T04:29:00Z</lastmod>
+  <lastmod>2017-08-04T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
@@ -55,7 +55,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-07-31T04:29:00Z</lastmod>
+  <lastmod>2017-08-04T20:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -83,7 +83,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/crawling.html</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-08-04T20:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/data.html</loc>
@@ -194,6 +194,10 @@
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/joins.html</loc>
+  <lastmod>2017-08-04T20:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/jupyter-notebook.html</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </url>
@@ -208,6 +212,10 @@
  <url>
   <loc>https://financedata.github.com/categories/krx.html</loc>
   <lastmod>2017-07-17T06:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/land.html</loc>
+  <lastmod>2017-08-04T20:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/list.html</loc>
@@ -235,7 +243,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/naver.html</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-08-04T20:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/notebook.html</loc>
@@ -363,7 +371,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-3.html</loc>
-  <lastmod>2017-07-31T04:29:00Z</lastmod>
+  <lastmod>2017-08-04T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -426,6 +434,10 @@
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/posts/joins-land-crawling.html</loc>
+  <lastmod>2017-08-04T20:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/posts/jupyter-notebook-authentication.html</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </url>
@@ -439,7 +451,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/korea-area-code.html</loc>
-  <lastmod>2017-07-31T04:29:00Z</lastmod>
+  <lastmod>2017-08-04T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</loc>
@@ -448,6 +460,10 @@
  <url>
   <loc>https://financedata.github.com/posts/naver-finance-finstate-crawling.html</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/naver-land-crawling.html</loc>
+  <lastmod>2017-08-04T20:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/naver_realtime_search_crawling.html</loc>
