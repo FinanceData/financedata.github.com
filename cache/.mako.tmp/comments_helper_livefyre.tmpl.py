@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1502085111.372868
+_modified_time = 1502085695.7278295
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl'
 _template_uri = 'comments_helper_livefyre.tmpl'
@@ -70,6 +70,6 @@ def render_comment_link(context,link,identifier):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl", "source_encoding": "utf-8", "line_map": {"64": 25, "48": 31, "34": 2, "35": 7, "36": 7, "37": 11, "38": 11, "65": 25, "71": 65, "44": 31, "61": 24, "16": 0, "59": 23, "21": 21, "22": 28, "23": 33, "54": 23, "60": 24, "29": 2, "62": 25, "63": 25}, "uri": "comments_helper_livefyre.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"64": 25, "48": 31, "34": 2, "35": 7, "36": 7, "37": 11, "38": 11, "65": 25, "71": 65, "44": 31, "61": 24, "16": 0, "59": 23, "21": 21, "22": 28, "23": 33, "54": 23, "60": 24, "29": 2, "62": 25, "63": 25}, "uri": "comments_helper_livefyre.tmpl", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_livefyre.tmpl"}
 __M_END_METADATA
 """
