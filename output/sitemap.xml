@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-08-07T05:29:00Z</lastmod>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-08-07T05:29:00Z</lastmod>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
@@ -55,7 +55,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-08-07T06:04:00Z</lastmod>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -167,7 +167,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangeul.html</loc>
-  <lastmod>2017-08-07T06:04:00Z</lastmod>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangul.html</loc>
@@ -243,7 +243,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/matplotlib.html</loc>
-  <lastmod>2017-08-07T06:04:00Z</lastmod>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/module.html</loc>
@@ -272,6 +272,10 @@
  <url>
   <loc>https://financedata.github.com/categories/operator.html</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/osx.html</loc>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/packaging.html</loc>
@@ -383,7 +387,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-3.html</loc>
-  <lastmod>2017-08-07T05:29:00Z</lastmod>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -466,8 +470,12 @@
   <lastmod>2017-08-04T20:30:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/posts/matplotlib-hangul-for-osx.html</loc>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/posts/matplotlib-hangul-for-ubuntu-linux.html</loc>
-  <lastmod>2017-08-07T06:04:00Z</lastmod>
+  <lastmod>2017-08-07T06:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</loc>
