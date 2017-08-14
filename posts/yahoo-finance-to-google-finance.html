@@ -134,7 +134,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -175,7 +175,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -183,114 +183,6 @@
 
 <span class="c1"># google</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get_data_google</span><span class="p">(</span><span class="s2">"KRX:KOSPI"</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume</th>
-    </tr>
-<tr>
-<th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-</thead>
-<tbody>
-<tr>
-<th>2017-01-02</th>
-      <td>2022.23</td>
-      <td>2031.79</td>
-      <td>2015.68</td>
-      <td>2026.16</td>
-      <td>229874000</td>
-    </tr>
-<tr>
-<th>2017-01-03</th>
-      <td>2034.31</td>
-      <td>2044.07</td>
-      <td>2028.47</td>
-      <td>2043.97</td>
-      <td>268127000</td>
-    </tr>
-<tr>
-<th>2017-01-04</th>
-      <td>2046.29</td>
-      <td>2046.29</td>
-      <td>2040.61</td>
-      <td>2045.64</td>
-      <td>371488000</td>
-    </tr>
-<tr>
-<th>2017-01-05</th>
-      <td>2045.52</td>
-      <td>2046.50</td>
-      <td>2039.49</td>
-      <td>2041.95</td>
-      <td>541343000</td>
-    </tr>
-<tr>
-<th>2017-01-06</th>
-      <td>2048.11</td>
-      <td>2051.84</td>
-      <td>2045.66</td>
-      <td>2049.12</td>
-      <td>455350000</td>
-    </tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># google</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s2">"KRX:KOSPI"</span><span class="p">,</span> <span class="s2">"google"</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -392,6 +284,114 @@
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># google</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s2">"KRX:KOSPI"</span><span class="p">,</span> <span class="s2">"google"</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Volume</th>
+    </tr>
+<tr>
+<th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2017-01-02</th>
+      <td>2022.23</td>
+      <td>2031.79</td>
+      <td>2015.68</td>
+      <td>2026.16</td>
+      <td>229874000</td>
+    </tr>
+<tr>
+<th>2017-01-03</th>
+      <td>2034.31</td>
+      <td>2044.07</td>
+      <td>2028.47</td>
+      <td>2043.97</td>
+      <td>268127000</td>
+    </tr>
+<tr>
+<th>2017-01-04</th>
+      <td>2046.29</td>
+      <td>2046.29</td>
+      <td>2040.61</td>
+      <td>2045.64</td>
+      <td>371488000</td>
+    </tr>
+<tr>
+<th>2017-01-05</th>
+      <td>2045.52</td>
+      <td>2046.50</td>
+      <td>2039.49</td>
+      <td>2041.95</td>
+      <td>541343000</td>
+    </tr>
+<tr>
+<th>2017-01-06</th>
+      <td>2048.11</td>
+      <td>2051.84</td>
+      <td>2045.66</td>
+      <td>2049.12</td>
+      <td>455350000</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -404,7 +404,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># yahoo</span>
@@ -424,7 +424,7 @@
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[ ]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -525,7 +525,7 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># yahoo</span>
@@ -542,6 +542,164 @@
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Volume</th>
+    </tr>
+<tr>
+<th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2017-04-28</th>
+      <td>2214.36</td>
+      <td>2217.04</td>
+      <td>2202.20</td>
+      <td>2205.44</td>
+      <td>268642000</td>
+    </tr>
+<tr>
+<th>2017-04-27</th>
+      <td>2201.72</td>
+      <td>2211.59</td>
+      <td>2199.76</td>
+      <td>2209.46</td>
+      <td>386106000</td>
+    </tr>
+<tr>
+<th>2017-04-26</th>
+      <td>2202.37</td>
+      <td>2210.61</td>
+      <td>2200.73</td>
+      <td>2207.84</td>
+      <td>397525000</td>
+    </tr>
+<tr>
+<th>2017-04-25</th>
+      <td>2175.70</td>
+      <td>2196.85</td>
+      <td>2174.11</td>
+      <td>2196.85</td>
+      <td>275897000</td>
+    </tr>
+<tr>
+<th>2017-04-24</th>
+      <td>2175.50</td>
+      <td>2177.89</td>
+      <td>2166.83</td>
+      <td>2173.74</td>
+      <td>374713000</td>
+    </tr>
+<tr>
+<th>2017-04-21</th>
+      <td>2161.24</td>
+      <td>2169.46</td>
+      <td>2156.64</td>
+      <td>2165.04</td>
+      <td>281540000</td>
+    </tr>
+<tr>
+<th>2017-04-20</th>
+      <td>2138.19</td>
+      <td>2150.43</td>
+      <td>2134.05</td>
+      <td>2149.15</td>
+      <td>268315000</td>
+    </tr>
+<tr>
+<th>2017-04-19</th>
+      <td>2144.98</td>
+      <td>2148.03</td>
+      <td>2133.82</td>
+      <td>2138.40</td>
+      <td>344221000</td>
+    </tr>
+<tr>
+<th>2017-04-18</th>
+      <td>2155.36</td>
+      <td>2155.36</td>
+      <td>2139.31</td>
+      <td>2148.46</td>
+      <td>291399000</td>
+    </tr>
+<tr>
+<th>2017-04-17</th>
+      <td>2140.87</td>
+      <td>2150.70</td>
+      <td>2138.70</td>
+      <td>2145.76</td>
+      <td>259303000</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="pandas-datareader-0.5-Fixed">pandas-datareader 0.5 Fixed<a class="anchor-link" href="yahoo-finance-to-google-finance.html#pandas-datareader-0.5-Fixed">¶</a>
+</h2>
+<h4 id="v0.5-(2017년-7월-25일)에서-fixed">v0.5 (2017년 7월 25일)에서 fixed<a class="anchor-link" href="yahoo-finance-to-google-finance.html#v0.5-(2017%EB%85%84-7%EC%9B%94-25%EC%9D%BC)%EC%97%90%EC%84%9C-fixed">¶</a>
+</h4>
+<p>pandas_datareader 에서 "yahoo"를 지정했을 때 데이터를 가져오지 못하는 문제는 pandas-datareader 0.5 (July 25, 2017) 이상에서 수정되었습니다. (2017년 5월 15일 ~ 7월 25일까지, 약 2달 정도 pandas_datareader 에서 "yahoo"의 가격 부분이 정상적으로 동작하지 않았습니다)</p>
+<p>pandas_datareader 내부적으로 <a href="http://ichart.finance.yahoo.com">http://ichart.finance.yahoo.com</a> 를 사용하지 않고, <a href="https://query1.finance.yahoo.com">https://query1.finance.yahoo.com</a> 를 사용하는 것으로 수정되었네요.</p>
+<p>업그레이드에 대한 상세 내용은,</p>
+<ul>
+<li>
+<a href="https://pandas-datareader.readthedocs.io/en/latest/whatsnew.html#v0-5-0-july-25-2017">https://pandas-datareader.readthedocs.io/en/latest/whatsnew.html#v0-5-0-july-25-2017</a> v0.5.0 (July 25, 2017) </li>
+</ul>
+<h4 id="업그레이드">업그레이드<a class="anchor-link" href="yahoo-finance-to-google-finance.html#%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C">¶</a>
+</h4>
+<p>v0.5 미만의 버전을 사용 중이라면, 다음과 같이 업그레이드하면 됩니다.</p>
+<div class="highlight"><pre><span></span>$ sudo pip3 install -U pandas_datareader
+</pre></div>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
