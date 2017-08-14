@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-08-07T06:49:00Z</lastmod>
+  <lastmod>2017-08-07T07:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
@@ -55,7 +55,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-08-07T06:57:00Z</lastmod>
+  <lastmod>2017-08-14T15:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -163,7 +163,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/google.html</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-08-14T15:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangeul.html</loc>
@@ -287,7 +287,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/pandas_datareader.html</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-08-14T15:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/phone.html</loc>
@@ -371,7 +371,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/yahoo.html</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-08-14T15:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/galleries/</loc>
@@ -387,11 +387,15 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-3.html</loc>
-  <lastmod>2017-08-07T06:49:00Z</lastmod>
+  <lastmod>2017-08-14T15:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
   <lastmod>2017-06-21T18:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/pages/pandas_datareader-yahoo-finance-fixed.html</loc>
+  <lastmod>2017-08-14T15:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/building_home_server.html</loc>
@@ -535,6 +539,6 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/yahoo-finance-to-google-finance.html</loc>
-  <lastmod>2017-07-17T06:20:00Z</lastmod>
+  <lastmod>2017-08-14T15:36:00Z</lastmod>
  </url>
 </urlset>
