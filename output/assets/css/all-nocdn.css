@@ -6872,6 +6872,13 @@ legend {
 }
 
 /*
+div.prompt {
+  display: none;
+}
+*/
+
+
+/*
 :Author: David Goodger (goodger@python.org)
 :Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
 :Copyright: This stylesheet has been placed in the public domain.

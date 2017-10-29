@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (크롤링에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link href="https://financedata.github.com/categories/keurolring.xml" rel="self" type="application/rss+xml"></atom:link><language>ko</language><lastBuildDate>Tue, 17 Oct 2017 13:58:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>국제 상품 가격 데이터 가져오기</title><link>https://financedata.github.com/posts/global-commodity-price.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="국제-상품-가격-데이터"&gt;국제 상품 가격 데이터&lt;a class="anchor-link" href="https://financedata.github.com/posts/global-commodity-price.html#%EA%B5%AD%EC%A0%9C-%EC%83%81%ED%92%88-%EA%B0%80%EA%B2%A9-%EB%8D%B0%EC%9D%B4%ED%84%B0"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;파이썬에서 국제 원자재(금, 은, 구리, 원유)의 가격을 가져와 다루는 방법&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;국제 금가격 (LBM, 런던금은시장)&lt;/li&gt;
+&lt;li&gt;국제 은 가격 (LBMA, 런던 금시장협회)&lt;/li&gt;
+&lt;li&gt;국제 구리 가격 (LME, 런던 금속 거래소)&lt;/li&gt;
+&lt;li&gt;국제 원유가격 (서부 텍사스 중질유, 두바이유, 북해 브렌트유)
+&lt;img src="http://i.imgur.com/qVjtvea.png" width="80%"&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/global-commodity-price.html"&gt;더 읽기…&lt;/a&gt; (읽기 7분 남음.)&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>상품가격</category><category>크롤링</category><guid>https://financedata.github.com/posts/global-commodity-price.html</guid><pubDate>Sat, 26 Aug 2017 05:00:16 GMT</pubDate></item></channel></rss>

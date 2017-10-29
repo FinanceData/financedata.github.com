@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2017-08-14T15:36:00Z</lastmod>
+  <lastmod>2017-10-17T13:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
@@ -190,6 +190,10 @@
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/keurolring.xml</loc>
+  <lastmod>2017-10-17T13:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/keyboard.xml</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </sitemap>
@@ -314,6 +318,10 @@
   <lastmod>2017-08-07T06:04:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/sangpumgagyeog.xml</loc>
+  <lastmod>2017-10-17T13:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/server.xml</loc>
   <lastmod>2017-07-17T06:20:00Z</lastmod>
  </sitemap>
@@ -355,14 +363,14 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/galleries/rss.xml</loc>
-  <lastmod>2017-03-01T16:38:00Z</lastmod>
+  <lastmod>2017-10-17T14:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2017-08-14T15:36:00Z</lastmod>
+  <lastmod>2017-10-17T13:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2017-08-14T15:36:00Z</lastmod>
+  <lastmod>2017-10-29T09:45:00Z</lastmod>
  </sitemap>
 </sitemapindex>

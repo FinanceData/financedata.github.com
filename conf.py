@@ -145,6 +145,8 @@ NAVIGATION_LINKS = {
 # Name of the theme to use.
 THEME = "bootblog-jinja"
 THEME = "custom_theme"
+#THEME = "slidemenu"
+#THEME = "maupassant"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
@@ -185,8 +187,8 @@ THEME = "custom_theme"
 #     )
 
 POSTS = (
-    ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
