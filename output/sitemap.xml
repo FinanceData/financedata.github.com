@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2017-10-29T09:50:00Z</lastmod>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2017-10-17T13:57:00Z</lastmod>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
@@ -55,7 +55,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2017-10-17T14:11:00Z</lastmod>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -72,6 +72,10 @@
  <url>
   <loc>https://financedata.github.com/categories/codeademy.html</loc>
   <lastmod>2017-10-17T14:11:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/colaboratory.html</loc>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/concat.html</loc>
@@ -163,7 +167,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/google.html</loc>
-  <lastmod>2017-10-17T14:11:00Z</lastmod>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangeul.html</loc>
@@ -207,7 +211,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/jupyter.html</loc>
-  <lastmod>2017-10-17T14:11:00Z</lastmod>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/keurolring.html</loc>
@@ -395,7 +399,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-3.html</loc>
-  <lastmod>2017-10-29T09:50:00Z</lastmod>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -463,7 +467,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/global-commodity-price.html</loc>
-  <lastmod>2017-10-29T09:50:00Z</lastmod>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/google-colaboratory-intro.html</loc>
+  <lastmod>2017-10-29T09:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/headless_dropbox.html</loc>
@@ -552,10 +560,6 @@
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
   <lastmod>2017-10-17T14:11:00Z</lastmod>
- </url>
- <url>
-  <loc>https://financedata.github.com/posts/test_post.html</loc>
-  <lastmod>2017-10-17T14:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/yahoo-finance-to-google-finance.html</loc>
