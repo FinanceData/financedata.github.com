@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
@@ -59,7 +59,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -323,7 +323,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python.html</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python3.html</loc>
@@ -403,15 +403,15 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-1.html</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/index-2.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/index-3.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -483,7 +483,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/headless_dropbox.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/joins-land-crawling.html</loc>
@@ -564,10 +564,6 @@
  <url>
   <loc>https://financedata.github.com/posts/python-basics-part-5.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
- </url>
- <url>
-  <loc>https://financedata.github.com/posts/python-news-cloud-text.html</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
