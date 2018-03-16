@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1521170707.936542
+_modified_time = 1521170725.101132
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/bootstrap3/templates/listing.tmpl'
 _template_uri = 'listing.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['sourcelink', 'content']
+_exports = ['content', 'sourcelink']
 
 
 def _mako_get_namespace(context, name):
@@ -33,17 +33,17 @@ def render_body(context,**pageargs):
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
         title = _import_ns.get('title', context.get('title', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        def sourcelink():
-            return render_sourcelink(context._locals(__M_locals))
-        def content():
-            return render_content(context._locals(__M_locals))
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
-        files = _import_ns.get('files', context.get('files', UNDEFINED))
-        ui = _mako_get_namespace(context, 'ui')
         folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
         source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
+        def sourcelink():
+            return render_sourcelink(context._locals(__M_locals))
         code = _import_ns.get('code', context.get('code', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
+        ui = _mako_get_namespace(context, 'ui')
+        def content():
+            return render_content(context._locals(__M_locals))
+        files = _import_ns.get('files', context.get('files', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -62,43 +62,21 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_sourcelink(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        _import_ns = {}
-        _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
-        def sourcelink():
-            return render_sourcelink(context)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        if source_link:
-            __M_writer('    <li>\n    <a href="')
-            __M_writer(str(source_link))
-            __M_writer('" id="sourcelink">')
-            __M_writer(str(messages("Source")))
-            __M_writer('</a>\n    </li>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
         title = _import_ns.get('title', context.get('title', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        def content():
-            return render_content(context)
-        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
-        files = _import_ns.get('files', context.get('files', UNDEFINED))
-        ui = _mako_get_namespace(context, 'ui')
         folders = _import_ns.get('folders', context.get('folders', UNDEFINED))
         source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
         code = _import_ns.get('code', context.get('code', UNDEFINED))
+        crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
+        ui = _mako_get_namespace(context, 'ui')
+        def content():
+            return render_content(context)
+        files = _import_ns.get('files', context.get('files', UNDEFINED))
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer(str(ui.bar(crumbs)))
@@ -136,8 +114,30 @@ def render_content(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_sourcelink(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'ui')._populate(_import_ns, ['bar'])
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
+        def sourcelink():
+            return render_sourcelink(context)
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if source_link:
+            __M_writer('    <li>\n    <a href="')
+            __M_writer(str(source_link))
+            __M_writer('" id="sourcelink">')
+            __M_writer(str(messages("Source")))
+            __M_writer('</a>\n    </li>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 """
 __M_BEGIN_METADATA
-{"line_map": {"128": 19, "129": 19, "130": 19, "131": 21, "132": 22, "133": 22, "139": 133, "23": 3, "29": 0, "48": 2, "49": 3, "54": 24, "59": 32, "65": 26, "75": 26, "76": 27, "77": 28, "78": 29, "79": 29, "80": 29, "81": 29, "87": 4, "103": 4, "104": 5, "105": 5, "106": 6, "107": 7, "108": 8, "109": 9, "110": 9, "111": 9, "112": 9, "113": 9, "114": 11, "115": 12, "116": 12, "117": 12, "118": 12, "119": 12, "120": 14, "121": 16, "122": 17, "123": 17, "124": 17, "125": 18, "126": 19, "127": 19}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/bootstrap3/templates/listing.tmpl", "uri": "listing.tmpl", "source_encoding": "utf-8"}
+{"line_map": {"128": 27, "129": 28, "130": 29, "131": 29, "132": 29, "133": 29, "139": 133, "23": 3, "29": 0, "48": 2, "49": 3, "54": 24, "59": 32, "65": 4, "81": 4, "82": 5, "83": 5, "84": 6, "85": 7, "86": 8, "87": 9, "88": 9, "89": 9, "90": 9, "91": 9, "92": 11, "93": 12, "94": 12, "95": 12, "96": 12, "97": 12, "98": 14, "99": 16, "100": 17, "101": 17, "102": 17, "103": 18, "104": 19, "105": 19, "106": 19, "107": 19, "108": 19, "109": 21, "110": 22, "111": 22, "117": 26, "127": 26}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/bootstrap3/templates/listing.tmpl", "uri": "listing.tmpl", "source_encoding": "utf-8"}
 __M_END_METADATA
 """
