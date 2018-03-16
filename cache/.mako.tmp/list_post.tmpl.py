@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1509271918.098132
+_modified_time = 1521169682.3297458
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list_post.tmpl'
 _template_uri = 'list_post.tmpl'
@@ -23,6 +23,9 @@ def _mako_generate_namespaces(context):
     ns = runtime.TemplateNamespace('archive_nav', context._clean_inheritance_tokens(), templateuri='archive_navigation_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'archive_nav')] = ns
 
+    ns = runtime.TemplateNamespace('feeds_translations', context._clean_inheritance_tokens(), templateuri='feeds_translations_helper.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'feeds_translations')] = ns
+
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
     return runtime._inherit_from(context, 'base.tmpl', _template_uri)
@@ -32,14 +35,17 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         def content():
             return render_content(context._locals(__M_locals))
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
         posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         archive_nav = _mako_get_namespace(context, 'archive_nav')
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         __M_writer = context.writer()
+        __M_writer('\n')
         __M_writer('\n')
         __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
@@ -57,18 +63,22 @@ def render_content(context,**pageargs):
     try:
         _import_ns = {}
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
-        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         def content():
             return render_content(context)
+        date_format = _import_ns.get('date_format', context.get('date_format', UNDEFINED))
         posts = _import_ns.get('posts', context.get('posts', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         archive_nav = _mako_get_namespace(context, 'archive_nav')
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<article class="listpage">\n    <header>\n        <h1>')
         __M_writer(filters.html_escape(str(title)))
         __M_writer('</h1>\n    </header>\n    ')
         __M_writer(str(archive_nav.archive_navigation()))
+        __M_writer('\n    ')
+        __M_writer(str(feeds_translations.translation_link()))
         __M_writer('\n')
         if posts:
             __M_writer('    <ul class="postlist">\n')
@@ -97,6 +107,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "list_post.tmpl", "source_encoding": "utf-8", "line_map": {"68": 5, "69": 8, "70": 8, "71": 10, "72": 10, "73": 11, "74": 12, "75": 13, "76": 14, "77": 14, "78": 14, "79": 14, "80": 14, "81": 14, "82": 14, "83": 14, "84": 14, "85": 14, "86": 14, "23": 3, "88": 17, "89": 18, "90": 18, "91": 18, "92": 20, "29": 0, "98": 92, "43": 2, "44": 3, "49": 21, "55": 5, "87": 16}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list_post.tmpl"}
+{"line_map": {"96": 16, "23": 3, "76": 6, "77": 9, "78": 9, "79": 11, "80": 11, "81": 12, "82": 12, "83": 13, "84": 14, "85": 15, "86": 16, "87": 16, "88": 16, "89": 16, "26": 4, "91": 16, "92": 16, "90": 16, "94": 16, "95": 16, "32": 0, "97": 18, "98": 19, "99": 20, "100": 20, "101": 20, "102": 22, "108": 102, "93": 16, "48": 2, "49": 3, "50": 4, "55": 23, "61": 6}, "source_encoding": "utf-8", "uri": "list_post.tmpl", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/list_post.tmpl"}
 __M_END_METADATA
 """

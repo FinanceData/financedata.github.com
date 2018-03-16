@@ -70,102 +70,13 @@
             
 
     
+
+
+    
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/phone-numbser-site-crawling.html" class="u-url">[FAQ] 전화번호부 사이트 크롤링</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/naver-finance-finstate-crawling.html" class="u-url">네이버 파이낸스 - 재무제표 크롤링</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                plusjune
-            </span></p>
-            <p class="dateline"><a href="posts/phone-numbser-site-crawling.html" rel="bookmark"><time class="published dt-published" datetime="2017-03-02T13:00:16+09:00" title="2017-03-02 13:00">2017-03-02 13:00</time></a></p>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/phone-numbser-site-crawling.html">
-
-
-        </span></p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="전화번호부-사이트-크롤링">전화번호부 사이트 크롤링<a class="anchor-link" href="posts/phone-numbser-site-crawling.html#%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%ED%81%AC%EB%A1%A4%EB%A7%81">¶</a>
-</h2>
-<p><img src="http://www.isuperpage.co.kr/image/logo.png"></p>
-<ul>
-<li>Q: 전화번호부 사이트를 검색하여 목록을 추출하고자 하는데, 데이터 전달이 되지 않습니다.</li>
-<li>A: 데이터를 인코딩 해주세요. 국내 사이트의 경우 종종 EUC-KR로 인코딩된 데이터만 수용하도록 설계된 경우가 있습니다.</li>
-</ul>
-<h5 id="http://fb.com/financedata">
-<a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="posts/phone-numbser-site-crawling.html#http://fb.com/financedata">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="전화번호부-사이트">전화번호부 사이트<a class="anchor-link" href="posts/phone-numbser-site-crawling.html#%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8">¶</a>
-</h2>
-<p><a href="http://www.isuperpage.co.kr">http://www.isuperpage.co.kr</a></p>
-<p>지역과 범주를 입력하고 검색하면,
-<img src="http://i.imgur.com/jMesQJZ.png"></p>
-<p class="more"><a href="posts/phone-numbser-site-crawling.html">더 읽기…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dataframe-extract-rows-and-concat-as-column.html" class="u-url">[FAQ] (Daum부동산) DataFrame 행 추출과 컬럼으로 합치기</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                plusjune
-            </span></p>
-            <p class="dateline"><a href="posts/dataframe-extract-rows-and-concat-as-column.html" rel="bookmark"><time class="published dt-published" datetime="2017-03-01T13:20:46+09:00" title="2017-03-01 13:20">2017-03-01 13:20</time></a></p>
-                <p class="commentline">
-        
-<span class="fb-comments-count" data-url="/posts/dataframe-extract-rows-and-concat-as-column.html">
-
-
-        </span></p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="[FAQ]-DataFrame-행(row)-정보를-추출하여-컬럼으로-합치기">[FAQ] DataFrame 행(row) 정보를 추출하여 컬럼으로 합치기<a class="anchor-link" href="posts/dataframe-extract-rows-and-concat-as-column.html#%5BFAQ%5D-DataFrame-%ED%96%89(row)-%EC%A0%95%EB%B3%B4%EB%A5%BC-%EC%B6%94%EC%B6%9C%ED%95%98%EC%97%AC-%EC%BB%AC%EB%9F%BC%EC%9C%BC%EB%A1%9C-%ED%95%A9%EC%B9%98%EA%B8%B0">¶</a>
-</h2>
-<p>크롤링 데이터 가공과 결측치 처리 예제 (Daum 부동산 예제)</p>
-<ul>
-<li>Q: DataFrame의 두 행(row)이 하나의 데이터를 이룹니다. 짝수 행의 데이터를 추출하여 컬럼으로 만드려면 어떻게 하나요?</li>
-<li>A: DataFrame.ix[] 인덱싱을 사용하여 짝수행 전체를 얻어 가공하고, pd.concat()을 이용여 합칠 수 있습니다.</li>
-</ul>
-<p><img width="320" src="http://i.imgur.com/9WYp6pK.png"></p>
-<h5 id="http://fb.com/financedata">
-<a href="http://fb.com/financedata">http://fb.com/financedata</a><a class="anchor-link" href="posts/dataframe-extract-rows-and-concat-as-column.html#http://fb.com/financedata">¶</a>
-</h5>
-<p class="more"><a href="posts/dataframe-extract-rows-and-concat-as-column.html">더 읽기…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/naver-finance-finstate-crawling.html" class="u-url">네이버 파이낸스 - 재무제표 크롤링</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/naver-finance-finstate-crawling.html" rel="bookmark"><time class="published dt-published" datetime="2017-02-25T02:30:35+09:00" title="2017-02-25 02:30">2017-02-25 02:30</time></a></p>
@@ -210,7 +121,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/jupyter-notebook-authentication.html" class="u-url">[FAQ] Jupyter Notebook 실행시 토큰을 입력하라고 나옵니다</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/jupyter-notebook-authentication.html" rel="bookmark"><time class="published dt-published" datetime="2017-02-13T09:10:26+09:00" title="2017-02-13 09:10">2017-02-13 09:10</time></a></p>
@@ -246,7 +157,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/faq_pip_packge_fail.html" class="u-url">[FAQ] pip로 패키지 설치가 되지 않습니다</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/faq_pip_packge_fail.html" rel="bookmark"><time class="published dt-published" datetime="2017-02-13T08:30:10+09:00" title="2017-02-13 08:30">2017-02-13 08:30</time></a></p>
@@ -282,7 +193,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/jupyter-notebook-shortcuts.html" class="u-url">Jupyter Notebook 키보드 바로가기</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/jupyter-notebook-shortcuts.html" rel="bookmark"><time class="published dt-published" datetime="2017-02-09T11:41:16+09:00" title="2017-02-09 11:41">2017-02-09 11:41</time></a></p>
@@ -335,7 +246,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/recommended-free-online-courses.html" class="u-url">추천 무료 온라인 강좌</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/recommended-free-online-courses.html" rel="bookmark"><time class="published dt-published" datetime="2017-02-09T04:45:16+09:00" title="2017-02-09 04:45">2017-02-09 04:45</time></a></p>
@@ -391,7 +302,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/definitions-of-designations.html" class="u-url">프로젝트 관계자의 호칭 정의</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/definitions-of-designations.html" rel="bookmark"><time class="published dt-published" datetime="2017-02-08T17:55:23+09:00" title="2017-02-08 17:55">2017-02-08 17:55</time></a></p>
@@ -429,7 +340,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/faq_matplotlib_highlight.html" class="u-url">[FAQ] matplotlib 특정 구간을 강조하려면</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/faq_matplotlib_highlight.html" rel="bookmark"><time class="published dt-published" datetime="2017-01-29T09:00:00+09:00" title="2017-01-29 09:00">2017-01-29 09:00</time></a></p>
@@ -465,7 +376,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/faq_matplotlib_default_chart_size.html" class="u-url">[FAQ] matplotlib 차트의 기본 크기 설정</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 plusjune
             </span></p>
             <p class="dateline"><a href="posts/faq_matplotlib_default_chart_size.html" rel="bookmark"><time class="published dt-published" datetime="2017-01-28T09:00:00+09:00" title="2017-01-28 09:00">2017-01-28 09:00</time></a></p>
@@ -493,6 +404,93 @@
 <li>A: matplotlib.pylab의 rcParams을 이용하여 차트 그림(figure)의 기본 설정을 지정할 수 있습니다</li>
 </ul>
 <p class="more"><a href="posts/faq_matplotlib_default_chart_size.html">더 읽기…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/codeademy_python_jupyter_notebook.html" class="u-url">코드카데미 파이썬 주피터 노트북</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/codeademy_python_jupyter_notebook.html" rel="bookmark"><time class="published dt-published" datetime="2017-01-27T20:45:11+09:00" title="2017-01-27 20:45">2017-01-27 20:45</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/codeademy_python_jupyter_notebook.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="코드카데미-파이썬-주피터-노트북">코드카데미 파이썬 주피터 노트북<a class="anchor-link" href="posts/codeademy_python_jupyter_notebook.html#%EC%BD%94%EB%93%9C%EC%B9%B4%EB%8D%B0%EB%AF%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A3%BC%ED%94%BC%ED%84%B0-%EB%85%B8%ED%8A%B8%EB%B6%81">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img align="left" src="http://i.imgur.com/WPFSTu7.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>본 문서는 코드카데미 파이썬(한국어) 강좌 <a href="https://codecademy.com/ko/tracks/python-ko">https://codecademy.com/ko/tracks/python-ko</a> 의 각 Chapter의 내용을 Jupyter Notebook 으로 정리한 문서입니다.  <br> 파이썬을 처음 접하시는 분에게 추천 합니다.
+</p>
+<p class="more"><a href="posts/codeademy_python_jupyter_notebook.html">더 읽기…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/faq_matplotlib_fill_chart.html" class="u-url">[FAQ] matplotlib 차트의 내부를 채우려면</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/faq_matplotlib_fill_chart.html" rel="bookmark"><time class="published dt-published" datetime="2017-01-27T08:22:11+09:00" title="2017-01-27 08:22">2017-01-27 08:22</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/faq_matplotlib_fill_chart.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://i.imgur.com/0dywhdR.png"></p>
+<h2 id="[FAQ]-matplotlib:-차트의-내부를-채우려면?">[FAQ] matplotlib: 차트의 내부를 채우려면?<a class="anchor-link" href="posts/faq_matplotlib_fill_chart.html#%5BFAQ%5D-matplotlib:-%EC%B0%A8%ED%8A%B8%EC%9D%98-%EB%82%B4%EB%B6%80%EB%A5%BC-%EC%B1%84%EC%9A%B0%EB%A0%A4%EB%A9%B4?">¶</a>
+</h2>
+<ul>
+<li>Q: 라인 차트에서 라인 사이를 특정한 색으로 채우고 싶습니다.</li>
+<li>A: fill_between() 함수를 활용하시면 됩니다.</li>
+</ul>
+<p class="more"><a href="posts/faq_matplotlib_fill_chart.html">더 읽기…</a></p>
 </div>
 </div>
 </div>
@@ -537,14 +535,14 @@
      js.src = "https://connect.facebook.net/en_US/all.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
-            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-            </script>
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script>
 </div>
         <!--End of body content-->
 
         <footer id="footer">
-            Contents © 2017         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2018         <a href="mailto:plusjune@gmail.com">plusjune</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
