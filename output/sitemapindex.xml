@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/baltic-dry-index.xml</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/basic.xml</loc>
@@ -35,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/bdi.xml</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/c9.xml</loc>
@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
@@ -239,7 +239,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/mining.xml</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/module.xml</loc>
@@ -251,7 +251,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/news.xml</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/notebook.xml</loc>
@@ -307,7 +307,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/python.xml</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/python3.xml</loc>
@@ -351,7 +351,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/text.xml</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/tuple.xml</loc>
@@ -387,10 +387,10 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </sitemap>
 </sitemapindex>
