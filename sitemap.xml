@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://financedata.github.com/</loc>
-  <lastmod>2017-10-29T09:55:00Z</lastmod>
+  <lastmod>2018-03-16T03:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/2016/</loc>
@@ -18,12 +18,16 @@
   <lastmod>2017-10-29T09:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/2018/</loc>
+  <lastmod>2018-03-16T03:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
@@ -51,7 +55,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/bdi.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/c9.html</loc>
@@ -59,7 +63,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -255,7 +259,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/mining.html</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/module.html</loc>
@@ -267,7 +271,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/news.html</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/notebook.html</loc>
@@ -323,7 +327,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python.html</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python3.html</loc>
@@ -367,7 +371,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/text.html</loc>
-  <lastmod>2018-03-16T03:09:00Z</lastmod>
+  <lastmod>2018-03-16T03:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/tuple.html</loc>
@@ -411,7 +415,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-3.html</loc>
-  <lastmod>2018-03-16T03:20:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -479,7 +483,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/global-commodity-price.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/headless_dropbox.html</loc>
@@ -564,6 +568,10 @@
  <url>
   <loc>https://financedata.github.com/posts/python-basics-part-5.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/python_news_cloud_text.html</loc>
+  <lastmod>2018-03-16T03:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
