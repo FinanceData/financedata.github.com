@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FinanceData (map에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link href="https://financedata.github.com/categories/map.xml" type="application/rss+xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Fri, 06 Apr 2018 03:52:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>부동산 - 스타벅스 매장 데이터와 지도</title><link>https://financedata.github.com/posts/python_starbucks_map.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="파이썬-X-스타벅스-매장-데이터와-지도"&gt;파이썬 X 스타벅스 매장 데이터와 지도&lt;a class="anchor-link" href="https://financedata.github.com/posts/python_starbucks_map.html#%ED%8C%8C%EC%9D%B4%EC%8D%AC-X-%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4-%EB%A7%A4%EC%9E%A5-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%99%80-%EC%A7%80%EB%8F%84"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="https://i.imgur.com/ik6NVEo.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;requests 위치 데이터 가져오기&lt;/li&gt;
+&lt;li&gt;json_normalize(): JSON 데이터 DataFrame으로 전환&lt;/li&gt;
+&lt;li&gt;folium 을 사용하여 지도에 위치 표시&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://financedata.github.com/posts/python_starbucks_map.html"&gt;더 읽기…&lt;/a&gt; (읽기 7분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>map</category><category>python</category><category>starbucks</category><guid>https://financedata.github.com/posts/python_starbucks_map.html</guid><pubDate>Thu, 05 Apr 2018 17:30:10 GMT</pubDate></item></channel></rss>

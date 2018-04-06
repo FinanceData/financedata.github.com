@@ -23,11 +23,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2018-03-16T03:24:00Z</lastmod>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2018-03-16T03:24:00Z</lastmod>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
@@ -63,7 +63,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2018-03-16T03:24:00Z</lastmod>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -250,6 +250,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/map.html</loc>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/market-days.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
@@ -327,7 +331,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python.html</loc>
-  <lastmod>2018-03-16T03:22:00Z</lastmod>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/python3.html</loc>
@@ -364,6 +368,10 @@
  <url>
   <loc>https://financedata.github.com/categories/size.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/starbucks.html</loc>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/statistics.html</loc>
@@ -415,7 +423,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-3.html</loc>
-  <lastmod>2018-03-16T03:24:00Z</lastmod>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -571,7 +579,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/python_news_cloud_text.html</loc>
-  <lastmod>2018-03-16T03:24:00Z</lastmod>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/python_starbucks_map.html</loc>
+  <lastmod>2018-04-06T03:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/recommended-free-online-courses.html</loc>
