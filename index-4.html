@@ -4,15 +4,17 @@
 <meta charset="utf-8">
 <meta name="description" content="Automate financial data collection and analysis">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>저장소 | FinanceData</title>
+<title>FinanceData (이전 포스트, 페이지 4) | FinanceData</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://financedata.github.com/archive.html">
+<link rel="canonical" href="https://financedata.github.com/index-4.html">
 <meta property="fb:app_id" content="">
+<link rel="prev" href="." type="text/html">
+<link rel="next" href="index-3.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -40,8 +42,8 @@
 <li>
 <a href="index.html">홈</a>
                 </li>
-<li class="active">
-<a href="#">저장소 <span class="sr-only">(활성됨)</span></a>
+<li>
+<a href="archive.html">저장소</a>
                 </li>
 <li>
 <a href="categories/cat_faq.html">FAQ</a>
@@ -66,21 +68,92 @@
         <div class="row">
             
             
-<article class="listpage"><header><h1>저장소</h1>
-    </header><ul class="postlist">
-<li>
-<a href="2018/">2018</a>
-            (4)
-        </li>
-<li>
-<a href="2017/">2017</a>
-            (31)
-        </li>
-<li>
-<a href="2016/">2016</a>
-            (6)
-    </li>
-</ul></article>
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pandas-market-days-krx.html" class="u-url">영업일과 휴일 - 한국거래소</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                plusjune
+            </span></p>
+            <p class="dateline"><a href="posts/pandas-market-days-krx.html" rel="bookmark"><time class="published dt-published" datetime="2017-07-16T15:45:16+09:00" title="2017-07-16 15:45">2017-07-16 15:45</time></a></p>
+                <p class="commentline">
+        
+<span class="fb-comments-count" data-url="/posts/pandas-market-days-krx.html">
+
+
+        </span></p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="영업일-캘린더-(KRX)">영업일 캘린더 (KRX)<a class="anchor-link" href="posts/pandas-market-days-krx.html#%EC%98%81%EC%97%85%EC%9D%BC-%EC%BA%98%EB%A6%B0%EB%8D%94-(KRX)">¶</a>
+</h2>
+<ul>
+<li>한국거래소 홈페이지에서 휴장일을 xls로 받을 수 있다</li>
+<li>휴장일 데이터로 부터 개장일(market days)를 생성</li>
+<li>해외 시장(CME, EUREX)등은  pandas-market-calendars를 활용</li>
+</ul>
+<p><img width="320" src="http://i.imgur.com/ClIQff8.jpg"></p>
+<h5 id="2017-http://fb.com/financedata-,-http://financedata.github.io">2017 <a href="http://fb.com/financedata">http://fb.com/financedata</a> , <a href="http://financedata.github.io">http://financedata.github.io</a><a class="anchor-link" href="posts/pandas-market-days-krx.html#2017-http://fb.com/financedata-,-http://financedata.github.io">¶</a>
+</h5>
+<p class="more"><a href="posts/pandas-market-days-krx.html">더 읽기…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="." rel="prev">최신 포스트</a>
+            </li>
+            <li class="next">
+                <a href="index-3.html" rel="next">옛날 포스트</a>
+            </li>
+        </ul></nav><div id="fb-root"></div>
+<script>
+    // thank lxml for this
+    $('.fb-comments-count').each(function(i, obj) {
+        var url = obj.attributes['data-url'].value;
+        // change here if you dislike the default way of displaying
+        // this
+        obj.innerHTML = '<fb:comments-count href="' + url + '"></fb:comments-count> comments';
+    });
+
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '',
+      status     : true,
+      xfbml      : true
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script>
 </div>
         <!--End of body content-->
 
