@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2018-04-06T03:52:00Z</lastmod>
+  <lastmod>2018-04-18T14:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
@@ -310,8 +310,12 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/py4e.xml</loc>
+  <lastmod>2018-04-18T14:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/python.xml</loc>
-  <lastmod>2018-04-06T03:52:00Z</lastmod>
+  <lastmod>2018-04-18T14:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/python3.xml</loc>
@@ -395,10 +399,10 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2018-04-06T03:52:00Z</lastmod>
+  <lastmod>2018-04-18T14:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2018-04-06T03:52:00Z</lastmod>
+  <lastmod>2018-04-18T14:33:00Z</lastmod>
  </sitemap>
 </sitemapindex>
