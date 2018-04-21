@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1524295525.9107473
+_modified_time = 1524295751.9595459
 _enable_loop = True
 _template_filename = '/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl'
 _template_uri = 'comments_helper_googleplus.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_form', 'comment_link', 'comment_link_script']
+_exports = ['comment_link_script', 'comment_link', 'comment_form']
 
 
 def render_body(context,**pageargs):
@@ -26,13 +26,11 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_comment_form(context,url,title,identifier):
+def render_comment_link_script(context):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
-        __M_writer('\n<script src="https://apis.google.com/js/plusone.js"></script>\n<div class="g-comments"\n    data-href="')
-        __M_writer(str(url))
-        __M_writer('"\n    data-first_party_property="BLOGGER"\n    data-view_type="FILTERED_POSTMOD">\n</div>\n')
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -50,11 +48,13 @@ def render_comment_link(context,link,identifier):
         context.caller_stack._pop_frame()
 
 
-def render_comment_link_script(context):
+def render_comment_form(context,url,title,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
-        __M_writer('\n')
+        __M_writer('\n<script src="https://apis.google.com/js/plusone.js"></script>\n<div class="g-comments"\n    data-href="')
+        __M_writer(str(url))
+        __M_writer('"\n    data-first_party_property="BLOGGER"\n    data-view_type="FILTERED_POSTMOD">\n</div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -62,6 +62,6 @@ def render_comment_link_script(context):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"33": 2, "34": 5, "35": 5, "41": 11, "45": 11, "46": 12, "47": 12, "16": 0, "21": 9, "22": 14, "23": 17, "57": 16, "63": 57, "29": 2, "53": 16}, "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl", "source_encoding": "utf-8", "uri": "comments_helper_googleplus.tmpl"}
+{"source_encoding": "utf-8", "filename": "/usr/local/lib/python3.5/dist-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl", "line_map": {"33": 16, "39": 11, "57": 5, "43": 11, "44": 12, "45": 12, "16": 0, "51": 2, "21": 9, "22": 14, "23": 17, "56": 5, "55": 2, "29": 16, "63": 57}, "uri": "comments_helper_googleplus.tmpl"}
 __M_END_METADATA
 """
