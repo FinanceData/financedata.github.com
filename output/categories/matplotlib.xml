@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>FinanceData (matplotlib에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://financedata.github.com/categories/matplotlib.xml"></atom:link><language>ko</language><lastBuildDate>Fri, 16 Mar 2018 03:08:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>matplotlib + 한글 (OSX)</title><link>https://financedata.github.com/posts/matplotlib-hangul-for-osx.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FinanceData (matplotlib에 대한 포스트)</title><link>https://financedata.github.com/</link><description></description><atom:link type="application/rss+xml" href="https://financedata.github.com/categories/matplotlib.xml" rel="self"></atom:link><language>ko</language><lastBuildDate>Sat, 21 Apr 2018 06:56:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>matplotlib + (Windows 아나콘다)</title><link>https://financedata.github.com/posts/matplotlib-hangul-for-windows-anaconda.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Matplotlib-한글-(Windows-아나콘다)"&gt;Matplotlib 한글 (Windows 아나콘다)&lt;a class="anchor-link" href="https://financedata.github.com/posts/matplotlib-hangul-for-windows-anaconda.html#Matplotlib-%ED%95%9C%EA%B8%80-(Windows-%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4)"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="http://i.imgur.com/Kvx2GHB.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;사용가능한 폰트 확인, TTF 폰트 설치 방법&lt;/li&gt;
+&lt;li&gt;matplotlib 텍스트 출력시 폰트 특성을 지정 (FontProperties)&lt;/li&gt;
+&lt;li&gt;matplotlib 전역으로 한글 글꼴 지정(rcParams)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="2018-FinanceData.KR-http://facebook.com/financedata"&gt;2018 FinanceData.KR &lt;a href="https://financedata.github.com/posts/matplotlib-hangul-for-windows-anaconda.html"&gt;http://facebook.com/financedata&lt;/a&gt;&lt;a class="anchor-link" href="https://financedata.github.com/posts/matplotlib-hangul-for-windows-anaconda.html#2018-FinanceData.KR-http://facebook.com/financedata"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;a href="https://financedata.github.com/posts/matplotlib-hangul-for-windows-anaconda.html"&gt;더 읽기…&lt;/a&gt; (읽기 5분 남음.)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>matplotlib</category><category>Windows</category><category>아나콘다</category><category>한글</category><guid>https://financedata.github.com/posts/matplotlib-hangul-for-windows-anaconda.html</guid><pubDate>Thu, 19 Apr 2018 17:45:10 GMT</pubDate></item><item><title>matplotlib + 한글 (OSX)</title><link>https://financedata.github.com/posts/matplotlib-hangul-for-osx.html</link><dc:creator>plusjune</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;

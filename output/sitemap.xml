@@ -23,15 +23,19 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2018-04-18T14:21:00Z</lastmod>
+  <lastmod>2018-04-21T06:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2018-04-18T14:21:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/anakonda.html</loc>
+  <lastmod>2018-04-21T06:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/assertionerror.html</loc>
@@ -63,7 +67,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2018-04-18T14:33:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -175,7 +179,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangeul.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-04-21T06:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/hangul.html</loc>
@@ -259,7 +263,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/matplotlib.html</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/mining.html</loc>
@@ -410,6 +414,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/windows.html</loc>
+  <lastmod>2018-04-21T06:55:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/yahoo.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
@@ -431,7 +439,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-4.html</loc>
-  <lastmod>2018-04-18T14:21:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -534,6 +542,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/posts/matplotlib-hangul-for-windows-anaconda.html</loc>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/posts/matplotlib_hline_and_vline.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
@@ -567,7 +579,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/py4e-python-for-everyone.html</loc>
-  <lastmod>2018-04-18T14:33:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/python-basics-part-1.html</loc>
