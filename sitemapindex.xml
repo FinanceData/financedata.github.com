@@ -10,6 +10,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/anakonda.xml</loc>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/assertionerror.xml</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
@@ -43,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2018-04-18T14:33:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
@@ -155,7 +159,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/hangeul.xml</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/hangul.xml</loc>
@@ -239,7 +243,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/matplotlib.xml</loc>
-  <lastmod>2018-03-16T03:08:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/mining.xml</loc>
@@ -390,6 +394,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/windows.xml</loc>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/yahoo.xml</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
@@ -399,10 +407,10 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2018-04-18T14:33:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2018-04-18T14:33:00Z</lastmod>
+  <lastmod>2018-04-21T06:56:00Z</lastmod>
  </sitemap>
 </sitemapindex>
