@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2018-04-21T07:39:00Z</lastmod>
+  <lastmod>2018-04-27T14:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
@@ -254,6 +254,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/morningstar.xml</loc>
+  <lastmod>2018-04-27T14:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/naver.xml</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
@@ -290,6 +294,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/pandas-datareader.xml</loc>
+  <lastmod>2018-04-27T14:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/pandas.xml</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
@@ -304,6 +312,10 @@
  <sitemap>
   <loc>https://financedata.github.com/categories/pip.xml</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://financedata.github.com/categories/price.xml</loc>
+  <lastmod>2018-04-27T14:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/print.xml</loc>
@@ -366,6 +378,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/stock.xml</loc>
+  <lastmod>2018-04-27T14:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/text.xml</loc>
   <lastmod>2018-03-16T03:23:00Z</lastmod>
  </sitemap>
@@ -411,10 +427,10 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2018-04-21T07:39:00Z</lastmod>
+  <lastmod>2018-04-27T14:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2018-04-21T07:39:00Z</lastmod>
+  <lastmod>2018-04-27T14:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>
