@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_dev.xml</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/cat_faq.xml</loc>
@@ -110,6 +110,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://financedata.github.com/categories/docs.xml</loc>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://financedata.github.com/categories/dropbox.xml</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </sitemap>
@@ -132,6 +136,10 @@
  <sitemap>
   <loc>https://financedata.github.com/categories/fill.xml</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://financedata.github.com/categories/financedatareader.xml</loc>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/categories/flow-control.xml</loc>
@@ -427,10 +435,10 @@
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/rss.xml</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://financedata.github.com/sitemap.xml</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>
