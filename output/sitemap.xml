@@ -23,11 +23,11 @@
  </url>
  <url>
   <loc>https://financedata.github.com/archive.html</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/acrea-code.html</loc>
@@ -67,7 +67,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_dev.html</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/cat_faq.html</loc>
@@ -130,6 +130,10 @@
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
  <url>
+  <loc>https://financedata.github.com/categories/docs.html</loc>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://financedata.github.com/categories/dropbox.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
  </url>
@@ -152,6 +156,10 @@
  <url>
   <loc>https://financedata.github.com/categories/fill.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/categories/financedatareader.html</loc>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/categories/flow-control.html</loc>
@@ -459,7 +467,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/index-4.html</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/listings/</loc>
@@ -520,6 +528,10 @@
  <url>
   <loc>https://financedata.github.com/posts/faq_pip_packge_fail.html</loc>
   <lastmod>2018-03-16T03:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://financedata.github.com/posts/finance-data-reader-users-guide.html</loc>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/fqa_pip_list_assertion_error.html</loc>
@@ -603,7 +615,7 @@
  </url>
  <url>
   <loc>https://financedata.github.com/posts/price_data_morningstar.html</loc>
-  <lastmod>2018-04-27T14:22:00Z</lastmod>
+  <lastmod>2018-05-17T11:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://financedata.github.com/posts/py4e-python-for-everyone.html</loc>
