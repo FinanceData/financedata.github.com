@@ -143,10 +143,11 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog-jinja"
-THEME = "custom_theme"
 #THEME = "slidemenu"
 #THEME = "maupassant"
+#THEME = "canterville"
+THEME = "bootblog-jinja"
+THEME = "custom_theme"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
@@ -310,7 +311,7 @@ COMPILERS = {
 # Nikola supports logo display.  If you have one, you can put the URL here.
 # Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
-# LOGO_URL = ''
+LOGO_URL = 'https://i.imgur.com/1xnFMui.png'
 
 # If you want to hide the title of your website (for example, if your logo
 # already contains the text), set this to False.
@@ -326,7 +327,7 @@ POSTS_SECTIONS = True
 
 # Setting this to False generates a list page instead of an index. Indexes
 # are the default and will apply GENERATE_ATOM if set.
-# POSTS_SECTIONS_ARE_INDEXES = True
+POSTS_SECTIONS_ARE_INDEXES = True
 
 # Each post and section page will have an associated color that can be used
 # to style them with a recognizable color detail across your site. A color
