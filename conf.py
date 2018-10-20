@@ -933,7 +933,7 @@ CONTENT_FOOTER_FORMATS = {
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = ""
+COMMENT_SYSTEM_ID = "facebook"
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
