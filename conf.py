@@ -933,7 +933,7 @@ COMMENT_SYSTEM = "facebook"
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = "plusjune"
+COMMENT_SYSTEM_ID = "1830949120470610"
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
